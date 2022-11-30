@@ -49,7 +49,7 @@ public class HttpServletConnection extends AbstractReceiverConnection
 
 	private final HttpServletResponse httpServletResponse;
 
-	private boolean statusCodeSet = false;
+	private boolean statusCodeSet;
 
 	/**
 	 * Constructs a new servlet connection with the given {@code HttpServletRequest} and {@code HttpServletResponse}.
@@ -106,12 +106,12 @@ public class HttpServletConnection extends AbstractReceiverConnection
 
 	@Override
 	public Iterator<String> getRequestHeaderNames() throws IOException {
-		return new EnumerationIterator<String>(getHttpServletRequest().getHeaderNames());
+		return new EnumerationIterator<>(getHttpServletRequest().getHeaderNames());
 	}
 
 	@Override
 	public Iterator<String> getRequestHeaders(String name) throws IOException {
-		return new EnumerationIterator<String>(getHttpServletRequest().getHeaders(name));
+		return new EnumerationIterator<>(getHttpServletRequest().getHeaders(name));
 	}
 
 	@Override

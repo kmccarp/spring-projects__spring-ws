@@ -28,7 +28,7 @@ public class CertificateLoginModule implements LoginModule {
 
 	private Subject subject;
 
-	private boolean loginSuccessful = false;
+	private boolean loginSuccessful;
 
 	@Override
 	public boolean abort() {

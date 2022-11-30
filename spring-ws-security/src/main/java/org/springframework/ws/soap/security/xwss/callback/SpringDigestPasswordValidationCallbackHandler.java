@@ -126,7 +126,7 @@ public class SpringDigestPasswordValidationCallbackHandler extends AbstractCallb
 		return user;
 	}
 
-	private class SpringSecurityDigestPasswordValidator extends PasswordValidationCallback.DigestPasswordValidator {
+	private final class SpringSecurityDigestPasswordValidator extends PasswordValidationCallback.DigestPasswordValidator {
 
 		private UserDetails user;
 

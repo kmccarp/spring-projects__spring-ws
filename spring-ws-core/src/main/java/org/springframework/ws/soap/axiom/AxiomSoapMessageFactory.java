@@ -88,7 +88,7 @@ public class AxiomSoapMessageFactory implements SoapMessageFactory, Initializing
 
 	private boolean payloadCaching = true;
 
-	private boolean attachmentCaching = false;
+	private boolean attachmentCaching;
 
 	private File attachmentCacheDir;
 
@@ -99,9 +99,9 @@ public class AxiomSoapMessageFactory implements SoapMessageFactory, Initializing
 
 	private boolean langAttributeOnSoap11FaultString = true;
 
-	private boolean replacingEntityReferences = false;
+	private boolean replacingEntityReferences;
 
-	private boolean supportingExternalEntities = false;
+	private boolean supportingExternalEntities;
 
 	/**
 	 * Indicates whether the SOAP Body payload should be cached or not. Default is {@code true}.
@@ -263,7 +263,7 @@ public class AxiomSoapMessageFactory implements SoapMessageFactory, Initializing
 
 		SOAPMessage soapMessage;
 
-		if (AxiomUtils.AXIOM14_IS_PRESENT()) {
+		if (AxiomUtils.axiom14IsPresent()) {
 			soapMessage = Axiom14Utils.getSOAPMessage(inputFactory, inputStream, getCharSetEncoding(contentType),
 					soapFactory);
 		} else {
@@ -286,7 +286,7 @@ public class AxiomSoapMessageFactory implements SoapMessageFactory, Initializing
 		SOAPMessage soapMessage;
 
 		try {
-			if (AxiomUtils.AXIOM14_IS_PRESENT()) {
+			if (AxiomUtils.axiom14IsPresent()) {
 				soapMessage = Axiom14Utils.getSOAPMessage(attachments, soapFactory, reader);
 			} else {
 				soapMessage = Axiom12Utils.getSOAPMessage(getSoapEnvelopeNamespace(contentType), attachments, soapFactory,

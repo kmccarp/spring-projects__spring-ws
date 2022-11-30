@@ -50,7 +50,7 @@ public abstract class AbstractXwssMessageInterceptorTestCase {
 
 		interceptor = new XwsSecurityInterceptor();
 		messageFactory = MessageFactory.newInstance();
-		namespaces = new HashMap<String, String>(4);
+		namespaces = new HashMap<>(4);
 		namespaces.put("SOAP-ENV", "http://schemas.xmlsoap.org/soap/envelope/");
 		namespaces.put("wsse", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd");
 		namespaces.put("wsu", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd");

@@ -61,7 +61,7 @@ class Axiom14NonCachingPayload extends AxiomAbstractPayload {
 		return payloadElement.getXMLStreamReaderWithoutCaching();
 	}
 
-	private class DelegatingStreamWriter implements XMLStreamWriter {
+	private final class DelegatingStreamWriter implements XMLStreamWriter {
 
 		private final ByteArrayOutputStream baos = new ByteArrayOutputStream(BUF_SIZE);
 
@@ -71,9 +71,9 @@ class Axiom14NonCachingPayload extends AxiomAbstractPayload {
 
 		private String encoding = "UTF-8";
 
-		private int elementDepth = 0;
+		private int elementDepth;
 
-		private boolean payloadAdded = false;
+		private boolean payloadAdded;
 
 		private DelegatingStreamWriter() {
 			try {

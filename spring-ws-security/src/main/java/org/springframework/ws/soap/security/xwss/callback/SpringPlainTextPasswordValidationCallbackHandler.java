@@ -55,7 +55,7 @@ public class SpringPlainTextPasswordValidationCallbackHandler extends AbstractCa
 
 	private AuthenticationManager authenticationManager;
 
-	private boolean ignoreFailure = false;
+	private boolean ignoreFailure;
 
 	/** Sets the Spring Security authentication manager. Required. */
 	public void setAuthenticationManager(AuthenticationManager authenticationManager) {

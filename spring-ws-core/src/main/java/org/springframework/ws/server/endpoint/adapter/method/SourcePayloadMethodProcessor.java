@@ -135,7 +135,7 @@ public class SourcePayloadMethodProcessor extends AbstractPayloadSourceMethodPro
 
 	}
 
-	private static class SystemIdStreamReaderDelegate extends StreamReaderDelegate {
+	private static final class SystemIdStreamReaderDelegate extends StreamReaderDelegate {
 
 		private final String systemId;
 

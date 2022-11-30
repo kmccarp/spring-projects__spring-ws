@@ -51,7 +51,7 @@ public class CommonsHttpMessageSenderIntegrationTest
 
 		CommonsHttpMessageSender messageSender = new CommonsHttpMessageSender();
 		messageSender.setMaxTotalConnections(2);
-		Map<String, String> maxConnectionsPerHost = new HashMap<String, String>();
+		Map<String, String> maxConnectionsPerHost = new HashMap<>();
 		maxConnectionsPerHost.put("https://www.example.com", "1");
 		maxConnectionsPerHost.put("http://www.example.com:8080", "7");
 		maxConnectionsPerHost.put("www.springframework.org", "10");
@@ -102,6 +102,8 @@ public class CommonsHttpMessageSenderIntegrationTest
 
 	@SuppressWarnings("serial")
 	private class EchoServlet extends HttpServlet {
+
+		private static final long serialVersionUID = 1;
 
 		@Override
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

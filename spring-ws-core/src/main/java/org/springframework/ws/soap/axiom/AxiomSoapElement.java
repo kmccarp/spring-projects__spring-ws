@@ -110,7 +110,7 @@ class AxiomSoapElement implements SoapElement {
 	@Override
 	public final Iterator<QName> getAllAttributes() {
 		try {
-			List<QName> results = new ArrayList<QName>();
+			List<QName> results = new ArrayList<>();
 			for (Iterator<?> iterator = getAxiomElement().getAllAttributes(); iterator.hasNext();) {
 				OMAttribute attribute = (OMAttribute) iterator.next();
 				results.add(attribute.getQName());

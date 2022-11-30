@@ -15,7 +15,7 @@
  */
 package org.springframework.ws.soap.axiom;
 
-import static org.springframework.ws.soap.axiom.support.AxiomUtils.AXIOM14_IS_PRESENT;
+import static org.springframework.ws.soap.axiom.support.AxiomUtils.axiom14IsPresent;
 
 import org.apache.axiom.soap.SOAPBody;
 import org.apache.axiom.soap.SOAPFactory;
@@ -33,7 +33,7 @@ final class AxiomPayloadUtils {
 	}
 
 	static Payload createCachingPayload(SOAPBody axiomBody, SOAPFactory axiomFactory) {
-		if (AXIOM14_IS_PRESENT()) {
+		if (axiom14IsPresent()) {
 			return new Axiom14CachingPayload(axiomBody, axiomFactory);
 		} else {
 			return new Axiom12CachingPayload(axiomBody, axiomFactory);
@@ -41,7 +41,7 @@ final class AxiomPayloadUtils {
 	}
 
 	static Payload createNonCachingPayload(SOAPBody axiomBody, SOAPFactory axiomFactory) {
-		if (AXIOM14_IS_PRESENT()) {
+		if (axiom14IsPresent()) {
 			return new Axiom14NonCachingPayload(axiomBody, axiomFactory);
 		} else {
 			return new Axiom12NonCachingPayload(axiomBody, axiomFactory);

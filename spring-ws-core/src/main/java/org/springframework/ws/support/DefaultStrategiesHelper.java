@@ -119,7 +119,7 @@ public class DefaultStrategiesHelper {
 			String value = defaultStrategies.getProperty(key);
 			if (value != null) {
 				String[] classNames = StringUtils.commaDelimitedListToStringArray(value);
-				result = new ArrayList<T>(classNames.length);
+				result = new ArrayList<>(classNames.length);
 				ClassLoader classLoader = null;
 				if (applicationContext != null) {
 					classLoader = applicationContext.getClassLoader();

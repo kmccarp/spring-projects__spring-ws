@@ -49,8 +49,7 @@ public abstract class RequestMatchers {
 	 * @return the request matcher
 	 */
 	public static RequestMatcher anything() {
-		return new RequestMatcher() {
-			public void match(URI uri, WebServiceMessage request) throws IOException, AssertionError {}
+		return (uri, request) -> {
 		};
 	}
 

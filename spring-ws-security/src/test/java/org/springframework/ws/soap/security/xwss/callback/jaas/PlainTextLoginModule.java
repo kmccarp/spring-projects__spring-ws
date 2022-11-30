@@ -37,7 +37,7 @@ public class PlainTextLoginModule implements LoginModule {
 
 	private boolean success;
 
-	private List<Principal> principals = new ArrayList<Principal>();
+	private List<Principal> principals = new ArrayList<>();
 
 	@Override
 	public boolean abort() {

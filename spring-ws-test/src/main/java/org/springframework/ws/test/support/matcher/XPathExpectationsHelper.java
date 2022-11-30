@@ -16,9 +16,9 @@
 
 package org.springframework.ws.test.support.matcher;
 
-import static org.springframework.ws.test.support.AssertionErrors.*;
+import static org.springframework.ws.test.support.AssertionErrors.assertEquals;
+import static org.springframework.ws.test.support.AssertionErrors.fail;
 
-import java.io.IOException;
 import java.util.Map;
 
 import javax.xml.transform.TransformerException;
@@ -68,38 +68,32 @@ public class XPathExpectationsHelper {
 	}
 
 	public WebServiceMessageMatcher exists() {
-		return new WebServiceMessageMatcher() {
-			public void match(WebServiceMessage message) throws IOException, AssertionError {
-				Node payload = transformToNode(message);
-				Node result = expression.evaluateAsNode(payload);
-				if (result == null) {
-					fail("No match for \"" + expressionString + "\" found", "Payload", message.getPayloadSource());
-				}
+		return message -> {
+			Node payload = transformToNode(message);
+			Node result = expression.evaluateAsNode(payload);
+			if (result == null) {
+				fail("No match for \"" + expressionString + "\" found", "Payload", message.getPayloadSource());
 			}
 		};
 	}
 
 	public WebServiceMessageMatcher doesNotExist() {
-		return new WebServiceMessageMatcher() {
-			public void match(WebServiceMessage message) throws IOException, AssertionError {
-				Node payload = transformToNode(message);
-				Node result = expression.evaluateAsNode(payload);
-				if (result != null) {
-					fail("Match for \"" + expressionString + "\" found", "Payload", message.getPayloadSource());
-				}
+		return message -> {
+			Node payload = transformToNode(message);
+			Node result = expression.evaluateAsNode(payload);
+			if (result != null) {
+				fail("Match for \"" + expressionString + "\" found", "Payload", message.getPayloadSource());
 			}
 		};
 	}
 
 	public WebServiceMessageMatcher evaluatesTo(final boolean expectedValue) {
-		return new WebServiceMessageMatcher() {
-			public void match(WebServiceMessage message) throws IOException, AssertionError {
-				Node payload = transformToNode(message);
-				boolean result = expression.evaluateAsBoolean(payload);
-				assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
-						"Payload", message.getPayloadSource());
+		return message -> {
+			Node payload = transformToNode(message);
+			boolean result = expression.evaluateAsBoolean(payload);
+			assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
+					"Payload", message.getPayloadSource());
 
-			}
 		};
 	}
 
@@ -108,26 +102,22 @@ public class XPathExpectationsHelper {
 	}
 
 	public WebServiceMessageMatcher evaluatesTo(final double expectedValue) {
-		return new WebServiceMessageMatcher() {
-			public void match(WebServiceMessage message) throws IOException, AssertionError {
-				Node payload = transformToNode(message);
-				double result = expression.evaluateAsNumber(payload);
-				assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
-						"Payload", message.getPayloadSource());
+		return message -> {
+			Node payload = transformToNode(message);
+			double result = expression.evaluateAsNumber(payload);
+			assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
+					"Payload", message.getPayloadSource());
 
-			}
 		};
 	}
 
 	public WebServiceMessageMatcher evaluatesTo(final String expectedValue) {
 		Assert.notNull(expectedValue, "'expectedValue' must not be null");
-		return new WebServiceMessageMatcher() {
-			public void match(WebServiceMessage message) throws IOException, AssertionError {
-				Node payload = transformToNode(message);
-				String result = expression.evaluateAsString(payload);
-				assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
-						"Payload", message.getPayloadSource());
-			}
+		return message -> {
+			Node payload = transformToNode(message);
+			String result = expression.evaluateAsString(payload);
+			assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
+					"Payload", message.getPayloadSource());
 		};
 	}
 

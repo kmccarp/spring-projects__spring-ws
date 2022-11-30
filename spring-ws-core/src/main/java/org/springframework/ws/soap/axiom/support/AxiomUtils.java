@@ -53,7 +53,7 @@ public final class AxiomUtils {
 	/**
 	 * Detect if Axiom 1.4 is on the classpath.
 	 */
-	public static boolean AXIOM14_IS_PRESENT() {
+	public static boolean axiom14IsPresent() {
 		return ClassUtils.isPresent("org.apache.axiom.om.ds.StringOMDataSource", null);
 	}
 

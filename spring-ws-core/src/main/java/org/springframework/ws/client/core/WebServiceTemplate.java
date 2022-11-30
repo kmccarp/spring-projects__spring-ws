@@ -210,12 +210,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 * @see #sendAndReceive(WebServiceMessageCallback,WebServiceMessageCallback)
 	 */
 	public void setDefaultUri(final String uri) {
-		destinationProvider = new DestinationProvider() {
-
-			public URI getDestination() {
-				return URI.create(uri);
-			}
-		};
+		destinationProvider = () -> URI.create(uri);
 	}
 
 	/** Returns the destination provider used on operations that do not have a URI parameter. */
@@ -439,14 +434,11 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 		try {
 			final Transformer transformer = createTransformer();
 			Boolean retVal = doSendAndReceive(uri, transformer, requestPayload, requestCallback,
-					new SourceExtractor<Boolean>() {
-
-						public Boolean extractData(Source source) throws IOException, TransformerException {
-							if (source != null) {
-								transformer.transform(source, responseResult);
-							}
-							return Boolean.TRUE;
+					source -> {
+						if (source != null) {
+							transformer.transform(source, responseResult);
 						}
+						return Boolean.TRUE;
 					});
 			return retVal != null && retVal;
 		} catch (TransformerConfigurationException ex) {
@@ -489,14 +481,12 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	private <T> T doSendAndReceive(String uri, final Transformer transformer, final Source requestPayload,
 			final WebServiceMessageCallback requestCallback, final SourceExtractor<T> responseExtractor) {
 		Assert.notNull(responseExtractor, "responseExtractor must not be null");
-		return sendAndReceive(uri, new WebServiceMessageCallback() {
-			public void doWithMessage(WebServiceMessage message) throws IOException, TransformerException {
-				transformer.transform(requestPayload, message.getPayloadResult());
-				if (requestCallback != null) {
-					requestCallback.doWithMessage(message);
-				}
+		return sendAndReceive(uri, message -> {
+			transformer.transform(requestPayload, message.getPayloadResult());
+			if (requestCallback != null) {
+				requestCallback.doWithMessage(message);
 			}
-		}, new SourceExtractorMessageExtractor<T>(responseExtractor));
+		}, new SourceExtractorMessageExtractor<>(responseExtractor));
 	}
 
 	//
@@ -792,7 +782,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	}
 
 	/** Adapter to enable use of a WebServiceMessageCallback inside a WebServiceMessageExtractor. */
-	private static class WebServiceMessageCallbackMessageExtractor implements WebServiceMessageExtractor<Boolean> {
+	private static final class WebServiceMessageCallbackMessageExtractor implements WebServiceMessageExtractor<Boolean> {
 
 		private final WebServiceMessageCallback callback;
 
@@ -808,7 +798,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	}
 
 	/** Adapter to enable use of a SourceExtractor inside a WebServiceMessageExtractor. */
-	private static class SourceExtractorMessageExtractor<T> implements WebServiceMessageExtractor<T> {
+	private static final class SourceExtractorMessageExtractor<T> implements WebServiceMessageExtractor<T> {
 
 		private final SourceExtractor<T> sourceExtractor;
 

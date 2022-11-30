@@ -94,7 +94,7 @@ public abstract class AbstractPortTypesProvider implements PortTypesProvider {
 	}
 
 	private void createOperations(Definition definition, PortType portType) throws WSDLException {
-		MultiValueMap<String, Message> operations = new LinkedMultiValueMap<String, Message>();
+		MultiValueMap<String, Message> operations = new LinkedMultiValueMap<>();
 		for (Iterator<?> iterator = definition.getMessages().values().iterator(); iterator.hasNext();) {
 			Message message = (Message) iterator.next();
 			String operationName = getOperationName(message);

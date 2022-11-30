@@ -154,7 +154,7 @@ public class KeyStoreCallbackHandler extends CryptographyCallbackHandler impleme
 
 	private char[] symmetricKeyPassword;
 
-	private boolean revocationEnabled = false;
+	private boolean revocationEnabled;
 
 	private static X509Certificate getCertificate(String alias, KeyStore store) throws IOException {
 		try {

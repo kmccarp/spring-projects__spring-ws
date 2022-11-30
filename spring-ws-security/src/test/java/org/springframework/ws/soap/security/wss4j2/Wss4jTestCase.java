@@ -71,7 +71,7 @@ public abstract class Wss4jTestCase {
 		saajSoap11MessageFactory = MessageFactory.newInstance();
 		saajSoap12MessageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
 
-		Map<String, String> namespaces = new HashMap<String, String>();
+		Map<String, String> namespaces = new HashMap<>();
 		namespaces.put("SOAP-ENV", "http://schemas.xmlsoap.org/soap/envelope/");
 		namespaces.put("wsse", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd");
 		namespaces.put("ds", "http://www.w3.org/2000/09/xmldsig#");
@@ -256,8 +256,9 @@ public abstract class Wss4jTestCase {
 			messageFactory = new AxiomSoapMessageFactory();
 		} else if (saajTest) {
 			messageFactory = new SaajSoapMessageFactory(saajSoap12MessageFactory);
-		} else
+		} else {
 			throw new IllegalArgumentException();
+		}
 		messageFactory.setSoapVersion(SoapVersion.SOAP_12);
 		return messageFactory;
 	}

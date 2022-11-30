@@ -246,6 +246,8 @@ public abstract class AbstractHttpWebServiceMessageSenderIntegrationTestCase<T e
 	@SuppressWarnings("serial")
 	private class MyServlet extends HttpServlet {
 
+		private static final long serialVersionUID = 1;
+
 		private int responseStatus = HttpServletResponse.SC_OK;
 
 		private Integer contentLength;

@@ -44,7 +44,7 @@ import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
  */
 public class SimplePasswordValidationCallbackHandler extends AbstractCallbackHandler implements InitializingBean {
 
-	private Map<String, String> users = new HashMap<String, String>();
+	private Map<String, String> users = new HashMap<>();
 
 	/** Sets the users to validate against. Property names are usernames, property values are passwords. */
 	public void setUsers(Properties users) {

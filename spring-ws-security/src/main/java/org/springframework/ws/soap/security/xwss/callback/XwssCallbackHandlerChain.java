@@ -67,7 +67,7 @@ public class XwssCallbackHandlerChain extends CallbackHandlerChain {
 		callback.setValidator(new TimestampValidatorChain(callback));
 	}
 
-	private class TimestampValidatorChain implements TimestampValidationCallback.TimestampValidator {
+	private final class TimestampValidatorChain implements TimestampValidationCallback.TimestampValidator {
 
 		private TimestampValidationCallback callback;
 
@@ -92,7 +92,7 @@ public class XwssCallbackHandlerChain extends CallbackHandlerChain {
 		}
 	}
 
-	private class PasswordValidatorChain implements PasswordValidationCallback.PasswordValidator {
+	private final class PasswordValidatorChain implements PasswordValidationCallback.PasswordValidator {
 
 		private PasswordValidationCallback callback;
 
@@ -122,7 +122,7 @@ public class XwssCallbackHandlerChain extends CallbackHandlerChain {
 		}
 	}
 
-	private class CertificateValidatorChain implements CertificateValidationCallback.CertificateValidator {
+	private final class CertificateValidatorChain implements CertificateValidationCallback.CertificateValidator {
 
 		private CertificateValidationCallback callback;
 

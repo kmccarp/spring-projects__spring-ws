@@ -78,7 +78,7 @@ public class WsdlDefinitionHandlerAdapter extends LocationTransformerObjectSuppo
 
 	private static final String CONTENT_TYPE = "text/xml";
 
-	private Map<String, String> expressionNamespaces = new HashMap<String, String>();
+	private Map<String, String> expressionNamespaces = new HashMap<>();
 
 	private String locationExpression = DEFAULT_LOCATION_EXPRESSION;
 
@@ -88,9 +88,9 @@ public class WsdlDefinitionHandlerAdapter extends LocationTransformerObjectSuppo
 
 	private XPathExpression schemaLocationXPathExpression;
 
-	private boolean transformLocations = false;
+	private boolean transformLocations;
 
-	private boolean transformSchemaLocations = false;
+	private boolean transformSchemaLocations;
 
 	/**
 	 * Sets the XPath expression used for extracting the {@code location} attributes from the WSDL 1.1 definition.

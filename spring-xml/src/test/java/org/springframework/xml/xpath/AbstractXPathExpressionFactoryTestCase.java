@@ -31,7 +31,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.xml.DocumentBuilderFactoryUtils;
-import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
@@ -42,7 +41,7 @@ public abstract class AbstractXPathExpressionFactoryTestCase {
 
 	private Document namespacesDocument;
 
-	private Map<String, String> namespaces = new HashMap<String, String>();
+	private Map<String, String> namespaces = new HashMap<>();
 
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -249,11 +248,7 @@ public abstract class AbstractXPathExpressionFactoryTestCase {
 	public void testEvaluateAsObject() {
 
 		XPathExpression expression = createXPathExpression("/root/child");
-		String result = expression.evaluateAsObject(noNamespacesDocument, new NodeMapper<String>() {
-			public String mapNode(Node node, int nodeNum) throws DOMException {
-				return node.getLocalName();
-			}
-		});
+		String result = expression.evaluateAsObject(noNamespacesDocument, (node, nodeNum) -> node.getLocalName());
 
 		assertThat(result).isNotNull();
 		assertThat(result).isEqualTo("child");
@@ -263,11 +258,7 @@ public abstract class AbstractXPathExpressionFactoryTestCase {
 	public void testEvaluate() throws Exception {
 
 		XPathExpression expression = createXPathExpression("/root/child/*");
-		List<String> results = expression.evaluate(noNamespacesDocument, new NodeMapper<String>() {
-			public String mapNode(Node node, int nodeNum) throws DOMException {
-				return node.getLocalName();
-			}
-		});
+		List<String> results = expression.evaluate(noNamespacesDocument, (node, nodeNum) -> node.getLocalName());
 
 		assertThat(results).isNotNull();
 		assertThat(results).containsExactly("text", "number", "boolean");

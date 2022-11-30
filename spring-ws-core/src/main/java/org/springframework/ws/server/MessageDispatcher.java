@@ -403,7 +403,7 @@ public class MessageDispatcher implements WebServiceMessageReceiver, BeanNameAwa
 			Map<String, EndpointAdapter> matchingBeans = BeanFactoryUtils.beansOfTypeIncludingAncestors(applicationContext,
 					EndpointAdapter.class, true, false);
 			if (!matchingBeans.isEmpty()) {
-				endpointAdapters = new ArrayList<EndpointAdapter>(matchingBeans.values());
+				endpointAdapters = new ArrayList<>(matchingBeans.values());
 				Collections.sort(endpointAdapters, new OrderComparator());
 			} else {
 				endpointAdapters = defaultStrategiesHelper.getDefaultStrategies(EndpointAdapter.class, applicationContext);
@@ -425,7 +425,7 @@ public class MessageDispatcher implements WebServiceMessageReceiver, BeanNameAwa
 			Map<String, EndpointExceptionResolver> matchingBeans = BeanFactoryUtils
 					.beansOfTypeIncludingAncestors(applicationContext, EndpointExceptionResolver.class, true, false);
 			if (!matchingBeans.isEmpty()) {
-				endpointExceptionResolvers = new ArrayList<EndpointExceptionResolver>(matchingBeans.values());
+				endpointExceptionResolvers = new ArrayList<>(matchingBeans.values());
 				Collections.sort(endpointExceptionResolvers, new OrderComparator());
 			} else {
 				endpointExceptionResolvers = defaultStrategiesHelper.getDefaultStrategies(EndpointExceptionResolver.class,
@@ -448,7 +448,7 @@ public class MessageDispatcher implements WebServiceMessageReceiver, BeanNameAwa
 			Map<String, EndpointMapping> matchingBeans = BeanFactoryUtils.beansOfTypeIncludingAncestors(applicationContext,
 					EndpointMapping.class, true, false);
 			if (!matchingBeans.isEmpty()) {
-				endpointMappings = new ArrayList<EndpointMapping>(matchingBeans.values());
+				endpointMappings = new ArrayList<>(matchingBeans.values());
 				Collections.sort(endpointMappings, new OrderComparator());
 			} else {
 				endpointMappings = defaultStrategiesHelper.getDefaultStrategies(EndpointMapping.class, applicationContext);

@@ -38,9 +38,9 @@ import org.springframework.util.Assert;
  */
 public class SimpleNamespaceContext implements NamespaceContext {
 
-	private Map<String, String> prefixToNamespaceUri = new LinkedHashMap<String, String>();
+	private Map<String, String> prefixToNamespaceUri = new LinkedHashMap<>();
 
-	private Map<String, Set<String>> namespaceUriToPrefixes = new LinkedHashMap<String, Set<String>>();
+	private Map<String, Set<String>> namespaceUriToPrefixes = new LinkedHashMap<>();
 
 	@Override
 	public String getNamespaceURI(String prefix) {
@@ -122,7 +122,7 @@ public class SimpleNamespaceContext implements NamespaceContext {
 	 * @return the declared prefixes
 	 */
 	public Iterator<String> getBoundPrefixes() {
-		Set<String> prefixes = new HashSet<String>(prefixToNamespaceUri.keySet());
+		Set<String> prefixes = new HashSet<>(prefixToNamespaceUri.keySet());
 		prefixes.remove(XMLConstants.DEFAULT_NS_PREFIX);
 		prefixes = Collections.unmodifiableSet(prefixes);
 		return prefixes.iterator();
@@ -136,7 +136,7 @@ public class SimpleNamespaceContext implements NamespaceContext {
 		} else {
 			Set<String> set = namespaceUriToPrefixes.get(namespaceUri);
 			if (set == null) {
-				set = new LinkedHashSet<String>();
+				set = new LinkedHashSet<>();
 				namespaceUriToPrefixes.put(namespaceUri, set);
 			}
 			return set;

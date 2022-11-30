@@ -66,7 +66,7 @@ class AxiomSoapFaultDetail extends AxiomSoapElement implements SoapFaultDetail {
 		return (SOAPFaultDetail) getAxiomElement();
 	}
 
-	private class AxiomSoapFaultDetailElementIterator implements Iterator<SoapFaultDetailElement> {
+	private final class AxiomSoapFaultDetailElementIterator implements Iterator<SoapFaultDetailElement> {
 
 		private final Iterator<OMElement> axiomIterator;
 

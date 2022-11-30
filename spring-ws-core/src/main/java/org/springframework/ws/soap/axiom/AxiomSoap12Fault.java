@@ -43,7 +43,7 @@ class AxiomSoap12Fault extends AxiomSoapFault implements Soap12Fault {
 
 	@Override
 	public Iterator<QName> getFaultSubcodes() {
-		List<QName> subcodes = new ArrayList<QName>();
+		List<QName> subcodes = new ArrayList<>();
 		SOAPFaultSubCode subcode = getAxiomFault().getCode().getSubCode();
 		while (subcode != null) {
 			subcodes.add(subcode.getValue().getTextAsQName());

@@ -9,6 +9,6 @@ public class Axiom14DetectionTest {
 
     @Test
     void detectedAxiom14Correctly() {
-        assertThat(AxiomUtils.AXIOM14_IS_PRESENT()).isTrue();
+        assertThat(AxiomUtils.axiom14IsPresent()).isTrue();
     }
 }

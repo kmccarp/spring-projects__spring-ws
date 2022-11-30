@@ -16,10 +16,9 @@
 
 package org.springframework.ws.test.server;
 
-import static org.springframework.ws.test.support.AssertionErrors.*;
+import static org.springframework.ws.test.support.AssertionErrors.fail;
 
 import java.io.IOException;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.xml.namespace.QName;
@@ -142,16 +141,13 @@ public abstract class ResponseMatchers {
 	 * @return the response matcher
 	 */
 	public static ResponseMatcher noFault() {
-		return new ResponseMatcher() {
-			public void match(WebServiceMessage request, WebServiceMessage response) throws IOException, AssertionError {
-				if (response instanceof FaultAwareWebServiceMessage) {
-					FaultAwareWebServiceMessage faultMessage = (FaultAwareWebServiceMessage) response;
-					if (faultMessage.hasFault()) {
-						fail("Response has a SOAP Fault: \"" + faultMessage.getFaultReason() + "\"");
-					}
+		return (request, response) -> {
+			if (response instanceof FaultAwareWebServiceMessage) {
+				FaultAwareWebServiceMessage faultMessage = (FaultAwareWebServiceMessage) response;
+				if (faultMessage.hasFault()) {
+					fail("Response has a SOAP Fault: \"" + faultMessage.getFaultReason() + "\"");
 				}
 			}
-
 		};
 	}
 

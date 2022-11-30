@@ -54,7 +54,7 @@ public class Wsdl11DestinationProvider extends AbstractCachingDestinationProvide
 
 	private static TransformerFactory transformerFactory = TransformerFactoryUtils.newInstance();
 
-	private Map<String, String> expressionNamespaces = new HashMap<String, String>();
+	private Map<String, String> expressionNamespaces = new HashMap<>();
 
 	private XPathExpression locationXPathExpression;
 

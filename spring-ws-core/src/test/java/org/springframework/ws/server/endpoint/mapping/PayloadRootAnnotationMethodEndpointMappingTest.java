@@ -138,7 +138,7 @@ public class PayloadRootAnnotationMethodEndpointMappingTest {
 
 		private static final org.apache.commons.logging.Log logger = LogFactory.getLog(MyEndpoint.class);
 
-		private boolean doItInvoked = false;
+		private boolean doItInvoked;
 
 		public boolean isDoItInvoked() {
 			return doItInvoked;

@@ -354,7 +354,7 @@ public class AxiomSoapMessage extends AbstractSoapMessage implements StreamingWe
 		return builder.toString();
 	}
 
-	private class AxiomAttachmentIterator implements Iterator<Attachment> {
+	private final class AxiomAttachmentIterator implements Iterator<Attachment> {
 
 		private final Iterator<String> iterator;
 
