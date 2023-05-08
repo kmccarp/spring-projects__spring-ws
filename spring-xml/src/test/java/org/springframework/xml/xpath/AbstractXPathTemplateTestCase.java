@@ -16,7 +16,8 @@
 
 package org.springframework.xml.xpath;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +41,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.xml.DocumentBuilderFactoryUtils;
 import org.springframework.xml.sax.SaxUtils;
 import org.springframework.xml.transform.ResourceSource;
-import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
@@ -209,11 +209,7 @@ public abstract class AbstractXPathTemplateTestCase {
 	@Test
 	public void testEvaluateAsObject() throws Exception {
 
-		String result = template.evaluateAsObject("/root/child", nonamespaces, new NodeMapper<String>() {
-			public String mapNode(Node node, int nodeNum) throws DOMException {
-				return node.getLocalName();
-			}
-		});
+		String result = template.evaluateAsObject("/root/child", nonamespaces, (node, nodeNum) -> node.getLocalName());
 
 		assertThat(result).isNotNull();
 		assertThat(result).isEqualTo("child");
@@ -222,11 +218,7 @@ public abstract class AbstractXPathTemplateTestCase {
 	@Test
 	public void testEvaluate() throws Exception {
 
-		List<String> results = template.evaluate("/root/child/*", nonamespaces, new NodeMapper<String>() {
-			public String mapNode(Node node, int nodeNum) throws DOMException {
-				return node.getLocalName();
-			}
-		});
+		List<String> results = template.evaluate("/root/child/*", nonamespaces, (node, nodeNum) -> node.getLocalName());
 
 		assertThat(results).isNotNull();
 		assertThat(results).containsExactly("text", "number", "boolean");

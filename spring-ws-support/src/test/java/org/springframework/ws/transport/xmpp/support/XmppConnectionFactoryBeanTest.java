@@ -33,7 +33,7 @@ public class XmppConnectionFactoryBeanTest {
 
 	@Test
 	public void noHost() {
-		assertThatIllegalArgumentException().isThrownBy(() -> factoryBean.afterPropertiesSet());
+		assertThatIllegalArgumentException().isThrownBy(factoryBean::afterPropertiesSet);
 	}
 
 	@Test

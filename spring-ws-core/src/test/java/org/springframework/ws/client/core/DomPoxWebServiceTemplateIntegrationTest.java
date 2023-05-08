@@ -109,7 +109,9 @@ public class DomPoxWebServiceTemplateIntegrationTest {
 
 	/** Servlet that returns and error message for a given status code. */
 	@SuppressWarnings("serial")
-	public static class ErrorServlet extends HttpServlet {
+	public static final class ErrorServlet extends HttpServlet {
+
+		private static final long serialVersionUID = 1;
 
 		private int sc;
 
@@ -126,6 +128,8 @@ public class DomPoxWebServiceTemplateIntegrationTest {
 	/** Simple POX Servlet. */
 	@SuppressWarnings("serial")
 	public static class PoxServlet extends HttpServlet {
+
+		private static final long serialVersionUID = 1;
 
 		private DocumentBuilderFactory documentBuilderFactory;
 

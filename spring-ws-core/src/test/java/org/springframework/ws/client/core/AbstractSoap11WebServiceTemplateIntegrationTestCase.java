@@ -78,9 +78,9 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 
 	private WebServiceTemplate template;
 
-	private String messagePayload = "<root xmlns='http://springframework.org/spring-ws'><child/></root>";
+	private final String messagePayload = "<root xmlns='http://springframework.org/spring-ws'><child/></root>";
 
-	private Logger logger = LogManager.getLogger();
+	private final Logger logger = LogManager.getLogger();
 
 	@BeforeAll
 	public static void startJetty() throws Exception {
@@ -278,7 +278,9 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 
 	/** Servlet that returns and error message for a given status code. */
 	@SuppressWarnings("serial")
-	private static class ErrorServlet extends HttpServlet {
+	private static final class ErrorServlet extends HttpServlet {
+
+		private static final long serialVersionUID = 1;
 
 		private int sc;
 
@@ -296,7 +298,9 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 	@SuppressWarnings("serial")
 	private abstract static class AbstractSoapServlet extends HttpServlet {
 
-		protected MessageFactory messageFactory = null;
+		private static final long serialVersionUID = 1;
+
+		protected MessageFactory messageFactory;
 
 		private int sc = -1;
 
@@ -383,6 +387,8 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 	@SuppressWarnings("serial")
 	public static class EchoSoapServlet extends AbstractSoapServlet {
 
+		private static final long serialVersionUID = 1;
+
 		@Override
 		protected SOAPMessage onMessage(SOAPMessage message) {
 			return message;
@@ -392,6 +398,8 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 	@SuppressWarnings("serial")
 	public static class NoResponseSoapServlet extends AbstractSoapServlet {
 
+		private static final long serialVersionUID = 1;
+
 		@Override
 		protected SOAPMessage onMessage(SOAPMessage message) {
 			return null;
@@ -400,6 +408,8 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 
 	@SuppressWarnings("serial")
 	public static class SoapFaultServlet extends AbstractSoapServlet {
+
+		private static final long serialVersionUID = 1;
 
 		@Override
 		protected SOAPMessage onMessage(SOAPMessage message) throws SOAPException {
@@ -413,6 +423,8 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 
 	@SuppressWarnings("serial")
 	public static class AttachmentsServlet extends AbstractSoapServlet {
+
+		private static final long serialVersionUID = 1;
 
 		@Override
 		protected SOAPMessage onMessage(SOAPMessage message) {

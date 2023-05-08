@@ -65,6 +65,8 @@ import org.springframework.xml.xsd.XsdSchema;
 @SuppressWarnings("serial")
 public class MessageDispatcherServlet extends FrameworkServlet {
 
+	private static final long serialVersionUID = 1;
+
 	/** Well-known name for the {@link WebServiceMessageFactory} bean in the bean factory for this namespace. */
 	public static final String DEFAULT_MESSAGE_FACTORY_BEAN_NAME = "messageFactory";
 
@@ -118,9 +120,9 @@ public class MessageDispatcherServlet extends FrameworkServlet {
 
 	private Map<String, XsdSchema> xsdSchemas;
 
-	private boolean transformWsdlLocations = false;
+	private boolean transformWsdlLocations;
 
-	private boolean transformSchemaLocations = false;
+	private boolean transformSchemaLocations;
 
 	/**
 	 * Public constructor, necessary for some Web application servers.

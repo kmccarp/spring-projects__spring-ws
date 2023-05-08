@@ -42,7 +42,9 @@ import org.springframework.util.StringUtils;
 @SuppressWarnings("serial")
 public class SimpleSaajServlet extends HttpServlet {
 
-	private MessageFactory msgFactory = null;
+	private static final long serialVersionUID = 1;
+
+	private MessageFactory msgFactory;
 
 	@Override
 	public void init(ServletConfig servletConfig) throws ServletException {

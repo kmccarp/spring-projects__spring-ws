@@ -16,7 +16,7 @@
 
 package org.springframework.ws.transport.support;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 import javax.xml.namespace.QName;
@@ -60,13 +60,9 @@ public class WebServiceMessageReceiverObjectSupportTest {
 		connectionMock.send(isA(WebServiceMessage.class));
 		connectionMock.close();
 
-		WebServiceMessageReceiver receiver = new WebServiceMessageReceiver() {
-
-			@Override
-			public void receive(MessageContext messageContext) throws Exception {
-				assertThat(messageContext).isNotNull();
-				messageContext.getResponse();
-			}
+		WebServiceMessageReceiver receiver = messageContext -> {
+			assertThat(messageContext).isNotNull();
+			messageContext.getResponse();
 		};
 
 		receiverSupport.handleConnection(connectionMock, receiver);
@@ -84,15 +80,11 @@ public class WebServiceMessageReceiverObjectSupportTest {
 		connectionMock.send(isA(WebServiceMessage.class));
 		connectionMock.close();
 
-		WebServiceMessageReceiver receiver = new WebServiceMessageReceiver() {
+		WebServiceMessageReceiver receiver = messageContext -> {
 
-			@Override
-			public void receive(MessageContext messageContext) throws Exception {
-
-				assertThat(messageContext).isNotNull();
-				MockWebServiceMessage response = (MockWebServiceMessage) messageContext.getResponse();
-				response.setFaultCode(faultCode);
-			}
+			assertThat(messageContext).isNotNull();
+			MockWebServiceMessage response = (MockWebServiceMessage) messageContext.getResponse();
+			response.setFaultCode(faultCode);
 		};
 
 		receiverSupport.handleConnection(connectionMock, receiver);
@@ -106,11 +98,8 @@ public class WebServiceMessageReceiverObjectSupportTest {
         when(connectionMock.receive(messageFactory)).thenReturn(request);
 		connectionMock.close();
 
-		WebServiceMessageReceiver receiver = new WebServiceMessageReceiver() {
-
-			public void receive(MessageContext messageContext) throws Exception {
-				assertThat(messageContext).isNotNull();
-			}
+		WebServiceMessageReceiver receiver = messageContext -> {
+			assertThat(messageContext).isNotNull();
 		};
 
 		receiverSupport.handleConnection(connectionMock, receiver);
