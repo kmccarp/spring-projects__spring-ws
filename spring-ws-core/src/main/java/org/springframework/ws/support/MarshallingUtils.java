@@ -39,7 +39,8 @@ import org.springframework.ws.mime.MimeMessage;
  */
 public abstract class MarshallingUtils {
 
-	private MarshallingUtils() {}
+	private MarshallingUtils() {
+	}
 
 	/**
 	 * Unmarshals the payload of the given message using the provided {@link Unmarshaller}.

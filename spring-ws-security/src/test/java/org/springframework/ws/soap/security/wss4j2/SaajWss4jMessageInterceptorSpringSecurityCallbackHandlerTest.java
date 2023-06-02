@@ -16,7 +16,6 @@
 
 package org.springframework.ws.soap.security.wss4j2;
 
-public class SaajWss4jMessageInterceptorSpringSecurityCallbackHandlerTest
-		extends Wss4jMessageInterceptorSpringSecurityCallbackHandlerTestCase {
+public class SaajWss4jMessageInterceptorSpringSecurityCallbackHandlerTestextends Wss4jMessageInterceptorSpringSecurityCallbackHandlerTestCase {
 
 }

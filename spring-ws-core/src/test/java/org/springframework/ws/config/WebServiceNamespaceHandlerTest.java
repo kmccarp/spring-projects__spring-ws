@@ -39,7 +39,7 @@ public class WebServiceNamespaceHandlerTest {
 	public void testMarshallingMethods() throws Exception {
 
 		Map<String, MarshallingMethodEndpointAdapter> result = applicationContext
-				.getBeansOfType(MarshallingMethodEndpointAdapter.class);
+	.getBeansOfType(MarshallingMethodEndpointAdapter.class);
 
 		assertThat(result).isNotEmpty();
 	}

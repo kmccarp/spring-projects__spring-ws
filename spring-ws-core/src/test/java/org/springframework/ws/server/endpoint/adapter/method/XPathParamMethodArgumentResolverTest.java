@@ -63,7 +63,7 @@ public class XPathParamMethodArgumentResolverTest {
 
 		resolver = new XPathParamMethodArgumentResolver();
 		Method supportedTypes = getClass().getMethod("supportedTypes", Boolean.TYPE, Double.TYPE, Node.class,
-				NodeList.class, String.class);
+	NodeList.class, String.class);
 		booleanParameter = new MethodParameter(supportedTypes, 0);
 		doubleParameter = new MethodParameter(supportedTypes, 1);
 		nodeParameter = new MethodParameter(supportedTypes, 2);
@@ -179,7 +179,7 @@ public class XPathParamMethodArgumentResolverTest {
 	public void resolveNamespacesMethod() throws Exception {
 
 		MockWebServiceMessage request = new MockWebServiceMessage(
-				"<root xmlns=\"http://springframework.org/spring-ws\">text</root>");
+	"<root xmlns=\"http://springframework.org/spring-ws\">text</root>");
 		MessageContext messageContext = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
 
 		Object result = resolver.resolveArgument(messageContext, namespaceMethodParameter);
@@ -192,7 +192,7 @@ public class XPathParamMethodArgumentResolverTest {
 	public void resolveNamespacesClass() throws Exception {
 
 		MockWebServiceMessage request = new MockWebServiceMessage(
-				"<root xmlns=\"http://springframework.org/spring-ws\">text</root>");
+	"<root xmlns=\"http://springframework.org/spring-ws\">text</root>");
 		MessageContext messageContext = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
 
 		Object result = resolver.resolveArgument(messageContext, namespaceClassParameter);
@@ -201,20 +201,25 @@ public class XPathParamMethodArgumentResolverTest {
 		assertThat(result).isEqualTo("text");
 	}
 
-	public void unsupported(String s) {}
+	public void unsupported(String s) {
+	}
 
 	public void supportedTypes( //
-			@XPathParam("/root/child") boolean param1, //
-			@XPathParam("/root/child/number") double param2, //
-			@XPathParam("/root/child") Node param3, //
-			@XPathParam("/root/*") NodeList param4, //
-			@XPathParam("/root/child/text") String param5) {}
+@XPathParam("/root/child") boolean param1, //
+@XPathParam("/root/child/number") double param2, //
+@XPathParam("/root/child") Node param3, //
+@XPathParam("/root/*") NodeList param4, //
+@XPathParam("/root/child/text") String param5) {
+	}
 
-	public void convertedType(@XPathParam("/root/child/number") int param) {}
+	public void convertedType(@XPathParam("/root/child/number") int param) {
+	}
 
 	@Namespaces(@Namespace(prefix = "tns", uri = "http://springframework.org/spring-ws"))
-	public void namespacesMethod(@XPathParam("/tns:root") String s) {}
+	public void namespacesMethod(@XPathParam("/tns:root") String s) {
+	}
 
-	public void namespacesClass(@XPathParam("/tns:root") String s) {}
+	public void namespacesClass(@XPathParam("/tns:root") String s) {
+	}
 
 }

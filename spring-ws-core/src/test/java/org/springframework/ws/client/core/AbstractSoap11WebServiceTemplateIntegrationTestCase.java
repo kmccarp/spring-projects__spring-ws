@@ -147,7 +147,7 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 	public void sendSourceAndReceiveToResultNoResponse() {
 
 		boolean b = template.sendSourceAndReceiveToResult(baseUrl + "/soap/noResponse", new StringSource(messagePayload),
-				new StringResult());
+	new StringResult());
 
 		assertThat(b).isFalse();
 	}
@@ -240,8 +240,8 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 	public void notFound() {
 
 		assertThatExceptionOfType(WebServiceTransportException.class)
-				.isThrownBy(() -> template.sendSourceAndReceiveToResult(baseUrl + "/errors/notfound",
-						new StringSource(messagePayload), new StringResult()));
+	.isThrownBy(() -> template.sendSourceAndReceiveToResult(baseUrl + "/errors/notfound",
+new StringSource(messagePayload), new StringResult()));
 	}
 
 	@Test
@@ -250,7 +250,7 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 		Result result = new StringResult();
 
 		assertThatExceptionOfType(SoapFaultClientException.class).isThrownBy(
-				() -> template.sendSourceAndReceiveToResult(baseUrl + "/soap/fault", new StringSource(messagePayload), result));
+	() -> template.sendSourceAndReceiveToResult(baseUrl + "/soap/fault", new StringSource(messagePayload), result));
 	}
 
 	@Test
@@ -261,7 +261,7 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 		template.setCheckConnectionForError(false);
 
 		assertThatExceptionOfType(SoapFaultClientException.class).isThrownBy(() -> template
-				.sendSourceAndReceiveToResult(baseUrl + "/soap/badRequestFault", new StringSource(messagePayload), result));
+	.sendSourceAndReceiveToResult(baseUrl + "/soap/badRequestFault", new StringSource(messagePayload), result));
 	}
 
 	@Test
@@ -272,7 +272,7 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 			SoapMessage soapMessage = (SoapMessage) message;
 			final String attachmentContent = "content";
 			soapMessage.addAttachment("attachment-1",
-					new DataHandler(new ByteArrayDataSource(attachmentContent, "text/plain")));
+		new DataHandler(new ByteArrayDataSource(attachmentContent, "text/plain")));
 		}, new StringResult());
 	}
 
@@ -334,7 +334,7 @@ public abstract class AbstractSoap11WebServiceTemplateIntegrationTestCase {
 
 					if (sc == -1) {
 						resp.setStatus(!reply.getSOAPBody().hasFault() ? HttpServletResponse.SC_OK
-								: HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+					: HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 					}
 
 					putHeaders(reply.getMimeHeaders(), resp);

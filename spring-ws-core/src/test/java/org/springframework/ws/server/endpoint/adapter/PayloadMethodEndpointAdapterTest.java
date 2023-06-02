@@ -51,14 +51,14 @@ public class PayloadMethodEndpointAdapterTest {
 	@Test
 	public void testSupportedNoResponse() throws NoSuchMethodException {
 
-		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "noResponse", new Class[] { DOMSource.class });
+		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "noResponse", new Class[]{DOMSource.class});
 		assertThat(adapter.supportsInternal(methodEndpoint)).isTrue();
 	}
 
 	@Test
 	public void testSupportedResponse() throws NoSuchMethodException {
 
-		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "response", new Class[] { StreamSource.class });
+		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "response", new Class[]{StreamSource.class});
 		assertThat(adapter.supportsInternal(methodEndpoint)).isTrue();
 	}
 
@@ -66,29 +66,29 @@ public class PayloadMethodEndpointAdapterTest {
 	public void testUnsupportedMethodMultipleParams() throws NoSuchMethodException {
 
 		assertThat(adapter.supportsInternal(
-				new MethodEndpoint(this, "unsupportedMultipleParams", new Class[] { Source.class, Source.class }))).isFalse();
+	new MethodEndpoint(this, "unsupportedMultipleParams", new Class[]{Source.class, Source.class}))).isFalse();
 	}
 
 	@Test
 	public void testUnsupportedMethodWrongReturnType() throws NoSuchMethodException {
 
 		assertThat(
-				adapter.supportsInternal(new MethodEndpoint(this, "unsupportedWrongReturnType", new Class[] { Source.class })))
-						.isFalse();
+	adapter.supportsInternal(new MethodEndpoint(this, "unsupportedWrongReturnType", new Class[]{Source.class})))
+	.isFalse();
 	}
 
 	@Test
 	public void testUnsupportedMethodWrongParam() throws NoSuchMethodException {
 
 		assertThat(
-				adapter.supportsInternal(new MethodEndpoint(this, "unsupportedWrongParam", new Class[] { String.class })))
-						.isFalse();
+	adapter.supportsInternal(new MethodEndpoint(this, "unsupportedWrongParam", new Class[]{String.class})))
+	.isFalse();
 	}
 
 	@Test
 	public void testNoResponse() throws Exception {
 
-		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "noResponse", new Class[] { DOMSource.class });
+		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "noResponse", new Class[]{DOMSource.class});
 
 		assertThat(noResponseInvoked).isFalse();
 
@@ -102,7 +102,7 @@ public class PayloadMethodEndpointAdapterTest {
 
 		WebServiceMessage request = new MockWebServiceMessage("<request/>");
 		messageContext = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
-		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "response", new Class[] { StreamSource.class });
+		MethodEndpoint methodEndpoint = new MethodEndpoint(this, "response", new Class[]{StreamSource.class});
 
 		assertThat(responseInvoked).isFalse();
 
@@ -121,7 +121,8 @@ public class PayloadMethodEndpointAdapterTest {
 		return request;
 	}
 
-	public void unsupportedMultipleParams(Source s1, Source s2) {}
+	public void unsupportedMultipleParams(Source s1, Source s2) {
+	}
 
 	public Source unsupportedWrongParam(String request) {
 		return null;

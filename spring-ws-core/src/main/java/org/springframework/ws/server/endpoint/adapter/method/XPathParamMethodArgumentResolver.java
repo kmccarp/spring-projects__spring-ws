@@ -77,8 +77,8 @@ public class XPathParamMethodArgumentResolver implements MethodArgumentResolver 
 		}
 		Class<?> parameterType = parameter.getParameterType();
 		if (Boolean.class.equals(parameterType) || Boolean.TYPE.equals(parameterType) || Double.class.equals(parameterType)
-				|| Double.TYPE.equals(parameterType) || Node.class.isAssignableFrom(parameterType)
-				|| NodeList.class.isAssignableFrom(parameterType) || String.class.isAssignableFrom(parameterType)) {
+	|| Double.TYPE.equals(parameterType) || Node.class.isAssignableFrom(parameterType)
+	|| NodeList.class.isAssignableFrom(parameterType) || String.class.isAssignableFrom(parameterType)) {
 			return true;
 		} else {
 			return conversionService.canConvert(String.class, parameterType);
@@ -87,7 +87,7 @@ public class XPathParamMethodArgumentResolver implements MethodArgumentResolver 
 
 	@Override
 	public Object resolveArgument(MessageContext messageContext, MethodParameter parameter)
-			throws TransformerException, XPathExpressionException {
+throws TransformerException, XPathExpressionException {
 		Class<?> parameterType = parameter.getParameterType();
 		QName evaluationReturnType = getReturnType(parameterType);
 		boolean useConversionService = false;

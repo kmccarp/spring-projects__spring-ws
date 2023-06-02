@@ -26,26 +26,28 @@ import org.junit.jupiter.api.Test;
 
 public class CallbackHandlerChainTest {
 
-	private CallbackHandler supported = callbacks -> {};
+	private CallbackHandler supported = callbacks -> {
+	};
 
 	private CallbackHandler unsupported = callbacks -> {
 		throw new UnsupportedCallbackException(callbacks[0]);
 	};
 
-	private Callback callback = new Callback() {};
+	private Callback callback = new Callback() {
+	};
 
 	@Test
 	public void testSupported() throws Exception {
 
-		CallbackHandlerChain chain = new CallbackHandlerChain(new CallbackHandler[] { supported });
-		chain.handle(new Callback[] { callback });
+		CallbackHandlerChain chain = new CallbackHandlerChain(new CallbackHandler[]{supported});
+		chain.handle(new Callback[]{callback});
 	}
 
 	@Test
 	public void testUnsupportedSupported() throws Exception {
 
-		CallbackHandlerChain chain = new CallbackHandlerChain(new CallbackHandler[] { unsupported, supported });
-		chain.handle(new Callback[] { callback });
+		CallbackHandlerChain chain = new CallbackHandlerChain(new CallbackHandler[]{unsupported, supported});
+		chain.handle(new Callback[]{callback});
 	}
 
 	@Test
@@ -53,8 +55,8 @@ public class CallbackHandlerChainTest {
 
 		assertThatExceptionOfType(UnsupportedCallbackException.class).isThrownBy(() -> {
 
-			CallbackHandlerChain chain = new CallbackHandlerChain(new CallbackHandler[] { unsupported });
-			chain.handle(new Callback[] { callback });
+			CallbackHandlerChain chain = new CallbackHandlerChain(new CallbackHandler[]{unsupported});
+			chain.handle(new Callback[]{callback});
 		});
 	}
 }

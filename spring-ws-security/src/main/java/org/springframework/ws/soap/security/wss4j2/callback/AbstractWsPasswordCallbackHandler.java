@@ -124,7 +124,7 @@ public abstract class AbstractWsPasswordCallbackHandler extends AbstractCallback
 	 * Default implementation throws an {@link UnsupportedCallbackException}.
 	 */
 	protected void handleSecurityContextToken(WSPasswordCallback callback)
-			throws IOException, UnsupportedCallbackException {
+throws IOException, UnsupportedCallbackException {
 		throw new UnsupportedCallbackException(callback);
 	}
 
@@ -161,7 +161,7 @@ public abstract class AbstractWsPasswordCallbackHandler extends AbstractCallback
 	 * Default implementation throws an {@link UnsupportedCallbackException}.
 	 */
 	protected void handleUsernameTokenPrincipal(UsernameTokenPrincipalCallback callback)
-			throws IOException, UnsupportedCallbackException {
+throws IOException, UnsupportedCallbackException {
 		throw new UnsupportedCallbackException(callback);
 	}
 }

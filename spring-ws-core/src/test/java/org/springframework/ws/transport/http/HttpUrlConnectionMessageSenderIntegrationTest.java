@@ -22,8 +22,7 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.Test;
 
-public class HttpUrlConnectionMessageSenderIntegrationTest
-		extends AbstractHttpWebServiceMessageSenderIntegrationTestCase<HttpUrlConnectionMessageSender> {
+public class HttpUrlConnectionMessageSenderIntegrationTestextends AbstractHttpWebServiceMessageSenderIntegrationTestCase<HttpUrlConnectionMessageSender> {
 
 	@Override
 	protected HttpUrlConnectionMessageSender createMessageSender() {

@@ -42,7 +42,7 @@ public abstract class Wss4jMessageInterceptorTimestampTestCase extends Wss4jTest
 		Document document = getDocument(message);
 
 		assertXpathExists("timestamp header not found", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsu:Timestamp",
-				document);
+	document);
 	}
 
 	@Test
@@ -57,7 +57,7 @@ public abstract class Wss4jMessageInterceptorTimestampTestCase extends Wss4jTest
 		interceptor.validateMessage(message, context);
 
 		assertXpathNotExists("Security Header not removed", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security",
-				getDocument(message));
+	getDocument(message));
 	}
 
 	@Test
@@ -104,11 +104,11 @@ public abstract class Wss4jMessageInterceptorTimestampTestCase extends Wss4jTest
 		interceptor.secureMessage(message, context);
 
 		String created = xpathTemplate.evaluateAsString(
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsu:Timestamp/wsu:Created/text()",
-				message.getEnvelope().getSource());
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsu:Timestamp/wsu:Created/text()",
+	message.getEnvelope().getSource());
 		String expires = xpathTemplate.evaluateAsString(
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsu:Timestamp/wsu:Expires/text()",
-				message.getEnvelope().getSource());
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsu:Timestamp/wsu:Expires/text()",
+	message.getEnvelope().getSource());
 
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SS'Z'");
 

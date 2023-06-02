@@ -171,7 +171,7 @@ public class WebServiceTemplateTest {
 		connectionMock.close();
 
 		assertThatExceptionOfType(WebServiceTransportException.class)
-				.isThrownBy(() -> template.sendAndReceive(null, extractorMock)).withMessage(errorMessage);
+	.isThrownBy(() -> template.sendAndReceive(null, extractorMock)).withMessage(errorMessage);
 	}
 
 	@Test
@@ -334,7 +334,7 @@ public class WebServiceTemplateTest {
 
 		ClientInterceptor interceptorMock1 = mock(ClientInterceptor.class);
 		ClientInterceptor interceptorMock2 = mock(ClientInterceptor.class);
-		template.setInterceptors(new ClientInterceptor[] { interceptorMock1, interceptorMock2 });
+		template.setInterceptors(new ClientInterceptor[]{interceptorMock1, interceptorMock2});
 		when(interceptorMock1.handleRequest(isA(MessageContext.class))).thenReturn(true);
 		when(interceptorMock2.handleRequest(isA(MessageContext.class))).thenReturn(true);
 		when(interceptorMock2.handleResponse(isA(MessageContext.class))).thenReturn(true);
@@ -367,7 +367,7 @@ public class WebServiceTemplateTest {
 
 		ClientInterceptor interceptorMock1 = mock(ClientInterceptor.class);
 		ClientInterceptor interceptorMock2 = mock(ClientInterceptor.class);
-		template.setInterceptors(new ClientInterceptor[] { interceptorMock1, interceptorMock2 });
+		template.setInterceptors(new ClientInterceptor[]{interceptorMock1, interceptorMock2});
 		when(interceptorMock1.handleRequest(isA(MessageContext.class))).thenReturn(false);
 		interceptorMock1.afterCompletion(isA(MessageContext.class), (Exception) isNull());
 
@@ -390,7 +390,7 @@ public class WebServiceTemplateTest {
 
 		ClientInterceptor interceptorMock1 = mock(ClientInterceptor.class);
 		ClientInterceptor interceptorMock2 = mock(ClientInterceptor.class);
-		template.setInterceptors(new ClientInterceptor[] { interceptorMock1, interceptorMock2 });
+		template.setInterceptors(new ClientInterceptor[]{interceptorMock1, interceptorMock2});
 		when(interceptorMock1.handleRequest(isA(MessageContext.class))).thenReturn(false);
 		when(interceptorMock1.handleResponse(isA(MessageContext.class))).thenReturn(true);
 		interceptorMock1.afterCompletion(isA(MessageContext.class), (Exception) isNull());

@@ -45,8 +45,7 @@ import org.springframework.ws.soap.security.support.SpringSecurityUtils;
  * @author Jamin Hitchcock
  * @since 2.3.0
  */
-public class SpringSecurityPasswordValidationCallbackHandler extends AbstractWsPasswordCallbackHandler
-		implements InitializingBean {
+public class SpringSecurityPasswordValidationCallbackHandler extends AbstractWsPasswordCallbackHandlerimplements InitializingBean {
 
 	private UserCache userCache = new NullUserCache();
 
@@ -84,11 +83,11 @@ public class SpringSecurityPasswordValidationCallbackHandler extends AbstractWsP
 
 	@Override
 	protected void handleUsernameTokenPrincipal(UsernameTokenPrincipalCallback callback)
-			throws IOException, UnsupportedCallbackException {
+throws IOException, UnsupportedCallbackException {
 		UserDetails user = loadUserDetails(callback.getPrincipal().getName());
 		WSUsernameTokenPrincipalImpl principal = callback.getPrincipal();
 		UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(principal,
-				principal.getPassword(), user.getAuthorities());
+	principal.getPassword(), user.getAuthorities());
 		if (logger.isDebugEnabled()) {
 			logger.debug("Authentication success: " + authRequest.toString());
 		}

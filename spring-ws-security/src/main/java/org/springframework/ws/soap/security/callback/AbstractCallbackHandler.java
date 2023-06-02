@@ -36,7 +36,8 @@ public abstract class AbstractCallbackHandler implements CallbackHandler {
 	/** Logger available to subclasses. */
 	protected final Log logger = LogFactory.getLog(getClass());
 
-	protected AbstractCallbackHandler() {}
+	protected AbstractCallbackHandler() {
+	}
 
 	/**
 	 * Iterates over the given callbacks, and calls {@code handleInternal} for each of them.

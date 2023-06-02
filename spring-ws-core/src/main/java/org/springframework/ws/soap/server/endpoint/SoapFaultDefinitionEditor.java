@@ -84,7 +84,7 @@ public class SoapFaultDefinitionEditor extends PropertyEditorSupport {
 			String[] tokens = StringUtils.commaDelimitedListToStringArray(text);
 			if (tokens.length < FAULT_STRING_INDEX) {
 				throw new IllegalArgumentException("Invalid amount of comma delimited values in [" + text
-						+ "]: SoapFaultDefinitionEditor requires at least 1");
+			+ "]: SoapFaultDefinitionEditor requires at least 1");
 			}
 			SoapFaultDefinition definition = new SoapFaultDefinition();
 			QNameEditor qNameEditor = new QNameEditor();

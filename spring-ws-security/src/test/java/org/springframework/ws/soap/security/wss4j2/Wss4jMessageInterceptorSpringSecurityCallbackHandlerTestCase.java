@@ -101,12 +101,12 @@ public abstract class Wss4jMessageInterceptorSpringSecurityCallbackHandlerTestCa
 
 		assertThat(result).isNotNull();
 		assertXpathNotExists("Security Header not removed", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security",
-				getDocument(message));
+	getDocument(message));
 		assertThat(SecurityContextHolder.getContext().getAuthentication()).isNotNull();
 	}
 
 	protected Wss4jSecurityInterceptor prepareInterceptor(String actions, boolean validating, boolean digest)
-			throws Exception {
+throws Exception {
 
 		Wss4jSecurityInterceptor interceptor = new Wss4jSecurityInterceptor();
 

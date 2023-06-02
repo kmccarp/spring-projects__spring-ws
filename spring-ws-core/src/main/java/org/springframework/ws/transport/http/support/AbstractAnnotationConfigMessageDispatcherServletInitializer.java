@@ -35,8 +35,7 @@ import org.springframework.ws.transport.http.MessageDispatcherServlet;
  * @author Arjen Poutsma
  * @since 2.2
  */
-public abstract class AbstractAnnotationConfigMessageDispatcherServletInitializer
-		extends AbstractMessageDispatcherServletInitializer {
+public abstract class AbstractAnnotationConfigMessageDispatcherServletInitializerextends AbstractMessageDispatcherServletInitializer {
 
 	/**
 	 * {@inheritDoc}

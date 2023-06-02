@@ -78,7 +78,8 @@ public class CommonsXsdSchemaCollection implements XsdSchemaCollection, Initiali
 	 * <p>
 	 * A subsequent call to the {@link #setXsds(Resource[])} is required.
 	 */
-	public CommonsXsdSchemaCollection() {}
+	public CommonsXsdSchemaCollection() {
+	}
 
 	/**
 	 * Constructs a new instance of the {@code CommonsXsdSchemaCollection} based on the given resources.
@@ -206,7 +207,7 @@ public class CommonsXsdSchemaCollection implements XsdSchemaCollection, Initiali
 				XmlSchemaImport schemaImport = (XmlSchemaImport) external;
 				XmlSchema importedSchema = schemaImport.getSchema();
 				if (!"http://www.w3.org/XML/1998/namespace".equals(schemaImport.getNamespace()) && importedSchema != null
-						&& !processedImports.contains(importedSchema)) {
+			&& !processedImports.contains(importedSchema)) {
 					inlineIncludes(importedSchema, processedIncludes, processedImports);
 					findImports(importedSchema, processedImports, processedIncludes);
 					xmlSchemas.add(importedSchema);

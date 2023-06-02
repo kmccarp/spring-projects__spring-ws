@@ -88,11 +88,11 @@ public class TrustManagersFactoryBean implements FactoryBean<TrustManager[]>, In
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		String algorithm = StringUtils.hasLength(this.algorithm) ? this.algorithm
-				: TrustManagerFactory.getDefaultAlgorithm();
+	: TrustManagerFactory.getDefaultAlgorithm();
 
 		TrustManagerFactory trustManagerFactory = StringUtils.hasLength(this.provider)
-				? TrustManagerFactory.getInstance(algorithm, this.provider)
-				: TrustManagerFactory.getInstance(algorithm);
+	? TrustManagerFactory.getInstance(algorithm, this.provider)
+	: TrustManagerFactory.getInstance(algorithm);
 
 		trustManagerFactory.init(keyStore);
 

@@ -86,7 +86,8 @@ abstract class Jaxp13ValidatorFactory {
 		}
 
 		@Override
-		public void warning(SAXParseException ex) throws SAXException {}
+		public void warning(SAXParseException ex) throws SAXException {
+		}
 
 		@Override
 		public void error(SAXParseException ex) throws SAXException {

@@ -21,7 +21,8 @@ public class WsConfigurerAdapter implements WsConfigurer {
 	 * This implementation is empty.
 	 */
 	@Override
-	public void addInterceptors(List<EndpointInterceptor> interceptors) {}
+	public void addInterceptors(List<EndpointInterceptor> interceptors) {
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -29,7 +30,8 @@ public class WsConfigurerAdapter implements WsConfigurer {
 	 * This implementation is empty.
 	 */
 	@Override
-	public void addArgumentResolvers(List<MethodArgumentResolver> argumentResolvers) {}
+	public void addArgumentResolvers(List<MethodArgumentResolver> argumentResolvers) {
+	}
 
 	/**
 	 * {@inheritDoc}

@@ -28,8 +28,7 @@ import org.springframework.ws.transport.WebServiceMessageReceiver;
  * @see #handleConnection(WebServiceConnection)
  * @since 1.5.0
  */
-public abstract class SimpleWebServiceMessageReceiverObjectSupport extends WebServiceMessageReceiverObjectSupport
-		implements InitializingBean {
+public abstract class SimpleWebServiceMessageReceiverObjectSupport extends WebServiceMessageReceiverObjectSupportimplements InitializingBean {
 
 	private WebServiceMessageReceiver messageReceiver;
 

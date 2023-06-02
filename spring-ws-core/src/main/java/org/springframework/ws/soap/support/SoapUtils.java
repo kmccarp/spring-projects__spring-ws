@@ -34,7 +34,8 @@ public abstract class SoapUtils {
 
 	private static final Pattern ACTION_PATTERN = Pattern.compile("action\\s*=\\s*([^;]+)");
 
-	private SoapUtils() {}
+	private SoapUtils() {
+	}
 
 	/** Escapes the given SOAP action to be surrounded by quotes. */
 	public static String escapeAction(String soapAction) {

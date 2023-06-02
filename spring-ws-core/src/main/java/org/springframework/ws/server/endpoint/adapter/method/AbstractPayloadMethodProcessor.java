@@ -36,8 +36,7 @@ import org.springframework.xml.transform.TransformerObjectSupport;
  * @author Arjen Poutsma
  * @since 2.0
  */
-public abstract class AbstractPayloadMethodProcessor extends TransformerObjectSupport
-		implements MethodArgumentResolver, MethodReturnValueHandler {
+public abstract class AbstractPayloadMethodProcessor extends TransformerObjectSupportimplements MethodArgumentResolver, MethodReturnValueHandler {
 
 	// MethodArgumentResolver
 

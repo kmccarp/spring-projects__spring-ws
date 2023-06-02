@@ -40,7 +40,8 @@ import org.springframework.xml.transform.ResourceSource;
  */
 public abstract class RequestMatchers {
 
-	private RequestMatchers() {}
+	private RequestMatchers() {
+	}
 
 	/**
 	 * Expects any request.
@@ -48,7 +49,8 @@ public abstract class RequestMatchers {
 	 * @return the request matcher
 	 */
 	public static RequestMatcher anything() {
-		return (uri, request) -> {};
+		return (uri, request) -> {
+		};
 	}
 
 	// Payload

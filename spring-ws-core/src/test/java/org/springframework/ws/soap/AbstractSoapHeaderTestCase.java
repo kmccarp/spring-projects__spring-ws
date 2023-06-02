@@ -61,7 +61,7 @@ public abstract class AbstractSoapHeaderTestCase extends AbstractSoapElementTest
 		transformer.transform(new StringSource(payload), headerElement.getResult());
 
 		assertHeaderElementEqual(headerElement,
-				"<spring:localName xmlns:spring='http://www.springframework.org'><spring:content/></spring:localName>");
+	"<spring:localName xmlns:spring='http://www.springframework.org'><spring:content/></spring:localName>");
 	}
 
 	@Test
@@ -100,8 +100,8 @@ public abstract class AbstractSoapHeaderTestCase extends AbstractSoapElementTest
 		transformer.transform(headerElement.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<spring:localName xmlns:spring='http://www.springframework.org'><spring:content/></spring:localName>")
-				.ignoreWhitespace().areSimilar();
+	.and("<spring:localName xmlns:spring='http://www.springframework.org'><spring:content/></spring:localName>")
+	.ignoreWhitespace().areSimilar();
 		assertThat(iterator.hasNext()).isFalse();
 	}
 

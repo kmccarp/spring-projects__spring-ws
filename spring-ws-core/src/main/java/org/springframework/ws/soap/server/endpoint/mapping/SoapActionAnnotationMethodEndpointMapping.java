@@ -52,8 +52,7 @@ import org.springframework.ws.soap.server.endpoint.annotation.SoapActions;
  * @author Arjen Poutsma
  * @since 1.0.0
  */
-public class SoapActionAnnotationMethodEndpointMapping extends AbstractAnnotationMethodEndpointMapping<String>
-		implements SoapEndpointMapping {
+public class SoapActionAnnotationMethodEndpointMapping extends AbstractAnnotationMethodEndpointMapping<String>implements SoapEndpointMapping {
 
 	private String[] actorsOrRoles;
 
@@ -62,7 +61,7 @@ public class SoapActionAnnotationMethodEndpointMapping extends AbstractAnnotatio
 	@Override
 	public final void setActorOrRole(String actorOrRole) {
 		Assert.notNull(actorOrRole, "actorOrRole must not be null");
-		actorsOrRoles = new String[] { actorOrRole };
+		actorsOrRoles = new String[]{actorOrRole};
 	}
 
 	@Override
@@ -88,7 +87,7 @@ public class SoapActionAnnotationMethodEndpointMapping extends AbstractAnnotatio
 	 */
 	@Override
 	protected final EndpointInvocationChain createEndpointInvocationChain(MessageContext messageContext, Object endpoint,
-			EndpointInterceptor[] interceptors) {
+EndpointInterceptor[] interceptors) {
 		return new SoapEndpointInvocationChain(endpoint, interceptors, actorsOrRoles, isUltimateReceiver);
 	}
 
@@ -98,7 +97,7 @@ public class SoapActionAnnotationMethodEndpointMapping extends AbstractAnnotatio
 			SoapMessage request = (SoapMessage) messageContext.getRequest();
 			String soapAction = request.getSoapAction();
 			if (StringUtils.hasLength(soapAction) && soapAction.charAt(0) == '"'
-					&& soapAction.charAt(soapAction.length() - 1) == '"') {
+		&& soapAction.charAt(soapAction.length() - 1) == '"') {
 				return soapAction.substring(1, soapAction.length() - 1);
 			} else {
 				return soapAction;

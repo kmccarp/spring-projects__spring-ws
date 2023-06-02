@@ -67,7 +67,7 @@ public abstract class WebServiceAccessor extends TransformerObjectSupport implem
 	 */
 	public void setMessageSender(WebServiceMessageSender messageSender) {
 		Assert.notNull(messageSender, "'messageSender' must not be null");
-		messageSenders = new WebServiceMessageSender[] { messageSender };
+		messageSenders = new WebServiceMessageSender[]{messageSender};
 	}
 
 	/**

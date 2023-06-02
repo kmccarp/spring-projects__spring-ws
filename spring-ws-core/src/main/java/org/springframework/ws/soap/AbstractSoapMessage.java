@@ -92,7 +92,7 @@ public abstract class AbstractSoapMessage extends AbstractMimeMessage implements
 				version = SoapVersion.SOAP_12;
 			} else {
 				throw new IllegalStateException(
-						"Unknown Envelope namespace uri '" + envelopeNamespace + "'. " + "Cannot deduce SoapVersion.");
+			"Unknown Envelope namespace uri '" + envelopeNamespace + "'. " + "Cannot deduce SoapVersion.");
 			}
 		}
 		return version;

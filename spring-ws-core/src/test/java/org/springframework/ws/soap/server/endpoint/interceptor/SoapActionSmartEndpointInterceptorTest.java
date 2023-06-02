@@ -68,7 +68,7 @@ public class SoapActionSmartEndpointInterceptorTest {
 	public void shouldInterceptNonMatch() {
 
 		SoapActionSmartEndpointInterceptor interceptor = new SoapActionSmartEndpointInterceptor(delegate,
-				"http://springframework.org/other");
+	"http://springframework.org/other");
 
 		boolean result = interceptor.shouldIntercept(messageContext, null);
 

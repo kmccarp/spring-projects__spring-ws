@@ -80,7 +80,7 @@ import org.springframework.ws.transport.support.TransportUtils;
  * {@link #setInterceptors(ClientInterceptor[]) interceptors}. Interceptors are executed in order. If any of the
  * interceptors creates a response message in the message context, skip to step 7.</li>
  * <li>Call {@link WebServiceConnection#send(WebServiceMessage) send()} on the connection.</li>
- * <li>Call {@link #hasError(WebServiceConnection,WebServiceMessage) hasError()} to check if the connection has an
+ * <li>Call {@link #hasError(WebServiceConnection, WebServiceMessage) hasError()} to check if the connection has an
  * error. For an HTTP transport, a status code other than {@code 2xx} indicates an error. However, since a status code
  * of 500 can also indicate a SOAP fault, the template verifies whether the error is not a fault.</li>
  * <ul>
@@ -92,7 +92,7 @@ import org.springframework.ws.transport.support.TransportUtils;
  * response message, if any.</li>
  * <ul>
  * <li>If no response was received, return {@code null} or {@code false}</li>
- * <li>Call {@link #hasFault(WebServiceConnection,WebServiceMessage) hasFault()} to determine whether the response has a
+ * <li>Call {@link #hasFault(WebServiceConnection, WebServiceMessage) hasFault()} to determine whether the response has a
  * fault. If it has, call {@link ClientInterceptor#handleFault(MessageContext)} and the {@link #handleFault
  * handleFault()} method.</li>
  * <li>Otherwise, invoke {@link ClientInterceptor#handleResponse(MessageContext)} and
@@ -112,11 +112,11 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 
 	/** Additional logger to use for sent message tracing. */
 	protected static final Log sentMessageTracingLogger = LogFactory
-			.getLog(WebServiceTemplate.MESSAGE_TRACING_LOG_CATEGORY + ".sent");
+.getLog(WebServiceTemplate.MESSAGE_TRACING_LOG_CATEGORY + ".sent");
 
 	/** Additional logger to use for received message tracing. */
 	protected static final Log receivedMessageTracingLogger = LogFactory
-			.getLog(WebServiceTemplate.MESSAGE_TRACING_LOG_CATEGORY + ".received");
+.getLog(WebServiceTemplate.MESSAGE_TRACING_LOG_CATEGORY + ".received");
 
 	private Marshaller marshaller;
 
@@ -163,8 +163,8 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 		Assert.notNull(marshaller, "marshaller must not be null");
 		if (!(marshaller instanceof Unmarshaller)) {
 			throw new IllegalArgumentException("Marshaller [" + marshaller + "] does not implement the Unmarshaller "
-					+ "interface. Please set an Unmarshaller explicitly by using the "
-					+ "WebServiceTemplate(Marshaller, Unmarshaller) constructor.");
+		+ "interface. Please set an Unmarshaller explicitly by using the "
+		+ "WebServiceTemplate(Marshaller, Unmarshaller) constructor.");
 		} else {
 			this.setMarshaller(marshaller);
 			this.setUnmarshaller((Unmarshaller) marshaller);
@@ -203,12 +203,12 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 * Typically, either this property is set, or {@link #setDestinationProvider(DestinationProvider)}, but not both.
 	 *
 	 * @see #marshalSendAndReceive(Object)
-	 * @see #marshalSendAndReceive(Object,WebServiceMessageCallback)
-	 * @see #sendSourceAndReceiveToResult(Source,Result)
-	 * @see #sendSourceAndReceiveToResult(Source,WebServiceMessageCallback,Result)
-	 * @see #sendSourceAndReceive(Source,SourceExtractor)
-	 * @see #sendSourceAndReceive(Source,WebServiceMessageCallback,SourceExtractor)
-	 * @see #sendAndReceive(WebServiceMessageCallback,WebServiceMessageCallback)
+	 * @see #marshalSendAndReceive(Object, WebServiceMessageCallback)
+	 * @see #sendSourceAndReceiveToResult(Source, Result)
+	 * @see #sendSourceAndReceiveToResult(Source, WebServiceMessageCallback, Result)
+	 * @see #sendSourceAndReceive(Source, SourceExtractor)
+	 * @see #sendSourceAndReceive(Source, WebServiceMessageCallback, SourceExtractor)
+	 * @see #sendAndReceive(WebServiceMessageCallback, WebServiceMessageCallback)
 	 */
 	public void setDefaultUri(final String uri) {
 		destinationProvider = new DestinationProvider() {
@@ -230,12 +230,12 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 * Typically, either this property is set, or {@link #setDefaultUri(String)}, but not both.
 	 *
 	 * @see #marshalSendAndReceive(Object)
-	 * @see #marshalSendAndReceive(Object,WebServiceMessageCallback)
-	 * @see #sendSourceAndReceiveToResult(Source,Result)
-	 * @see #sendSourceAndReceiveToResult(Source,WebServiceMessageCallback,Result)
-	 * @see #sendSourceAndReceive(Source,SourceExtractor)
-	 * @see #sendSourceAndReceive(Source,WebServiceMessageCallback,SourceExtractor)
-	 * @see #sendAndReceive(WebServiceMessageCallback,WebServiceMessageCallback)
+	 * @see #marshalSendAndReceive(Object, WebServiceMessageCallback)
+	 * @see #sendSourceAndReceiveToResult(Source, Result)
+	 * @see #sendSourceAndReceiveToResult(Source, WebServiceMessageCallback, Result)
+	 * @see #sendSourceAndReceive(Source, SourceExtractor)
+	 * @see #sendSourceAndReceive(Source, WebServiceMessageCallback, SourceExtractor)
+	 * @see #sendAndReceive(WebServiceMessageCallback, WebServiceMessageCallback)
 	 */
 	public void setDestinationProvider(DestinationProvider destinationProvider) {
 		this.destinationProvider = destinationProvider;
@@ -302,7 +302,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 * Internal Server Error" HTTP status code if the response envelope is a Fault. Setting this property to {@code false}
 	 * allows this template to deal with non-conforming services.
 	 *
-	 * @see #hasFault(WebServiceConnection,WebServiceMessage)
+	 * @see #hasFault(WebServiceConnection, WebServiceMessage)
 	 * @see <a href="http://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383529">SOAP 1.1 specification</a>
 	 * @see <a href="http://www.ws-i.org/Profiles/BasicProfile-1.1.html#HTTP_Server_Error_Status_Codes">WS-I Basic
 	 *      Profile</a>
@@ -387,7 +387,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 
 	@Override
 	public Object marshalSendAndReceive(String uri, final Object requestPayload,
-			final WebServiceMessageCallback requestCallback) {
+final WebServiceMessageCallback requestCallback) {
 		return sendAndReceive(uri, new WebServiceMessageCallback() {
 
 			public void doWithMessage(WebServiceMessage request) throws IOException, TransformerException {
@@ -430,25 +430,25 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 
 	@Override
 	public boolean sendSourceAndReceiveToResult(Source requestPayload, WebServiceMessageCallback requestCallback,
-			final Result responseResult) {
+final Result responseResult) {
 		return sendSourceAndReceiveToResult(getDefaultUri(), requestPayload, requestCallback, responseResult);
 	}
 
 	@Override
 	public boolean sendSourceAndReceiveToResult(String uri, Source requestPayload,
-			WebServiceMessageCallback requestCallback, final Result responseResult) {
+WebServiceMessageCallback requestCallback, final Result responseResult) {
 		try {
 			final Transformer transformer = createTransformer();
 			Boolean retVal = doSendAndReceive(uri, transformer, requestPayload, requestCallback,
-					new SourceExtractor<Boolean>() {
+		new SourceExtractor<Boolean>() {
 
-						public Boolean extractData(Source source) throws IOException, TransformerException {
-							if (source != null) {
-								transformer.transform(source, responseResult);
-							}
-							return Boolean.TRUE;
-						}
-					});
+			public Boolean extractData(Source source) throws IOException, TransformerException {
+				if (source != null) {
+					transformer.transform(source, responseResult);
+				}
+				return Boolean.TRUE;
+			}
+		});
 			return retVal != null && retVal;
 		} catch (TransformerConfigurationException ex) {
 			throw new WebServiceTransformerException("Could not create transformer", ex);
@@ -466,19 +466,19 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 
 	@Override
 	public <T> T sendSourceAndReceive(String uri, final Source requestPayload,
-			final SourceExtractor<T> responseExtractor) {
+final SourceExtractor<T> responseExtractor) {
 		return sendSourceAndReceive(uri, requestPayload, null, responseExtractor);
 	}
 
 	@Override
 	public <T> T sendSourceAndReceive(final Source requestPayload, final WebServiceMessageCallback requestCallback,
-			final SourceExtractor<T> responseExtractor) {
+final SourceExtractor<T> responseExtractor) {
 		return sendSourceAndReceive(getDefaultUri(), requestPayload, requestCallback, responseExtractor);
 	}
 
 	@Override
 	public <T> T sendSourceAndReceive(String uri, final Source requestPayload,
-			final WebServiceMessageCallback requestCallback, final SourceExtractor<T> responseExtractor) {
+final WebServiceMessageCallback requestCallback, final SourceExtractor<T> responseExtractor) {
 
 		try {
 			return doSendAndReceive(uri, createTransformer(), requestPayload, requestCallback, responseExtractor);
@@ -488,7 +488,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	}
 
 	private <T> T doSendAndReceive(String uri, final Transformer transformer, final Source requestPayload,
-			final WebServiceMessageCallback requestCallback, final SourceExtractor<T> responseExtractor) {
+final WebServiceMessageCallback requestCallback, final SourceExtractor<T> responseExtractor) {
 		Assert.notNull(responseExtractor, "responseExtractor must not be null");
 		return sendAndReceive(uri, new WebServiceMessageCallback() {
 			public void doWithMessage(WebServiceMessage message) throws IOException, TransformerException {
@@ -511,22 +511,22 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 
 	@Override
 	public boolean sendAndReceive(String uri, WebServiceMessageCallback requestCallback,
-			WebServiceMessageCallback responseCallback) {
+WebServiceMessageCallback responseCallback) {
 		Assert.notNull(responseCallback, "responseCallback must not be null");
 		Boolean result = sendAndReceive(uri, requestCallback,
-				new WebServiceMessageCallbackMessageExtractor(responseCallback));
+	new WebServiceMessageCallbackMessageExtractor(responseCallback));
 		return result != null && result;
 	}
 
 	@Override
 	public <T> T sendAndReceive(WebServiceMessageCallback requestCallback,
-			WebServiceMessageExtractor<T> responseExtractor) {
+WebServiceMessageExtractor<T> responseExtractor) {
 		return sendAndReceive(getDefaultUri(), requestCallback, responseExtractor);
 	}
 
 	@Override
 	public <T> T sendAndReceive(String uriString, WebServiceMessageCallback requestCallback,
-			WebServiceMessageExtractor<T> responseExtractor) {
+WebServiceMessageExtractor<T> responseExtractor) {
 		Assert.notNull(responseExtractor, "'responseExtractor' must not be null");
 		Assert.hasLength(uriString, "'uri' must not be empty");
 		TransportContext previousTransportContext = TransportContextHolder.getTransportContext();
@@ -562,7 +562,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 */
 	@SuppressWarnings("unchecked")
 	protected <T> T doSendAndReceive(MessageContext messageContext, WebServiceConnection connection,
-			WebServiceMessageCallback requestCallback, WebServiceMessageExtractor<T> responseExtractor) throws IOException {
+WebServiceMessageCallback requestCallback, WebServiceMessageExtractor<T> responseExtractor) throws IOException {
 		int interceptorIndex = -1;
 		try {
 			if (requestCallback != null) {
@@ -657,7 +657,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 * @param connection the erroneous connection
 	 * @param request the corresponding request message
 	 * @return the object to be returned from
-	 *         {@link #sendAndReceive(String,WebServiceMessageCallback, WebServiceMessageExtractor)}, if any
+	 *         {@link #sendAndReceive(String, WebServiceMessageCallback, WebServiceMessageExtractor)}, if any
 	 */
 	protected Object handleError(WebServiceConnection connection, WebServiceMessage request) throws IOException {
 		if (logger.isDebugEnabled()) {
@@ -674,10 +674,10 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 				ByteArrayOutputStream responseStream = new ByteArrayOutputStream();
 				messageContext.getResponse().writeTo(responseStream);
 				receivedMessageTracingLogger.trace("Received response [" + responseStream.toString(StandardCharsets.UTF_8) + "] for request ["
-						+ requestStream.toString(StandardCharsets.UTF_8) + "]");
+			+ requestStream.toString(StandardCharsets.UTF_8) + "]");
 			} else if (receivedMessageTracingLogger.isDebugEnabled()) {
 				receivedMessageTracingLogger.debug("Received response [" + messageContext.getResponse() + "] for request ["
-						+ messageContext.getRequest() + "]");
+			+ messageContext.getRequest() + "]");
 			}
 		} else {
 			if (receivedMessageTracingLogger.isDebugEnabled()) {
@@ -763,7 +763,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 * @see ClientInterceptor#afterCompletion
 	 */
 	private void triggerAfterCompletion(int interceptorIndex, MessageContext messageContext, Exception ex)
-			throws WebServiceClientException {
+throws WebServiceClientException {
 		if (interceptors != null) {
 			for (int i = interceptorIndex; i >= 0; i--) {
 				interceptors[i].afterCompletion(messageContext, ex);
@@ -778,7 +778,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 	 * @param connection the faulty connection
 	 * @param messageContext the message context
 	 * @return the object to be returned from
-	 *         {@link #sendAndReceive(String,WebServiceMessageCallback, WebServiceMessageExtractor)}, if any
+	 *         {@link #sendAndReceive(String, WebServiceMessageCallback, WebServiceMessageExtractor)}, if any
 	 */
 	protected Object handleFault(WebServiceConnection connection, MessageContext messageContext) throws IOException {
 		if (logger.isDebugEnabled()) {

@@ -77,7 +77,7 @@ public class JmsSenderConnection extends AbstractSenderConnection {
 
 	/** Constructs a new JMS connection with the given parameters. */
 	protected JmsSenderConnection(ConnectionFactory connectionFactory, Connection connection, Session session,
-			Destination requestDestination, Message requestMessage) throws JMSException {
+Destination requestDestination, Message requestMessage) throws JMSException {
 		Assert.notNull(connectionFactory, "'connectionFactory' must not be null");
 		Assert.notNull(connection, "'connection' must not be null");
 		Assert.notNull(session, "'session' must not be null");
@@ -246,7 +246,7 @@ public class JmsSenderConnection extends AbstractSenderConnection {
 				responseMessage = message;
 			} else if (message != null) {
 				throw new IllegalArgumentException("Wrong message type: [" + message.getClass() + "]. "
-						+ "Only BytesMessages or TextMessages can be handled.");
+			+ "Only BytesMessages or TextMessages can be handled.");
 			}
 		} catch (JMSException ex) {
 			throw new JmsTransportException(ex);

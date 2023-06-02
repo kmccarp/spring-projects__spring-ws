@@ -100,10 +100,10 @@ public abstract class AbstractEndpointMapping extends ApplicationObjectSupport i
 	 */
 	protected void initInterceptors() {
 		Map<String, SmartEndpointInterceptor> smartInterceptors = BeanFactoryUtils
-				.beansOfTypeIncludingAncestors(getApplicationContext(), SmartEndpointInterceptor.class, true, false);
+	.beansOfTypeIncludingAncestors(getApplicationContext(), SmartEndpointInterceptor.class, true, false);
 		if (!smartInterceptors.isEmpty()) {
 			this.smartInterceptors = smartInterceptors.values()
-					.toArray(new SmartEndpointInterceptor[smartInterceptors.size()]);
+		.toArray(new SmartEndpointInterceptor[smartInterceptors.size()]);
 		}
 	}
 
@@ -145,7 +145,7 @@ public abstract class AbstractEndpointMapping extends ApplicationObjectSupport i
 		}
 
 		return createEndpointInvocationChain(messageContext, endpoint,
-				interceptors.toArray(new EndpointInterceptor[interceptors.size()]));
+	interceptors.toArray(new EndpointInterceptor[interceptors.size()]));
 	}
 
 	/**
@@ -158,7 +158,7 @@ public abstract class AbstractEndpointMapping extends ApplicationObjectSupport i
 	 * @see #setInterceptors(org.springframework.ws.server.EndpointInterceptor[])
 	 */
 	protected EndpointInvocationChain createEndpointInvocationChain(MessageContext messageContext, Object endpoint,
-			EndpointInterceptor[] interceptors) {
+EndpointInterceptor[] interceptors) {
 		return new EndpointInvocationChain(endpoint, interceptors);
 	}
 

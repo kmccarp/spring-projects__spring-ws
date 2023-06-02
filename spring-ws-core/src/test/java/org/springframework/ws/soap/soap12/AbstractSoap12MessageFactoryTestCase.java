@@ -82,7 +82,7 @@ public abstract class AbstractSoap12MessageFactoryTestCase extends AbstractSoapM
 		InputStream is = AbstractSoap12MessageFactoryTestCase.class.getResourceAsStream("soap12-attachment.bin");
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-Type",
-				"multipart/related;" + "type=\"application/soap+xml\";" + "boundary=\"----=_Part_0_11416420.1149699787554\"");
+	"multipart/related;" + "type=\"application/soap+xml\";" + "boundary=\"----=_Part_0_11416420.1149699787554\"");
 		TransportInputStream tis = new MockTransportInputStream(is, headers);
 
 		WebServiceMessage message = messageFactory.createWebServiceMessage(tis);
@@ -105,9 +105,9 @@ public abstract class AbstractSoap12MessageFactoryTestCase extends AbstractSoapM
 		InputStream is = AbstractSoap12MessageFactoryTestCase.class.getResourceAsStream("soap12-mtom.bin");
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-Type",
-				"multipart/related;" + "start-info=\"application/soap+xml\";" + "type=\"application/xop+xml\";"
-						+ "start=\"<0.urn:uuid:40864869929B855F971176851454456@apache.org>\";"
-						+ "boundary=\"MIMEBoundaryurn_uuid_40864869929B855F971176851454455\"");
+	"multipart/related;" + "start-info=\"application/soap+xml\";" + "type=\"application/xop+xml\";"
++ "start=\"<0.urn:uuid:40864869929B855F971176851454456@apache.org>\";"
++ "boundary=\"MIMEBoundaryurn_uuid_40864869929B855F971176851454455\"");
 		TransportInputStream tis = new MockTransportInputStream(is, headers);
 
 		WebServiceMessage message = messageFactory.createWebServiceMessage(tis);

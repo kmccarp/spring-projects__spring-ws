@@ -76,14 +76,14 @@ public abstract class AbstractJaxb2PayloadMethodProcessor extends AbstractPayloa
 
 	@Override
 	public final void handleReturnValue(MessageContext messageContext, MethodParameter returnType, Object returnValue)
-			throws Exception {
+throws Exception {
 		if (returnValue != null) {
 			handleReturnValueInternal(messageContext, returnType, returnValue);
 		}
 	}
 
 	protected abstract void handleReturnValueInternal(MessageContext messageContext, MethodParameter returnType,
-			Object returnValue) throws Exception;
+Object returnValue) throws Exception;
 
 	/**
 	 * Marshals the given {@code jaxbElement} to the response payload of the given message context.
@@ -94,7 +94,7 @@ public abstract class AbstractJaxb2PayloadMethodProcessor extends AbstractPayloa
 	 * @throws JAXBException in case of JAXB2 errors
 	 */
 	protected final void marshalToResponsePayload(MessageContext messageContext, Class<?> clazz, Object jaxbElement)
-			throws JAXBException {
+throws JAXBException {
 		Assert.notNull(messageContext, "'messageContext' must not be null");
 		Assert.notNull(clazz, "'clazz' must not be null");
 		Assert.notNull(jaxbElement, "'jaxbElement' must not be null");
@@ -127,7 +127,7 @@ public abstract class AbstractJaxb2PayloadMethodProcessor extends AbstractPayloa
 	 * @throws JAXBException in case of JAXB2 errors
 	 */
 	protected final Object unmarshalFromRequestPayload(MessageContext messageContext, Class<?> clazz)
-			throws JAXBException {
+throws JAXBException {
 		Source requestPayload = getRequestPayload(messageContext);
 		if (requestPayload == null) {
 			return null;
@@ -153,7 +153,7 @@ public abstract class AbstractJaxb2PayloadMethodProcessor extends AbstractPayloa
 	 * @throws JAXBException in case of JAXB2 errors
 	 */
 	protected final <T> JAXBElement<T> unmarshalElementFromRequestPayload(MessageContext messageContext, Class<T> clazz)
-			throws JAXBException {
+throws JAXBException {
 		Source requestPayload = getRequestPayload(messageContext);
 		if (requestPayload == null) {
 			return null;
@@ -247,7 +247,7 @@ public abstract class AbstractJaxb2PayloadMethodProcessor extends AbstractPayloa
 		@Override
 		public void saxSource(XMLReader reader, InputSource inputSource) throws Exception {
 			if (inputSource.getByteStream() == null && inputSource.getCharacterStream() == null
-					&& inputSource.getSystemId() == null) {
+		&& inputSource.getSystemId() == null) {
 				// The InputSource neither has a stream nor a system ID set; this means that
 				// we are dealing with a custom SAXSource that is not backed by a SAX parser
 				// but that generates a sequence of SAX events in some other way.

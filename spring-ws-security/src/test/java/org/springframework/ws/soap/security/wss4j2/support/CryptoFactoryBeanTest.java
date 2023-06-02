@@ -39,7 +39,7 @@ public class CryptoFactoryBeanTest {
 
 		Properties configuration = new Properties();
 		configuration.setProperty("org.apache.ws.security.crypto.provider",
-				"org.apache.ws.security.components.crypto.Merlin");
+	"org.apache.ws.security.components.crypto.Merlin");
 		configuration.setProperty("org.apache.ws.security.crypto.merlin.keystore.type", "jceks");
 		configuration.setProperty("org.apache.ws.security.crypto.merlin.keystore.password", "123456");
 		configuration.setProperty("org.apache.ws.security.crypto.merlin.file", "private.jks");

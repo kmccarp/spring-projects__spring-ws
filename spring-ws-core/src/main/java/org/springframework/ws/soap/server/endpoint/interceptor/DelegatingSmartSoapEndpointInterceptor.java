@@ -29,8 +29,7 @@ import org.springframework.ws.soap.server.SoapEndpointInterceptor;
  * @author Arjen Poutsma
  * @since 2.0
  */
-public class DelegatingSmartSoapEndpointInterceptor extends DelegatingSmartEndpointInterceptor
-		implements SmartSoapEndpointInterceptor {
+public class DelegatingSmartSoapEndpointInterceptor extends DelegatingSmartEndpointInterceptorimplements SmartSoapEndpointInterceptor {
 
 	/**
 	 * Creates a new instance of the {@code DelegatingSmartSoapEndpointInterceptor} with the given delegate.

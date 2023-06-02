@@ -98,7 +98,7 @@ public class SimpleSaajServlet extends HttpServlet {
 					reply.saveChanges();
 				}
 				resp.setStatus(
-						!reply.getSOAPBody().hasFault() ? HttpServletResponse.SC_OK : HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+			!reply.getSOAPBody().hasFault() ? HttpServletResponse.SC_OK : HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 				putHeaders(reply.getMimeHeaders(), resp);
 				reply.writeTo(resp.getOutputStream());
 			} else {

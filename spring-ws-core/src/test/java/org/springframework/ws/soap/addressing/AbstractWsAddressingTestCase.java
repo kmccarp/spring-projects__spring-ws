@@ -61,9 +61,9 @@ public abstract class AbstractWsAddressingTestCase {
 		Document resultDocument = result.getSaajMessage().getSOAPPart();
 
 		XmlAssert.assertThat(resultDocument).and(expectedDocument) //
-				.ignoreWhitespace() //
-				.ignoreChildNodesOrder() //
-				.areSimilar();
+	.ignoreWhitespace() //
+	.ignoreChildNodesOrder() //
+	.areSimilar();
 	}
 
 	protected void assertXMLNotSimilar(SaajSoapMessage expected, SaajSoapMessage result) {
@@ -72,7 +72,7 @@ public abstract class AbstractWsAddressingTestCase {
 		Document resultDocument = result.getSaajMessage().getSOAPPart();
 
 		XmlAssert.assertThat(resultDocument).and(expectedDocument) //
-				.ignoreWhitespace() //
-				.areNotSimilar();
+	.ignoreWhitespace() //
+	.areNotSimilar();
 	}
 }

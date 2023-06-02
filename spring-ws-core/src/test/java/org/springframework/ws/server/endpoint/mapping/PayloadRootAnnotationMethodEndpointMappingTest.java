@@ -53,9 +53,11 @@ import org.springframework.ws.soap.server.SoapMessageDispatcher;
 @ContextConfiguration("payloadRootAnnotationMethodEndpointMapping.xml")
 public class PayloadRootAnnotationMethodEndpointMappingTest {
 
-	@Autowired private PayloadRootAnnotationMethodEndpointMapping mapping;
+	@Autowired
+	private PayloadRootAnnotationMethodEndpointMapping mapping;
 
-	@Autowired private ApplicationContext applicationContext;
+	@Autowired
+	private ApplicationContext applicationContext;
 
 	@Test
 	public void registrationSingle() throws NoSuchMethodException {
@@ -116,14 +118,14 @@ public class PayloadRootAnnotationMethodEndpointMappingTest {
 		SOAPMessage request = messageFactory.createMessage();
 		request.getSOAPBody().addBodyElement(QName.valueOf("{http://springframework.org/spring-ws}Request"));
 		MessageContext messageContext = new DefaultMessageContext(new SaajSoapMessage(request),
-				new SaajSoapMessageFactory(messageFactory));
+	new SaajSoapMessageFactory(messageFactory));
 		DefaultMethodEndpointAdapter adapter = new DefaultMethodEndpointAdapter();
 		adapter.afterPropertiesSet();
 
 		MessageDispatcher messageDispatcher = new SoapMessageDispatcher();
 		messageDispatcher.setApplicationContext(applicationContext);
-		messageDispatcher.setEndpointMappings(Collections.<EndpointMapping> singletonList(mapping));
-		messageDispatcher.setEndpointAdapters(Collections.<EndpointAdapter> singletonList(adapter));
+		messageDispatcher.setEndpointMappings(Collections.<EndpointMapping>singletonList(mapping));
+		messageDispatcher.setEndpointAdapters(Collections.<EndpointAdapter>singletonList(adapter));
 
 		messageDispatcher.receive(messageContext);
 
@@ -154,9 +156,10 @@ public class PayloadRootAnnotationMethodEndpointMappingTest {
 		}
 
 		@PayloadRoots({ //
-				@PayloadRoot(localPart = "Request1", namespace = "http://springframework.org/spring-ws"),
-				@PayloadRoot(localPart = "Request2", namespace = "http://springframework.org/spring-ws") })
-		public void doItMultiple() {}
+	@PayloadRoot(localPart = "Request1", namespace = "http://springframework.org/spring-ws"),
+	@PayloadRoot(localPart = "Request2", namespace = "http://springframework.org/spring-ws")})
+		public void doItMultiple() {
+		}
 
 		@PayloadRoot(localPart = "Request3", namespace = "http://springframework.org/spring-ws")
 		@PayloadRoot(localPart = "Request4", namespace = "http://springframework.org/spring-ws")

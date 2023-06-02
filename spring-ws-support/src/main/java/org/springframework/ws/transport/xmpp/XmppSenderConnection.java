@@ -157,7 +157,7 @@ public class XmppSenderConnection extends AbstractSenderConnection {
 				responseMessage = (Message) packet;
 			} else if (packet != null) {
 				throw new IllegalArgumentException(
-						"Wrong packet type: [" + packet.getClass() + "]. Only Messages can be handled.");
+			"Wrong packet type: [" + packet.getClass() + "]. Only Messages can be handled.");
 			}
 		} catch (InterruptedException e) {
 			throw new IOException(e);

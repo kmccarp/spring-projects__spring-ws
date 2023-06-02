@@ -44,7 +44,7 @@ public class SoapActionSmartEndpointInterceptor extends DelegatingSmartSoapEndpo
 		if (request instanceof SoapMessage) {
 			String soapAction = ((SoapMessage) request).getSoapAction();
 			if (StringUtils.hasLength(soapAction) && soapAction.charAt(0) == '"'
-					&& soapAction.charAt(soapAction.length() - 1) == '"') {
+		&& soapAction.charAt(soapAction.length() - 1) == '"') {
 				soapAction = soapAction.substring(1, soapAction.length() - 1);
 			}
 			return this.soapAction.equals(soapAction);

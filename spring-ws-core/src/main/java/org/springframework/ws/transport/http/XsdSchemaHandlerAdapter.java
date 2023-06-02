@@ -47,8 +47,7 @@ import org.w3c.dom.Document;
  * @see #getSchemaSource(XsdSchema)
  * @since 1.5.3
  */
-public class XsdSchemaHandlerAdapter extends LocationTransformerObjectSupport
-		implements HandlerAdapter, InitializingBean {
+public class XsdSchemaHandlerAdapter extends LocationTransformerObjectSupportimplements HandlerAdapter, InitializingBean {
 
 	/**
 	 * Default XPath expression used for extracting all {@code schemaLocation} attributes from the WSDL definition.
@@ -90,7 +89,7 @@ public class XsdSchemaHandlerAdapter extends LocationTransformerObjectSupport
 
 	@Override
 	public ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
+throws Exception {
 		if (HttpTransportConstants.METHOD_GET.equals(request.getMethod())) {
 			Transformer transformer = createTransformer();
 			Source schemaSource = getSchemaSource((XsdSchema) handler);
@@ -120,7 +119,7 @@ public class XsdSchemaHandlerAdapter extends LocationTransformerObjectSupport
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		schemaLocationXPathExpression = XPathExpressionFactory.createXPathExpression(schemaLocationExpression,
-				expressionNamespaces);
+	expressionNamespaces);
 	}
 
 	/**

@@ -45,8 +45,7 @@ import org.springframework.ws.soap.saaj.SaajSoapMessageFactory;
 import org.springframework.ws.transport.WebServiceConnection;
 import org.springframework.ws.transport.support.FreePortScanner;
 
-public class HttpComponentsMessageSenderIntegrationTest
-		extends AbstractHttpWebServiceMessageSenderIntegrationTestCase<HttpComponentsMessageSender> {
+public class HttpComponentsMessageSenderIntegrationTestextends AbstractHttpWebServiceMessageSenderIntegrationTestCase<HttpComponentsMessageSender> {
 
 	@Override
 	protected HttpComponentsMessageSender createMessageSender() {
@@ -64,7 +63,7 @@ public class HttpComponentsMessageSenderIntegrationTest
 		assertThat(route1.isSecure()).isTrue();
 		assertThat(route1.getTargetHost().getHostName()).isEqualTo("www.example.com");
 		assertThat(route1.getTargetHost().getPort())
-				.has(new Condition<>(value -> value == -1 || value == 443, "verify port"));
+	.has(new Condition<>(value -> value == -1 || value == 443, "verify port"));
 
 		final String url2 = "http://www.example.com:8080";
 		URI uri2 = new URI(url2);
@@ -83,7 +82,7 @@ public class HttpComponentsMessageSenderIntegrationTest
 		assertThat(route3.isSecure()).isFalse();
 		assertThat(route3.getTargetHost().getHostName()).isEqualTo("www.springframework.org");
 		assertThat(route3.getTargetHost().getPort())
-				.has(new Condition<>(value -> value == -1 || value == 80, "verify port"));
+	.has(new Condition<>(value -> value == -1 || value == 80, "verify port"));
 
 		HttpComponentsMessageSender messageSender = new HttpComponentsMessageSender();
 		messageSender.setMaxTotalConnections(2);
@@ -94,7 +93,7 @@ public class HttpComponentsMessageSenderIntegrationTest
 		messageSender.setMaxConnectionsPerHost(maxConnectionsPerHost);
 
 		PoolingClientConnectionManager poolingClientConnectionManager = (PoolingClientConnectionManager) messageSender
-				.getHttpClient().getConnectionManager();
+	.getHttpClient().getConnectionManager();
 
 		assertThat(poolingClientConnectionManager.getMaxPerRoute(route1)).isEqualTo(1);
 		assertThat(poolingClientConnectionManager.getMaxPerRoute(route2)).isEqualTo(7);
@@ -128,7 +127,7 @@ public class HttpComponentsMessageSenderIntegrationTest
 			appContext.refresh();
 
 			HttpComponentsMessageSender messageSender = appContext.getBean("messageSender",
-					HttpComponentsMessageSender.class);
+		HttpComponentsMessageSender.class);
 			connection = messageSender.createConnection(new URI("http://localhost:" + port));
 
 			connection.send(new SaajSoapMessage(messageFactory.createMessage()));

@@ -62,7 +62,7 @@ public class SoapMessageDispatcherTest {
 		MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPHeaderElement header = request.getSOAPHeader()
-				.addHeaderElement(new QName("http://www.springframework.org", "Header"));
+	.addHeaderElement(new QName("http://www.springframework.org", "Header"));
 		header.setActor(SOAPConstants.URI_SOAP_ACTOR_NEXT);
 		header.setMustUnderstand(true);
 		SoapMessageFactory factory = new SaajSoapMessageFactory(messageFactory);
@@ -72,7 +72,7 @@ public class SoapMessageDispatcherTest {
 		replay(interceptorMock);
 
 		SoapEndpointInvocationChain chain = new SoapEndpointInvocationChain(new Object(),
-				new SoapEndpointInterceptor[] { interceptorMock });
+	new SoapEndpointInterceptor[]{interceptorMock});
 
 		boolean result = dispatcher.handleRequest(chain, context);
 
@@ -87,7 +87,7 @@ public class SoapMessageDispatcherTest {
 		MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPHeaderElement header = request.getSOAPHeader()
-				.addHeaderElement(new QName("http://www.springframework.org", "Header"));
+	.addHeaderElement(new QName("http://www.springframework.org", "Header"));
 		header.setMustUnderstand(true);
 		header.setRole(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
 		SoapMessageFactory factory = new SaajSoapMessageFactory(messageFactory);
@@ -97,7 +97,7 @@ public class SoapMessageDispatcherTest {
 		replay(interceptorMock);
 
 		SoapEndpointInvocationChain chain = new SoapEndpointInvocationChain(new Object(),
-				new SoapEndpointInterceptor[] { interceptorMock });
+	new SoapEndpointInterceptor[]{interceptorMock});
 
 		boolean result = dispatcher.handleRequest(chain, context);
 
@@ -112,7 +112,7 @@ public class SoapMessageDispatcherTest {
 		MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPHeaderElement header = request.getSOAPHeader()
-				.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
+	.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
 		header.setActor(SOAPConstants.URI_SOAP_ACTOR_NEXT);
 		header.setMustUnderstand(true);
 		SoapMessageFactory factory = new SaajSoapMessageFactory(messageFactory);
@@ -122,7 +122,7 @@ public class SoapMessageDispatcherTest {
 		replay(interceptorMock);
 
 		SoapEndpointInvocationChain chain = new SoapEndpointInvocationChain(new Object(),
-				new SoapEndpointInterceptor[] { interceptorMock });
+	new SoapEndpointInterceptor[]{interceptorMock});
 
 		boolean result = dispatcher.handleRequest(chain, context);
 
@@ -148,7 +148,7 @@ public class SoapMessageDispatcherTest {
 		MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPHeaderElement header = request.getSOAPHeader()
-				.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
+	.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
 		header.setMustUnderstand(true);
 		header.setRole(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
 		SoapMessageFactory factory = new SaajSoapMessageFactory(messageFactory);
@@ -158,7 +158,7 @@ public class SoapMessageDispatcherTest {
 		replay(interceptorMock);
 
 		SoapEndpointInvocationChain chain = new SoapEndpointInvocationChain(new Object(),
-				new SoapEndpointInterceptor[] { interceptorMock });
+	new SoapEndpointInterceptor[]{interceptorMock});
 
 		boolean result = dispatcher.handleRequest(chain, context);
 
@@ -174,7 +174,7 @@ public class SoapMessageDispatcherTest {
 
 		assertThat(fault.getFaultCode()).isEqualTo(new QName(SOAPConstants.URI_NS_SOAP_1_2_ENVELOPE, "MustUnderstand"));
 		assertThat(fault.getFaultReasonText(Locale.ENGLISH))
-				.isEqualTo(SoapMessageDispatcher.DEFAULT_MUST_UNDERSTAND_FAULT_STRING);
+	.isEqualTo(SoapMessageDispatcher.DEFAULT_MUST_UNDERSTAND_FAULT_STRING);
 
 		SoapHeader responseHeader = response.getSoapHeader();
 		Iterator<SoapHeaderElement> iterator = responseHeader.examineAllHeaderElements();
@@ -194,7 +194,7 @@ public class SoapMessageDispatcherTest {
 		MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPHeaderElement header = request.getSOAPHeader()
-				.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
+	.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
 		String headerActor = "http://www/springframework.org/role";
 		header.setActor(headerActor);
 		header.setMustUnderstand(true);
@@ -205,7 +205,7 @@ public class SoapMessageDispatcherTest {
 		replay(interceptorMock);
 
 		SoapEndpointInvocationChain chain = new SoapEndpointInvocationChain(new Object(),
-				new SoapEndpointInterceptor[] { interceptorMock }, new String[] { headerActor }, true);
+	new SoapEndpointInterceptor[]{interceptorMock}, new String[]{headerActor}, true);
 
 		boolean result = dispatcher.handleRequest(chain, context);
 
@@ -220,7 +220,7 @@ public class SoapMessageDispatcherTest {
 		MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPHeaderElement header = request.getSOAPHeader()
-				.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
+	.addHeaderElement(new QName("http://www.springframework.org", "Header", "spring-ws"));
 		String headerRole = "http://www/springframework.org/role";
 		header.setRole(headerRole);
 		header.setMustUnderstand(true);
@@ -231,7 +231,7 @@ public class SoapMessageDispatcherTest {
 		replay(interceptorMock);
 
 		SoapEndpointInvocationChain chain = new SoapEndpointInvocationChain(new Object(),
-				new SoapEndpointInterceptor[] { interceptorMock }, new String[] { headerRole }, true);
+	new SoapEndpointInterceptor[]{interceptorMock}, new String[]{headerRole}, true);
 
 		boolean result = dispatcher.handleRequest(chain, context);
 
@@ -251,7 +251,7 @@ public class SoapMessageDispatcherTest {
 		replay(interceptorMock);
 
 		SoapEndpointInvocationChain chain = new SoapEndpointInvocationChain(new Object(),
-				new SoapEndpointInterceptor[] { interceptorMock }, new String[] { "role" }, true);
+	new SoapEndpointInterceptor[]{interceptorMock}, new String[]{"role"}, true);
 
 		boolean result = dispatcher.handleRequest(chain, context);
 
@@ -266,7 +266,7 @@ public class SoapMessageDispatcherTest {
 		MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPHeaderElement header = request.getSOAPHeader()
-				.addHeaderElement(new QName("http://www.springframework.org", "Header"));
+	.addHeaderElement(new QName("http://www.springframework.org", "Header"));
 		header.setActor(SOAPConstants.URI_SOAP_ACTOR_NEXT);
 		header.setMustUnderstand(true);
 		SoapMessageFactory factory = new SaajSoapMessageFactory(messageFactory);

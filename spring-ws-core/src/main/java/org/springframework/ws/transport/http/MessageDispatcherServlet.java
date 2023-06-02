@@ -272,9 +272,9 @@ public class MessageDispatcherServlet extends FrameworkServlet {
 		this.xsdSchemaHandlerAdapterBeanName = xsdSchemaHandlerAdapterBeanName;
 	}
 
-    @Override
+	@Override
 	protected void doService(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
-			throws Exception {
+throws Exception {
 		WsdlDefinition definition = getWsdlDefinition(httpServletRequest);
 		if (definition != null) {
 			wsdlDefinitionHandlerAdapter.handle(httpServletRequest, httpServletResponse, definition);
@@ -325,7 +325,7 @@ public class MessageDispatcherServlet extends FrameworkServlet {
 	 */
 	protected WsdlDefinition getWsdlDefinition(HttpServletRequest request) {
 		if (HttpTransportConstants.METHOD_GET.equals(request.getMethod())
-				&& request.getRequestURI().endsWith(WSDL_SUFFIX_NAME)) {
+	&& request.getRequestURI().endsWith(WSDL_SUFFIX_NAME)) {
 			String fileName = WebUtils.extractFilenameFromUrlPath(request.getRequestURI());
 			return wsdlDefinitions.get(fileName);
 		} else {
@@ -344,7 +344,7 @@ public class MessageDispatcherServlet extends FrameworkServlet {
 	 */
 	protected XsdSchema getXsdSchema(HttpServletRequest request) {
 		if (HttpTransportConstants.METHOD_GET.equals(request.getMethod())
-				&& request.getRequestURI().endsWith(XSD_SUFFIX_NAME)) {
+	&& request.getRequestURI().endsWith(XSD_SUFFIX_NAME)) {
 			String fileName = WebUtils.extractFilenameFromUrlPath(request.getRequestURI());
 			return xsdSchemas.get(fileName);
 		} else {
@@ -370,7 +370,7 @@ public class MessageDispatcherServlet extends FrameworkServlet {
 		try {
 			try {
 				messageReceiverHandlerAdapter = context.getBean(getMessageReceiverHandlerAdapterBeanName(),
-						WebServiceMessageReceiverHandlerAdapter.class);
+			WebServiceMessageReceiverHandlerAdapter.class);
 			} catch (NoSuchBeanDefinitionException ignored) {
 				messageReceiverHandlerAdapter = new WebServiceMessageReceiverHandlerAdapter();
 			}
@@ -398,7 +398,7 @@ public class MessageDispatcherServlet extends FrameworkServlet {
 		try {
 			try {
 				wsdlDefinitionHandlerAdapter = context.getBean(getWsdlDefinitionHandlerAdapterBeanName(),
-						WsdlDefinitionHandlerAdapter.class);
+			WsdlDefinitionHandlerAdapter.class);
 
 			} catch (NoSuchBeanDefinitionException ignored) {
 				wsdlDefinitionHandlerAdapter = new WsdlDefinitionHandlerAdapter();

@@ -52,7 +52,7 @@ public class JdkHttpClientConnection extends AbstractHttpSenderConnection {
 	private static final Log logger = LogFactory.getLog(JdkHttpClientConnection.class);
 
 	private static final List<String> DISALLOWED_HEADERS = List.of("connection", "content-length", "expect", "host",
-			"upgrade");
+"upgrade");
 
 	private final HttpClient httpClient;
 
@@ -119,8 +119,8 @@ public class JdkHttpClientConnection extends AbstractHttpSenderConnection {
 		HttpStatus status = HttpStatus.resolve(getResponseCode());
 
 		return status != null //
-				? status.getReasonPhrase() //
-				: "";
+	? status.getReasonPhrase() //
+	: "";
 	}
 
 	@Override
@@ -129,8 +129,8 @@ public class JdkHttpClientConnection extends AbstractHttpSenderConnection {
 		if (response != null) {
 
 			return response.headers() //
-					.firstValueAsLong(HttpTransportConstants.HEADER_CONTENT_LENGTH) //
-					.orElse(-1);
+		.firstValueAsLong(HttpTransportConstants.HEADER_CONTENT_LENGTH) //
+		.orElse(-1);
 		}
 
 		return 0;

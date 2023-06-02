@@ -50,7 +50,7 @@ public abstract class LocationTransformerObjectSupport extends TransformerObject
 	 * @param request the request, used to determine the location to transform to
 	 */
 	protected void transformLocations(XPathExpression xPathExpression, Document definitionDocument,
-			HttpServletRequest request) {
+HttpServletRequest request) {
 		Assert.notNull(xPathExpression, "'xPathExpression' must not be null");
 		Assert.notNull(definitionDocument, "'definitionDocument' must not be null");
 		Assert.notNull(request, "'request' must not be null");

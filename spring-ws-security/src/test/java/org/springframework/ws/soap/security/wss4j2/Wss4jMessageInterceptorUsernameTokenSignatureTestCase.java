@@ -38,9 +38,9 @@ public abstract class Wss4jMessageInterceptorUsernameTokenSignatureTestCase exte
 		Document doc = getDocument(message);
 
 		assertXpathEvaluatesTo("Invalid Username", "Bert",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Username/text()", doc);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Username/text()", doc);
 		assertXpathExists("Invalid Password",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Password[@Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest']/text()",
-				doc);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Password[@Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest']/text()",
+	doc);
 	}
 }

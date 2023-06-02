@@ -40,7 +40,7 @@ public class WebServicesNamespaceHandlerTigerTest {
 	public void testMarshallingEndpoints() {
 
 		Map<String, GenericMarshallingMethodEndpointAdapter> result = applicationContext
-				.getBeansOfType(GenericMarshallingMethodEndpointAdapter.class);
+	.getBeansOfType(GenericMarshallingMethodEndpointAdapter.class);
 
 		assertThat(result).isNotEmpty();
 	}
@@ -49,7 +49,7 @@ public class WebServicesNamespaceHandlerTigerTest {
 	public void testXpathEndpoints() {
 
 		Map<String, XPathParamAnnotationMethodEndpointAdapter> result = applicationContext
-				.getBeansOfType(XPathParamAnnotationMethodEndpointAdapter.class);
+	.getBeansOfType(XPathParamAnnotationMethodEndpointAdapter.class);
 
 		assertThat(result).isNotEmpty();
 	}

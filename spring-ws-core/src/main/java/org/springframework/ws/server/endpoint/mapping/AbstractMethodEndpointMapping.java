@@ -96,7 +96,7 @@ public abstract class AbstractMethodEndpointMapping<T> extends AbstractEndpointM
 		Object mappedEndpoint = endpointMap.get(key);
 		if (mappedEndpoint != null) {
 			throw new ApplicationContextException("Cannot map endpoint [" + endpoint + "] on registration key [" + key
-					+ "]: there's already endpoint [" + mappedEndpoint + "] mapped");
+		+ "]: there's already endpoint [" + mappedEndpoint + "] mapped");
 		}
 		if (endpoint == null) {
 			throw new ApplicationContextException("Could not find endpoint for key [" + key + "]");
@@ -157,7 +157,7 @@ public abstract class AbstractMethodEndpointMapping<T> extends AbstractEndpointM
 	}
 
 	private Set<Method> findEndpointMethods(Class<?> endpointType,
-			final ReflectionUtils.MethodFilter endpointMethodFilter) {
+final ReflectionUtils.MethodFilter endpointMethodFilter) {
 		final Set<Method> endpointMethods = new LinkedHashSet<Method>();
 		Set<Class<?>> endpointTypes = new LinkedHashSet<Class<?>>();
 		Class<?> specificEndpointType = null;
@@ -173,7 +173,7 @@ public abstract class AbstractMethodEndpointMapping<T> extends AbstractEndpointM
 					Method specificMethod = ClassUtils.getMostSpecificMethod(method, targetClass);
 					Method bridgedMethod = BridgeMethodResolver.findBridgedMethod(specificMethod);
 					if (endpointMethodFilter.matches(specificMethod)
-							&& (bridgedMethod == specificMethod || !endpointMethodFilter.matches(bridgedMethod))) {
+				&& (bridgedMethod == specificMethod || !endpointMethodFilter.matches(bridgedMethod))) {
 						endpointMethods.add(specificMethod);
 					}
 				}
@@ -204,7 +204,7 @@ public abstract class AbstractMethodEndpointMapping<T> extends AbstractEndpointM
 	 */
 	protected List<T> getLookupKeysForMethod(Method method) {
 		T key = getLookupKeyForMethod(method);
-		return key != null ? Collections.singletonList(key) : Collections.<T> emptyList();
+		return key != null ? Collections.singletonList(key) : Collections.<T>emptyList();
 	}
 
 	/**
@@ -218,9 +218,9 @@ public abstract class AbstractMethodEndpointMapping<T> extends AbstractEndpointM
 	protected Class<?> getEndpointClass(Object endpoint) {
 		if (AopUtils.isJdkDynamicProxy(endpoint)) {
 			throw new IllegalArgumentException(
-					ClassUtils.getShortName(getClass()) + " does not work with JDK Dynamic Proxies. "
-							+ "Please use CGLIB proxies, by setting proxy-target-class=\"true\" on the aop:aspectj-autoproxy "
-							+ "or aop:config element.");
+		ClassUtils.getShortName(getClass()) + " does not work with JDK Dynamic Proxies. "
+	+ "Please use CGLIB proxies, by setting proxy-target-class=\"true\" on the aop:aspectj-autoproxy "
+	+ "or aop:config element.");
 		}
 		return AopUtils.getTargetClass(endpoint);
 	}

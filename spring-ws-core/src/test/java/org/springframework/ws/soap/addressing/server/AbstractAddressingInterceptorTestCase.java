@@ -51,7 +51,7 @@ public abstract class AbstractAddressingInterceptorTestCase extends AbstractWsAd
 		URI replyAction = new URI("urn:replyAction");
 		URI faultAction = new URI("urn:faultAction");
 		interceptor = new AddressingEndpointInterceptor(getVersion(), strategyMock, new WebServiceMessageSender[0],
-				replyAction, faultAction);
+	replyAction, faultAction);
 	}
 
 	@Test
@@ -195,7 +195,7 @@ public abstract class AbstractAddressingInterceptorTestCase extends AbstractWsAd
 		URI replyAction = new URI("urn:replyAction");
 		URI faultAction = new URI("urn:replyAction");
 		interceptor = new AddressingEndpointInterceptor(getVersion(), strategyMock,
-				new WebServiceMessageSender[] { senderMock }, replyAction, faultAction);
+	new WebServiceMessageSender[]{senderMock}, replyAction, faultAction);
 
 		WebServiceConnection connectionMock = createMock(WebServiceConnection.class);
 

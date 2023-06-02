@@ -62,6 +62,6 @@ public interface Soap12Header extends SoapHeader {
 	 * @see SoapHeaderElement
 	 */
 	Iterator<SoapHeaderElement> examineHeaderElementsToProcess(String[] roles, boolean isUltimateReceiver)
-			throws SoapHeaderException;
+throws SoapHeaderException;
 
 }

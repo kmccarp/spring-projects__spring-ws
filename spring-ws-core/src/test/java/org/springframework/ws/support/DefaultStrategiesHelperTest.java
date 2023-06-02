@@ -37,7 +37,7 @@ public class DefaultStrategiesHelperTest {
 
 		Properties strategies = new Properties();
 		strategies.put(Strategy.class.getName(),
-				StrategyImpl.class.getName() + "," + ContextAwareStrategyImpl.class.getName());
+	StrategyImpl.class.getName() + "," + ContextAwareStrategyImpl.class.getName());
 		DefaultStrategiesHelper helper = new DefaultStrategiesHelper(strategies);
 
 		StaticApplicationContext applicationContext = new StaticApplicationContext();
@@ -81,7 +81,7 @@ public class DefaultStrategiesHelperTest {
 
 		Properties strategies = new Properties();
 		strategies.put(Strategy.class.getName(),
-				StrategyImpl.class.getName() + "," + ContextAwareStrategyImpl.class.getName());
+	StrategyImpl.class.getName() + "," + ContextAwareStrategyImpl.class.getName());
 		DefaultStrategiesHelper helper = new DefaultStrategiesHelper(strategies);
 
 		StaticApplicationContext applicationContext = new StaticApplicationContext();
@@ -89,7 +89,7 @@ public class DefaultStrategiesHelperTest {
 		applicationContext.registerSingleton("strategy2", ContextAwareStrategyImpl.class);
 
 		assertThatExceptionOfType(BeanInitializationException.class)
-				.isThrownBy(() -> helper.getDefaultStrategy(Strategy.class, applicationContext));
+	.isThrownBy(() -> helper.getDefaultStrategy(Strategy.class, applicationContext));
 	}
 
 	@Test

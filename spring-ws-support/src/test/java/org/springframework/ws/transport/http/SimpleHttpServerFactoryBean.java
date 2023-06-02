@@ -108,7 +108,7 @@ class SimpleHttpServerFactoryBean implements FactoryBean<HttpServer>, Initializi
 	@Override
 	public void afterPropertiesSet() throws IOException {
 		InetSocketAddress address = (this.hostname != null ? new InetSocketAddress(this.hostname, this.port)
-				: new InetSocketAddress(this.port));
+	: new InetSocketAddress(this.port));
 		this.server = HttpServer.create(address, this.backlog);
 		if (this.executor != null) {
 			this.server.setExecutor(this.executor);

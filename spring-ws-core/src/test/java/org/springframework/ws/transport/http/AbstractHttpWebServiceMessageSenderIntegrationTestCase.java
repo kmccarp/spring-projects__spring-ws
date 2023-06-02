@@ -72,12 +72,12 @@ public abstract class AbstractHttpWebServiceMessageSenderIntegrationTestCase<T e
 	private static final String REQUEST = "<Request xmlns='http://springframework.org/spring-ws/' />";
 
 	private static final String SOAP_REQUEST = "<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'><SOAP-ENV:Header/><SOAP-ENV:Body>"
-			+ REQUEST + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
++ REQUEST + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
 
 	private static final String RESPONSE = "<Response  xmlns='http://springframework.org/spring-ws/' />";
 
 	private static final String SOAP_RESPONSE = "<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'><SOAP-ENV:Header/><SOAP-ENV:Body>"
-			+ RESPONSE + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
++ RESPONSE + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
 
 	private ServletContextHandler jettyContext;
 
@@ -191,7 +191,7 @@ public abstract class AbstractHttpWebServiceMessageSenderIntegrationTestCase<T e
 		jettyServer.start();
 
 		try (FaultAwareWebServiceConnection connection = (FaultAwareWebServiceConnection) messageSender
-				.createConnection(connectionUri)) {
+	.createConnection(connectionUri)) {
 			SOAPMessage request = createRequest();
 			connection.send(new SaajSoapMessage(request));
 			connection.receive(messageFactory);
@@ -207,7 +207,7 @@ public abstract class AbstractHttpWebServiceMessageSenderIntegrationTestCase<T e
 		jettyServer.start();
 
 		try (FaultAwareWebServiceConnection connection = (FaultAwareWebServiceConnection) messageSender
-				.createConnection(connectionUri)) {
+	.createConnection(connectionUri)) {
 			SOAPMessage request = createRequest();
 			connection.send(new SaajSoapMessage(request));
 			SaajSoapMessage response = (SaajSoapMessage) connection.receive(messageFactory);
@@ -284,12 +284,12 @@ public abstract class AbstractHttpWebServiceMessageSenderIntegrationTestCase<T e
 
 		@Override
 		protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
-				throws ServletException {
+	throws ServletException {
 			try {
 				assertThat(httpServletRequest.getHeader(REQUEST_HEADER_NAME)).isEqualTo(REQUEST_HEADER_VALUE);
 
 				String receivedRequest = new String(FileCopyUtils.copyToByteArray(httpServletRequest.getInputStream()),
-						StandardCharsets.UTF_8);
+			StandardCharsets.UTF_8);
 
 				XmlAssert.assertThat(receivedRequest).and(SOAP_REQUEST).ignoreWhitespace().areIdentical();
 

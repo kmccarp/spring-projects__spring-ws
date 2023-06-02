@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
  *
  * @author Arjen Poutsma
  * @author Alef Arendsen
- * @see #invokeInternal(org.w3c.dom.Element,org.w3c.dom.Document)
+ * @see #invokeInternal(org.w3c.dom.Element, org.w3c.dom.Document)
  * @since 1.0.0
  * @deprecated as of Spring Web Services 2.0, in favor of annotated endpoints
  */

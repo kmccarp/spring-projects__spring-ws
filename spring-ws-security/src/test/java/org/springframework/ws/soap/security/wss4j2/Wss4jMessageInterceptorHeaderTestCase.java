@@ -76,18 +76,18 @@ public abstract class Wss4jMessageInterceptorHeaderTestCase extends Wss4jTestCas
 
 		assertThat(result).isNotNull();
 
-		for (Iterator<SoapHeaderElement> i = message.getEnvelope().getHeader().examineAllHeaderElements(); i.hasNext();) {
+		for (Iterator<SoapHeaderElement> i = message.getEnvelope().getHeader().examineAllHeaderElements(); i.hasNext(); ) {
 
 			SoapHeaderElement element = i.next();
 			QName name = element.getName();
 			if (name.getNamespaceURI()
-					.equals("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")) {
+		.equals("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")) {
 				fail("Security Header not removed");
 			}
 		}
 
 		assertXpathNotExists("Security Header not removed", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security",
-				getDocument(message));
+	getDocument(message));
 		assertXpathExists("header1 not found", "/SOAP-ENV:Envelope/SOAP-ENV:Header/header1", getDocument(message));
 		assertXpathExists("header2 not found", "/SOAP-ENV:Envelope/SOAP-ENV:Header/header2", getDocument(message));
 	}
@@ -103,12 +103,12 @@ public abstract class Wss4jMessageInterceptorHeaderTestCase extends Wss4jTestCas
 		assertThat(result).isNotNull();
 
 		boolean foundSecurityHeader = false;
-		for (Iterator<SoapHeaderElement> i = message.getEnvelope().getHeader().examineAllHeaderElements(); i.hasNext();) {
+		for (Iterator<SoapHeaderElement> i = message.getEnvelope().getHeader().examineAllHeaderElements(); i.hasNext(); ) {
 
 			SoapHeaderElement element = i.next();
 			QName name = element.getName();
 			if (name.getNamespaceURI()
-					.equals("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")) {
+		.equals("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")) {
 				foundSecurityHeader = true;
 			}
 
@@ -144,7 +144,7 @@ public abstract class Wss4jMessageInterceptorHeaderTestCase extends Wss4jTestCas
 		String document = os.toString(StandardCharsets.UTF_8);
 
 		assertXpathEvaluatesTo("Header 1 does not exist", "test1", "/SOAP-ENV:Envelope/SOAP-ENV:Header/test:header1",
-				document);
+	document);
 		assertXpathNotExists("Header 2 exist", "/SOAP-ENV:Envelope/SOAP-ENV:Header/test:header2", document);
 
 		interceptor.secureMessage(message, messageContext);
@@ -157,17 +157,17 @@ public abstract class Wss4jMessageInterceptorHeaderTestCase extends Wss4jTestCas
 		document = os.toString(StandardCharsets.UTF_8);
 
 		assertXpathEvaluatesTo("Header 1 does not exist", "test1", "/SOAP-ENV:Envelope/SOAP-ENV:Header/test:header1",
-				document);
+	document);
 		assertXpathEvaluatesTo("Header 2 does not exist", "test2", "/SOAP-ENV:Envelope/SOAP-ENV:Header/test:header2",
-				document);
+	document);
 
 		os = new ByteArrayOutputStream();
 		message.writeTo(os);
 		document = os.toString(StandardCharsets.UTF_8);
 
 		assertXpathEvaluatesTo("Header 1 does not exist", "test1", "/SOAP-ENV:Envelope/SOAP-ENV:Header/test:header1",
-				document);
+	document);
 		assertXpathEvaluatesTo("Header 2 does not exist", "test2", "/SOAP-ENV:Envelope/SOAP-ENV:Header/test:header2",
-				document);
+	document);
 	}
 }

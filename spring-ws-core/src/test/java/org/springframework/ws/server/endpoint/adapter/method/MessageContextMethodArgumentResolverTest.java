@@ -53,6 +53,7 @@ public class MessageContextMethodArgumentResolverTest {
 		assertThat(result).isSameAs(messageContext);
 	}
 
-	public void supported(MessageContext messageContext) {}
+	public void supported(MessageContext messageContext) {
+	}
 
 }

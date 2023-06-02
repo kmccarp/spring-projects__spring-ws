@@ -39,8 +39,7 @@ import org.springframework.ws.soap.saaj.SaajSoapMessageFactory;
 import org.springframework.ws.transport.WebServiceConnection;
 import org.springframework.ws.transport.support.FreePortScanner;
 
-public class CommonsHttpMessageSenderIntegrationTest
-		extends AbstractHttpWebServiceMessageSenderIntegrationTestCase<CommonsHttpMessageSender> {
+public class CommonsHttpMessageSenderIntegrationTestextends AbstractHttpWebServiceMessageSenderIntegrationTestCase<CommonsHttpMessageSender> {
 
 	@Override
 	protected CommonsHttpMessageSender createMessageSender() {

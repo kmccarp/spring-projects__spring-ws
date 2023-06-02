@@ -68,7 +68,7 @@ class SaajSoap12Header extends SaajSoapHeader implements Soap12Header {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Iterator<SoapHeaderElement> examineHeaderElementsToProcess(String[] roles, boolean isUltimateDestination)
-			throws SoapHeaderException {
+throws SoapHeaderException {
 		List<SOAPHeaderElement> result = new ArrayList<SOAPHeaderElement>();
 		Iterator<SOAPHeaderElement> iterator = getSaajHeader().examineAllHeaderElements();
 		while (iterator.hasNext()) {

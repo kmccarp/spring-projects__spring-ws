@@ -59,7 +59,7 @@ public class ClientHttpRequestMessageSender extends AbstractHttpWebServiceMessag
 		ClientHttpRequest request = requestFactory.createRequest(uri, HttpMethod.POST);
 		if (isAcceptGzipEncoding()) {
 			request.getHeaders().add(HttpTransportConstants.HEADER_ACCEPT_ENCODING,
-					HttpTransportConstants.CONTENT_ENCODING_GZIP);
+		HttpTransportConstants.CONTENT_ENCODING_GZIP);
 		}
 		return new ClientHttpRequestConnection(request);
 	}

@@ -95,7 +95,7 @@ public class SoapMessageDispatcher extends MessageDispatcher {
 	}
 
 	private boolean handleHeaders(EndpointInvocationChain mappedEndpoint, MessageContext messageContext,
-			String[] actorsOrRoles, boolean isUltimateReceiver) {
+String[] actorsOrRoles, boolean isUltimateReceiver) {
 		SoapMessage soapRequest = (SoapMessage) messageContext.getRequest();
 		SoapHeader soapHeader = soapRequest.getSoapHeader();
 		if (soapHeader == null) {
@@ -142,7 +142,7 @@ public class SoapMessageDispatcher extends MessageDispatcher {
 		}
 		for (EndpointInterceptor interceptor : interceptors) {
 			if (interceptor instanceof SoapEndpointInterceptor
-					&& ((SoapEndpointInterceptor) interceptor).understands(headerElement)) {
+		&& ((SoapEndpointInterceptor) interceptor).understands(headerElement)) {
 				return true;
 			}
 		}
@@ -150,10 +150,10 @@ public class SoapMessageDispatcher extends MessageDispatcher {
 	}
 
 	private void createMustUnderstandFault(SoapMessage soapResponse, List<QName> notUnderstoodHeaderNames,
-			String[] actorsOrRoles) {
+String[] actorsOrRoles) {
 		if (logger.isWarnEnabled()) {
 			logger.warn("Could not handle mustUnderstand headers: "
-					+ StringUtils.collectionToCommaDelimitedString(notUnderstoodHeaderNames) + ". Returning fault");
+		+ StringUtils.collectionToCommaDelimitedString(notUnderstoodHeaderNames) + ". Returning fault");
 		}
 		SoapBody responseBody = soapResponse.getSoapBody();
 		SoapFault fault = responseBody.addMustUnderstandFault(mustUnderstandFaultString, mustUnderstandFaultStringLocale);

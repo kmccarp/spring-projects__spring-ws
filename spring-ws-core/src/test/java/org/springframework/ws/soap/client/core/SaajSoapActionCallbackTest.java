@@ -42,7 +42,7 @@ public class SaajSoapActionCallbackTest {
 
 		SaajSoapMessage message = saaj11Factory.createWebServiceMessage();
 		String[] soapActionHeaders = message.getSaajMessage().getMimeHeaders()
-				.getHeader(TransportConstants.HEADER_SOAP_ACTION);
+	.getHeader(TransportConstants.HEADER_SOAP_ACTION);
 
 		assertThat(soapActionHeaders).containsExactly("\"\"");
 	}
@@ -54,7 +54,7 @@ public class SaajSoapActionCallbackTest {
 		SoapActionCallback callback = new SoapActionCallback("testAction");
 		callback.doWithMessage(message);
 		String[] soapActionHeaders = message.getSaajMessage().getMimeHeaders()
-				.getHeader(TransportConstants.HEADER_SOAP_ACTION);
+	.getHeader(TransportConstants.HEADER_SOAP_ACTION);
 
 		assertThat(soapActionHeaders).containsExactly("\"testAction\"");
 	}
@@ -66,7 +66,7 @@ public class SaajSoapActionCallbackTest {
 		SoapActionCallback callback = new SoapActionCallback(null);
 		callback.doWithMessage(message);
 		String[] soapActionHeaders = message.getSaajMessage().getMimeHeaders()
-				.getHeader(TransportConstants.HEADER_SOAP_ACTION);
+	.getHeader(TransportConstants.HEADER_SOAP_ACTION);
 
 		assertThat(soapActionHeaders).containsExactly("\"\"");
 	}
@@ -76,7 +76,7 @@ public class SaajSoapActionCallbackTest {
 
 		SaajSoapMessage message = saaj12Factory.createWebServiceMessage();
 		String[] soapActionHeaders = message.getSaajMessage().getMimeHeaders()
-				.getHeader(TransportConstants.HEADER_SOAP_ACTION);
+	.getHeader(TransportConstants.HEADER_SOAP_ACTION);
 
 		assertThat(soapActionHeaders).isNull();
 	}
@@ -88,7 +88,7 @@ public class SaajSoapActionCallbackTest {
 		SoapActionCallback callback = new SoapActionCallback("testAction");
 		callback.doWithMessage(message);
 		String[] soapActionHeaders = message.getSaajMessage().getMimeHeaders()
-				.getHeader(TransportConstants.HEADER_SOAP_ACTION);
+	.getHeader(TransportConstants.HEADER_SOAP_ACTION);
 		String[] contentTypes = message.getSaajMessage().getMimeHeaders().getHeader(TransportConstants.HEADER_CONTENT_TYPE);
 
 		assertThat(soapActionHeaders).isNull();
@@ -102,7 +102,7 @@ public class SaajSoapActionCallbackTest {
 		SoapActionCallback callback = new SoapActionCallback(null);
 		callback.doWithMessage(message);
 		String[] soapActionHeaders = message.getSaajMessage().getMimeHeaders()
-				.getHeader(TransportConstants.HEADER_SOAP_ACTION);
+	.getHeader(TransportConstants.HEADER_SOAP_ACTION);
 		String[] contentTypes = message.getSaajMessage().getMimeHeaders().getHeader(TransportConstants.HEADER_CONTENT_TYPE);
 
 		assertThat(soapActionHeaders).isNull();

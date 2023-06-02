@@ -197,7 +197,7 @@ public class WsdlDefinitionHandlerAdapterTest {
 		request.setRequestURI("/context/service.wsdl");
 
 		SimpleWsdl11Definition definition = new SimpleWsdl11Definition(
-				new ClassPathResource("echo-input.wsdl", getClass()));
+	new ClassPathResource("echo-input.wsdl", getClass()));
 
 		adapter.handle(request, response, definition);
 
@@ -229,7 +229,7 @@ public class WsdlDefinitionHandlerAdapterTest {
 		request.setRequestURI("/context/service.wsdl");
 
 		SimpleWsdl11Definition definition = new SimpleWsdl11Definition(
-				new ClassPathResource("echo-input.wsdl", getClass()));
+	new ClassPathResource("echo-input.wsdl", getClass()));
 
 		adapter.handle(request, response, definition);
 

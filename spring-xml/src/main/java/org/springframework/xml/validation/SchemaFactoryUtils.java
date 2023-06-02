@@ -45,18 +45,18 @@ public class SchemaFactoryUtils {
 		} catch (SAXNotRecognizedException | SAXNotSupportedException e) {
 			if (log.isWarnEnabled()) {
 				log.warn(XMLConstants.ACCESS_EXTERNAL_DTD + " property not supported by "
-						+ schemaFactory.getClass().getCanonicalName());
+			+ schemaFactory.getClass().getCanonicalName());
 			}
 
 		}
 
 		try {
 			schemaFactory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA,
-					ResourceUtils.URL_PROTOCOL_FILE + "," + "jar:file" + "," + ResourceUtils.URL_PROTOCOL_WSJAR);
+		ResourceUtils.URL_PROTOCOL_FILE + "," + "jar:file" + "," + ResourceUtils.URL_PROTOCOL_WSJAR);
 		} catch (SAXNotRecognizedException | SAXNotSupportedException e) {
 			if (log.isWarnEnabled()) {
 				log.warn(XMLConstants.ACCESS_EXTERNAL_SCHEMA + " property not supported by "
-						+ schemaFactory.getClass().getCanonicalName());
+			+ schemaFactory.getClass().getCanonicalName());
 			}
 		}
 

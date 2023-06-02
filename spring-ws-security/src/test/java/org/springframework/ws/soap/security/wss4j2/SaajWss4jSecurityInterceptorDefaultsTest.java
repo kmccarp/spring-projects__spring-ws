@@ -48,14 +48,14 @@ public class SaajWss4jSecurityInterceptorDefaultsTest extends Wss4jTestCase {
 		Wss4jSecurityInterceptor subject = new Wss4jSecurityInterceptor();
 		RequestData requestData = new RequestData();
 		Boolean springDefault = (Boolean) ReflectionTestUtils.getField(subject, Wss4jSecurityInterceptor.class,
-				"addInclusivePrefixes");
+	"addInclusivePrefixes");
 		assertEquals("Spring-ws default for addInclusivePrefixes matches Wss4j default",
-				requestData.isAddInclusivePrefixes(), springDefault);
+	requestData.isAddInclusivePrefixes(), springDefault);
 	}
 
 	@Test
 	public void testThatInitializeValidationRequestDataSetsInclusivePrefixesUsingDefaults()
-			throws TransformerException, SOAPException {
+throws TransformerException, SOAPException {
 
 		Wss4jSecurityInterceptor subject = new Wss4jSecurityInterceptor();
 
@@ -65,17 +65,17 @@ public class SaajWss4jSecurityInterceptorDefaultsTest extends Wss4jTestCase {
 		transformer.transform(new StringSource(PAYLOAD), new DOMResult(saajMessage.getSOAPBody()));
 		SoapMessage message = new SaajSoapMessage(saajMessage, saajSoap11MessageFactory);
 		MessageContext messageContext = new DefaultMessageContext(message,
-				new SaajSoapMessageFactory(saajSoap11MessageFactory));
+	new SaajSoapMessageFactory(saajSoap11MessageFactory));
 
 		RequestData validationData = ReflectionTestUtils.invokeMethod(subject, "initializeValidationRequestData",
-				messageContext);
+	messageContext);
 
 		assertTrue(validationData.isAddInclusivePrefixes());
 	}
 
 	@Test
 	public void testThatInitializeValidationRequestDataSetsInclusivePrefixesUsingNotUsingInclusivePrefixes()
-			throws TransformerException, SOAPException {
+throws TransformerException, SOAPException {
 
 		Wss4jSecurityInterceptor subject = new Wss4jSecurityInterceptor();
 		subject.setAddInclusivePrefixes(false);
@@ -85,10 +85,10 @@ public class SaajWss4jSecurityInterceptorDefaultsTest extends Wss4jTestCase {
 		transformer.transform(new StringSource(PAYLOAD), new DOMResult(saajMessage.getSOAPBody()));
 		SoapMessage message = new SaajSoapMessage(saajMessage, saajSoap11MessageFactory);
 		MessageContext messageContext = new DefaultMessageContext(message,
-				new SaajSoapMessageFactory(saajSoap11MessageFactory));
+	new SaajSoapMessageFactory(saajSoap11MessageFactory));
 
 		RequestData validationData = ReflectionTestUtils.invokeMethod(subject, "initializeValidationRequestData",
-				messageContext);
+	messageContext);
 
 		assertFalse(validationData.isAddInclusivePrefixes());
 	}

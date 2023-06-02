@@ -70,7 +70,7 @@ public class JaxbElementPayloadMethodProcessorTest {
 	public void resolveArgument() throws JAXBException {
 
 		WebServiceMessage request = new MockWebServiceMessage(
-				"<myType xmlns='http://springframework.org'><string>Foo</string></myType>");
+	"<myType xmlns='http://springframework.org'><string>Foo</string></myType>");
 		MessageContext messageContext = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
 
 		JAXBElement<?> result = processor.resolveArgument(messageContext, supportedParameter);
@@ -90,7 +90,7 @@ public class JaxbElementPayloadMethodProcessorTest {
 		MyType type = new MyType();
 		type.setString("Foo");
 		JAXBElement<MyType> element = new JAXBElement<>(new QName("http://springframework.org", "type"), MyType.class,
-				type);
+	type);
 		processor.handleReturnValue(messageContext, supportedReturnType, element);
 
 		assertThat(messageContext.hasResponse()).isTrue();
@@ -98,7 +98,7 @@ public class JaxbElementPayloadMethodProcessorTest {
 		MockWebServiceMessage response = (MockWebServiceMessage) messageContext.getResponse();
 
 		XmlAssert.assertThat(response.getPayloadAsString())
-				.and("<type xmlns='http://springframework.org'><string>Foo</string></type>").ignoreWhitespace().areIdentical();
+	.and("<type xmlns='http://springframework.org'><string>Foo</string></type>").ignoreWhitespace().areIdentical();
 	}
 
 	@Test
@@ -115,7 +115,7 @@ public class JaxbElementPayloadMethodProcessorTest {
 		MockWebServiceMessage response = (MockWebServiceMessage) messageContext.getResponse();
 
 		XmlAssert.assertThat(response.getPayloadAsString()).and("<string xmlns='http://springframework.org'>Foo</string>")
-				.ignoreWhitespace().areIdentical();
+	.ignoreWhitespace().areIdentical();
 	}
 
 	@Test

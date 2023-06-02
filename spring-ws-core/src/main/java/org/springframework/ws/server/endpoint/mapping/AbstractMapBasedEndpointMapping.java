@@ -137,7 +137,7 @@ public abstract class AbstractMapBasedEndpointMapping extends AbstractEndpointMa
 		Object mappedEndpoint = endpointMap.get(key);
 		if (mappedEndpoint != null) {
 			throw new ApplicationContextException("Cannot map endpoint [" + endpoint + "] on registration key [" + key
-					+ "]: there's already endpoint [" + mappedEndpoint + "] mapped");
+		+ "]: there's already endpoint [" + mappedEndpoint + "] mapped");
 		}
 		if (!lazyInitEndpoints && endpoint instanceof String) {
 			String endpointName = (String) endpoint;

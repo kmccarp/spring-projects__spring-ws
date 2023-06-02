@@ -41,13 +41,13 @@ public abstract class Wss4jInterceptorTestCase extends Wss4jTestCase {
 
 			@Override
 			protected void secureMessage(SoapMessage soapMessage, MessageContext messageContext)
-					throws WsSecuritySecurementException {
+		throws WsSecuritySecurementException {
 				fail("secure not expected");
 			}
 
 			@Override
 			protected void validateMessage(SoapMessage soapMessage, MessageContext messageContext)
-					throws WsSecurityValidationException {
+		throws WsSecurityValidationException {
 
 				assertThat(getMessage(soapMessage)).isEqualTo(requestMessage);
 				setMessage(soapMessage, validatedRequestMessage);
@@ -70,13 +70,13 @@ public abstract class Wss4jInterceptorTestCase extends Wss4jTestCase {
 
 			@Override
 			protected void secureMessage(SoapMessage soapMessage, MessageContext messageContext)
-					throws WsSecuritySecurementException {
+		throws WsSecuritySecurementException {
 				setMessage(soapMessage, securedResponseMessage);
 			}
 
 			@Override
 			protected void validateMessage(SoapMessage soapMessage, MessageContext messageContext)
-					throws WsSecurityValidationException {
+		throws WsSecurityValidationException {
 				fail("validate not expected");
 			}
 

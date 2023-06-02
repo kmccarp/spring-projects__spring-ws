@@ -63,7 +63,7 @@ public abstract class AbstractValidatingMarshallingPayloadEndpoint extends Abstr
 	 * will be kept. Use {@link #setValidators(Validator[])} to set multiple validators.
 	 */
 	public void setValidator(Validator validator) {
-		this.validators = new Validator[] { validator };
+		this.validators = new Validator[]{validator};
 	}
 
 	/** Return the Validators for this controller. */

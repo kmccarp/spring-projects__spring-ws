@@ -56,7 +56,7 @@ public class XomPayloadMethodProcessor extends AbstractPayloadSourceMethodProces
 
 	@Override
 	protected Element resolveRequestPayloadArgument(MethodParameter parameter, Source requestPayload)
-			throws TransformerException, IOException, ParsingException {
+throws TransformerException, IOException, ParsingException {
 		if (requestPayload instanceof DOMSource) {
 			org.w3c.dom.Node node = ((DOMSource) requestPayload).getNode();
 			if (node.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
@@ -80,7 +80,7 @@ public class XomPayloadMethodProcessor extends AbstractPayloadSourceMethodProces
 
 	@Override
 	protected Source createResponsePayload(MethodParameter returnType, Object returnValue)
-			throws ParserConfigurationException {
+throws ParserConfigurationException {
 		Element returnedElement = (Element) returnValue;
 		Document document = returnedElement.getDocument();
 		if (document == null) {

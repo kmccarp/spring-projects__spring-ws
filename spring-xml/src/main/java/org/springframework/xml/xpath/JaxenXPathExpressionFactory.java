@@ -50,7 +50,7 @@ abstract class JaxenXPathExpressionFactory {
 			return new JaxenXpathExpression(xpath, expression);
 		} catch (JaxenException ex) {
 			throw new org.springframework.xml.xpath.XPathParseException(
-					"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
+		"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
 		}
 	}
 
@@ -69,7 +69,7 @@ abstract class JaxenXPathExpressionFactory {
 			return new JaxenXpathExpression(xpath, expression);
 		} catch (JaxenException ex) {
 			throw new org.springframework.xml.xpath.XPathParseException(
-					"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
+		"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
 		}
 	}
 

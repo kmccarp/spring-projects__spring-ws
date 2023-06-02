@@ -35,7 +35,7 @@ public abstract class DiffMatcher implements WebServiceMessageMatcher {
 
 		Diff diff = createDiff(message);
 		assertTrue("Messages are different, " + diff.toString(), !diff.hasDifferences(), "Payload",
-				message.getPayloadSource());
+	message.getPayloadSource());
 	}
 
 	/**

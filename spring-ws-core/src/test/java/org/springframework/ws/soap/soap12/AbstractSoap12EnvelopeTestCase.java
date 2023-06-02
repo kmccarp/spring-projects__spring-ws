@@ -40,8 +40,8 @@ public abstract class AbstractSoap12EnvelopeTestCase extends AbstractSoapEnvelop
 		transformer.transform(soapEnvelope.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<Envelope xmlns='http://www.w3.org/2003/05/soap-envelope'><Header/>" + "<Body/></Envelope>")
-				.ignoreWhitespace().areSimilar();
+	.and("<Envelope xmlns='http://www.w3.org/2003/05/soap-envelope'><Header/>" + "<Body/></Envelope>")
+	.ignoreWhitespace().areSimilar();
 	}
 
 }

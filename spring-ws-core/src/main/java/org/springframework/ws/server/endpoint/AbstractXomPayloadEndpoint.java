@@ -130,7 +130,7 @@ public abstract class AbstractXomPayloadEndpoint extends TransformerObjectSuppor
 					document = builder.build(inputSource.getCharacterStream());
 				} else {
 					throw new IllegalArgumentException(
-							"InputSource in SAXSource contains neither byte stream nor character stream");
+				"InputSource in SAXSource contains neither byte stream nor character stream");
 				}
 				element = document.getRootElement();
 			} catch (ParsingException e) {

@@ -85,7 +85,7 @@ public abstract class AbstractSoap11MessageFactoryTestCase extends AbstractSoapM
 		InputStream is = AbstractSoap11MessageFactoryTestCase.class.getResourceAsStream("soap11-attachment.bin");
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-Type",
-				"multipart/related;" + "type=\"text/xml\";" + "boundary=\"----=_Part_0_11416420.1149699787554\"");
+	"multipart/related;" + "type=\"text/xml\";" + "boundary=\"----=_Part_0_11416420.1149699787554\"");
 		TransportInputStream tis = new MockTransportInputStream(is, headers);
 
 		WebServiceMessage message = messageFactory.createWebServiceMessage(tis);
@@ -113,9 +113,9 @@ public abstract class AbstractSoap11MessageFactoryTestCase extends AbstractSoapM
 		InputStream is = AbstractSoap11MessageFactoryTestCase.class.getResourceAsStream("soap11-mtom.bin");
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-Type",
-				"multipart/related;" + "start-info=\"text/xml\";" + "type=\"application/xop+xml\";"
-						+ "start=\"<0.urn:uuid:492264AB42E57108E01176731445508@apache.org>\";"
-						+ "boundary=\"MIMEBoundaryurn_uuid_492264AB42E57108E01176731445507\"");
+	"multipart/related;" + "start-info=\"text/xml\";" + "type=\"application/xop+xml\";"
++ "start=\"<0.urn:uuid:492264AB42E57108E01176731445508@apache.org>\";"
++ "boundary=\"MIMEBoundaryurn_uuid_492264AB42E57108E01176731445507\"");
 		TransportInputStream tis = new MockTransportInputStream(is, headers);
 
 		WebServiceMessage message = messageFactory.createWebServiceMessage(tis);
@@ -142,9 +142,9 @@ public abstract class AbstractSoap11MessageFactoryTestCase extends AbstractSoapM
 		InputStream is = AbstractSoap11MessageFactoryTestCase.class.getResourceAsStream("soap11-mtom.bin");
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-Type",
-				"multipart/related;" + "startinfo=\"text/xml\";" + "type=\"application/xop+xml\";"
-						+ "start=\"<0.urn:uuid:492264AB42E57108E01176731445508@apache.org>\";"
-						+ "boundary=\"MIMEBoundaryurn_uuid_492264AB42E57108E01176731445507\"");
+	"multipart/related;" + "startinfo=\"text/xml\";" + "type=\"application/xop+xml\";"
++ "start=\"<0.urn:uuid:492264AB42E57108E01176731445508@apache.org>\";"
++ "boundary=\"MIMEBoundaryurn_uuid_492264AB42E57108E01176731445507\"");
 		TransportInputStream tis = new MockTransportInputStream(is, headers);
 
 		WebServiceMessage message = messageFactory.createWebServiceMessage(tis);

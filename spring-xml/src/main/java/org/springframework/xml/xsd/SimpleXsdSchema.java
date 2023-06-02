@@ -68,7 +68,8 @@ public class SimpleXsdSchema implements XsdSchema, InitializingBean {
 	 * <p>
 	 * A subsequent call to the {@link #setXsd(Resource)} method is required.
 	 */
-	public SimpleXsdSchema() {}
+	public SimpleXsdSchema() {
+	}
 
 	/**
 	 * Create a new instance of the {@link SimpleXsdSchema} class with the specified resource.
@@ -94,7 +95,7 @@ public class SimpleXsdSchema implements XsdSchema, InitializingBean {
 	public String getTargetNamespace() {
 
 		Assert.notNull(schemaElement,
-				"schemaElement must not be null! Did you run afterPropertiesSet() or register this as a Spring bean?");
+	"schemaElement must not be null! Did you run afterPropertiesSet() or register this as a Spring bean?");
 
 		return schemaElement.getAttribute("targetNamespace");
 	}
@@ -125,10 +126,10 @@ public class SimpleXsdSchema implements XsdSchema, InitializingBean {
 		Document schemaDocument = documentBuilder.parse(SaxUtils.createInputSource(xsdResource));
 		schemaElement = schemaDocument.getDocumentElement();
 		Assert.isTrue(SCHEMA_NAME.getLocalPart().equals(schemaElement.getLocalName()),
-				xsdResource + " has invalid root element : [" + schemaElement.getLocalName() + "] instead of [schema]");
+	xsdResource + " has invalid root element : [" + schemaElement.getLocalName() + "] instead of [schema]");
 		Assert.isTrue(SCHEMA_NAME.getNamespaceURI().equals(schemaElement.getNamespaceURI()),
-				xsdResource + " has invalid root element: [" + schemaElement.getNamespaceURI() + "] instead of ["
-						+ SCHEMA_NAME.getNamespaceURI() + "]");
+	xsdResource + " has invalid root element: [" + schemaElement.getNamespaceURI() + "] instead of ["
++ SCHEMA_NAME.getNamespaceURI() + "]");
 		Assert.hasText(getTargetNamespace(), xsdResource + " has no targetNamespace");
 	}
 

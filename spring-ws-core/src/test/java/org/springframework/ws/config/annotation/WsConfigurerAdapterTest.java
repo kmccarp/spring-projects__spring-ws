@@ -39,7 +39,7 @@ public class WsConfigurerAdapterTest {
 	public void interceptors() {
 
 		PayloadRootAnnotationMethodEndpointMapping endpointMapping = this.applicationContext
-				.getBean(PayloadRootAnnotationMethodEndpointMapping.class);
+	.getBean(PayloadRootAnnotationMethodEndpointMapping.class);
 
 		assertThat(endpointMapping.getOrder()).isEqualTo(0);
 
@@ -99,7 +99,8 @@ public class WsConfigurerAdapterTest {
 		}
 	}
 
-	public static class MyInterceptor extends EndpointInterceptorAdapter {}
+	public static class MyInterceptor extends EndpointInterceptorAdapter {
+	}
 
 	public static class MyMethodArgumentResolver implements MethodArgumentResolver {
 
@@ -123,6 +124,7 @@ public class WsConfigurerAdapterTest {
 
 		@Override
 		public void handleReturnValue(MessageContext messageContext, MethodParameter returnType, Object returnValue)
-				throws Exception {}
+	throws Exception {
+		}
 	}
 }

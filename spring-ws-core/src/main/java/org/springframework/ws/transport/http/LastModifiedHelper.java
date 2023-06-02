@@ -35,7 +35,8 @@ import org.w3c.dom.Document;
  */
 class LastModifiedHelper {
 
-	private LastModifiedHelper() {}
+	private LastModifiedHelper() {
+	}
 
 	/**
 	 * Returns the last modified date of the given {@link Source}.

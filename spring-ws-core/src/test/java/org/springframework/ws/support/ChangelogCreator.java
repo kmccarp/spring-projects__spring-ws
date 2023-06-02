@@ -52,10 +52,10 @@ class ChangelogCreator {
 
 		try {
 			HttpEntity<String> response = webClient //
-					.get().uri(URI_TEMPLATE, MILESTONE_ID) //
-					// .header(HttpHeaders.AUTHORIZATION, "token <plugin in a personal token and uncomment>") //
-					.exchangeToMono(clientResponse -> clientResponse.toEntity(String.class)) //
-					.block(Duration.ofSeconds(10));
+		.get().uri(URI_TEMPLATE, MILESTONE_ID) //
+		// .header(HttpHeaders.AUTHORIZATION, "token <plugin in a personal token and uncomment>") //
+		.exchangeToMono(clientResponse -> clientResponse.toEntity(String.class)) //
+		.block(Duration.ofSeconds(10));
 
 			boolean keepChecking = true;
 			boolean printHeader = true;
@@ -71,9 +71,9 @@ class ChangelogCreator {
 				if (links.getLink(IanaLinkRelations.NEXT).isPresent()) {
 
 					response = webClient //
-							.get().uri(links.getRequiredLink(IanaLinkRelations.NEXT).expand().getHref()) //
-							.exchangeToMono(clientResponse -> clientResponse.toEntity(String.class)) //
-							.block(Duration.ofSeconds(10));
+				.get().uri(links.getRequiredLink(IanaLinkRelations.NEXT).expand().getHref()) //
+				.exchangeToMono(clientResponse -> clientResponse.toEntity(String.class)) //
+				.block(Duration.ofSeconds(10));
 
 				} else {
 					keepChecking = false;
@@ -94,7 +94,7 @@ class ChangelogCreator {
 
 		if (header) {
 			System.out.println(
-					"Changes in version " + JsonPath.read(content, "$[0].milestone.title") + " (" + LocalDate.now() + ")");
+		"Changes in version " + JsonPath.read(content, "$[0].milestone.title") + " (" + LocalDate.now() + ")");
 			System.out.println("----------------------------------------");
 		}
 

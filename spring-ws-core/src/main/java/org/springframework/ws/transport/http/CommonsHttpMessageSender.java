@@ -53,8 +53,7 @@ import org.springframework.ws.transport.WebServiceConnection;
  * @deprecated In favor of {@link HttpComponentsMessageSender}
  */
 @Deprecated
-public class CommonsHttpMessageSender extends AbstractHttpWebServiceMessageSender
-		implements InitializingBean, DisposableBean {
+public class CommonsHttpMessageSender extends AbstractHttpWebServiceMessageSenderimplements InitializingBean, DisposableBean {
 
 	private static final int DEFAULT_CONNECTION_TIMEOUT_MILLISECONDS = (60 * 1000);
 
@@ -184,7 +183,7 @@ public class CommonsHttpMessageSender extends AbstractHttpWebServiceMessageSende
 			}
 			int maxHostConnections = Integer.parseInt(maxConnectionsPerHost.get(host));
 			getHttpClient().getHttpConnectionManager().getParams().setMaxConnectionsPerHost(hostConfiguration,
-					maxHostConnections);
+		maxHostConnections);
 		}
 	}
 
@@ -229,7 +228,7 @@ public class CommonsHttpMessageSender extends AbstractHttpWebServiceMessageSende
 		PostMethod postMethod = new PostMethod(uri.toString());
 		if (isAcceptGzipEncoding()) {
 			postMethod.addRequestHeader(HttpTransportConstants.HEADER_ACCEPT_ENCODING,
-					HttpTransportConstants.CONTENT_ENCODING_GZIP);
+		HttpTransportConstants.CONTENT_ENCODING_GZIP);
 		}
 		return new CommonsHttpConnection(getHttpClient(), postMethod);
 	}

@@ -56,7 +56,7 @@ public class HttpServletConnectionTest {
 	private static final String CONTENT = "<Request xmlns='http://springframework.org/spring-ws/' />";
 
 	private static final String SOAP_CONTENT = "<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'><SOAP-ENV:Header/><SOAP-ENV:Body>"
-			+ CONTENT + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
++ CONTENT + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
 
 	private SaajSoapMessageFactory messageFactory;
 

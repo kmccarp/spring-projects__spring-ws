@@ -34,16 +34,18 @@ public class SkipValidationWsSecurityInterceptorTest {
 
 			@Override
 			protected void validateMessage(SoapMessage soapMessage, MessageContext messageContext)
-					throws WsSecurityValidationException {
+		throws WsSecurityValidationException {
 				fail("validation must be skipped.");
 			}
 
 			@Override
 			protected void secureMessage(SoapMessage soapMessage, MessageContext messageContext)
-					throws WsSecuritySecurementException {}
+		throws WsSecuritySecurementException {
+			}
 
 			@Override
-			protected void cleanUp() {}
+			protected void cleanUp() {
+			}
 		};
 		interceptor.setSkipValidationIfNoHeaderPresent(true);
 	}

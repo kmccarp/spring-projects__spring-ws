@@ -73,7 +73,7 @@ public class JmsMessageReceiver extends SimpleWebServiceMessageReceiverObjectSup
 			connection = new JmsReceiverConnection((TextMessage) request, textMessageEncoding, session);
 		} else {
 			throw new IllegalArgumentException(
-					"Wrong message type: [" + request.getClass() + "]. Only BytesMessages or TextMessages can be handled.");
+		"Wrong message type: [" + request.getClass() + "]. Only BytesMessages or TextMessages can be handled.");
 		}
 		connection.setPostProcessor(postProcessor);
 

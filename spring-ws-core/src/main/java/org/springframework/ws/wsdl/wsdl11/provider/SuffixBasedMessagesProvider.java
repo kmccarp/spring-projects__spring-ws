@@ -105,7 +105,7 @@ public class SuffixBasedMessagesProvider extends DefaultMessagesProvider {
 			String elementName = getElementName(element);
 			Assert.hasText(elementName, "Element has no name");
 			return elementName.endsWith(getRequestSuffix()) || elementName.endsWith(getResponseSuffix())
-					|| elementName.endsWith(getFaultSuffix());
+		|| elementName.endsWith(getFaultSuffix());
 		} else {
 			return false;
 		}

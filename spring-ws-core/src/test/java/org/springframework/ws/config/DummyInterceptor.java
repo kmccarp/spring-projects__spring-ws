@@ -22,7 +22,8 @@ import org.springframework.ws.server.EndpointInterceptor;
 
 public class DummyInterceptor implements EndpointInterceptor {
 
-	@Autowired private DummyInterceptorDependency autowiredDependency;
+	@Autowired
+	private DummyInterceptorDependency autowiredDependency;
 
 	private DummyInterceptorDependency propertyDependency;
 
@@ -54,5 +55,6 @@ public class DummyInterceptor implements EndpointInterceptor {
 	}
 
 	@Override
-	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) throws Exception {}
+	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) throws Exception {
+	}
 }

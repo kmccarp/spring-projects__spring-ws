@@ -50,7 +50,7 @@ public class SchemaLoaderUtilsTest {
 	public void testLoadNullSchema() throws Exception {
 
 		assertThatIllegalArgumentException()
-				.isThrownBy(() -> SchemaLoaderUtils.loadSchema((Resource) null, XMLConstants.W3C_XML_SCHEMA_NS_URI));
+	.isThrownBy(() -> SchemaLoaderUtils.loadSchema((Resource) null, XMLConstants.W3C_XML_SCHEMA_NS_URI));
 	}
 
 	@Test
@@ -58,8 +58,8 @@ public class SchemaLoaderUtilsTest {
 
 		Resource envelope = new ClassPathResource("envelope.xsd", getClass());
 		Resource encoding = new ClassPathResource("encoding.xsd", getClass());
-		Schema schema = SchemaLoaderUtils.loadSchema(new Resource[] { envelope, encoding },
-				XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema schema = SchemaLoaderUtils.loadSchema(new Resource[]{envelope, encoding},
+	XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
 		assertThat(schema).isNotNull();
 		assertThat(envelope.isOpen()).isFalse();

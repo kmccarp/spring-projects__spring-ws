@@ -45,7 +45,7 @@ public abstract class Wss4jMessageInterceptorEncryptionTestCase extends Wss4jTes
 
 		Properties cryptoFactoryBeanConfig = new Properties();
 		cryptoFactoryBeanConfig.setProperty("org.apache.ws.security.crypto.provider",
-				"org.apache.ws.security.components.crypto.Merlin");
+	"org.apache.ws.security.components.crypto.Merlin");
 		cryptoFactoryBeanConfig.setProperty("org.apache.ws.security.crypto.merlin.keystore.type", "jceks");
 		cryptoFactoryBeanConfig.setProperty("org.apache.ws.security.crypto.merlin.keystore.password", "123456");
 
@@ -68,9 +68,9 @@ public abstract class Wss4jMessageInterceptorEncryptionTestCase extends Wss4jTes
 		Document document = getDocument((SoapMessage) messageContext.getRequest());
 
 		assertXpathEvaluatesTo("Decryption error", "Hello", "/SOAP-ENV:Envelope/SOAP-ENV:Body/echo:echoRequest/text()",
-				document);
+	document);
 		assertXpathNotExists("Security Header not removed", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security",
-				getDocument(message));
+	getDocument(message));
 	}
 
 	@Test
@@ -83,6 +83,6 @@ public abstract class Wss4jMessageInterceptorEncryptionTestCase extends Wss4jTes
 		Document document = getDocument(message);
 
 		assertXpathExists("Encryption error", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/xenc:EncryptedKey",
-				document);
+	document);
 	}
 }

@@ -32,7 +32,8 @@ public class ClientInterceptorAdapterTest {
 	@Test
 	public void handleEmptyInterceptor() {
 
-		ClientInterceptor interceptor = new ClientInterceptorAdapter() {};
+		ClientInterceptor interceptor = new ClientInterceptorAdapter() {
+		};
 
 		assertThat(interceptor.handleRequest(null)).isTrue();
 		assertThat(interceptor.handleResponse(null)).isTrue();

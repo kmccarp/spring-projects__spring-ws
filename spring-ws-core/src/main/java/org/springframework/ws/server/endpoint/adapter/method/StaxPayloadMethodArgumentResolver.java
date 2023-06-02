@@ -57,7 +57,7 @@ public class StaxPayloadMethodArgumentResolver extends TransformerObjectSupport 
 
 	@Override
 	public Object resolveArgument(MessageContext messageContext, MethodParameter parameter)
-			throws TransformerException, XMLStreamException {
+throws TransformerException, XMLStreamException {
 		Source source = messageContext.getRequest().getPayloadSource();
 		if (source == null) {
 			return null;

@@ -140,7 +140,7 @@ public abstract class AbstractActionEndpointMapping extends AbstractAddressingEn
 		if (mappedEndpoint != null) {
 			if (mappedEndpoint != resolvedEndpoint) {
 				throw new IllegalStateException("Cannot map endpoint [" + endpoint + "] to action [" + action
-						+ "]: There is already endpoint [" + resolvedEndpoint + "] mapped.");
+			+ "]: There is already endpoint [" + resolvedEndpoint + "] mapped.");
 			}
 		} else {
 			this.endpointMap.put(action, resolvedEndpoint);

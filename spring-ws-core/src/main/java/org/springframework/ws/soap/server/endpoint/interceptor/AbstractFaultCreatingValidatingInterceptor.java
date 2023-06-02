@@ -42,7 +42,7 @@ import org.xml.sax.SAXParseException;
  * @see #DEFAULT_FAULTSTRING_OR_REASON
  * @see #setDetailElementName(javax.xml.namespace.QName)
  * @see #DEFAULT_DETAIL_ELEMENT_NAME
- * @see #handleResponseValidationErrors(org.springframework.ws.context.MessageContext,org.xml.sax.SAXParseException[])
+ * @see #handleResponseValidationErrors(org.springframework.ws.context.MessageContext, org.xml.sax.SAXParseException[])
  * @since 1.0.0
  */
 public abstract class AbstractFaultCreatingValidatingInterceptor extends AbstractValidatingInterceptor {
@@ -53,7 +53,7 @@ public abstract class AbstractFaultCreatingValidatingInterceptor extends Abstrac
 	 * @see #setDetailElementName(javax.xml.namespace.QName)
 	 */
 	public static final QName DEFAULT_DETAIL_ELEMENT_NAME = new QName("http://springframework.org/spring-ws",
-			"ValidationError", "spring-ws");
+"ValidationError", "spring-ws");
 
 	/**
 	 * Default SOAP Fault string used when a validation errors occur on the request.
@@ -139,7 +139,7 @@ public abstract class AbstractFaultCreatingValidatingInterceptor extends Abstrac
 
 	/**
 	 * Template method that is called when the request message contains validation errors. This implementation logs all
-	 * errors, returns {@code false}, and creates a {@link SoapBody#addClientOrSenderFault(String,Locale) client or
+	 * errors, returns {@code false}, and creates a {@link SoapBody#addClientOrSenderFault(String, Locale) client or
 	 * sender} {@link SoapFault}, adding a {@link SoapFaultDetail} with all errors if the {@code addValidationErrorDetail}
 	 * property is {@code true}.
 	 *
@@ -149,7 +149,7 @@ public abstract class AbstractFaultCreatingValidatingInterceptor extends Abstrac
 	 */
 	@Override
 	protected boolean handleRequestValidationErrors(MessageContext messageContext, SAXParseException[] errors)
-			throws TransformerException {
+throws TransformerException {
 		for (SAXParseException error : errors) {
 			logger.warn("XML validation error on request: " + error.getMessage());
 		}

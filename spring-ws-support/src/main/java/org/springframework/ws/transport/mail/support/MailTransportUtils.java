@@ -47,7 +47,8 @@ public abstract class MailTransportUtils {
 
 	private static final Log logger = LogFactory.getLog(MailTransportUtils.class);
 
-	private MailTransportUtils() {}
+	private MailTransportUtils() {
+	}
 
 	public static InternetAddress getTo(URI uri) {
 		Matcher matcher = TO_PATTERN.matcher(uri.getSchemeSpecificPart());

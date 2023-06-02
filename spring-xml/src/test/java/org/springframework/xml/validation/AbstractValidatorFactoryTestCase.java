@@ -49,8 +49,8 @@ public abstract class AbstractValidatorFactoryTestCase {
 	@BeforeEach
 	public void setUp() throws Exception {
 
-		Resource[] schemaResource = new Resource[] {
-				new ClassPathResource("schema.xsd", AbstractValidatorFactoryTestCase.class) };
+		Resource[] schemaResource = new Resource[]{
+	new ClassPathResource("schema.xsd", AbstractValidatorFactoryTestCase.class)};
 		validator = createValidator(schemaResource, XmlValidatorFactory.SCHEMA_W3C_XML);
 		validInputStream = AbstractValidatorFactoryTestCase.class.getResourceAsStream("validDocument.xml");
 		invalidInputStream = AbstractValidatorFactoryTestCase.class.getResourceAsStream("invalidDocument.xml");
@@ -131,20 +131,20 @@ public abstract class AbstractValidatorFactoryTestCase {
 	@Test
 	public void testMultipleSchemasValidMessage() throws Exception {
 
-		Resource[] schemaResources = new Resource[] {
-				new ClassPathResource("multipleSchemas1.xsd", AbstractValidatorFactoryTestCase.class),
-				new ClassPathResource("multipleSchemas2.xsd", AbstractValidatorFactoryTestCase.class) };
+		Resource[] schemaResources = new Resource[]{
+	new ClassPathResource("multipleSchemas1.xsd", AbstractValidatorFactoryTestCase.class),
+	new ClassPathResource("multipleSchemas2.xsd", AbstractValidatorFactoryTestCase.class)};
 		validator = createValidator(schemaResources, XmlValidatorFactory.SCHEMA_W3C_XML);
 
 		Source document = new ResourceSource(
-				new ClassPathResource("multipleSchemas1.xml", AbstractValidatorFactoryTestCase.class));
+	new ClassPathResource("multipleSchemas1.xml", AbstractValidatorFactoryTestCase.class));
 		SAXParseException[] errors = validator.validate(document);
 
 		assertThat(errors).isEmpty();
 
 		validator = createValidator(schemaResources, XmlValidatorFactory.SCHEMA_W3C_XML);
 		document = new ResourceSource(
-				new ClassPathResource("multipleSchemas2.xml", AbstractValidatorFactoryTestCase.class));
+	new ClassPathResource("multipleSchemas2.xml", AbstractValidatorFactoryTestCase.class));
 		errors = validator.validate(document);
 
 		assertThat(errors).isEmpty();
@@ -159,11 +159,14 @@ public abstract class AbstractValidatorFactoryTestCase {
 				return new SAXParseException[0];
 			}
 
-			public void warning(SAXParseException exception) throws SAXException {}
+			public void warning(SAXParseException exception) throws SAXException {
+			}
 
-			public void error(SAXParseException exception) throws SAXException {}
+			public void error(SAXParseException exception) throws SAXException {
+			}
 
-			public void fatalError(SAXParseException exception) throws SAXException {}
+			public void fatalError(SAXParseException exception) throws SAXException {
+			}
 		};
 
 		SAXParseException[] errors = validator.validate(new StreamSource(invalidInputStream), myHandler);

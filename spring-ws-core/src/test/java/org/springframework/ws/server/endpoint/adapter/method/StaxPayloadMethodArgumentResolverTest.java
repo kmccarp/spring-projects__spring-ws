@@ -170,9 +170,12 @@ public class StaxPayloadMethodArgumentResolverTest extends AbstractMethodArgumen
 		assertThat(startElement.getName().getLocalPart()).isEqualTo(LOCAL_NAME);
 	}
 
-	public void invalid(XMLStreamReader streamReader) {}
+	public void invalid(XMLStreamReader streamReader) {
+	}
 
-	public void streamReader(@RequestPayload XMLStreamReader streamReader) {}
+	public void streamReader(@RequestPayload XMLStreamReader streamReader) {
+	}
 
-	public void eventReader(@RequestPayload XMLEventReader streamReader) {}
+	public void eventReader(@RequestPayload XMLEventReader streamReader) {
+	}
 }

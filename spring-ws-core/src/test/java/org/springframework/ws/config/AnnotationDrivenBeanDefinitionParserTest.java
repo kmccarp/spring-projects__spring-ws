@@ -85,19 +85,19 @@ public class AnnotationDrivenBeanDefinitionParserTest {
 
 		assertThat(argumentResolvers).isNotEmpty();
 		assertThat(argumentResolvers).hasOnlyElementsOfTypes(MessageContextMethodArgumentResolver.class,
-				XPathParamMethodArgumentResolver.class, SoapMethodArgumentResolver.class,
-				SoapHeaderElementMethodArgumentResolver.class, DomPayloadMethodProcessor.class,
-				SourcePayloadMethodProcessor.class, Dom4jPayloadMethodProcessor.class,
-				XmlRootElementPayloadMethodProcessor.class, JaxbElementPayloadMethodProcessor.class,
-				JDomPayloadMethodProcessor.class, StaxPayloadMethodArgumentResolver.class, XomPayloadMethodProcessor.class);
+	XPathParamMethodArgumentResolver.class, SoapMethodArgumentResolver.class,
+	SoapHeaderElementMethodArgumentResolver.class, DomPayloadMethodProcessor.class,
+	SourcePayloadMethodProcessor.class, Dom4jPayloadMethodProcessor.class,
+	XmlRootElementPayloadMethodProcessor.class, JaxbElementPayloadMethodProcessor.class,
+	JDomPayloadMethodProcessor.class, StaxPayloadMethodArgumentResolver.class, XomPayloadMethodProcessor.class);
 
 		List<MethodReturnValueHandler> returnValueHandlers = endpointAdapter.getMethodReturnValueHandlers();
 
 		assertThat(returnValueHandlers).isNotEmpty();
 		assertThat(returnValueHandlers).hasOnlyElementsOfTypes(DomPayloadMethodProcessor.class,
-				SourcePayloadMethodProcessor.class, Dom4jPayloadMethodProcessor.class,
-				XmlRootElementPayloadMethodProcessor.class, JaxbElementPayloadMethodProcessor.class,
-				JDomPayloadMethodProcessor.class, XomPayloadMethodProcessor.class);
+	SourcePayloadMethodProcessor.class, Dom4jPayloadMethodProcessor.class,
+	XmlRootElementPayloadMethodProcessor.class, JaxbElementPayloadMethodProcessor.class,
+	JDomPayloadMethodProcessor.class, XomPayloadMethodProcessor.class);
 	}
 
 	@Test

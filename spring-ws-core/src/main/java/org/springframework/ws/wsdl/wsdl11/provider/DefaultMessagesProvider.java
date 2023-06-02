@@ -117,7 +117,7 @@ public class DefaultMessagesProvider implements MessagesProvider {
 	protected boolean isMessageElement(Element element) {
 
 		return "element".equals(element.getLocalName())
-				&& "http://www.w3.org/2001/XMLSchema".equals(element.getNamespaceURI());
+	&& "http://www.w3.org/2001/XMLSchema".equals(element.getNamespaceURI());
 	}
 
 	/**

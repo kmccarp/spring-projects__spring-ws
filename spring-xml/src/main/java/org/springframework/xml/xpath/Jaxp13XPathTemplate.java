@@ -185,7 +185,7 @@ public class Jaxp13XPathTemplate extends AbstractXPathTemplate {
 
 		@Override
 		public void staxSource(XMLEventReader eventReader)
-				throws XPathExpressionException, XMLStreamException, TransformerException {
+	throws XPathExpressionException, XMLStreamException, TransformerException {
 			Element element = getRootElement(StaxUtils.createCustomStaxSource(eventReader));
 			domSource(element);
 		}

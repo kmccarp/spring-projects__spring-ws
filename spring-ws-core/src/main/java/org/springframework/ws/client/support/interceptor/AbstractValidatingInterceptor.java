@@ -49,8 +49,7 @@ import org.xml.sax.SAXParseException;
  * @see #getValidationResponseSource(WebServiceMessage)
  * @since 1.5.4
  */
-public abstract class AbstractValidatingInterceptor extends TransformerObjectSupport
-		implements ClientInterceptor, InitializingBean {
+public abstract class AbstractValidatingInterceptor extends TransformerObjectSupportimplements ClientInterceptor, InitializingBean {
 
 	private String schemaLanguage = XmlValidatorFactory.SCHEMA_W3C_XML;
 
@@ -243,7 +242,7 @@ public abstract class AbstractValidatingInterceptor extends TransformerObjectSup
 	 * @return {@code true} to continue the reponse interceptor chain, {@code false} (the default) otherwise
 	 */
 	protected boolean handleResponseValidationErrors(MessageContext messageContext, SAXParseException[] errors)
-			throws WebServiceValidationException {
+throws WebServiceValidationException {
 		for (SAXParseException error : errors) {
 			logger.warn("XML validation error on response: " + error.getMessage());
 		}
@@ -258,7 +257,8 @@ public abstract class AbstractValidatingInterceptor extends TransformerObjectSup
 
 	/** Does nothing by default. */
 	@Override
-	public void afterCompletion(MessageContext messageContext, Exception ex) throws WebServiceClientException {}
+	public void afterCompletion(MessageContext messageContext, Exception ex) throws WebServiceClientException {
+	}
 
 	/**
 	 * Abstract template method that returns the part of the request message that is to be validated.

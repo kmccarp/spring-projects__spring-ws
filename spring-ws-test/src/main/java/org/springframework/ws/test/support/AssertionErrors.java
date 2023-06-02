@@ -27,7 +27,8 @@ import javax.xml.transform.Source;
  */
 public abstract class AssertionErrors {
 
-	private AssertionErrors() {}
+	private AssertionErrors() {
+	}
 
 	/**
 	 * Fails a test with the given message.

@@ -59,8 +59,8 @@ public class SaajContentHandlerTest {
 	public void testHandler() throws Exception {
 
 		String content = "<Root xmlns='http://springframework.org/spring-ws/1' "
-				+ "xmlns:child='http://springframework.org/spring-ws/2'>"
-				+ "<child:Child attribute='value'>Content</child:Child></Root>";
+	+ "xmlns:child='http://springframework.org/spring-ws/2'>"
+	+ "<child:Child attribute='value'>Content</child:Child></Root>";
 		Source source = new StringSource(content);
 		Result result = new SAXResult(handler);
 		transformer.transform(source, result);

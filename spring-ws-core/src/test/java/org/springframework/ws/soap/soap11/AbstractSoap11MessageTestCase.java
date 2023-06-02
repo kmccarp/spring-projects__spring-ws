@@ -45,7 +45,7 @@ public abstract class AbstractSoap11MessageTestCase extends AbstractSoapMessageT
 
 	@Override
 	protected final Resource[] getSoapSchemas() {
-		return new Resource[] { new ClassPathResource("soap11.xsd", AbstractSoap11MessageTestCase.class) };
+		return new Resource[]{new ClassPathResource("soap11.xsd", AbstractSoap11MessageTestCase.class)};
 	}
 
 	@Override
@@ -68,10 +68,10 @@ public abstract class AbstractSoap11MessageTestCase extends AbstractSoapMessageT
 		String result = bos.toString(StandardCharsets.UTF_8);
 
 		XmlAssert.assertThat(result)
-				.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://schemas.xmlsoap.org/soap/envelope/'>"
-						+ getHeader() + "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS()
-						+ ":Body></" + getNS() + ":Envelope>")
-				.ignoreWhitespace().areIdentical();
+	.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://schemas.xmlsoap.org/soap/envelope/'>"
++ getHeader() + "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS()
++ ":Body></" + getNS() + ":Envelope>")
+	.ignoreWhitespace().areIdentical();
 
 		String contentType = tos.getHeaders().get("Content-Type");
 
@@ -104,7 +104,7 @@ public abstract class AbstractSoap11MessageTestCase extends AbstractSoapMessageT
 	public void testToDocument() throws Exception {
 
 		transformer.transform(new StringSource("<payload xmlns='http://www.springframework.org' />"),
-				soapMessage.getSoapBody().getPayloadResult());
+	soapMessage.getSoapBody().getPayloadResult());
 
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactoryUtils.newInstance();
 		documentBuilderFactory.setNamespaceAware(true);
@@ -132,7 +132,7 @@ public abstract class AbstractSoap11MessageTestCase extends AbstractSoapMessageT
 	public void testSetLiveDocument() throws Exception {
 
 		transformer.transform(new StringSource("<payload xmlns='http://www.springframework.org' />"),
-				soapMessage.getSoapBody().getPayloadResult());
+	soapMessage.getSoapBody().getPayloadResult());
 
 		Document document = soapMessage.getDocument();
 
@@ -144,17 +144,17 @@ public abstract class AbstractSoap11MessageTestCase extends AbstractSoapMessageT
 		String result = bos.toString(StandardCharsets.UTF_8);
 
 		XmlAssert.assertThat(result)
-				.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://schemas.xmlsoap.org/soap/envelope/'>"
-						+ getHeader() + "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS()
-						+ ":Body></" + getNS() + ":Envelope>")
-				.ignoreWhitespace().areIdentical();
+	.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://schemas.xmlsoap.org/soap/envelope/'>"
++ getHeader() + "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS()
++ ":Body></" + getNS() + ":Envelope>")
+	.ignoreWhitespace().areIdentical();
 	}
 
 	@Override
 	public void testSetOtherDocument() throws Exception {
 
 		transformer.transform(new StringSource("<payload xmlns='http://www.springframework.org' />"),
-				soapMessage.getSoapBody().getPayloadResult());
+	soapMessage.getSoapBody().getPayloadResult());
 
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		soapMessage.writeTo(bos);
@@ -173,10 +173,10 @@ public abstract class AbstractSoap11MessageTestCase extends AbstractSoapMessageT
 		String result = bos.toString(StandardCharsets.UTF_8);
 
 		XmlAssert.assertThat(result)
-				.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://schemas.xmlsoap.org/soap/envelope/'>"
-						+ getHeader() + "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS()
-						+ ":Body></" + getNS() + ":Envelope>")
-				.ignoreWhitespace().areIdentical();
+	.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://schemas.xmlsoap.org/soap/envelope/'>"
++ getHeader() + "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS()
++ ":Body></" + getNS() + ":Envelope>")
+	.ignoreWhitespace().areIdentical();
 	}
 
 }

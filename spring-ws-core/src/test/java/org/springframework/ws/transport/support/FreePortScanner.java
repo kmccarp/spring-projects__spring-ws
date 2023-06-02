@@ -58,7 +58,7 @@ public abstract class FreePortScanner {
 		do {
 			if (++searchCounter > portRange) {
 				throw new IllegalStateException(
-						String.format("There were no ports available in the range %d to %d", minPort, maxPort));
+			String.format("There were no ports available in the range %d to %d", minPort, maxPort));
 			}
 			candidatePort = getRandomPort(minPort, portRange);
 		} while (!isPortAvailable(candidatePort));

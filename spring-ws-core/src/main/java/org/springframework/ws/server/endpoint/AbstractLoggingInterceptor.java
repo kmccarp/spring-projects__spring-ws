@@ -116,7 +116,8 @@ public abstract class AbstractLoggingInterceptor extends TransformerObjectSuppor
 
 	/** Does nothing by default */
 	@Override
-	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) {}
+	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) {
+	}
 
 	/**
 	 * Determine whether the {@link #logger} field is enabled.

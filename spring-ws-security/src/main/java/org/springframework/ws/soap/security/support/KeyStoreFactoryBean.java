@@ -56,7 +56,7 @@ public class KeyStoreFactoryBean implements FactoryBean<KeyStore>, InitializingB
 	/**
 	 * Sets the location of the key store to use. If this is not set, a new, empty key store will be used.
 	 *
-	 * @see KeyStore#load(java.io.InputStream,char[])
+	 * @see KeyStore#load(java.io.InputStream, char[])
 	 */
 	public void setLocation(Resource location) {
 		this.location = location;

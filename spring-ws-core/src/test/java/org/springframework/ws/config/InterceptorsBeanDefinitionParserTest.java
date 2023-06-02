@@ -35,7 +35,7 @@ public class InterceptorsBeanDefinitionParserTest {
 	public void namespace() {
 
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-				"interceptorsBeanDefinitionParserTest.xml", getClass());
+	"interceptorsBeanDefinitionParserTest.xml", getClass());
 		Map<String, ?> result = applicationContext.getBeansOfType(DelegatingSmartEndpointInterceptor.class);
 
 		assertThat(result).hasSize(8);
@@ -53,10 +53,10 @@ public class InterceptorsBeanDefinitionParserTest {
 	public void ordering() {
 
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-				"interceptorsBeanDefinitionParserOrderTest.xml", getClass());
+	"interceptorsBeanDefinitionParserOrderTest.xml", getClass());
 
 		List<DelegatingSmartEndpointInterceptor> interceptors = new ArrayList<DelegatingSmartEndpointInterceptor>(
-				applicationContext.getBeansOfType(DelegatingSmartEndpointInterceptor.class).values());
+	applicationContext.getBeansOfType(DelegatingSmartEndpointInterceptor.class).values());
 
 		assertThat(interceptors).hasSize(6);
 
@@ -73,10 +73,10 @@ public class InterceptorsBeanDefinitionParserTest {
 	public void injection() {
 
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-				"interceptorsBeanDefinitionParserInjectionTest.xml", getClass());
+	"interceptorsBeanDefinitionParserInjectionTest.xml", getClass());
 
 		List<DelegatingSmartEndpointInterceptor> interceptors = new ArrayList<DelegatingSmartEndpointInterceptor>(
-				applicationContext.getBeansOfType(DelegatingSmartEndpointInterceptor.class).values());
+	applicationContext.getBeansOfType(DelegatingSmartEndpointInterceptor.class).values());
 
 		assertThat(interceptors).hasSize(1);
 

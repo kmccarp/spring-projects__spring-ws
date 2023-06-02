@@ -59,7 +59,8 @@ public abstract class AbstractMarshallingPayloadEndpoint implements MessageEndpo
 	 * @see #setMarshaller(org.springframework.oxm.Marshaller)
 	 * @see #setUnmarshaller(org.springframework.oxm.Unmarshaller)
 	 */
-	protected AbstractMarshallingPayloadEndpoint() {}
+	protected AbstractMarshallingPayloadEndpoint() {
+	}
 
 	/**
 	 * Creates a new {@code AbstractMarshallingPayloadEndpoint} with the given marshaller. The given {@link Marshaller}
@@ -71,14 +72,14 @@ public abstract class AbstractMarshallingPayloadEndpoint implements MessageEndpo
 	 *
 	 * @param marshaller object used as marshaller and unmarshaller
 	 * @throws IllegalArgumentException when {@code marshaller} does not implement the {@link Unmarshaller} interface
-	 * @see #AbstractMarshallingPayloadEndpoint(Marshaller,Unmarshaller)
+	 * @see #AbstractMarshallingPayloadEndpoint(Marshaller, Unmarshaller)
 	 */
 	protected AbstractMarshallingPayloadEndpoint(Marshaller marshaller) {
 		Assert.notNull(marshaller, "marshaller must not be null");
 		if (!(marshaller instanceof Unmarshaller)) {
 			throw new IllegalArgumentException("Marshaller [" + marshaller + "] does not implement the Unmarshaller "
-					+ "interface. Please set an Unmarshaller explicitly by using the "
-					+ "AbstractMarshallingPayloadEndpoint(Marshaller, Unmarshaller) constructor.");
+		+ "interface. Please set an Unmarshaller explicitly by using the "
+		+ "AbstractMarshallingPayloadEndpoint(Marshaller, Unmarshaller) constructor.");
 		} else {
 			setMarshaller(marshaller);
 			setUnmarshaller((Unmarshaller) marshaller);
@@ -180,7 +181,8 @@ public abstract class AbstractMarshallingPayloadEndpoint implements MessageEndpo
 	 * @param requestObject the object unmarshalled from the {@link MessageContext#getRequest() request}
 	 * @param responseObject the object marshalled to the {@link MessageContext#getResponse()} request}
 	 */
-	protected void onMarshalResponse(MessageContext messageContext, Object requestObject, Object responseObject) {}
+	protected void onMarshalResponse(MessageContext messageContext, Object requestObject, Object responseObject) {
+	}
 
 	/**
 	 * Template method that gets called after the marshaller and unmarshaller have been set.
@@ -191,7 +193,8 @@ public abstract class AbstractMarshallingPayloadEndpoint implements MessageEndpo
 	 *             overridden in subclasses
 	 */
 	@Deprecated
-	public void afterMarshallerSet() throws Exception {}
+	public void afterMarshallerSet() throws Exception {
+	}
 
 	/**
 	 * Template method that subclasses must implement to process a request.

@@ -70,7 +70,8 @@ public class MarshallingMethodEndpointAdapter extends AbstractMethodEndpointAdap
 	 * @see #setMarshaller(org.springframework.oxm.Marshaller)
 	 * @see #setUnmarshaller(org.springframework.oxm.Unmarshaller)
 	 */
-	public MarshallingMethodEndpointAdapter() {}
+	public MarshallingMethodEndpointAdapter() {
+	}
 
 	/**
 	 * Creates a new {@code MarshallingMethodEndpointAdapter} with the given marshaller. If the given {@link Marshaller}
@@ -87,8 +88,8 @@ public class MarshallingMethodEndpointAdapter extends AbstractMethodEndpointAdap
 		Assert.notNull(marshaller, "marshaller must not be null");
 		if (!(marshaller instanceof Unmarshaller)) {
 			throw new IllegalArgumentException("Marshaller [" + marshaller + "] does not implement the Unmarshaller "
-					+ "interface. Please set an Unmarshaller explicitly by using the "
-					+ "MarshallingMethodEndpointAdapter(Marshaller, Unmarshaller) constructor.");
+		+ "interface. Please set an Unmarshaller explicitly by using the "
+		+ "MarshallingMethodEndpointAdapter(Marshaller, Unmarshaller) constructor.");
 		} else {
 			this.setMarshaller(marshaller);
 			this.setUnmarshaller((Unmarshaller) marshaller);
@@ -138,7 +139,7 @@ public class MarshallingMethodEndpointAdapter extends AbstractMethodEndpointAdap
 	protected void invokeInternal(MessageContext messageContext, MethodEndpoint methodEndpoint) throws Exception {
 		WebServiceMessage request = messageContext.getRequest();
 		Object requestObject = unmarshalRequest(request);
-		Object responseObject = methodEndpoint.invoke(new Object[] { requestObject });
+		Object responseObject = methodEndpoint.invoke(new Object[]{requestObject});
 		if (responseObject != null) {
 			WebServiceMessage response = messageContext.getResponse();
 			marshalResponse(responseObject, response);

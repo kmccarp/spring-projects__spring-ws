@@ -590,7 +590,7 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 	public void afterPropertiesSet() throws Exception {
 
 		Assert.isTrue(validationActions != null || securementActions != null,
-				"validationActions or securementActions are required");
+	"validationActions or securementActions are required");
 		if (validationActions != null) {
 			if (validationActionsVector.contains(WSConstants.UT)) {
 				Assert.notNull(validationCallbackHandler, "validationCallbackHandler is required");
@@ -606,7 +606,7 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 
 	@Override
 	protected void secureMessage(SoapMessage soapMessage, MessageContext messageContext)
-			throws WsSecuritySecurementException {
+throws WsSecuritySecurementException {
 
 		List<HandlerAction> securementActionsVector = new ArrayList<HandlerAction>();
 		try {
@@ -712,7 +712,7 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 
 	@Override
 	protected void validateMessage(SoapMessage soapMessage, MessageContext messageContext)
-			throws WsSecurityValidationException {
+throws WsSecurityValidationException {
 
 		if (logger.isDebugEnabled()) {
 			logger.debug("Validating message [" + soapMessage + "] with actions [" + validationActions + "]");
@@ -773,7 +773,7 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 	 * @throws Wss4jSecurityValidationException if the results are deemed invalid
 	 */
 	protected void checkResults(List<WSSecurityEngineResult> results, List<Integer> validationActions)
-			throws Wss4jSecurityValidationException {
+throws Wss4jSecurityValidationException {
 
 		if (!handler.checkReceiverResultsAnyOrder(results, validationActions)) {
 			throw new Wss4jSecurityValidationException("Security processing failed (actions mismatch)");
@@ -789,12 +789,12 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 
 		List<WSHandlerResult> handlerResults;
 		if ((handlerResults = (List<WSHandlerResult>) messageContext
-				.getProperty(WSHandlerConstants.RECV_RESULTS)) == null) {
+	.getProperty(WSHandlerConstants.RECV_RESULTS)) == null) {
 			handlerResults = new ArrayList<WSHandlerResult>();
 			messageContext.setProperty(WSHandlerConstants.RECV_RESULTS, handlerResults);
 		}
 		WSHandlerResult rResult = new WSHandlerResult(validationActor, results,
-				Collections.<Integer, List<WSSecurityEngineResult>> emptyMap());
+	Collections.<Integer, List<WSSecurityEngineResult>>emptyMap());
 		handlerResults.add(0, rResult);
 		messageContext.setProperty(WSHandlerConstants.RECV_RESULTS, handlerResults);
 	}
@@ -812,7 +812,7 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 			WSSecurityEngineResult actionResult = results.get(0);
 			X509Certificate returnCert = (X509Certificate) actionResult.get(WSSecurityEngineResult.TAG_X509_CERTIFICATE);
 			Credential credential = new Credential();
-			credential.setCertificates(new X509Certificate[] { returnCert });
+			credential.setCertificates(new X509Certificate[]{returnCert});
 
 			RequestData requestData = new RequestData();
 			requestData.setSigVerCrypto(validationSignatureCrypto);
@@ -861,7 +861,7 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 			if (principal instanceof WSUsernameTokenPrincipalImpl usernameTokenPrincipal) {
 				UsernameTokenPrincipalCallback callback = new UsernameTokenPrincipalCallback(usernameTokenPrincipal);
 				try {
-					validationCallbackHandler.handle(new Callback[] { callback });
+					validationCallbackHandler.handle(new Callback[]{callback});
 				} catch (IOException ex) {
 					logger.warn("Principal callback resulted in IOException", ex);
 				} catch (UnsupportedCallbackException ex) {
@@ -877,7 +877,7 @@ public class Wss4jSecurityInterceptor extends AbstractWsSecurityInterceptor impl
 		if (validationCallbackHandler != null) {
 			try {
 				CleanupCallback cleanupCallback = new CleanupCallback();
-				validationCallbackHandler.handle(new Callback[] { cleanupCallback });
+				validationCallbackHandler.handle(new Callback[]{cleanupCallback});
 			} catch (IOException ex) {
 				logger.warn("Cleanup callback resulted in IOException", ex);
 			} catch (UnsupportedCallbackException ex) {

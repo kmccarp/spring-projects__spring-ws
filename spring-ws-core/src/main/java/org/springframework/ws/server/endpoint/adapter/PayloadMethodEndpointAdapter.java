@@ -57,7 +57,7 @@ public class PayloadMethodEndpointAdapter extends AbstractMethodEndpointAdapter 
 	protected boolean supportsInternal(MethodEndpoint methodEndpoint) {
 		Method method = methodEndpoint.getMethod();
 		return (Void.TYPE.isAssignableFrom(method.getReturnType()) || Source.class.isAssignableFrom(method.getReturnType()))
-				&& method.getParameterTypes().length == 1 && Source.class.isAssignableFrom(method.getParameterTypes()[0]);
+	&& method.getParameterTypes().length == 1 && Source.class.isAssignableFrom(method.getParameterTypes()[0]);
 
 	}
 

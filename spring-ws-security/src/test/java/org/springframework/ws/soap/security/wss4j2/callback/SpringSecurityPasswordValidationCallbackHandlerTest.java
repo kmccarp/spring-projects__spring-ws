@@ -89,7 +89,7 @@ public class SpringSecurityPasswordValidationCallbackHandlerTest {
 		callbackHandler.setUserDetailsService(userDetailsService);
 
 		expect(userDetailsService.loadUserByUsername("Ernie"))
-				.andThrow(new UsernameNotFoundException("User 'Ernie' not found"));
+	.andThrow(new UsernameNotFoundException("User 'Ernie' not found"));
 
 		replay(userDetailsService);
 

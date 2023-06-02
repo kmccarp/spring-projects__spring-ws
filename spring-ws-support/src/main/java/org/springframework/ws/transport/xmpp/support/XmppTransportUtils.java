@@ -34,7 +34,8 @@ import org.springframework.ws.transport.xmpp.XmppTransportConstants;
  */
 public abstract class XmppTransportUtils {
 
-	private XmppTransportUtils() {}
+	private XmppTransportUtils() {
+	}
 
 	/**
 	 * Converts the given XMPP destination into a {@code xmpp} URI.

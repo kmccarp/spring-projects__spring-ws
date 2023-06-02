@@ -102,9 +102,9 @@ public class DomPoxWebServiceTemplateIntegrationTest {
 
 		XmlAssert.assertThat(result.toString()).and(content).ignoreWhitespace().areIdentical();
 		assertThatExceptionOfType(WebServiceTransportException.class).isThrownBy(() -> template
-				.sendSourceAndReceiveToResult(baseUrl + "/errors/notfound", new StringSource(content), new StringResult()));
+	.sendSourceAndReceiveToResult(baseUrl + "/errors/notfound", new StringSource(content), new StringResult()));
 		assertThatExceptionOfType(WebServiceTransportException.class).isThrownBy(
-				() -> template.sendSourceAndReceiveToResult(baseUrl + "/errors/server", new StringSource(content), result));
+	() -> template.sendSourceAndReceiveToResult(baseUrl + "/errors/server", new StringSource(content), result));
 	}
 
 	/** Servlet that returns and error message for a given status code. */

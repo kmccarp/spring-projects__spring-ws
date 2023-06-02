@@ -97,7 +97,7 @@ public class XPathExpectationsHelper {
 				Node payload = transformToNode(message);
 				boolean result = expression.evaluateAsBoolean(payload);
 				assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
-						"Payload", message.getPayloadSource());
+			"Payload", message.getPayloadSource());
 
 			}
 		};
@@ -113,7 +113,7 @@ public class XPathExpectationsHelper {
 				Node payload = transformToNode(message);
 				double result = expression.evaluateAsNumber(payload);
 				assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
-						"Payload", message.getPayloadSource());
+			"Payload", message.getPayloadSource());
 
 			}
 		};
@@ -126,7 +126,7 @@ public class XPathExpectationsHelper {
 				Node payload = transformToNode(message);
 				String result = expression.evaluateAsString(payload);
 				assertEquals("Evaluation of XPath expression \"" + expressionString + "\" failed.", expectedValue, result,
-						"Payload", message.getPayloadSource());
+			"Payload", message.getPayloadSource());
 			}
 		};
 	}

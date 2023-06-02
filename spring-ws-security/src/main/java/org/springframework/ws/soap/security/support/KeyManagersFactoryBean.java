@@ -103,8 +103,8 @@ public class KeyManagersFactoryBean implements FactoryBean<KeyManager[]>, Initia
 		String algorithm = StringUtils.hasLength(this.algorithm) ? this.algorithm : KeyManagerFactory.getDefaultAlgorithm();
 
 		KeyManagerFactory keyManagerFactory = StringUtils.hasLength(this.provider)
-				? KeyManagerFactory.getInstance(algorithm, this.provider)
-				: KeyManagerFactory.getInstance(algorithm);
+	? KeyManagerFactory.getInstance(algorithm, this.provider)
+	: KeyManagerFactory.getInstance(algorithm);
 
 		keyManagerFactory.init(keyStore, password);
 

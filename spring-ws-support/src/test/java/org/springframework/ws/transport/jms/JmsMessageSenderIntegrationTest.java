@@ -49,9 +49,11 @@ import org.springframework.ws.transport.WebServiceConnection;
 @ContextConfiguration("jms-sender-applicationContext.xml")
 public class JmsMessageSenderIntegrationTest {
 
-	@Autowired private JmsMessageSender messageSender;
+	@Autowired
+	private JmsMessageSender messageSender;
 
-	@Autowired private JmsTemplate jmsTemplate;
+	@Autowired
+	private JmsTemplate jmsTemplate;
 
 	private MessageFactory messageFactory;
 

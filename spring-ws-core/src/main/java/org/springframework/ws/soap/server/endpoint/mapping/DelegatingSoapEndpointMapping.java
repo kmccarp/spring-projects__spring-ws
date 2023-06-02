@@ -56,7 +56,7 @@ public class DelegatingSoapEndpointMapping implements InitializingBean, SoapEndp
 	@Override
 	public final void setActorOrRole(String actorOrRole) {
 		Assert.notNull(actorOrRole, "actorOrRole must not be null");
-		actorsOrRoles = new String[] { actorOrRole };
+		actorsOrRoles = new String[]{actorOrRole};
 	}
 
 	@Override
@@ -81,7 +81,7 @@ public class DelegatingSoapEndpointMapping implements InitializingBean, SoapEndp
 		EndpointInvocationChain delegateChain = delegate.getEndpoint(messageContext);
 		if (delegateChain != null) {
 			return new SoapEndpointInvocationChain(delegateChain.getEndpoint(), delegateChain.getInterceptors(),
-					actorsOrRoles, isUltimateReceiver);
+		actorsOrRoles, isUltimateReceiver);
 		} else {
 			return null;
 		}

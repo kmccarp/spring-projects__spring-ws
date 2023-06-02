@@ -36,7 +36,7 @@ public class MockWebServiceMessageSenderTest {
 	public void noMoreExpectedConnections() {
 
 		assertThatExceptionOfType(AssertionError.class)
-				.isThrownBy(() -> sender.createConnection(URI.create("http://localhost")));
+	.isThrownBy(() -> sender.createConnection(URI.create("http://localhost")));
 	}
 
 	@Test

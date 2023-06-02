@@ -134,7 +134,7 @@ public class PayloadValidatingInterceptorTest {
 
 		assertThat(fault.getFaultCode()).isEqualTo(SoapVersion.SOAP_12.getClientOrSenderFaultName());
 		assertThat(fault.getFaultReasonText(Locale.ENGLISH))
-				.isEqualTo(PayloadValidatingInterceptor.DEFAULT_FAULTSTRING_OR_REASON);
+	.isEqualTo(PayloadValidatingInterceptor.DEFAULT_FAULTSTRING_OR_REASON);
 		assertThat(fault.getFaultDetail()).isNotNull();
 	}
 
@@ -221,16 +221,16 @@ public class PayloadValidatingInterceptorTest {
 		// Make sure we use Xerces for this testcase: the JAXP implementation used internally by JDK 1.5 has a bug
 		// See http://opensource.atlassian.com/projects/spring/browse/SWS-35
 		String previousSchemaFactory = System
-				.getProperty("javax.xml.validation.SchemaFactory:" + XMLConstants.W3C_XML_SCHEMA_NS_URI, "");
+	.getProperty("javax.xml.validation.SchemaFactory:" + XMLConstants.W3C_XML_SCHEMA_NS_URI, "");
 		System.setProperty("javax.xml.validation.SchemaFactory:" + XMLConstants.W3C_XML_SCHEMA_NS_URI,
-				"org.apache.xerces.jaxp.validation.XMLSchemaFactory");
+	"org.apache.xerces.jaxp.validation.XMLSchemaFactory");
 		try {
 			PayloadValidatingInterceptor interceptor = new PayloadValidatingInterceptor();
 			interceptor.setSchema(new ClassPathResource(SCHEMA2, PayloadValidatingInterceptorTest.class));
 			interceptor.afterPropertiesSet();
 			MessageFactory messageFactory = MessageFactory.newInstance();
 			SOAPMessage saajMessage = SaajUtils.loadMessage(new ClassPathResource(VALID_SOAP_MESSAGE, getClass()),
-					messageFactory);
+		messageFactory);
 			context = new DefaultMessageContext(new SaajSoapMessage(saajMessage), new SaajSoapMessageFactory(messageFactory));
 
 			boolean result = interceptor.handleRequest(context, null);
@@ -240,7 +240,7 @@ public class PayloadValidatingInterceptorTest {
 		} finally {
 			// Reset the property
 			System.setProperty("javax.xml.validation.SchemaFactory:" + XMLConstants.W3C_XML_SCHEMA_NS_URI,
-					previousSchemaFactory);
+		previousSchemaFactory);
 		}
 	}
 
@@ -258,7 +258,7 @@ public class PayloadValidatingInterceptorTest {
 	public void testHandlerInvalidRequestMultipleSchemas() throws Exception {
 
 		interceptor.setSchemas(new ClassPathResource(PRODUCT_SCHEMA, getClass()),
-				new ClassPathResource(SIZE_SCHEMA, getClass()));
+	new ClassPathResource(SIZE_SCHEMA, getClass()));
 		interceptor.afterPropertiesSet();
 		MockWebServiceMessage request = new MockWebServiceMessage(new ClassPathResource(INVALID_MESSAGE, getClass()));
 		context = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
@@ -271,7 +271,7 @@ public class PayloadValidatingInterceptorTest {
 	public void testHandleValidRequestMultipleSchemas() throws Exception {
 
 		interceptor.setSchemas(new ClassPathResource(PRODUCT_SCHEMA, getClass()),
-				new ClassPathResource(SIZE_SCHEMA, getClass()));
+	new ClassPathResource(SIZE_SCHEMA, getClass()));
 		interceptor.afterPropertiesSet();
 		MockWebServiceMessage request = new MockWebServiceMessage(new ClassPathResource(VALID_MESSAGE, getClass()));
 		context = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
@@ -286,7 +286,7 @@ public class PayloadValidatingInterceptorTest {
 	public void testHandleInvalidResponseMultipleSchemas() throws Exception {
 
 		interceptor.setSchemas(new ClassPathResource(PRODUCT_SCHEMA, getClass()),
-				new ClassPathResource(SIZE_SCHEMA, getClass()));
+	new ClassPathResource(SIZE_SCHEMA, getClass()));
 		interceptor.afterPropertiesSet();
 		MockWebServiceMessage request = new MockWebServiceMessage();
 		context = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
@@ -301,7 +301,7 @@ public class PayloadValidatingInterceptorTest {
 	public void testHandleValidResponseMultipleSchemas() throws Exception {
 
 		interceptor.setSchemas(new ClassPathResource(PRODUCT_SCHEMA, getClass()),
-				new ClassPathResource(SIZE_SCHEMA, getClass()));
+	new ClassPathResource(SIZE_SCHEMA, getClass()));
 		interceptor.afterPropertiesSet();
 		MockWebServiceMessage request = new MockWebServiceMessage();
 		context = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
@@ -339,11 +339,14 @@ public class PayloadValidatingInterceptorTest {
 				return new SAXParseException[0];
 			}
 
-			public void warning(SAXParseException exception) throws SAXException {}
+			public void warning(SAXParseException exception) throws SAXException {
+			}
 
-			public void error(SAXParseException exception) throws SAXException {}
+			public void error(SAXParseException exception) throws SAXException {
+			}
 
-			public void fatalError(SAXParseException exception) throws SAXException {}
+			public void fatalError(SAXParseException exception) throws SAXException {
+			}
 		};
 
 		interceptor.setErrorHandler(errorHandler);

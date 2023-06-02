@@ -49,8 +49,7 @@ import org.springframework.ws.server.endpoint.adapter.method.jaxb.XmlRootElement
  * @author Arjen Poutsma
  * @since 2.0
  */
-public class DefaultMethodEndpointAdapter extends AbstractMethodEndpointAdapter
-		implements BeanClassLoaderAware, InitializingBean {
+public class DefaultMethodEndpointAdapter extends AbstractMethodEndpointAdapterimplements BeanClassLoaderAware, InitializingBean {
 
 	private static final String DOM4J_CLASS_NAME = "org.dom4j.Element";
 
@@ -197,7 +196,7 @@ public class DefaultMethodEndpointAdapter extends AbstractMethodEndpointAdapter
 	private void addMethodArgumentResolver(String className, List<MethodArgumentResolver> methodArgumentResolvers) {
 		try {
 			Class<MethodArgumentResolver> methodArgumentResolverClass = (Class<MethodArgumentResolver>) ClassUtils
-					.forName(className, getClassLoader());
+		.forName(className, getClassLoader());
 			methodArgumentResolvers.add(BeanUtils.instantiateClass(methodArgumentResolverClass));
 		} catch (ClassNotFoundException e) {
 			logger.warn("Could not find \"" + className + "\" on the classpath");
@@ -239,7 +238,7 @@ public class DefaultMethodEndpointAdapter extends AbstractMethodEndpointAdapter
 	@Override
 	protected boolean supportsInternal(MethodEndpoint methodEndpoint) {
 		return supportsParameters(methodEndpoint.getMethodParameters())
-				&& supportsReturnType(methodEndpoint.getReturnType());
+	&& supportsReturnType(methodEndpoint.getReturnType());
 	}
 
 	private boolean supportsParameters(MethodParameter[] methodParameters) {
@@ -248,7 +247,7 @@ public class DefaultMethodEndpointAdapter extends AbstractMethodEndpointAdapter
 			for (MethodArgumentResolver methodArgumentResolver : methodArgumentResolvers) {
 				if (logger.isTraceEnabled()) {
 					logger.trace("Testing if argument resolver [" + methodArgumentResolver + "] supports ["
-							+ methodParameter.getGenericParameterType() + "]");
+				+ methodParameter.getGenericParameterType() + "]");
 				}
 				if (methodArgumentResolver.supportsParameter(methodParameter)) {
 					supported = true;
@@ -331,7 +330,7 @@ public class DefaultMethodEndpointAdapter extends AbstractMethodEndpointAdapter
 	 * @throws Exception in case of errors
 	 */
 	protected void handleMethodReturnValue(MessageContext messageContext, Object returnValue,
-			MethodEndpoint methodEndpoint) throws Exception {
+MethodEndpoint methodEndpoint) throws Exception {
 		MethodParameter returnType = methodEndpoint.getReturnType();
 		for (MethodReturnValueHandler methodReturnValueHandler : methodReturnValueHandlers) {
 			if (methodReturnValueHandler.supportsReturnType(returnType)) {

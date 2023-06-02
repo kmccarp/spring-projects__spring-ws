@@ -91,16 +91,16 @@ public class HttpComponents5Connection extends AbstractHttpSenderConnection {
 	}
 
 	/*
-	  * URI
-	  */
+		URI
+		*/
 	@Override
 	public URI getUri() throws URISyntaxException {
 		return new URI(httpPost.getUri().toString());
 	}
 
 	/*
-	  * Sending request
-	  */
+		Sending request
+		*/
 
 	@Override
 	protected void onSendBeforeWrite(WebServiceMessage message) throws IOException {
@@ -175,15 +175,15 @@ public class HttpComponents5Connection extends AbstractHttpSenderConnection {
 	public Iterator<String> getResponseHeaderNames() throws IOException {
 
 		return Arrays.stream(httpResponse.getHeaders()) //
-				.map(NameValuePair::getName) //
-				.iterator();
+	.map(NameValuePair::getName) //
+	.iterator();
 	}
 
 	@Override
 	public Iterator<String> getResponseHeaders(String name) throws IOException {
 
 		return Arrays.stream(httpResponse.getHeaders(name)) //
-				.map(NameValuePair::getValue) //
-				.iterator();
+	.map(NameValuePair::getValue) //
+	.iterator();
 	}
 }

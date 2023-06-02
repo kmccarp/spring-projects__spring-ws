@@ -37,8 +37,10 @@ public class NullX509UserCache implements X509UserCache {
 	}
 
 	@Override
-	public void putUserInCache(X509Certificate certificate, UserDetails user) {}
+	public void putUserInCache(X509Certificate certificate, UserDetails user) {
+	}
 
 	@Override
-	public void removeUserFromCache(X509Certificate certificate) {}
+	public void removeUserFromCache(X509Certificate certificate) {
+	}
 }

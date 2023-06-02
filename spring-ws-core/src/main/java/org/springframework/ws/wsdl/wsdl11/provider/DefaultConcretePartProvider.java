@@ -68,18 +68,18 @@ public class DefaultConcretePartProvider implements BindingsProvider, ServicesPr
 
 	/**
 	 * Creates a {@link Binding} for each {@link PortType} in the definition, and calls
-	 * {@link #populateBinding(Definition,javax.wsdl.Binding)} with it. Creates a {@link BindingOperation} for each
+	 * {@link #populateBinding(Definition, javax.wsdl.Binding)} with it. Creates a {@link BindingOperation} for each
 	 * {@link Operation} in the port type, a {@link BindingInput} for each {@link Input} in the operation, etc.
 	 * <p>
 	 * Calls the various {@code populate} methods with the created WSDL4J objects.
 	 *
 	 * @param definition the WSDL4J {@code Definition}
 	 * @throws WSDLException in case of errors
-	 * @see #populateBinding(Definition,javax.wsdl.Binding)
-	 * @see #populateBindingOperation(Definition,javax.wsdl.BindingOperation)
-	 * @see #populateBindingInput(Definition,javax.wsdl.BindingInput,javax.wsdl.Input)
-	 * @see #populateBindingOutput(Definition,javax.wsdl.BindingOutput,javax.wsdl.Output)
-	 * @see #populateBindingFault(Definition,javax.wsdl.BindingFault,javax.wsdl.Fault)
+	 * @see #populateBinding(Definition, javax.wsdl.Binding)
+	 * @see #populateBindingOperation(Definition, javax.wsdl.BindingOperation)
+	 * @see #populateBindingInput(Definition, javax.wsdl.BindingInput, javax.wsdl.Input)
+	 * @see #populateBindingOutput(Definition, javax.wsdl.BindingOutput, javax.wsdl.Output)
+	 * @see #populateBindingFault(Definition, javax.wsdl.BindingFault, javax.wsdl.Fault)
 	 */
 	@Override
 	public void addBindings(Definition definition) throws WSDLException {
@@ -174,12 +174,12 @@ public class DefaultConcretePartProvider implements BindingsProvider, ServicesPr
 	 * @throws WSDLException in case of errors
 	 */
 	protected void populateBindingOperation(Definition definition, BindingOperation bindingOperation)
-			throws WSDLException {
+throws WSDLException {
 		bindingOperation.setName(bindingOperation.getOperation().getName());
 	}
 
 	private void createBindingInput(Definition definition, Operation operation, BindingOperation bindingOperation)
-			throws WSDLException {
+throws WSDLException {
 
 		BindingInput bindingInput = definition.createBindingInput();
 		populateBindingInput(definition, bindingInput, operation.getInput());
@@ -187,7 +187,7 @@ public class DefaultConcretePartProvider implements BindingsProvider, ServicesPr
 	}
 
 	private void createBindingOutput(Definition definition, Operation operation, BindingOperation bindingOperation)
-			throws WSDLException {
+throws WSDLException {
 
 		BindingOutput bindingOutput = definition.createBindingOutput();
 		populateBindingOutput(definition, bindingOutput, operation.getOutput());
@@ -205,7 +205,7 @@ public class DefaultConcretePartProvider implements BindingsProvider, ServicesPr
 	 * @param input the corresponding WSDL4J {@code Input} @throws WSDLException in case of errors
 	 */
 	protected void populateBindingInput(Definition definition, BindingInput bindingInput, Input input)
-			throws WSDLException {
+throws WSDLException {
 		bindingInput.setName(input.getName());
 	}
 
@@ -220,7 +220,7 @@ public class DefaultConcretePartProvider implements BindingsProvider, ServicesPr
 	 * @param output the corresponding WSDL4J {@code Output} @throws WSDLException in case of errors
 	 */
 	protected void populateBindingOutput(Definition definition, BindingOutput bindingOutput, Output output)
-			throws WSDLException {
+throws WSDLException {
 		bindingOutput.setName(output.getName());
 	}
 
@@ -234,14 +234,14 @@ public class DefaultConcretePartProvider implements BindingsProvider, ServicesPr
 	 * @param fault the corresponding WSDL4J {@code Fault} @throws WSDLException in case of errors
 	 */
 	protected void populateBindingFault(Definition definition, BindingFault bindingFault, Fault fault)
-			throws WSDLException {
+throws WSDLException {
 		bindingFault.setName(fault.getName());
 	}
 
 	/**
 	 * Creates a single {@link Service} if not present, and calls {@link #populateService(Definition, Service)} with it.
 	 * Creates a corresponding {@link Port} for each {@link Binding}, which is passed to
-	 * {@link #populatePort(javax.wsdl.Definition,javax.wsdl.Port)}.
+	 * {@link #populatePort(javax.wsdl.Definition, javax.wsdl.Port)}.
 	 *
 	 * @param definition the WSDL4J {@code Definition}
 	 * @throws WSDLException in case of errors

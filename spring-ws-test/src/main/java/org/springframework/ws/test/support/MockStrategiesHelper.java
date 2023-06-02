@@ -78,7 +78,7 @@ public class MockStrategiesHelper {
 			return entry.getValue();
 		} else {
 			throw new BeanInitializationException(
-					"Could not find exactly 1 " + ClassUtils.getShortName(type) + " in application context");
+		"Could not find exactly 1 " + ClassUtils.getShortName(type) + " in application context");
 		}
 	}
 
@@ -99,7 +99,7 @@ public class MockStrategiesHelper {
 		} else {
 			if (logger.isDebugEnabled()) {
 				logger.debug(
-						"No " + ClassUtils.getShortName(type) + " found, using default " + ClassUtils.getShortName(defaultType));
+			"No " + ClassUtils.getShortName(type) + " found, using default " + ClassUtils.getShortName(defaultType));
 			}
 			T defaultStrategy = BeanUtils.instantiateClass(defaultType);
 			if (defaultStrategy instanceof ApplicationContextAware) {

@@ -103,7 +103,7 @@ public class SaajSoapMessage extends AbstractSoapMessage {
 	 * @param messageFactory the message factory
 	 */
 	public SaajSoapMessage(SOAPMessage soapMessage, boolean langAttributeOnSoap11FaultString,
-			MessageFactory messageFactory) {
+MessageFactory messageFactory) {
 		Assert.notNull(soapMessage, "soapMessage must not be null");
 		saajMessage = soapMessage;
 		this.langAttributeOnSoap11FaultString = langAttributeOnSoap11FaultString;
@@ -144,7 +144,7 @@ public class SaajSoapMessage extends AbstractSoapMessage {
 		} else if (SoapVersion.SOAP_12 == getVersion()) {
 			String[] contentTypes = mimeHeaders.getHeader(TransportConstants.HEADER_CONTENT_TYPE);
 			return !ObjectUtils.isEmpty(contentTypes) ? SoapUtils.extractActionFromContentType(contentTypes[0])
-					: TransportConstants.EMPTY_SOAP_ACTION;
+		: TransportConstants.EMPTY_SOAP_ACTION;
 		} else {
 			throw new IllegalStateException("Unsupported SOAP version: " + getVersion());
 		}
@@ -238,7 +238,7 @@ public class SaajSoapMessage extends AbstractSoapMessage {
 					}
 					message.saveChanges();
 				}
-				for (Iterator<?> iterator = headers.getAllHeaders(); iterator.hasNext();) {
+				for (Iterator<?> iterator = headers.getAllHeaders(); iterator.hasNext(); ) {
 					MimeHeader mimeHeader = (MimeHeader) iterator.next();
 					transportOutputStream.addHeader(mimeHeader.getName(), mimeHeader.getValue());
 				}
@@ -275,7 +275,7 @@ public class SaajSoapMessage extends AbstractSoapMessage {
 		String[] oldContentTypes = mimeHeaders.getHeader(TransportConstants.HEADER_CONTENT_TYPE);
 		String oldContentType = !ObjectUtils.isEmpty(oldContentTypes) ? oldContentTypes[0] : getVersion().getContentType();
 		mimeHeaders.setHeader(TransportConstants.HEADER_CONTENT_TYPE,
-				CONTENT_TYPE_XOP + ";type=" + '"' + oldContentType + '"');
+	CONTENT_TYPE_XOP + ";type=" + '"' + oldContentType + '"');
 	}
 
 	private void convertPartToXop() {
@@ -283,7 +283,7 @@ public class SaajSoapMessage extends AbstractSoapMessage {
 		String[] oldContentTypes = saajPart.getMimeHeader(TransportConstants.HEADER_CONTENT_TYPE);
 		String oldContentType = !ObjectUtils.isEmpty(oldContentTypes) ? oldContentTypes[0] : getVersion().getContentType();
 		saajPart.setMimeHeader(TransportConstants.HEADER_CONTENT_TYPE,
-				CONTENT_TYPE_XOP + ";type=" + '"' + oldContentType + '"');
+	CONTENT_TYPE_XOP + ";type=" + '"' + oldContentType + '"');
 	}
 
 	@Override

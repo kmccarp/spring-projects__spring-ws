@@ -62,7 +62,7 @@ public abstract class XmlValidatorFactory {
 	 * @see #SCHEMA_W3C_XML
 	 */
 	public static XmlValidator createValidator(Resource schemaResource, String schemaLanguage) throws IOException {
-		return createValidator(new Resource[] { schemaResource }, schemaLanguage);
+		return createValidator(new Resource[]{schemaResource}, schemaLanguage);
 	}
 
 	/**
@@ -83,7 +83,7 @@ public abstract class XmlValidatorFactory {
 		Assert.notEmpty(schemaResources, "No resources given");
 		Assert.hasLength(schemaLanguage, "No schema language provided");
 		Assert.isTrue(SCHEMA_W3C_XML.equals(schemaLanguage) || SCHEMA_RELAX_NG.equals(schemaLanguage),
-				"Invalid schema language: " + schemaLanguage);
+	"Invalid schema language: " + schemaLanguage);
 		Assert.noNullElements(schemaResources, "No null schemaResources allowed");
 		for (Resource schemaResource : schemaResources) {
 			Assert.isTrue(schemaResource.exists(), "schema [" + schemaResource + "] does not exist");

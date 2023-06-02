@@ -84,8 +84,8 @@ public class CommonsXsdSchemaCollectionTest {
 		transformer.transform(schemas[0].getSource(), domResult);
 
 		XmlAssert.assertThat(domResult.getNode()).and(expected) //
-				.ignoreWhitespace() //
-				.areIdentical();
+	.ignoreWhitespace() //
+	.areIdentical();
 		assertThat(schemas[1].getTargetNamespace()).isEqualTo("urn:2");
 
 		Resource cd = new ClassPathResource("CD.xsd", AbstractXsdSchemaTestCase.class);
@@ -94,8 +94,8 @@ public class CommonsXsdSchemaCollectionTest {
 		transformer.transform(schemas[1].getSource(), domResult);
 
 		XmlAssert.assertThat(domResult.getNode()).and(expected) //
-				.ignoreWhitespace() //
-				.areIdentical();
+	.ignoreWhitespace() //
+	.areIdentical();
 	}
 
 	@Test

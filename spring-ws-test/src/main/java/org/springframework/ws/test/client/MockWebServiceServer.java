@@ -153,7 +153,7 @@ public class MockWebServiceServer {
 			return createServer(gatewaySupport);
 		}
 		throw new IllegalArgumentException(
-				"Could not find either WebServiceTemplate or WebServiceGatewaySupport in application context");
+	"Could not find either WebServiceTemplate or WebServiceGatewaySupport in application context");
 	}
 
 	/**

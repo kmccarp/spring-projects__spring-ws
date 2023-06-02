@@ -44,7 +44,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	<T> T sendAndReceive(WebServiceMessageCallback requestCallback, WebServiceMessageExtractor<T> responseExtractor)
-			throws WebServiceClientException;
+throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that can be manipulated with the given callback, reading the result with a
@@ -57,7 +57,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	<T> T sendAndReceive(String uri, WebServiceMessageCallback requestCallback,
-			WebServiceMessageExtractor<T> responseExtractor) throws WebServiceClientException;
+WebServiceMessageExtractor<T> responseExtractor) throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that can be manipulated with the given request callback, handling the response with a
@@ -71,7 +71,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	boolean sendAndReceive(WebServiceMessageCallback requestCallback, WebServiceMessageCallback responseCallback)
-			throws WebServiceClientException;
+throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that can be manipulated with the given request callback, handling the response with a
@@ -84,7 +84,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	boolean sendAndReceive(String uri, WebServiceMessageCallback requestCallback,
-			WebServiceMessageCallback responseCallback) throws WebServiceClientException;
+WebServiceMessageCallback responseCallback) throws WebServiceClientException;
 
 	// -----------------------------------------------------------------------------------------------------------------
 	// Convenience methods for sending and receiving marshalled messages
@@ -135,7 +135,7 @@ public interface WebServiceOperations {
 	 * @see WebServiceTemplate#setUnmarshaller(org.springframework.oxm.Unmarshaller)
 	 */
 	Object marshalSendAndReceive(Object requestPayload, WebServiceMessageCallback requestCallback)
-			throws XmlMappingException, WebServiceClientException;
+throws XmlMappingException, WebServiceClientException;
 
 	/**
 	 * Sends a web service message that contains the given payload, marshalled by the configured {@code Marshaller}.
@@ -152,7 +152,7 @@ public interface WebServiceOperations {
 	 * @see WebServiceTemplate#setUnmarshaller(org.springframework.oxm.Unmarshaller)
 	 */
 	Object marshalSendAndReceive(String uri, Object requestPayload, WebServiceMessageCallback requestCallback)
-			throws XmlMappingException, WebServiceClientException;
+throws XmlMappingException, WebServiceClientException;
 
 	// -----------------------------------------------------------------------------------------------------------------
 	// Convenience methods for sending Sources
@@ -169,7 +169,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	<T> T sendSourceAndReceive(Source requestPayload, SourceExtractor<T> responseExtractor)
-			throws WebServiceClientException;
+throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that contains the given payload, reading the result with a {@code SourceExtractor}.
@@ -181,7 +181,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	<T> T sendSourceAndReceive(String uri, Source requestPayload, SourceExtractor<T> responseExtractor)
-			throws WebServiceClientException;
+throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that contains the given payload, reading the result with a {@code SourceExtractor}.
@@ -197,7 +197,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	<T> T sendSourceAndReceive(Source requestPayload, WebServiceMessageCallback requestCallback,
-			SourceExtractor<T> responseExtractor) throws WebServiceClientException;
+SourceExtractor<T> responseExtractor) throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that contains the given payload, reading the result with a {@code SourceExtractor}.
@@ -212,7 +212,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	<T> T sendSourceAndReceive(String uri, Source requestPayload, WebServiceMessageCallback requestCallback,
-			SourceExtractor<T> responseExtractor) throws WebServiceClientException;
+SourceExtractor<T> responseExtractor) throws WebServiceClientException;
 
 	// -----------------------------------------------------------------------------------------------------------------
 	// Convenience methods for sending Sources and receiving to Results
@@ -242,7 +242,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	boolean sendSourceAndReceiveToResult(String uri, Source requestPayload, Result responseResult)
-			throws WebServiceClientException;
+throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that contains the given payload. Writes the response, if any, to the given
@@ -259,7 +259,7 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	boolean sendSourceAndReceiveToResult(Source requestPayload, WebServiceMessageCallback requestCallback,
-			Result responseResult) throws WebServiceClientException;
+Result responseResult) throws WebServiceClientException;
 
 	/**
 	 * Sends a web service message that contains the given payload. Writes the response, if any, to the given
@@ -275,6 +275,6 @@ public interface WebServiceOperations {
 	 * @throws WebServiceClientException if there is a problem sending or receiving the message
 	 */
 	boolean sendSourceAndReceiveToResult(String uri, Source requestPayload, WebServiceMessageCallback requestCallback,
-			Result responseResult) throws WebServiceClientException;
+Result responseResult) throws WebServiceClientException;
 
 }

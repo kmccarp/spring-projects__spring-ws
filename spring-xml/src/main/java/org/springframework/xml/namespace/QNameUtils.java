@@ -40,7 +40,7 @@ public abstract class QNameUtils {
 	 * @param localPart local part of the {@code QName}
 	 * @param prefix prefix of the {@code QName}. May be ignored.
 	 * @return the created {@code QName}
-	 * @see QName#QName(String,String,String)
+	 * @see QName#QName(String, String, String)
 	 * @deprecated in favor of {@link QName#QName(String, String, String)}
 	 */
 	@Deprecated
@@ -158,7 +158,7 @@ public abstract class QNameUtils {
 				return new QName(namespaceURI, qNameString.substring(endOfNamespaceURI + 1));
 			} else {
 				return new QName(namespaceURI, qNameString.substring(prefixSeperator + 1),
-						qNameString.substring(endOfNamespaceURI + 1, prefixSeperator));
+			qNameString.substring(endOfNamespaceURI + 1, prefixSeperator));
 			}
 		}
 

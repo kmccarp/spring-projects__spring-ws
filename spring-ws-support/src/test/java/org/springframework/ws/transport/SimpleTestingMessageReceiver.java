@@ -33,6 +33,6 @@ public class SimpleTestingMessageReceiver extends TransformerObjectSupport imple
 
 		Transformer transformer = createTransformer();
 		transformer.transform(messageContext.getRequest().getPayloadSource(),
-				messageContext.getResponse().getPayloadResult());
+	messageContext.getResponse().getPayloadResult());
 	}
 }

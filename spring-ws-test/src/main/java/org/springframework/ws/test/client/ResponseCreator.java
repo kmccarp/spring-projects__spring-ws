@@ -40,6 +40,6 @@ public interface ResponseCreator {
 	 * @throws IOException in case of I/O errors
 	 */
 	WebServiceMessage createResponse(URI uri, WebServiceMessage request, WebServiceMessageFactory messageFactory)
-			throws IOException;
+throws IOException;
 
 }

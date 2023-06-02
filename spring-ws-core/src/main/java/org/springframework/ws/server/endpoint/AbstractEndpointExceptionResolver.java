@@ -92,7 +92,7 @@ public abstract class AbstractEndpointExceptionResolver implements EndpointExcep
 	 * Default implementation that checks whether the given {@code endpoint} is in the set of {@link #setMappedEndpoints
 	 * mapped endpoints}.
 	 *
-	 * @see #resolveExceptionInternal(MessageContext,Object,Exception)
+	 * @see #resolveExceptionInternal(MessageContext, Object, Exception)
 	 */
 	@Override
 	public final boolean resolveException(MessageContext messageContext, Object endpoint, Exception ex) {
@@ -145,7 +145,7 @@ public abstract class AbstractEndpointExceptionResolver implements EndpointExcep
 	 * @param endpoint the executed endpoint, or {@code null} if none chosen at the time of the exception
 	 * @param ex the exception that got thrown during endpoint execution
 	 * @return {@code true} if resolved; {@code false} otherwise
-	 * @see #resolveException(MessageContext,Object,Exception)
+	 * @see #resolveException(MessageContext, Object, Exception)
 	 */
 	protected abstract boolean resolveExceptionInternal(MessageContext messageContext, Object endpoint, Exception ex);
 

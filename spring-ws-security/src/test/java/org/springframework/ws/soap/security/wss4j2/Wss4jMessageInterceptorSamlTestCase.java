@@ -60,7 +60,7 @@ public abstract class Wss4jMessageInterceptorSamlTestCase extends Wss4jTestCase 
 		Document document = getDocument(message);
 
 		assertXpathExists("Absent SAML Assertion element",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/saml:Assertion", document);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/saml:Assertion", document);
 
 		// lets verify the signature that we've just generated
 		interceptor.validateMessage(message, messageContext);

@@ -36,7 +36,7 @@ public class WsConfigurationSupportTest {
 	public void interceptors() {
 
 		PayloadRootAnnotationMethodEndpointMapping endpointMapping = this.applicationContext
-				.getBean(PayloadRootAnnotationMethodEndpointMapping.class);
+	.getBean(PayloadRootAnnotationMethodEndpointMapping.class);
 
 		assertThat(endpointMapping.getOrder()).isEqualTo(0);
 

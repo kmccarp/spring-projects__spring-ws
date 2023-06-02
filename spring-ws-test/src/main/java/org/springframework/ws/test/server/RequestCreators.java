@@ -38,7 +38,8 @@ import org.springframework.xml.transform.ResourceSource;
  */
 public abstract class RequestCreators {
 
-	private RequestCreators() {}
+	private RequestCreators() {
+	}
 
 	// Payload
 

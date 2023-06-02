@@ -43,7 +43,7 @@ public class SimpleFaultMessageResolverTest {
 		replay(messageMock);
 
 		assertThatExceptionOfType(WebServiceFaultException.class).isThrownBy(() -> resolver.resolveFault(messageMock))
-				.withMessage(message);
+	.withMessage(message);
 
 		verify(messageMock);
 	}

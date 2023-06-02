@@ -52,7 +52,8 @@ public class XmppMessageReceiver extends AbstractStandaloneMessageReceiver {
 
 	private String messageEncoding = DEFAULT_MESSAGE_ENCODING;
 
-	public XmppMessageReceiver() {}
+	public XmppMessageReceiver() {
+	}
 
 	/** Sets the {@code XMPPConnection} to use. Setting this property is required. */
 	public void setConnection(XMPPTCPConnection connection) {

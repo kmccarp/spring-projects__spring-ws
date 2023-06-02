@@ -73,5 +73,6 @@ public class EndpointInterceptorAdapter implements EndpointInterceptor {
 	 * Does nothing by default.
 	 */
 	@Override
-	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) throws Exception {}
+	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) throws Exception {
+	}
 }

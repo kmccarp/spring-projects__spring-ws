@@ -111,7 +111,8 @@ public class JmsMessageSender extends JmsDestinationAccessor implements WebServi
 	 *
 	 * @see #setConnectionFactory(ConnectionFactory)
 	 */
-	public JmsMessageSender() {}
+	public JmsMessageSender() {
+	}
 
 	/**
 	 * Create a new {@code JmsMessageSender}, given a ConnectionFactory.
@@ -154,7 +155,7 @@ public class JmsMessageSender extends JmsDestinationAccessor implements WebServi
 			Destination requestDestination = resolveRequestDestination(jmsSession, uri);
 			Message requestMessage = createRequestMessage(jmsSession, uri);
 			JmsSenderConnection wsConnection = new JmsSenderConnection(getConnectionFactory(), jmsConnection, jmsSession,
-					requestDestination, requestMessage);
+		requestDestination, requestMessage);
 			wsConnection.setDeliveryMode(JmsTransportUtils.getDeliveryMode(uri));
 			wsConnection.setPriority(JmsTransportUtils.getPriority(uri));
 			wsConnection.setReceiveTimeout(receiveTimeout);

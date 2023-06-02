@@ -43,7 +43,7 @@ public class DocumentBuilderFactoryUtils {
 		} catch (IllegalArgumentException e) {
 			if (log.isWarnEnabled()) {
 				log.warn(
-						XMLConstants.ACCESS_EXTERNAL_DTD + " property not supported by " + factory.getClass().getCanonicalName());
+			XMLConstants.ACCESS_EXTERNAL_DTD + " property not supported by " + factory.getClass().getCanonicalName());
 			}
 		}
 
@@ -52,7 +52,7 @@ public class DocumentBuilderFactoryUtils {
 		} catch (IllegalArgumentException e) {
 			if (log.isWarnEnabled()) {
 				log.warn(XMLConstants.ACCESS_EXTERNAL_SCHEMA + " property not supported by "
-						+ factory.getClass().getCanonicalName());
+			+ factory.getClass().getCanonicalName());
 			}
 		}
 
@@ -61,7 +61,7 @@ public class DocumentBuilderFactoryUtils {
 		} catch (ParserConfigurationException e) {
 			if (log.isWarnEnabled()) {
 				log.warn("FEATURE 'http://apache.org/xml/features/disallow-doctype-decl' is probably not supported by "
-						+ factory.getClass().getCanonicalName());
+			+ factory.getClass().getCanonicalName());
 			}
 		}
 
@@ -70,7 +70,7 @@ public class DocumentBuilderFactoryUtils {
 		} catch (ParserConfigurationException e) {
 			if (log.isWarnEnabled()) {
 				log.warn("FEATURE 'http://xml.org/sax/features/external-general-entities' is probably not supported by "
-						+ factory.getClass().getCanonicalName());
+			+ factory.getClass().getCanonicalName());
 			}
 		}
 
@@ -79,7 +79,7 @@ public class DocumentBuilderFactoryUtils {
 		} catch (ParserConfigurationException e) {
 			if (log.isWarnEnabled()) {
 				log.warn("FEATURE 'http://xml.org/sax/features/external-parameter-entities' is probably not supported by "
-						+ factory.getClass().getCanonicalName());
+			+ factory.getClass().getCanonicalName());
 			}
 		}
 
@@ -88,8 +88,8 @@ public class DocumentBuilderFactoryUtils {
 		} catch (ParserConfigurationException e) {
 			if (log.isWarnEnabled()) {
 				log.warn(
-						"FEATURE 'http://apache.org/xml/features/nonvalidating/load-external-dtd' is probably not supported by "
-								+ factory.getClass().getCanonicalName());
+			"FEATURE 'http://apache.org/xml/features/nonvalidating/load-external-dtd' is probably not supported by "
+		+ factory.getClass().getCanonicalName());
 			}
 		}
 

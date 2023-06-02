@@ -211,7 +211,8 @@ public class GenericMarshallingMethodEndpointAdapterTest {
 		return type;
 	}
 
-	public void unsupportedMultipleParams(String s1, String s2) {}
+	public void unsupportedMultipleParams(String s1, String s2) {
+	}
 
 	public String unsupportedWrongParam(String s) {
 		return s;

@@ -16,8 +16,7 @@
 
 package org.springframework.ws.transport.http;
 
-public class ClientHttpRequestMessageSenderIntegrationTest
-		extends AbstractHttpWebServiceMessageSenderIntegrationTestCase {
+public class ClientHttpRequestMessageSenderIntegrationTestextends AbstractHttpWebServiceMessageSenderIntegrationTestCase {
 
 	@Override
 	protected AbstractHttpWebServiceMessageSender createMessageSender() {

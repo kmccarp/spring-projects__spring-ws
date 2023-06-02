@@ -35,12 +35,12 @@ import org.xml.sax.helpers.XMLReaderFactory;
 public class DomContentHandlerTest {
 
 	private static final String XML_1 = "<?xml version='1.0' encoding='UTF-8'?>" + "<?pi content?>"
-			+ "<root xmlns='namespace'>"
-			+ "<prefix:child xmlns:prefix='namespace2' xmlns:prefix2='namespace3' prefix2:attr='value'>content</prefix:child>"
-			+ "</root>";
++ "<root xmlns='namespace'>"
++ "<prefix:child xmlns:prefix='namespace2' xmlns:prefix2='namespace3' prefix2:attr='value'>content</prefix:child>"
++ "</root>";
 
 	private static final String XML_2_EXPECTED = "<?xml version='1.0' encoding='UTF-8'?>" + "<root xmlns='namespace'>"
-			+ "<child xmlns='namespace2' />" + "</root>";
++ "<child xmlns='namespace2' />" + "</root>";
 
 	private static final String XML_2_SNIPPET = "<?xml version='1.0' encoding='UTF-8'?>" + "<child xmlns='namespace2' />";
 

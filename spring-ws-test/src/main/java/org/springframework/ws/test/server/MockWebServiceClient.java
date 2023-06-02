@@ -132,7 +132,7 @@ public class MockWebServiceClient {
 	 * @return the created client
 	 */
 	public static MockWebServiceClient createClient(WebServiceMessageReceiver messageReceiver,
-			WebServiceMessageFactory messageFactory) {
+WebServiceMessageFactory messageFactory) {
 		return new MockWebServiceClient(messageReceiver, messageFactory);
 	}
 
@@ -156,9 +156,9 @@ public class MockWebServiceClient {
 		MockStrategiesHelper strategiesHelper = new MockStrategiesHelper(applicationContext);
 
 		WebServiceMessageReceiver messageReceiver = strategiesHelper.getStrategy(WebServiceMessageReceiver.class,
-				SoapMessageDispatcher.class);
+	SoapMessageDispatcher.class);
 		WebServiceMessageFactory messageFactory = strategiesHelper.getStrategy(WebServiceMessageFactory.class,
-				SaajSoapMessageFactory.class);
+	SaajSoapMessageFactory.class);
 		return new MockWebServiceClient(messageReceiver, messageFactory);
 	}
 

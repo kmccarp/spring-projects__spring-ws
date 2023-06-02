@@ -42,7 +42,8 @@ public class WsdlDefinitionHttpHandler extends TransformerObjectSupport implemen
 
 	private WsdlDefinition definition;
 
-	public WsdlDefinitionHttpHandler() {}
+	public WsdlDefinitionHttpHandler() {
+	}
 
 	public WsdlDefinitionHttpHandler(WsdlDefinition definition) {
 		this.definition = definition;

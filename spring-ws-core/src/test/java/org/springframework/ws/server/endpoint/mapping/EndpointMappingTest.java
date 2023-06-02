@@ -91,7 +91,7 @@ public class EndpointMappingTest {
 			}
 		};
 
-		mapping.setInterceptors(new EndpointInterceptor[] { interceptor });
+		mapping.setInterceptors(new EndpointInterceptor[]{interceptor});
 		EndpointInvocationChain result = mapping.getEndpoint(messageContext);
 
 		assertThat(result.getInterceptors()).hasSize(1);
@@ -114,7 +114,7 @@ public class EndpointMappingTest {
 			}
 		};
 		mapping.setApplicationContext(applicationContext);
-		mapping.setInterceptors(new EndpointInterceptor[] { interceptor });
+		mapping.setInterceptors(new EndpointInterceptor[]{interceptor});
 
 		EndpointInvocationChain result = mapping.getEndpoint(messageContext);
 

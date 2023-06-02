@@ -83,7 +83,7 @@ public final class MethodEndpoint {
 		Assert.notNull(beanFactory, "'beanFactory' must not be null");
 		Assert.notNull(method, "'method' must not be null");
 		Assert.isTrue(beanFactory.containsBean(beanName),
-				"Bean factory [" + beanFactory + "] does not contain bean " + "with name [" + beanName + "]");
+	"Bean factory [" + beanFactory + "] does not contain bean " + "with name [" + beanName + "]");
 		this.bean = beanName;
 		this.beanFactory = beanFactory;
 		this.method = method;
@@ -134,7 +134,7 @@ public final class MethodEndpoint {
 		} catch (InvocationTargetException ex) {
 			handleInvocationTargetException(ex);
 			throw new IllegalStateException("Unexpected exception thrown by method - "
-					+ ex.getTargetException().getClass().getName() + ": " + ex.getTargetException().getMessage());
+		+ ex.getTargetException().getClass().getName() + ": " + ex.getTargetException().getMessage());
 		}
 	}
 

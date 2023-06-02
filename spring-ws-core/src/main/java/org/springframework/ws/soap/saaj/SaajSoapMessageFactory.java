@@ -71,7 +71,8 @@ public class SaajSoapMessageFactory implements SoapMessageFactory, InitializingB
 	private Map<String, ?> messageProperties;
 
 	/** Default, empty constructor. */
-	public SaajSoapMessageFactory() {}
+	public SaajSoapMessageFactory() {
+	}
 
 	/** Constructor that takes a message factory as an argument. */
 	public SaajSoapMessageFactory(MessageFactory messageFactory) {
@@ -118,7 +119,7 @@ public class SaajSoapMessageFactory implements SoapMessageFactory, InitializingB
 				messageFactoryProtocol = SOAPConstants.SOAP_1_2_PROTOCOL;
 			} else {
 				throw new IllegalArgumentException(
-						"Invalid version [" + version + "]. Expected the SOAP_11 or SOAP_12 constant");
+			"Invalid version [" + version + "]. Expected the SOAP_11 or SOAP_12 constant");
 			}
 		} else if (SoapVersion.SOAP_11 != version) {
 			throw new IllegalArgumentException("SAAJ 1.1 and 1.2 only support SOAP 1.1");
@@ -145,13 +146,13 @@ public class SaajSoapMessageFactory implements SoapMessageFactory, InitializingB
 					messageFactory = MessageFactory.newInstance();
 				} else {
 					throw new IllegalStateException(
-							"SaajSoapMessageFactory requires SAAJ 1.1, which was not found on the classpath");
+				"SaajSoapMessageFactory requires SAAJ 1.1, which was not found on the classpath");
 				}
 			} catch (NoSuchMethodError ex) {
 				throw new SoapMessageCreationException(
-						"Could not create SAAJ MessageFactory. Is the version of the SAAJ specification interfaces ["
-								+ SaajUtils.getSaajVersionString() + "] the same as the version supported by the application server?",
-						ex);
+			"Could not create SAAJ MessageFactory. Is the version of the SAAJ specification interfaces ["
+		+ SaajUtils.getSaajVersionString() + "] the same as the version supported by the application server?",
+			ex);
 			} catch (SOAPException ex) {
 				throw new SoapMessageCreationException("Could not create SAAJ MessageFactory: " + ex.getMessage(), ex);
 			}
@@ -185,7 +186,7 @@ public class SaajSoapMessageFactory implements SoapMessageFactory, InitializingB
 			// SAAJ 1.3 RI has a issue with handling multipart XOP content types which contain "startinfo" rather than
 			// "start-info", so let's try and do something about it
 			String contentType = StringUtils
-					.arrayToCommaDelimitedString(mimeHeaders.getHeader(TransportConstants.HEADER_CONTENT_TYPE));
+		.arrayToCommaDelimitedString(mimeHeaders.getHeader(TransportConstants.HEADER_CONTENT_TYPE));
 			if (contentType.contains("startinfo")) {
 				contentType = contentType.replace("startinfo", "start-info");
 				mimeHeaders.setHeader(TransportConstants.HEADER_CONTENT_TYPE, contentType);
@@ -220,9 +221,9 @@ public class SaajSoapMessageFactory implements SoapMessageFactory, InitializingB
 		MimeHeaders mimeHeaders = new MimeHeaders();
 		if (inputStream instanceof TransportInputStream) {
 			TransportInputStream transportInputStream = (TransportInputStream) inputStream;
-			for (Iterator<String> headerNames = transportInputStream.getHeaderNames(); headerNames.hasNext();) {
+			for (Iterator<String> headerNames = transportInputStream.getHeaderNames(); headerNames.hasNext(); ) {
 				String headerName = headerNames.next();
-				for (Iterator<String> headerValues = transportInputStream.getHeaders(headerName); headerValues.hasNext();) {
+				for (Iterator<String> headerValues = transportInputStream.getHeaders(headerName); headerValues.hasNext(); ) {
 					String headerValue = headerValues.next();
 					StringTokenizer tokenizer = new StringTokenizer(headerValue, ",");
 					while (tokenizer.hasMoreTokens()) {

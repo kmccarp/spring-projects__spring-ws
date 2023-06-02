@@ -91,7 +91,7 @@ public class X509AuthenticationProvider implements AuthenticationProvider, Initi
 
 		if (clientCertificate == null) {
 			throw new BadCredentialsException(
-					messages.getMessage("X509AuthenticationProvider.certificateNull", "Certificate is null"));
+		messages.getMessage("X509AuthenticationProvider.certificateNull", "Certificate is null"));
 		}
 
 		UserDetails user = userCache.getUserFromCache(clientCertificate);

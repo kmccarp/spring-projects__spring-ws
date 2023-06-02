@@ -36,35 +36,35 @@ public enum FaultCode {
 	 * Note that custom Fault Codes are only supported on SOAP 1.1.
 	 *
 	 * @see SoapFault#customFaultCode()
-	 * @see Soap11Body#addFault(javax.xml.namespace.QName,String,java.util.Locale)
+	 * @see Soap11Body#addFault(javax.xml.namespace.QName, String, java.util.Locale)
 	 */
 	CUSTOM(new QName("CUSTOM")),
 
 	/**
 	 * Constant used to indicate that a {@code Client} fault must be created.
 	 *
-	 * @see SoapBody#addClientOrSenderFault(String,java.util.Locale)
+	 * @see SoapBody#addClientOrSenderFault(String, java.util.Locale)
 	 */
 	CLIENT(new QName("CLIENT")),
 
 	/**
 	 * Constant {@code QName} used to indicate that a {@code Receiver} fault must be created.
 	 *
-	 * @see SoapBody#addServerOrReceiverFault(String,java.util.Locale)
+	 * @see SoapBody#addServerOrReceiverFault(String, java.util.Locale)
 	 */
 	RECEIVER(new QName("RECEIVER")),
 
 	/**
 	 * Constant {@code QName} used to indicate that a {@code Sender} fault must be created.
 	 *
-	 * @see SoapBody#addServerOrReceiverFault(String,java.util.Locale)
+	 * @see SoapBody#addServerOrReceiverFault(String, java.util.Locale)
 	 */
 	SENDER(new QName("SENDER")),
 
 	/**
 	 * Constant {@code QName} used to indicate that a {@code Server} fault must be created.
 	 *
-	 * @see SoapBody#addClientOrSenderFault(String,java.util.Locale)
+	 * @see SoapBody#addClientOrSenderFault(String, java.util.Locale)
 	 */
 	SERVER(new QName("SERVER"));
 

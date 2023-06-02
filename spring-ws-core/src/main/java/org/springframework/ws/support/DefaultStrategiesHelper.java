@@ -112,7 +112,7 @@ public class DefaultStrategiesHelper {
 	 */
 	@SuppressWarnings("unchecked")
 	public <T> List<T> getDefaultStrategies(Class<T> strategyInterface, ApplicationContext applicationContext)
-			throws BeanInitializationException {
+throws BeanInitializationException {
 		String key = strategyInterface.getName();
 		try {
 			String value = defaultStrategies.getProperty(key);
@@ -131,7 +131,7 @@ public class DefaultStrategiesHelper {
 			for (String className : classNames) {
 				Class<T> clazz = (Class<T>) ClassUtils.forName(className, classLoader);
 				Assert.isTrue(strategyInterface.isAssignableFrom(clazz),
-						clazz.getName() + " is not a " + strategyInterface.getName());
+			clazz.getName() + " is not a " + strategyInterface.getName());
 				T strategy = instantiateBean(clazz, applicationContext);
 				result.add(strategy);
 			}
@@ -200,7 +200,7 @@ public class DefaultStrategiesHelper {
 	/**
 	 * Return the default strategy object for the given strategy interface.
 	 * <p>
-	 * Delegates to {@link #getDefaultStrategies(Class,ApplicationContext)}, expecting a single object in the list.
+	 * Delegates to {@link #getDefaultStrategies(Class, ApplicationContext)}, expecting a single object in the list.
 	 *
 	 * @param strategyInterface the strategy interface
 	 * @param applicationContext used to satisfy strategies that are application context aware, may be {@code null}
@@ -208,11 +208,11 @@ public class DefaultStrategiesHelper {
 	 * @throws BeansException if initialization failed
 	 */
 	public <T> T getDefaultStrategy(Class<T> strategyInterface, ApplicationContext applicationContext)
-			throws BeanInitializationException {
+throws BeanInitializationException {
 		List<T> result = getDefaultStrategies(strategyInterface, applicationContext);
 		if (result.size() != 1) {
 			throw new BeanInitializationException(
-					"Could not find exactly 1 strategy for interface [" + strategyInterface.getName() + "]");
+		"Could not find exactly 1 strategy for interface [" + strategyInterface.getName() + "]");
 		}
 		return result.get(0);
 	}

@@ -131,9 +131,10 @@ public class SoapActionAnnotationMethodEndpointMappingTest {
 
 		}
 
-		@SoapActions({ @SoapAction("http://springframework.org/spring-ws/SoapAction1"),
-				@SoapAction("http://springframework.org/spring-ws/SoapAction2") })
-		public void doItMultiple() {}
+		@SoapActions({@SoapAction("http://springframework.org/spring-ws/SoapAction1"),
+	@SoapAction("http://springframework.org/spring-ws/SoapAction2")})
+		public void doItMultiple() {
+		}
 
 		@SoapAction("http://springframework.org/spring-ws/SoapAction3")
 		@SoapAction("http://springframework.org/spring-ws/SoapAction4")

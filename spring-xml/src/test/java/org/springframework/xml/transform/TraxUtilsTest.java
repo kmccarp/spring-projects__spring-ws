@@ -307,7 +307,8 @@ public class TraxUtilsTest {
 
 		Source source = new Source() {
 
-			public void setSystemId(String systemId) {}
+			public void setSystemId(String systemId) {
+			}
 
 			public String getSystemId() {
 				return null;
@@ -321,7 +322,8 @@ public class TraxUtilsTest {
 	public void testDoWithInvalidResult() throws Exception {
 		Result result = new Result() {
 
-			public void setSystemId(String systemId) {}
+			public void setSystemId(String systemId) {
+			}
 
 			public String getSystemId() {
 				return null;

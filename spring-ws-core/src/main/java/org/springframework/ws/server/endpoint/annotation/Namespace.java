@@ -36,7 +36,7 @@ import javax.xml.XMLConstants;
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.PACKAGE, ElementType.TYPE, ElementType.METHOD })
+@Target({ElementType.PACKAGE, ElementType.TYPE, ElementType.METHOD})
 public @interface Namespace {
 
 	/**

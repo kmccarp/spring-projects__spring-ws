@@ -41,7 +41,7 @@ public abstract class Wss4jMessageInterceptorSignTestCase extends Wss4jTestCase 
 		CryptoFactoryBean cryptoFactoryBean = new CryptoFactoryBean();
 		Properties cryptoFactoryBeanConfig = new Properties();
 		cryptoFactoryBeanConfig.setProperty("org.apache.ws.security.crypto.provider",
-				"org.apache.ws.security.components.crypto.Merlin");
+	"org.apache.ws.security.components.crypto.Merlin");
 		cryptoFactoryBeanConfig.setProperty("org.apache.ws.security.crypto.merlin.keystore.type", "jceks");
 		cryptoFactoryBeanConfig.setProperty("org.apache.ws.security.crypto.merlin.keystore.password", "123456");
 
@@ -66,7 +66,7 @@ public abstract class Wss4jMessageInterceptorSignTestCase extends Wss4jTestCase 
 		assertThat(result).isNotNull();
 
 		assertXpathNotExists("Security Header not removed", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security",
-				getDocument(message));
+	getDocument(message));
 	}
 
 	@Test
@@ -83,7 +83,7 @@ public abstract class Wss4jMessageInterceptorSignTestCase extends Wss4jTestCase 
 
 		Document document = getDocument((SoapMessage) response);
 		assertXpathExists("Absent SignatureConfirmation element",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse11:SignatureConfirmation", document);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse11:SignatureConfirmation", document);
 	}
 
 	@Test
@@ -102,7 +102,7 @@ public abstract class Wss4jMessageInterceptorSignTestCase extends Wss4jTestCase 
 
 		Document document = getDocument(message);
 		assertXpathExists("Absent SignatureConfirmation element",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/ds:Signature", document);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/ds:Signature", document);
 	}
 
 	@Test
@@ -119,6 +119,6 @@ public abstract class Wss4jMessageInterceptorSignTestCase extends Wss4jTestCase 
 
 		Document document = getDocument(message);
 		assertXpathExists("Absent SignatureConfirmation element",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/ds:Signature", document);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/ds:Signature", document);
 	}
 }

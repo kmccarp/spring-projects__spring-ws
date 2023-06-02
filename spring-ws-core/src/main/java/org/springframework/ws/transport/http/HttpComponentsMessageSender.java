@@ -55,8 +55,7 @@ import org.springframework.ws.transport.WebServiceConnection;
  * @since 2.1.0
  */
 @SuppressWarnings("deprecation")
-public class HttpComponentsMessageSender extends AbstractHttpWebServiceMessageSender
-		implements InitializingBean, DisposableBean {
+public class HttpComponentsMessageSender extends AbstractHttpWebServiceMessageSenderimplements InitializingBean, DisposableBean {
 
 	private static final int DEFAULT_CONNECTION_TIMEOUT_MILLISECONDS = (60 * 1000);
 
@@ -74,7 +73,7 @@ public class HttpComponentsMessageSender extends AbstractHttpWebServiceMessageSe
 	 */
 	public HttpComponentsMessageSender() {
 		org.apache.http.impl.client.DefaultHttpClient defaultClient = new org.apache.http.impl.client.DefaultHttpClient(
-				new org.apache.http.impl.conn.PoolingClientConnectionManager());
+	new org.apache.http.impl.conn.PoolingClientConnectionManager());
 		defaultClient.addRequestInterceptor(new RemoveSoapHeadersInterceptor(), 0);
 
 		this.httpClient = defaultClient;
@@ -160,8 +159,8 @@ public class HttpComponentsMessageSender extends AbstractHttpWebServiceMessageSe
 		org.apache.http.conn.ClientConnectionManager connectionManager = getHttpClient().getConnectionManager();
 		if (!(connectionManager instanceof org.apache.http.impl.conn.PoolingClientConnectionManager)) {
 			throw new IllegalArgumentException(
-					"maxTotalConnections is not supported on " + connectionManager.getClass().getName() + ". Use "
-							+ org.apache.http.impl.conn.PoolingClientConnectionManager.class.getName() + " instead");
+		"maxTotalConnections is not supported on " + connectionManager.getClass().getName() + ". Use "
+	+ org.apache.http.impl.conn.PoolingClientConnectionManager.class.getName() + " instead");
 		}
 		((org.apache.http.impl.conn.PoolingClientConnectionManager) connectionManager).setMaxTotal(maxTotalConnections);
 	}
@@ -185,8 +184,8 @@ public class HttpComponentsMessageSender extends AbstractHttpWebServiceMessageSe
 		org.apache.http.conn.ClientConnectionManager connectionManager = getHttpClient().getConnectionManager();
 		if (!(connectionManager instanceof org.apache.http.impl.conn.PoolingClientConnectionManager)) {
 			throw new IllegalArgumentException(
-					"maxConnectionsPerHost is not supported on " + connectionManager.getClass().getName() + ". Use "
-							+ org.apache.http.impl.conn.PoolingClientConnectionManager.class.getName() + " instead");
+		"maxConnectionsPerHost is not supported on " + connectionManager.getClass().getName() + ". Use "
+	+ org.apache.http.impl.conn.PoolingClientConnectionManager.class.getName() + " instead");
 		}
 		org.apache.http.impl.conn.PoolingClientConnectionManager poolingConnectionManager = (org.apache.http.impl.conn.PoolingClientConnectionManager) connectionManager;
 
@@ -222,7 +221,7 @@ public class HttpComponentsMessageSender extends AbstractHttpWebServiceMessageSe
 	public void afterPropertiesSet() throws Exception {
 		if (credentials != null && getHttpClient() instanceof org.apache.http.impl.client.DefaultHttpClient) {
 			((org.apache.http.impl.client.DefaultHttpClient) getHttpClient()).getCredentialsProvider()
-					.setCredentials(authScope, credentials);
+		.setCredentials(authScope, credentials);
 		}
 	}
 

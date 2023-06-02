@@ -100,9 +100,12 @@ public class SoapMethodArgumentResolverTest extends AbstractMethodArgumentResolv
 
 	}
 
-	public void soapEnvelope(SoapEnvelope soapEnvelope) {}
+	public void soapEnvelope(SoapEnvelope soapEnvelope) {
+	}
 
-	public void soapBody(SoapBody soapBody) {}
+	public void soapBody(SoapBody soapBody) {
+	}
 
-	public void soapHeader(SoapHeader soapHeader) {}
+	public void soapHeader(SoapHeader soapHeader) {
+	}
 }

@@ -44,11 +44,11 @@ import org.springframework.ws.transport.jms.JmsTransportConstants;
  */
 public abstract class JmsTransportUtils {
 
-	private static final String[] CONVERSION_TABLE = new String[] { JmsTransportConstants.HEADER_CONTENT_TYPE,
-			JmsTransportConstants.PROPERTY_CONTENT_TYPE, JmsTransportConstants.HEADER_CONTENT_LENGTH,
-			JmsTransportConstants.PROPERTY_CONTENT_LENGTH, JmsTransportConstants.HEADER_SOAP_ACTION,
-			JmsTransportConstants.PROPERTY_SOAP_ACTION, JmsTransportConstants.HEADER_ACCEPT_ENCODING,
-			JmsTransportConstants.PROPERTY_ACCEPT_ENCODING };
+	private static final String[] CONVERSION_TABLE = new String[]{JmsTransportConstants.HEADER_CONTENT_TYPE,
+JmsTransportConstants.PROPERTY_CONTENT_TYPE, JmsTransportConstants.HEADER_CONTENT_LENGTH,
+JmsTransportConstants.PROPERTY_CONTENT_LENGTH, JmsTransportConstants.HEADER_SOAP_ACTION,
+JmsTransportConstants.PROPERTY_SOAP_ACTION, JmsTransportConstants.HEADER_ACCEPT_ENCODING,
+JmsTransportConstants.PROPERTY_ACCEPT_ENCODING};
 
 	private static final Pattern DESTINATION_NAME_PATTERN = Pattern.compile("^([^\\?]+)");
 
@@ -62,7 +62,8 @@ public abstract class JmsTransportUtils {
 
 	private static final Pattern REPLY_TO_NAME_PATTERN = Pattern.compile("replyToName=([^&]+)");
 
-	private JmsTransportUtils() {}
+	private JmsTransportUtils() {
+	}
 
 	/**
 	 * Converts the given transport header to a JMS property name. Returns the given header name if no match is found.

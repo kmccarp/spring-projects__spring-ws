@@ -53,8 +53,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
  * @see #setResponseXslt(org.springframework.core.io.Resource)
  * @since 1.0.0
  */
-public class PayloadTransformingInterceptor extends TransformerObjectSupport
-		implements EndpointInterceptor, InitializingBean {
+public class PayloadTransformingInterceptor extends TransformerObjectSupportimplements EndpointInterceptor, InitializingBean {
 
 	private static final Log logger = LogFactory.getLog(PayloadTransformingInterceptor.class);
 
@@ -129,7 +128,8 @@ public class PayloadTransformingInterceptor extends TransformerObjectSupport
 
 	/** Does nothing by default. */
 	@Override
-	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) {}
+	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) {
+	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {

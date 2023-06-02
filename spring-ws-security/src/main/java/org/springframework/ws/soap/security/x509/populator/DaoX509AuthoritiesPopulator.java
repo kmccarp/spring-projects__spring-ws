@@ -69,7 +69,7 @@ public class DaoX509AuthoritiesPopulator implements X509AuthoritiesPopulator, In
 
 		if (!matcher.find()) {
 			throw new BadCredentialsException(messages.getMessage("DaoX509AuthoritiesPopulator.noMatching",
-					new Object[] { subjectDN }, "No matching pattern was found in subjectDN: {0}"));
+		new Object[]{subjectDN}, "No matching pattern was found in subjectDN: {0}"));
 		}
 
 		if (matcher.groupCount() != 1) {
@@ -82,7 +82,7 @@ public class DaoX509AuthoritiesPopulator implements X509AuthoritiesPopulator, In
 
 		if (user == null) {
 			throw new AuthenticationServiceException(
-					"UserDetailsService returned null, which is an interface contract violation");
+		"UserDetailsService returned null, which is an interface contract violation");
 		}
 
 		return user;

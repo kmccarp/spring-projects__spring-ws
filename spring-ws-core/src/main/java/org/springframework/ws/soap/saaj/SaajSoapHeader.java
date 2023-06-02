@@ -61,7 +61,7 @@ abstract class SaajSoapHeader extends SaajSoapElement<SOAPHeader> implements Soa
 	@Override
 	@SuppressWarnings("unchecked")
 	public Iterator<SoapHeaderElement> examineMustUnderstandHeaderElements(String actorOrRole)
-			throws SoapHeaderException {
+throws SoapHeaderException {
 		Iterator<SOAPHeaderElement> iterator = getSaajHeader().examineMustUnderstandHeaderElements(actorOrRole);
 		return new SaajSoapHeaderElementIterator(iterator);
 	}

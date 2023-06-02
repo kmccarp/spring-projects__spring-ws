@@ -49,7 +49,8 @@ public class GenericMarshallingMethodEndpointAdapter extends MarshallingMethodEn
 	 * @see #setMarshaller(org.springframework.oxm.Marshaller)
 	 * @see #setUnmarshaller(org.springframework.oxm.Unmarshaller)
 	 */
-	public GenericMarshallingMethodEndpointAdapter() {}
+	public GenericMarshallingMethodEndpointAdapter() {
+	}
 
 	/**
 	 * Creates a new {@code GenericMarshallingMethodEndpointAdapter} with the given marshaller. If the given

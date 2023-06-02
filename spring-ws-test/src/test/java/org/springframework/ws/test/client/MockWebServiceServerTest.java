@@ -149,13 +149,13 @@ public class MockWebServiceServerTest {
 		requestMatcher1.match(eq(uri), isA(SaajSoapMessage.class));
 		requestMatcher2.match(eq(uri), isA(SaajSoapMessage.class));
 		expect(responseCreator.createResponse(eq(uri), isA(SaajSoapMessage.class), isA(SaajSoapMessageFactory.class)))
-				.andReturn(response);
+	.andReturn(response);
 
 		replay(requestMatcher1, requestMatcher2, responseCreator);
 
 		server.expect(requestMatcher1).andExpect(requestMatcher2).andRespond(responseCreator);
 		template.sendSourceAndReceiveToResult(uri.toString(), new StringSource("<request xmlns='http://example.com'/>"),
-				new StringResult());
+	new StringResult());
 
 		verify(requestMatcher1, requestMatcher2, responseCreator);
 	}
@@ -213,7 +213,7 @@ public class MockWebServiceServerTest {
 			server.expect(soapHeader(soapHeaderName));
 
 			template.sendSourceAndReceiveToResult(new StringSource("<request xmlns='http://example.com'/>"),
-					new StringResult());
+		new StringResult());
 		});
 	}
 
@@ -224,7 +224,7 @@ public class MockWebServiceServerTest {
 		server.expect(connectionTo(uri));
 
 		template.sendSourceAndReceiveToResult(uri, new StringSource("<request xmlns='http://example.com'/>"),
-				new StringResult());
+	new StringResult());
 	}
 
 	@Test
@@ -237,7 +237,7 @@ public class MockWebServiceServerTest {
 
 			String actual = "http://actual.com";
 			template.sendSourceAndReceiveToResult(actual, new StringSource("<request xmlns='http://example.com'/>"),
-					new StringResult());
+		new StringResult());
 		});
 	}
 
@@ -260,8 +260,8 @@ public class MockWebServiceServerTest {
 	public void xsdMatch() throws Exception {
 
 		Resource schema = new ByteArrayResource(
-				"<schema xmlns=\"http://www.w3.org/2001/XMLSchema\" targetNamespace=\"http://example.com\" elementFormDefault=\"qualified\"><element name=\"request\"/></schema>"
-						.getBytes());
+	"<schema xmlns=\"http://www.w3.org/2001/XMLSchema\" targetNamespace=\"http://example.com\" elementFormDefault=\"qualified\"><element name=\"request\"/></schema>"
+.getBytes());
 
 		server.expect(validPayload(schema));
 
@@ -276,8 +276,8 @@ public class MockWebServiceServerTest {
 		assertThatExceptionOfType(AssertionError.class).isThrownBy(() -> {
 
 			Resource schema = new ByteArrayResource(
-					"<schema xmlns=\"http://www.w3.org/2001/XMLSchema\" targetNamespace=\"http://example.com\" elementFormDefault=\"qualified\"><element name=\"request\"/></schema>"
-							.getBytes());
+		"<schema xmlns=\"http://www.w3.org/2001/XMLSchema\" targetNamespace=\"http://example.com\" elementFormDefault=\"qualified\"><element name=\"request\"/></schema>"
+	.getBytes());
 
 			server.expect(validPayload(schema));
 
@@ -295,7 +295,7 @@ public class MockWebServiceServerTest {
 		server.expect(xpath("/ns:request", ns).exists());
 
 		template.sendSourceAndReceiveToResult(new StringSource("<request xmlns='http://example.com'/>"),
-				new StringResult());
+	new StringResult());
 	}
 
 	@Test
@@ -308,7 +308,7 @@ public class MockWebServiceServerTest {
 			server.expect(xpath("/ns:foo", ns).exists());
 
 			template.sendSourceAndReceiveToResult(new StringSource("<request xmlns='http://example.com'/>"),
-					new StringResult());
+		new StringResult());
 		});
 	}
 

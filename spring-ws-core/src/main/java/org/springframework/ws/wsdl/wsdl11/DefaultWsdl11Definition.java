@@ -175,7 +175,7 @@ public class DefaultWsdl11Definition implements Wsdl11Definition, InitializingBe
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		if (!StringUtils.hasText(delegate.getTargetNamespace()) && typesProvider.getSchemaCollection() != null
-				&& typesProvider.getSchemaCollection().getXsdSchemas().length > 0) {
+	&& typesProvider.getSchemaCollection().getXsdSchemas().length > 0) {
 			XsdSchema schema = typesProvider.getSchemaCollection().getXsdSchemas()[0];
 			setTargetNamespace(schema.getTargetNamespace());
 		}

@@ -42,7 +42,7 @@ public class StaxEventPayloadEndpointTest extends AbstractMessageEndpointTestCas
 		return new AbstractStaxEventPayloadEndpoint() {
 			@Override
 			protected void invokeInternal(XMLEventReader eventReader, XMLEventConsumer eventWriter,
-					XMLEventFactory eventFactory) {
+		XMLEventFactory eventFactory) {
 				assertThat(eventReader).isNotNull();
 			}
 		};
@@ -55,7 +55,7 @@ public class StaxEventPayloadEndpointTest extends AbstractMessageEndpointTestCas
 
 			@Override
 			protected void invokeInternal(XMLEventReader eventReader, XMLEventConsumer eventWriter,
-					XMLEventFactory eventFactory) {
+		XMLEventFactory eventFactory) {
 				assertThat(eventReader).isNull();
 			}
 		};
@@ -68,7 +68,7 @@ public class StaxEventPayloadEndpointTest extends AbstractMessageEndpointTestCas
 
 			@Override
 			protected void invokeInternal(XMLEventReader eventReader, XMLEventConsumer eventWriter,
-					XMLEventFactory eventFactory) throws XMLStreamException {
+		XMLEventFactory eventFactory) throws XMLStreamException {
 
 				assertThat(eventReader).isNotNull();
 				assertThat(eventWriter).isNotNull();

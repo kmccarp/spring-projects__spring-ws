@@ -28,7 +28,7 @@ import org.w3c.dom.Node;
  * List.
  *
  * @author Arjen Poutsma
- * @see XPathOperations#evaluate(String,javax.xml.transform.Source,NodeCallbackHandler)
+ * @see XPathOperations#evaluate(String, javax.xml.transform.Source, NodeCallbackHandler)
  * @since 1.0.0
  */
 public interface NodeCallbackHandler {

@@ -40,7 +40,8 @@ public class WebServiceHttpHandlerIntegrationTest {
 
 	private HttpClient client;
 
-	@Autowired private int port;
+	@Autowired
+	private int port;
 
 	private String url;
 
@@ -67,7 +68,7 @@ public class WebServiceHttpHandlerIntegrationTest {
 		PostMethod postMethod = new PostMethod(url);
 		postMethod.addRequestHeader(HttpTransportConstants.HEADER_CONTENT_TYPE, "text/xml");
 		postMethod.addRequestHeader(TransportConstants.HEADER_SOAP_ACTION,
-				"http://springframework.org/spring-ws/NoResponse");
+	"http://springframework.org/spring-ws/NoResponse");
 		Resource soapRequest = new ClassPathResource("soapRequest.xml", WebServiceHttpHandlerIntegrationTest.class);
 		postMethod.setRequestEntity(new InputStreamRequestEntity(soapRequest.getInputStream()));
 
@@ -97,7 +98,7 @@ public class WebServiceHttpHandlerIntegrationTest {
 		PostMethod postMethod = new PostMethod(url);
 		postMethod.addRequestHeader(HttpTransportConstants.HEADER_CONTENT_TYPE, "text/xml");
 		postMethod.addRequestHeader(TransportConstants.HEADER_SOAP_ACTION,
-				"http://springframework.org/spring-ws/NoEndpoint");
+	"http://springframework.org/spring-ws/NoEndpoint");
 		Resource soapRequest = new ClassPathResource("soapRequest.xml", WebServiceHttpHandlerIntegrationTest.class);
 		postMethod.setRequestEntity(new InputStreamRequestEntity(soapRequest.getInputStream()));
 

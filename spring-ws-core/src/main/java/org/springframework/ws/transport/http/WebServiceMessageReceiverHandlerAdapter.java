@@ -43,8 +43,7 @@ import org.springframework.ws.transport.support.WebServiceMessageReceiverObjectS
  * @see org.springframework.ws.server.MessageDispatcher
  * @since 1.0.0
  */
-public class WebServiceMessageReceiverHandlerAdapter extends WebServiceMessageReceiverObjectSupport
-		implements HandlerAdapter {
+public class WebServiceMessageReceiverHandlerAdapter extends WebServiceMessageReceiverObjectSupportimplements HandlerAdapter {
 
 	@Override
 	public long getLastModified(HttpServletRequest request, Object handler) {
@@ -53,7 +52,7 @@ public class WebServiceMessageReceiverHandlerAdapter extends WebServiceMessageRe
 
 	@Override
 	public ModelAndView handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
-			Object handler) throws Exception {
+Object handler) throws Exception {
 		if (HttpTransportConstants.METHOD_POST.equals(httpServletRequest.getMethod())) {
 			WebServiceConnection connection = new HttpServletConnection(httpServletRequest, httpServletResponse);
 			try {
@@ -83,7 +82,7 @@ public class WebServiceMessageReceiverHandlerAdapter extends WebServiceMessageRe
 	 * @param handler current handler
 	 */
 	protected void handleNonPostMethod(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
-			Object handler) throws Exception {
+Object handler) throws Exception {
 		httpServletResponse.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
 	}
 
@@ -99,7 +98,7 @@ public class WebServiceMessageReceiverHandlerAdapter extends WebServiceMessageRe
 	 * @param ex the invalid XML exception that resulted in this method being called
 	 */
 	protected void handleInvalidXmlException(HttpServletRequest httpServletRequest,
-			HttpServletResponse httpServletResponse, Object handler, InvalidXmlException ex) throws Exception {
+HttpServletResponse httpServletResponse, Object handler, InvalidXmlException ex) throws Exception {
 		httpServletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 	}
 

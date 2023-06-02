@@ -51,7 +51,7 @@ public class SchemaValidatingMatcherTest {
 	public void singleSchemaMatch() throws IOException, AssertionError {
 
 		expect(message.getPayloadSource()).andReturn(
-				new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>0</number><text>text</text></test>"));
+	new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>0</number><text>text</text></test>"));
 
 		SchemaValidatingMatcher matcher = new SchemaValidatingMatcher(schema);
 
@@ -68,8 +68,8 @@ public class SchemaValidatingMatcherTest {
 		assertThatExceptionOfType(AssertionError.class).isThrownBy(() -> {
 
 			expect(message.getPayloadSource()).andReturn(
-					new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
-					.times(2);
+		new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
+		.times(2);
 
 			SchemaValidatingMatcher matcher = new SchemaValidatingMatcher(schema);
 
@@ -85,7 +85,7 @@ public class SchemaValidatingMatcherTest {
 	public void multipleSchemaMatch() throws IOException, AssertionError {
 
 		expect(message.getPayloadSource()).andReturn(
-				new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>0</number><text>text</text></test>"));
+	new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>0</number><text>text</text></test>"));
 
 		SchemaValidatingMatcher matcher = new SchemaValidatingMatcher(schema1, schema2);
 
@@ -102,8 +102,8 @@ public class SchemaValidatingMatcherTest {
 		assertThatExceptionOfType(AssertionError.class).isThrownBy(() -> {
 
 			expect(message.getPayloadSource()).andReturn(
-					new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
-					.times(2);
+		new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
+		.times(2);
 
 			SchemaValidatingMatcher matcher = new SchemaValidatingMatcher(schema1, schema2);
 
@@ -121,8 +121,8 @@ public class SchemaValidatingMatcherTest {
 		assertThatExceptionOfType(AssertionError.class).isThrownBy(() -> {
 
 			expect(message.getPayloadSource()).andReturn(
-					new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
-					.times(2);
+		new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
+		.times(2);
 
 			SchemaValidatingMatcher matcher = new SchemaValidatingMatcher(schema1, schema2);
 
@@ -140,8 +140,8 @@ public class SchemaValidatingMatcherTest {
 		assertThatExceptionOfType(AssertionError.class).isThrownBy(() -> {
 
 			expect(message.getPayloadSource()).andReturn(
-					new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
-					.times(2);
+		new StringSource("<test xmlns=\"http://www.example.org/schema\"><number>a</number><text>text</text></test>"))
+		.times(2);
 
 			SchemaValidatingMatcher matcher = new SchemaValidatingMatcher(schema);
 

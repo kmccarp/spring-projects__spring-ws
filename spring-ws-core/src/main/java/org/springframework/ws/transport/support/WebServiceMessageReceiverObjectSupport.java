@@ -77,7 +77,7 @@ public abstract class WebServiceMessageReceiverObjectSupport implements Initiali
 	 * @param receiver the handler of the message, typically a {@link org.springframework.ws.server.MessageDispatcher}
 	 */
 	protected final void handleConnection(WebServiceConnection connection, WebServiceMessageReceiver receiver)
-			throws Exception {
+throws Exception {
 		logUri(connection);
 		TransportContext previousTransportContext = TransportContextHolder.getTransportContext();
 		TransportContextHolder.setTransportContext(new DefaultTransportContext(connection));
@@ -115,7 +115,7 @@ public abstract class WebServiceMessageReceiverObjectSupport implements Initiali
 	 * @throws Exception in case of errors
 	 */
 	protected void handleNoEndpointFoundException(NoEndpointFoundException ex, WebServiceConnection connection,
-			WebServiceMessageReceiver receiver) throws Exception {
+WebServiceMessageReceiver receiver) throws Exception {
 		if (connection instanceof EndpointAwareWebServiceConnection) {
 			((EndpointAwareWebServiceConnection) connection).endpointNotFound();
 		}

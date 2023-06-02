@@ -56,8 +56,7 @@ import org.springframework.ws.transport.WebServiceConnection;
  * @see HttpClient
  * @since 4.0.5
  */
-public class HttpComponents5MessageSender extends AbstractHttpWebServiceMessageSender
-		implements InitializingBean, DisposableBean {
+public class HttpComponents5MessageSender extends AbstractHttpWebServiceMessageSenderimplements InitializingBean, DisposableBean {
 
 	private static final String HTTP_CLIENT_ALREADY_SET = "httpClient already set";
 
@@ -73,7 +72,7 @@ public class HttpComponents5MessageSender extends AbstractHttpWebServiceMessageS
 
 		this.clientFactory = new HttpComponents5ClientFactory();
 		this.clientFactory.setClientBuilderCustomizer(
-				httpClientBuilder -> httpClientBuilder.addRequestInterceptorFirst(new RemoveSoapHeadersInterceptor()));
+	httpClientBuilder -> httpClientBuilder.addRequestInterceptorFirst(new RemoveSoapHeadersInterceptor()));
 	}
 
 	/**
@@ -227,7 +226,7 @@ public class HttpComponents5MessageSender extends AbstractHttpWebServiceMessageS
 
 		@Override
 		public void process(HttpRequest request, EntityDetails entityDetails, HttpContext httpContext)
-				throws HttpException, IOException {
+	throws HttpException, IOException {
 
 			if (request.containsHeader(HttpHeaders.TRANSFER_ENCODING)) {
 				request.removeHeaders(HttpHeaders.TRANSFER_ENCODING);

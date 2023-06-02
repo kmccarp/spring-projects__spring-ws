@@ -166,7 +166,7 @@ public abstract class SaajUtils {
 	 * @throws IOException if the input stream resource cannot be loaded
 	 */
 	public static SOAPMessage loadMessage(Resource resource, MessageFactory messageFactory)
-			throws SOAPException, IOException {
+throws SOAPException, IOException {
 		try (InputStream is = resource.getInputStream()) {
 			MimeHeaders mimeHeaders = new MimeHeaders();
 			mimeHeaders.addHeader(TransportConstants.HEADER_CONTENT_TYPE, "text/xml");
@@ -196,7 +196,7 @@ public abstract class SaajUtils {
 	 * Returns the first child element of the given body.
 	 */
 	public static SOAPElement getFirstBodyElement(SOAPBody body) {
-		for (Iterator<?> iterator = body.getChildElements(); iterator.hasNext();) {
+		for (Iterator<?> iterator = body.getChildElements(); iterator.hasNext(); ) {
 			Object child = iterator.next();
 			if (child instanceof SOAPElement) {
 				return (SOAPElement) child;

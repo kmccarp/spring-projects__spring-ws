@@ -57,7 +57,8 @@ public class MockWebServiceMessage implements FaultAwareWebServiceMessage {
 
 	private String faultReason;
 
-	public MockWebServiceMessage() {}
+	public MockWebServiceMessage() {
+	}
 
 	public MockWebServiceMessage(Source source) throws TransformerException {
 
@@ -192,10 +193,12 @@ public class MockWebServiceMessage implements FaultAwareWebServiceMessage {
 		}
 
 		@Override
-		public void close() {}
+		public void close() {
+		}
 
 		@Override
-		public void flush() {}
+		public void flush() {
+		}
 
 		@Override
 		public void write(char cbuf[], int off, int len) {

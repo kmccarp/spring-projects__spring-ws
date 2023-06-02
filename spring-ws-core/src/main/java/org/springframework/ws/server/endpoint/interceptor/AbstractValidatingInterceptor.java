@@ -53,8 +53,7 @@ import org.xml.sax.SAXParseException;
  * @see #getValidationResponseSource(org.springframework.ws.WebServiceMessage)
  * @since 1.0.0
  */
-public abstract class AbstractValidatingInterceptor extends TransformerObjectSupport
-		implements EndpointInterceptor, InitializingBean {
+public abstract class AbstractValidatingInterceptor extends TransformerObjectSupportimplements EndpointInterceptor, InitializingBean {
 
 	private String schemaLanguage = XmlValidatorFactory.SCHEMA_W3C_XML;
 
@@ -180,7 +179,7 @@ public abstract class AbstractValidatingInterceptor extends TransformerObjectSup
 	 */
 	@Override
 	public boolean handleRequest(MessageContext messageContext, Object endpoint)
-			throws IOException, SAXException, TransformerException {
+throws IOException, SAXException, TransformerException {
 		if (validateRequest) {
 			Source requestSource = getValidationRequestSource(messageContext.getRequest());
 			if (requestSource != null) {
@@ -204,7 +203,7 @@ public abstract class AbstractValidatingInterceptor extends TransformerObjectSup
 	 * @return {@code true} to continue processing the request, {@code false} (the default) otherwise
 	 */
 	protected boolean handleRequestValidationErrors(MessageContext messageContext, SAXParseException[] errors)
-			throws TransformerException {
+throws TransformerException {
 		for (SAXParseException error : errors) {
 			logger.warn("XML validation error on request: " + error.getMessage());
 		}
@@ -260,7 +259,8 @@ public abstract class AbstractValidatingInterceptor extends TransformerObjectSup
 
 	/** Does nothing by default. */
 	@Override
-	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) {}
+	public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) {
+	}
 
 	/**
 	 * Abstract template method that returns the part of the request message that is to be validated.

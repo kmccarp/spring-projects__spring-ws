@@ -26,14 +26,15 @@ import org.springframework.util.Assert;
  * {@link org.springframework.ws.WebServiceMessage WebServiceMessages} to a transport.
  *
  * @author Arjen Poutsma
- * @see #addHeader(String,String)
+ * @see #addHeader(String, String)
  * @since 1.0.0
  */
 public abstract class TransportOutputStream extends OutputStream {
 
 	private OutputStream outputStream;
 
-	protected TransportOutputStream() {}
+	protected TransportOutputStream() {
+	}
 
 	private OutputStream getOutputStream() throws IOException {
 		if (outputStream == null) {

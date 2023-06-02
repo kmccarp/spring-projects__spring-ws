@@ -43,16 +43,20 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 public class WebServiceMessageListenerIntegrationTest {
 
 	private static final String CONTENT = "<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'>"
-			+ "<SOAP-ENV:Body>\n" + "<m:GetLastTradePrice xmlns:m='http://www.springframework.org/spring-ws'>\n"
-			+ "<symbol>DIS</symbol>\n" + "</m:GetLastTradePrice>\n" + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
++ "<SOAP-ENV:Body>\n" + "<m:GetLastTradePrice xmlns:m='http://www.springframework.org/spring-ws'>\n"
++ "<symbol>DIS</symbol>\n" + "</m:GetLastTradePrice>\n" + "</SOAP-ENV:Body></SOAP-ENV:Envelope>";
 
-	@Autowired private JmsTemplate jmsTemplate;
+	@Autowired
+	private JmsTemplate jmsTemplate;
 
-	@Resource private Queue responseQueue;
+	@Resource
+	private Queue responseQueue;
 
-	@Resource private Queue requestQueue;
+	@Resource
+	private Queue requestQueue;
 
-	@Autowired private Topic requestTopic;
+	@Autowired
+	private Topic requestTopic;
 
 	private EmbeddedActiveMQ server;
 

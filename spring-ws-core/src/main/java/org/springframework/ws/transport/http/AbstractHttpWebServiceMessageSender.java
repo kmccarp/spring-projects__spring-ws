@@ -60,6 +60,6 @@ public abstract class AbstractHttpWebServiceMessageSender implements WebServiceM
 	@Override
 	public boolean supports(URI uri) {
 		return uri.getScheme().equals(HttpTransportConstants.HTTP_URI_SCHEME)
-				|| uri.getScheme().equals(HttpTransportConstants.HTTPS_URI_SCHEME);
+	|| uri.getScheme().equals(HttpTransportConstants.HTTPS_URI_SCHEME);
 	}
 }

@@ -154,7 +154,7 @@ public abstract class AbstractXPathTemplateTestCase {
 		documentBuilderFactory.setNamespaceAware(true);
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 		Document document = documentBuilder.parse(
-				SaxUtils.createInputSource(new ClassPathResource("nonamespaces.xml", AbstractXPathTemplateTestCase.class)));
+	SaxUtils.createInputSource(new ClassPathResource("nonamespaces.xml", AbstractXPathTemplateTestCase.class)));
 
 		String result = template.evaluateAsString("/root/child/text", new DOMSource(document));
 

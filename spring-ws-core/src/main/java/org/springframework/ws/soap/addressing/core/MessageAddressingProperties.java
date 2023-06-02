@@ -65,7 +65,7 @@ public final class MessageAddressingProperties implements Serializable {
 	 * @param messageId the value of the message id property
 	 */
 	public MessageAddressingProperties(URI to, EndpointReference from, EndpointReference replyTo,
-			EndpointReference faultTo, URI action, URI messageId) {
+EndpointReference faultTo, URI action, URI messageId) {
 		this.to = to;
 		this.from = from;
 		this.replyTo = replyTo;

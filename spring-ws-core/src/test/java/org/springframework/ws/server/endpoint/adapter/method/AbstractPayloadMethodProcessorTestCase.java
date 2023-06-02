@@ -104,7 +104,8 @@ public abstract class AbstractPayloadMethodProcessorTestCase extends AbstractMet
 		}
 	}
 
-	protected void testArgument(Object argument, MethodParameter parameter) {}
+	protected void testArgument(Object argument, MethodParameter parameter) {
+	}
 
 	@Test
 	public void saajReturnValue() throws Exception {

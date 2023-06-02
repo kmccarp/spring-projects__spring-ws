@@ -61,8 +61,8 @@ public abstract class AbstractAnnotationMethodEndpointMapping<T> extends Abstrac
 			logger.debug("Looking for endpoints in application context: " + getApplicationContext());
 		}
 		String[] beanNames = (this.detectEndpointsInAncestorContexts
-				? BeanFactoryUtils.beanNamesForTypeIncludingAncestors(getApplicationContext(), Object.class)
-				: getApplicationContext().getBeanNamesForType(Object.class));
+	? BeanFactoryUtils.beanNamesForTypeIncludingAncestors(getApplicationContext(), Object.class)
+	: getApplicationContext().getBeanNamesForType(Object.class));
 
 		for (String beanName : beanNames) {
 			Class<?> endpointClass = getApplicationContext().getType(beanName);

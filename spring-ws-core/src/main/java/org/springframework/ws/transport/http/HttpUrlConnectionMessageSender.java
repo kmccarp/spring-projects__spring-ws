@@ -94,7 +94,7 @@ public class HttpUrlConnectionMessageSender extends AbstractHttpWebServiceMessag
 		connection.setDoOutput(true);
 		if (isAcceptGzipEncoding()) {
 			connection.setRequestProperty(HttpTransportConstants.HEADER_ACCEPT_ENCODING,
-					HttpTransportConstants.CONTENT_ENCODING_GZIP);
+		HttpTransportConstants.CONTENT_ENCODING_GZIP);
 		}
 		connection.setConnectTimeout(Math.toIntExact(this.connectionTimeout.toMillis()));
 		connection.setReadTimeout(Math.toIntExact(this.readTimeout.toMillis()));

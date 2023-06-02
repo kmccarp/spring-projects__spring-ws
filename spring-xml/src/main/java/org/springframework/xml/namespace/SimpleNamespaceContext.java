@@ -99,11 +99,11 @@ public class SimpleNamespaceContext implements NamespaceContext {
 		Assert.notNull(namespaceUri, "No namespaceUri given");
 		if (XMLConstants.XML_NS_PREFIX.equals(prefix)) {
 			Assert.isTrue(XMLConstants.XML_NS_URI.equals(namespaceUri), "Prefix \"" + prefix + "\" bound to namespace \""
-					+ namespaceUri + "\" (should be \"" + XMLConstants.XML_NS_URI + "\")");
+		+ namespaceUri + "\" (should be \"" + XMLConstants.XML_NS_URI + "\")");
 		} else if (XMLConstants.XMLNS_ATTRIBUTE.equals(prefix)) {
 			Assert.isTrue(XMLConstants.XMLNS_ATTRIBUTE_NS_URI.equals(namespaceUri),
-					"Prefix \"" + prefix + "\" bound to namespace \"" + namespaceUri + "\" (should be \""
-							+ XMLConstants.XMLNS_ATTRIBUTE_NS_URI + "\")");
+		"Prefix \"" + prefix + "\" bound to namespace \"" + namespaceUri + "\" (should be \""
+	+ XMLConstants.XMLNS_ATTRIBUTE_NS_URI + "\")");
 		} else {
 			prefixToNamespaceUri.put(prefix, namespaceUri);
 			getPrefixesInternal(namespaceUri).add(prefix);

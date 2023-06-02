@@ -93,7 +93,7 @@ public class SoapHeaderElementMethodArgumentResolver implements MethodArgumentRe
 		String paramValue = parameter.getParameterAnnotation(SoapHeader.class).value();
 
 		Assert.isTrue(QNameUtils.validateQName(paramValue),
-				"Invalid header qualified name [" + paramValue + "]. " + "QName must be of the form '{namespace}localPart'.");
+	"Invalid header qualified name [" + paramValue + "]. " + "QName must be of the form '{namespace}localPart'.");
 
 		QName qname = QName.valueOf(paramValue);
 
@@ -120,7 +120,7 @@ public class SoapHeaderElementMethodArgumentResolver implements MethodArgumentRe
 	}
 
 	private List<SoapHeaderElement> extractSoapHeaderList(QName qname,
-			org.springframework.ws.soap.SoapHeader soapHeader) {
+org.springframework.ws.soap.SoapHeader soapHeader) {
 		List<SoapHeaderElement> result = new ArrayList<SoapHeaderElement>();
 		Iterator<SoapHeaderElement> elements = soapHeader.examineAllHeaderElements();
 		while (elements.hasNext()) {

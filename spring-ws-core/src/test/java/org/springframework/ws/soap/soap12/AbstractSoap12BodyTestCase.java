@@ -52,7 +52,7 @@ public abstract class AbstractSoap12BodyTestCase extends AbstractSoapBodyTestCas
 		transformer.transform(soapBody.getSource(), result);
 
 		XmlAssert.assertThat(result.toString()).and("<Body xmlns='http://www.w3.org/2003/05/soap-envelope' />")
-				.ignoreWhitespace().areSimilar();
+	.ignoreWhitespace().areSimilar();
 	}
 
 	@Test
@@ -66,11 +66,11 @@ public abstract class AbstractSoap12BodyTestCase extends AbstractSoapBodyTestCas
 		transformer.transform(fault.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
-						+ soapBody.getName().getPrefix() + ":MustUnderstand</soapenv:Value></soapenv:Code>"
-						+ "<soapenv:Reason><soapenv:Text xml:lang='en'>SOAP Must Understand Error</soapenv:Text>"
-						+ "</soapenv:Reason></soapenv:Fault>")
-				.ignoreWhitespace().areSimilar();
+	.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
++ soapBody.getName().getPrefix() + ":MustUnderstand</soapenv:Value></soapenv:Code>"
++ "<soapenv:Reason><soapenv:Text xml:lang='en'>SOAP Must Understand Error</soapenv:Text>"
++ "</soapenv:Reason></soapenv:Fault>")
+	.ignoreWhitespace().areSimilar();
 	}
 
 	@Test
@@ -84,11 +84,11 @@ public abstract class AbstractSoap12BodyTestCase extends AbstractSoapBodyTestCas
 		transformer.transform(fault.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
-						+ soapBody.getName().getPrefix() + ":Sender</soapenv:Value></soapenv:Code>"
-						+ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
-						+ "</soapenv:Fault>")
-				.ignoreWhitespace().areSimilar();
+	.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
++ soapBody.getName().getPrefix() + ":Sender</soapenv:Value></soapenv:Code>"
++ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
++ "</soapenv:Fault>")
+	.ignoreWhitespace().areSimilar();
 	}
 
 	@Test
@@ -102,11 +102,11 @@ public abstract class AbstractSoap12BodyTestCase extends AbstractSoapBodyTestCas
 		transformer.transform(fault.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
-						+ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value></soapenv:Code>"
-						+ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
-						+ "</soapenv:Fault>")
-				.ignoreWhitespace().areSimilar();
+	.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
++ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value></soapenv:Code>"
++ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
++ "</soapenv:Fault>")
+	.ignoreWhitespace().areSimilar();
 	}
 
 	@Test
@@ -121,12 +121,12 @@ public abstract class AbstractSoap12BodyTestCase extends AbstractSoapBodyTestCas
 		transformer.transform(fault.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
-						+ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value>" + "</soapenv:Code>"
-						+ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
-						+ "<soapenv:Detail><prefix:localPart xmlns:prefix='namespace'><detailContents xmlns='namespace'/>"
-						+ "</prefix:localPart></soapenv:Detail></soapenv:Fault>")
-				.ignoreWhitespace().areSimilar();
+	.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
++ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value>" + "</soapenv:Code>"
++ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
++ "<soapenv:Detail><prefix:localPart xmlns:prefix='namespace'><detailContents xmlns='namespace'/>"
++ "</prefix:localPart></soapenv:Detail></soapenv:Fault>")
+	.ignoreWhitespace().areSimilar();
 	}
 
 	@Test
@@ -140,12 +140,12 @@ public abstract class AbstractSoap12BodyTestCase extends AbstractSoapBodyTestCas
 		transformer.transform(fault.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
-						+ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value>" + "</soapenv:Code>"
-						+ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
-						+ "<soapenv:Detail>" + "<detailContents xmlns='namespace'/>" + "<detailContents xmlns='namespace'/>"
-						+ "</soapenv:Detail></soapenv:Fault>")
-				.ignoreWhitespace().areSimilar();
+	.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
++ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value>" + "</soapenv:Code>"
++ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
++ "<soapenv:Detail>" + "<detailContents xmlns='namespace'/>" + "<detailContents xmlns='namespace'/>"
++ "</soapenv:Detail></soapenv:Fault>")
+	.ignoreWhitespace().areSimilar();
 	}
 
 	@Test
@@ -168,14 +168,14 @@ public abstract class AbstractSoap12BodyTestCase extends AbstractSoapBodyTestCas
 		transformer.transform(fault.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
-						+ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value>"
-						+ "<soapenv:Subcode><soapenv:Value xmlns:spring-ws='http://www.springframework.org'>spring-ws:Subcode1</soapenv:Value>"
-						+ "<soapenv:Subcode><soapenv:Value xmlns:spring-ws='http://www.springframework.org'>spring-ws:Subcode2</soapenv:Value>"
-						+ "</soapenv:Subcode></soapenv:Subcode></soapenv:Code>"
-						+ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
-						+ "</soapenv:Fault>")
-				.ignoreWhitespace().areSimilar();
+	.and("<soapenv:Fault xmlns:soapenv='http://www.w3.org/2003/05/soap-envelope'>" + "<soapenv:Code><soapenv:Value>"
++ soapBody.getName().getPrefix() + ":Receiver</soapenv:Value>"
++ "<soapenv:Subcode><soapenv:Value xmlns:spring-ws='http://www.springframework.org'>spring-ws:Subcode1</soapenv:Value>"
++ "<soapenv:Subcode><soapenv:Value xmlns:spring-ws='http://www.springframework.org'>spring-ws:Subcode2</soapenv:Value>"
++ "</soapenv:Subcode></soapenv:Subcode></soapenv:Code>"
++ "<soapenv:Reason><soapenv:Text xml:lang='en'>faultString</soapenv:Text></soapenv:Reason>"
++ "</soapenv:Fault>")
+	.ignoreWhitespace().areSimilar();
 	}
 
 }

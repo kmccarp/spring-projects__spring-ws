@@ -46,7 +46,8 @@ public class MarshallingPayloadMethodProcessor extends AbstractPayloadMethodProc
 	 * @see #setMarshaller(Marshaller)
 	 * @see #setUnmarshaller(Unmarshaller)
 	 */
-	public MarshallingPayloadMethodProcessor() {}
+	public MarshallingPayloadMethodProcessor() {
+	}
 
 	/**
 	 * Creates a new {@code MarshallingPayloadMethodProcessor} with the given marshaller. If the given {@link Marshaller}
@@ -147,7 +148,7 @@ public class MarshallingPayloadMethodProcessor extends AbstractPayloadMethodProc
 
 	@Override
 	public void handleReturnValue(MessageContext messageContext, MethodParameter returnType, Object returnValue)
-			throws Exception {
+throws Exception {
 		if (returnValue == null) {
 			return;
 		}

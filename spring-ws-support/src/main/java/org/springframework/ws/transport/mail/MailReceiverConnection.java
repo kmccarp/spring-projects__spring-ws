@@ -118,6 +118,7 @@ public class MailReceiverConnection extends AbstractReceiverConnection {
 			throw new URISyntaxException("", ex.getMessage());
 		}
 	}
+
 	/*
 		 * Errors
 		 */
@@ -208,7 +209,7 @@ public class MailReceiverConnection extends AbstractReceiverConnection {
 		Transport transport = null;
 		try {
 			responseMessage
-					.setDataHandler(new DataHandler(new ByteArrayDataSource(responseContentType, responseBuffer.toByteArray())));
+		.setDataHandler(new DataHandler(new ByteArrayDataSource(responseContentType, responseBuffer.toByteArray())));
 			transport = session.getTransport(transportUri);
 			transport.connect();
 			responseMessage.saveChanges();

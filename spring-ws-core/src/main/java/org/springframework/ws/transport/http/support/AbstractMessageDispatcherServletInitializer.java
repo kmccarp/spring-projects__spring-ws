@@ -51,7 +51,7 @@ public abstract class AbstractMessageDispatcherServletInitializer extends Abstra
 	/**
 	 * The default servlet mappings. Can be customized by overriding {@link #getServletMappings()}.
 	 */
-	public static final String[] DEFAULT_SERVLET_MAPPINGS = new String[] { "/services", "*.wsdl" };
+	public static final String[] DEFAULT_SERVLET_MAPPINGS = new String[]{"/services", "*.wsdl"};
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
@@ -77,7 +77,7 @@ public abstract class AbstractMessageDispatcherServletInitializer extends Abstra
 
 		WebApplicationContext servletAppContext = this.createServletApplicationContext();
 		Assert.notNull(servletAppContext, "createServletApplicationContext() did not return an application "
-				+ "context for servlet [" + servletName + "]");
+	+ "context for servlet [" + servletName + "]");
 
 		MessageDispatcherServlet dispatcherServlet = new MessageDispatcherServlet(servletAppContext);
 		dispatcherServlet.setTransformWsdlLocations(isTransformWsdlLocations());
@@ -86,7 +86,7 @@ public abstract class AbstractMessageDispatcherServletInitializer extends Abstra
 		ServletRegistration.Dynamic registration = servletContext.addServlet(servletName, dispatcherServlet);
 
 		Assert.notNull(registration, "Failed to register servlet with name '" + servletName + "'."
-				+ "Check if there is another servlet registered under the same name.");
+	+ "Check if there is another servlet registered under the same name.");
 
 		registration.setLoadOnStartup(1);
 		registration.addMapping(getServletMappings());
@@ -148,6 +148,7 @@ public abstract class AbstractMessageDispatcherServletInitializer extends Abstra
 	 * @param registration the {@code MessageDispatcherServlet} registration to be customized
 	 * @see #registerMessageDispatcherServlet(ServletContext)
 	 */
-	protected void customizeRegistration(ServletRegistration.Dynamic registration) {}
+	protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+	}
 
 }

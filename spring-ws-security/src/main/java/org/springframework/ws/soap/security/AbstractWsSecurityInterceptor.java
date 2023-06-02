@@ -55,7 +55,7 @@ public abstract class AbstractWsSecurityInterceptor implements SoapEndpointInter
 	protected final Log logger = LogFactory.getLog(getClass());
 
 	protected static final QName WS_SECURITY_NAME = new QName(
-			"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Security");
+"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Security");
 
 	private boolean secureResponse = true;
 
@@ -105,14 +105,14 @@ public abstract class AbstractWsSecurityInterceptor implements SoapEndpointInter
 
 	/**
 	 * Validates a server-side incoming request. Delegates to
-	 * {@link #validateMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)} if
+	 * {@link #validateMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)} if
 	 * the {@link #setValidateRequest(boolean) validateRequest} property is {@code true}.
 	 *
 	 * @param messageContext the message context, containing the request to be validated
 	 * @param endpoint chosen endpoint to invoke
 	 * @return {@code true} if the request was valid; {@code false} otherwise.
 	 * @throws Exception in case of errors
-	 * @see #validateMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)
+	 * @see #validateMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)
 	 */
 	@Override
 	public final boolean handleRequest(MessageContext messageContext, Object endpoint) throws Exception {
@@ -136,14 +136,14 @@ public abstract class AbstractWsSecurityInterceptor implements SoapEndpointInter
 
 	/**
 	 * Secures a server-side outgoing response. Delegates to
-	 * {@link #secureMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)} if
+	 * {@link #secureMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)} if
 	 * the {@link #setSecureResponse(boolean) secureResponse} property is {@code true}.
 	 *
 	 * @param messageContext the message context, containing the response to be secured
 	 * @param endpoint chosen endpoint to invoke
 	 * @return {@code true} if the response was secured; {@code false} otherwise.
 	 * @throws Exception in case of errors
-	 * @see #secureMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)
+	 * @see #secureMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)
 	 */
 	@Override
 	public final boolean handleResponse(MessageContext messageContext, Object endpoint) throws Exception {
@@ -190,13 +190,13 @@ public abstract class AbstractWsSecurityInterceptor implements SoapEndpointInter
 
 	/**
 	 * Secures a client-side outgoing request. Delegates to
-	 * {@link #secureMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)} if
+	 * {@link #secureMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)} if
 	 * the {@link #setSecureRequest(boolean) secureRequest} property is {@code true}.
 	 *
 	 * @param messageContext the message context, containing the request to be secured
 	 * @return {@code true} if the response was secured; {@code false} otherwise.
 	 * @throws Exception in case of errors
-	 * @see #secureMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)
+	 * @see #secureMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)
 	 */
 	@Override
 	public final boolean handleRequest(MessageContext messageContext) throws WebServiceClientException {
@@ -217,13 +217,13 @@ public abstract class AbstractWsSecurityInterceptor implements SoapEndpointInter
 
 	/**
 	 * Validates a client-side incoming response. Delegates to
-	 * {@link #validateMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)} if
+	 * {@link #validateMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)} if
 	 * the {@link #setValidateResponse(boolean) validateResponse} property is {@code true}.
 	 *
 	 * @param messageContext the message context, containing the response to be validated
 	 * @return {@code true} if the request was valid; {@code false} otherwise.
 	 * @throws Exception in case of errors
-	 * @see #validateMessage(org.springframework.ws.soap.SoapMessage,org.springframework.ws.context.MessageContext)
+	 * @see #validateMessage(org.springframework.ws.soap.SoapMessage, org.springframework.ws.context.MessageContext)
 	 */
 	@Override
 	public final boolean handleResponse(MessageContext messageContext) throws WebServiceClientException {
@@ -327,7 +327,7 @@ public abstract class AbstractWsSecurityInterceptor implements SoapEndpointInter
 	 * @throws WsSecurityValidationException in case of validation errors
 	 */
 	protected abstract void validateMessage(SoapMessage soapMessage, MessageContext messageContext)
-			throws WsSecurityValidationException;
+throws WsSecurityValidationException;
 
 	/**
 	 * Abstract template method. Subclasses are required to secure the response contained in the given
@@ -337,7 +337,7 @@ public abstract class AbstractWsSecurityInterceptor implements SoapEndpointInter
 	 * @throws WsSecuritySecurementException in case of securement errors
 	 */
 	protected abstract void secureMessage(SoapMessage soapMessage, MessageContext messageContext)
-			throws WsSecuritySecurementException;
+throws WsSecuritySecurementException;
 
 	protected abstract void cleanUp();
 

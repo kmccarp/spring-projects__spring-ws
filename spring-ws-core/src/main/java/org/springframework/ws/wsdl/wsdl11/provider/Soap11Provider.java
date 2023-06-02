@@ -172,7 +172,7 @@ public class Soap11Provider extends DefaultConcretePartProvider {
 	 */
 	@Override
 	protected void populateBindingFault(Definition definition, BindingFault bindingFault, Fault fault)
-			throws WSDLException {
+throws WSDLException {
 
 		super.populateBindingFault(definition, bindingFault, fault);
 		SOAPFault soapFault = (SOAPFault) createSoapExtension(definition, BindingFault.class, "fault");
@@ -211,7 +211,7 @@ public class Soap11Provider extends DefaultConcretePartProvider {
 	 */
 	@Override
 	protected void populateBindingInput(Definition definition, BindingInput bindingInput, Input input)
-			throws WSDLException {
+throws WSDLException {
 
 		super.populateBindingInput(definition, bindingInput, input);
 		SOAPBody soapBody = (SOAPBody) createSoapExtension(definition, BindingInput.class, "body");
@@ -247,7 +247,7 @@ public class Soap11Provider extends DefaultConcretePartProvider {
 	 */
 	@Override
 	protected void populateBindingOperation(Definition definition, BindingOperation bindingOperation)
-			throws WSDLException {
+throws WSDLException {
 
 		super.populateBindingOperation(definition, bindingOperation);
 		SOAPOperation soapOperation = (SOAPOperation) createSoapExtension(definition, BindingOperation.class, "operation");
@@ -268,7 +268,7 @@ public class Soap11Provider extends DefaultConcretePartProvider {
 	 * @see #setSoapActions(java.util.Properties)
 	 */
 	protected void populateSoapOperation(SOAPOperation soapOperation, BindingOperation bindingOperation)
-			throws WSDLException {
+throws WSDLException {
 
 		String bindingOperationName = bindingOperation.getName();
 		String soapAction = getSoapActions().getProperty(bindingOperationName, "");
@@ -289,7 +289,7 @@ public class Soap11Provider extends DefaultConcretePartProvider {
 	 */
 	@Override
 	protected void populateBindingOutput(Definition definition, BindingOutput bindingOutput, Output output)
-			throws WSDLException {
+throws WSDLException {
 
 		super.populateBindingOutput(definition, bindingOutput, output);
 		SOAPBody soapBody = (SOAPBody) createSoapExtension(definition, BindingOutput.class, "body");
@@ -302,7 +302,7 @@ public class Soap11Provider extends DefaultConcretePartProvider {
 	 * this method to define the port name, or add extensions to it.
 	 * <p>
 	 * Default implementation calls
-	 * {@link DefaultConcretePartProvider#populatePort(javax.wsdl.Definition,javax.wsdl.Port)}, creates a
+	 * {@link DefaultConcretePartProvider#populatePort(javax.wsdl.Definition, javax.wsdl.Port)}, creates a
 	 * {@link SOAPAddress}, and calls {@link #populateSoapAddress(SOAPAddress)}.
 	 *
 	 * @param port the WSDL4J {@code Port}
@@ -348,7 +348,7 @@ public class Soap11Provider extends DefaultConcretePartProvider {
 	 * @see ExtensionRegistry#createExtension(Class, QName)
 	 */
 	private ExtensibilityElement createSoapExtension(Definition definition, Class<?> parentType, String localName)
-			throws WSDLException {
+throws WSDLException {
 		return definition.getExtensionRegistry().createExtension(parentType, new QName(SOAP_11_NAMESPACE_URI, localName));
 	}
 

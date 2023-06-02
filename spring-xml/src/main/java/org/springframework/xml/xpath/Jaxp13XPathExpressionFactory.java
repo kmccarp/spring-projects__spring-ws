@@ -57,7 +57,7 @@ abstract class Jaxp13XPathExpressionFactory {
 			return new Jaxp13XPathExpression(xpathExpression, expression);
 		} catch (XPathExpressionException ex) {
 			throw new org.springframework.xml.xpath.XPathParseException(
-					"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
+		"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
 		}
 	}
 
@@ -79,7 +79,7 @@ abstract class Jaxp13XPathExpressionFactory {
 			return new Jaxp13XPathExpression(xpathExpression, expression);
 		} catch (XPathExpressionException ex) {
 			throw new org.springframework.xml.xpath.XPathParseException(
-					"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
+		"Could not compile [" + expression + "] to a XPathExpression: " + ex.getMessage(), ex);
 		}
 	}
 

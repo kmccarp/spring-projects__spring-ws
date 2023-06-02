@@ -47,7 +47,7 @@ public class TransformerFactoryUtils {
 			return defaultSettings(transformerFactoryClass.newInstance());
 		} catch (InstantiationException | IllegalAccessException e) {
 			throw new TransformerFactoryConfigurationError(e,
-					"Could not instantiate TransformerFactory [" + transformerFactoryClass + "]");
+		"Could not instantiate TransformerFactory [" + transformerFactoryClass + "]");
 		}
 	}
 
@@ -60,7 +60,7 @@ public class TransformerFactoryUtils {
 		} catch (IllegalArgumentException e) {
 			if (log.isWarnEnabled()) {
 				log.warn(
-						XMLConstants.ACCESS_EXTERNAL_DTD + " property not supported by " + factory.getClass().getCanonicalName());
+			XMLConstants.ACCESS_EXTERNAL_DTD + " property not supported by " + factory.getClass().getCanonicalName());
 			}
 		}
 
@@ -69,7 +69,7 @@ public class TransformerFactoryUtils {
 		} catch (IllegalArgumentException e) {
 			if (log.isWarnEnabled()) {
 				log.warn(XMLConstants.ACCESS_EXTERNAL_STYLESHEET + " property not supported by "
-						+ factory.getClass().getCanonicalName());
+			+ factory.getClass().getCanonicalName());
 			}
 		}
 

@@ -277,7 +277,7 @@ public class SoapFaultAnnotationExceptionResolverTest {
 	}
 
 	@SoapFault(faultCode = FaultCode.CUSTOM, customFaultCode = "{http://springframework.org/spring-ws}Fault",
-			faultStringOrReason = "MyCustomException thrown", locale = "nl")
+faultStringOrReason = "MyCustomException thrown", locale = "nl")
 	@SuppressWarnings("serial")
 	public class MyCustomException extends Exception {
 

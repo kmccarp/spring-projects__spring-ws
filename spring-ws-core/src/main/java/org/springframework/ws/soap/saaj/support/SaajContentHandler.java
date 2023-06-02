@@ -134,22 +134,28 @@ public class SaajContentHandler implements ContentHandler {
 	}
 
 	@Override
-	public void setDocumentLocator(Locator locator) {}
+	public void setDocumentLocator(Locator locator) {
+	}
 
 	@Override
-	public void startDocument() throws SAXException {}
+	public void startDocument() throws SAXException {
+	}
 
 	@Override
-	public void endDocument() throws SAXException {}
+	public void endDocument() throws SAXException {
+	}
 
 	@Override
-	public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {}
+	public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
+	}
 
 	@Override
-	public void processingInstruction(String target, String data) throws SAXException {}
+	public void processingInstruction(String target, String data) throws SAXException {
+	}
 
 	@Override
-	public void skippedEntity(String name) throws SAXException {}
+	public void skippedEntity(String name) throws SAXException {
+	}
 
 	private String getPrefix(String qName) {
 		int idx = qName.indexOf(':');

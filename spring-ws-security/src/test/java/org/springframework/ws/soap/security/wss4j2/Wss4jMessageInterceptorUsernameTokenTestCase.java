@@ -111,7 +111,7 @@ public abstract class Wss4jMessageInterceptorUsernameTokenTestCase extends Wss4j
 
 		assertThat(result).isNotNull();
 		assertXpathNotExists("Security Header not removed", "/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security",
-				getDocument(message));
+	getDocument(message));
 	}
 
 	protected void assertAddUsernameTokenPlainText(SoapMessage message) {
@@ -123,10 +123,10 @@ public abstract class Wss4jMessageInterceptorUsernameTokenTestCase extends Wss4j
 		Document doc = getDocument(message);
 
 		assertXpathEvaluatesTo("Invalid Username", "Bert",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Username/text()", doc);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Username/text()", doc);
 		assertXpathEvaluatesTo("Invalid Password", "Ernie",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Password[@Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText']/text()",
-				doc);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Password[@Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText']/text()",
+	doc);
 	}
 
 	protected void assertAddUsernameTokenDigest(SoapMessage message) {
@@ -136,14 +136,14 @@ public abstract class Wss4jMessageInterceptorUsernameTokenTestCase extends Wss4j
 
 		assertThat(result).isNotNull();
 		assertXpathEvaluatesTo("Invalid Username", "Bert",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Username/text()", doc);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Username/text()", doc);
 		assertXpathExists("Password does not exist",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Password[@Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest']",
-				doc);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:UsernameToken/wsse:Password[@Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest']",
+	doc);
 	}
 
 	protected Wss4jSecurityInterceptor prepareInterceptor(String actions, boolean validating, boolean digest)
-			throws Exception {
+throws Exception {
 
 		Wss4jSecurityInterceptor interceptor = new Wss4jSecurityInterceptor();
 		if (validating) {

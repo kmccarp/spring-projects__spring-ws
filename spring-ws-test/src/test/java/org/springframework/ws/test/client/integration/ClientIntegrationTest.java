@@ -41,7 +41,8 @@ import org.springframework.xml.transform.StringSource;
 @ContextConfiguration("integration-test.xml")
 public class ClientIntegrationTest {
 
-	@Autowired private CustomerClient client;
+	@Autowired
+	private CustomerClient client;
 
 	private MockWebServiceServer mockServer;
 
@@ -54,10 +55,10 @@ public class ClientIntegrationTest {
 	public void basic() {
 
 		Source expectedRequestPayload = new StringSource(
-				"<customerCountRequest xmlns='http://springframework.org/spring-ws'>" + "<customerName>John Doe</customerName>"
-						+ "</customerCountRequest>");
+	"<customerCountRequest xmlns='http://springframework.org/spring-ws'>" + "<customerName>John Doe</customerName>"
++ "</customerCountRequest>");
 		Source responsePayload = new StringSource("<customerCountResponse xmlns='http://springframework.org/spring-ws'>"
-				+ "<customerCount>10</customerCount>" + "</customerCountResponse>");
+	+ "<customerCount>10</customerCount>" + "</customerCountResponse>");
 
 		mockServer.expect(payload(expectedRequestPayload)).andRespond(withPayload(responsePayload));
 

@@ -127,8 +127,8 @@ public class HttpsUrlConnectionMessageSender extends HttpUrlConnectionMessageSen
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		Assert.isTrue(
-				!(ObjectUtils.isEmpty(keyManagers) && ObjectUtils.isEmpty(trustManagers) && (sslSocketFactory == null)),
-				"Setting either 'keyManagers', 'trustManagers' or 'sslSocketFactory' is required");
+	!(ObjectUtils.isEmpty(keyManagers) && ObjectUtils.isEmpty(trustManagers) && (sslSocketFactory == null)),
+	"Setting either 'keyManagers', 'trustManagers' or 'sslSocketFactory' is required");
 	}
 
 	@Override
@@ -150,12 +150,12 @@ public class HttpsUrlConnectionMessageSender extends HttpUrlConnectionMessageSen
 		}
 		try {
 			SSLContext sslContext = StringUtils.hasLength(sslProvider) ? SSLContext.getInstance(sslProtocol, sslProvider)
-					: SSLContext.getInstance(sslProtocol);
+		: SSLContext.getInstance(sslProtocol);
 			sslContext.init(keyManagers, trustManagers, rnd);
 			if (logger.isDebugEnabled()) {
 				logger.debug("Initialized SSL Context with key managers ["
-						+ StringUtils.arrayToCommaDelimitedString(keyManagers) + "] trust managers ["
-						+ StringUtils.arrayToCommaDelimitedString(trustManagers) + "] secure random [" + rnd + "]");
+			+ StringUtils.arrayToCommaDelimitedString(keyManagers) + "] trust managers ["
+			+ StringUtils.arrayToCommaDelimitedString(trustManagers) + "] secure random [" + rnd + "]");
 			}
 			return sslContext.getSocketFactory();
 		} catch (NoSuchAlgorithmException | NoSuchProviderException ex) {

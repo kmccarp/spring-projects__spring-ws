@@ -57,19 +57,19 @@ import org.w3c.dom.Element;
 class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParser {
 
 	private static final boolean dom4jPresent = ClassUtils.isPresent("org.dom4j.Element",
-			AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
+AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
 
 	private static final boolean jaxb2Present = ClassUtils.isPresent("jakarta.xml.bind.Binder",
-			AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
+AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
 
 	private static final boolean jdomPresent = ClassUtils.isPresent("org.jdom2.Element",
-			AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
+AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
 
 	private static final boolean staxPresent = ClassUtils.isPresent("javax.xml.stream.XMLInputFactory",
-			AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
+AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
 
 	private static final boolean xomPresent = ClassUtils.isPresent("nu.xom.Element",
-			AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
+AnnotationDrivenBeanDefinitionParser.class.getClassLoader());
 
 	@Override
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
@@ -91,12 +91,12 @@ class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParser {
 
 	private void registerEndpointMappings(Object source, ParserContext parserContext) {
 		RootBeanDefinition payloadRootMappingDef = createBeanDefinition(PayloadRootAnnotationMethodEndpointMapping.class,
-				source);
+	source);
 		payloadRootMappingDef.getPropertyValues().add("order", 0);
 		parserContext.getReaderContext().registerWithGeneratedName(payloadRootMappingDef);
 
 		RootBeanDefinition soapActionMappingDef = createBeanDefinition(SoapActionAnnotationMethodEndpointMapping.class,
-				source);
+	source);
 		soapActionMappingDef.getPropertyValues().add("order", 1);
 		parserContext.getReaderContext().registerWithGeneratedName(soapActionMappingDef);
 
@@ -124,24 +124,24 @@ class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParser {
 		returnValueHandlers.add(domProcessor);
 
 		RuntimeBeanReference sourceProcessor = createBeanReference(SourcePayloadMethodProcessor.class, source,
-				parserContext);
+	parserContext);
 		argumentResolvers.add(sourceProcessor);
 		returnValueHandlers.add(sourceProcessor);
 
 		if (dom4jPresent) {
 			RuntimeBeanReference dom4jProcessor = createBeanReference(Dom4jPayloadMethodProcessor.class, source,
-					parserContext);
+		parserContext);
 			argumentResolvers.add(dom4jProcessor);
 			returnValueHandlers.add(dom4jProcessor);
 		}
 		if (jaxb2Present) {
 			RuntimeBeanReference xmlRootElementProcessor = createBeanReference(XmlRootElementPayloadMethodProcessor.class,
-					source, parserContext);
+		source, parserContext);
 			argumentResolvers.add(xmlRootElementProcessor);
 			returnValueHandlers.add(xmlRootElementProcessor);
 
 			RuntimeBeanReference jaxbElementProcessor = createBeanReference(JaxbElementPayloadMethodProcessor.class, source,
-					parserContext);
+		parserContext);
 			argumentResolvers.add(jaxbElementProcessor);
 			returnValueHandlers.add(jaxbElementProcessor);
 		}
@@ -168,7 +168,7 @@ class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParser {
 			}
 
 			RootBeanDefinition marshallingProcessorDef = createBeanDefinition(MarshallingPayloadMethodProcessor.class,
-					source);
+		source);
 			marshallingProcessorDef.getPropertyValues().add("marshaller", marshallerReference);
 			marshallingProcessorDef.getPropertyValues().add("unmarshaller", unmarshallerReference);
 			argumentResolvers.add(marshallingProcessorDef);

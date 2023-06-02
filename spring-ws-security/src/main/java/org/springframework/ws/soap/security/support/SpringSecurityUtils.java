@@ -40,7 +40,7 @@ public abstract class SpringSecurityUtils {
 	 * @throws LockedException if the account is locked
 	 */
 	public static void checkUserValidity(UserDetails user)
-			throws AccountExpiredException, CredentialsExpiredException, DisabledException, LockedException {
+throws AccountExpiredException, CredentialsExpiredException, DisabledException, LockedException {
 		if (!user.isAccountNonLocked()) {
 			throw new LockedException("Account for user '" + user + "' is locked");
 		}

@@ -52,7 +52,7 @@ public class SoapHeaderMatcher extends AbstractSoapMessageMatcher {
 	protected void match(SoapMessage soapMessage) throws IOException, AssertionError {
 		SoapHeader soapHeader = soapMessage.getSoapHeader();
 		assertTrue("SOAP message [" + soapMessage + "] does not contain SOAP header", soapHeader != null, "Envelope",
-				soapMessage.getEnvelope().getSource());
+	soapMessage.getEnvelope().getSource());
 
 		Iterator<SoapHeaderElement> soapHeaderElementIterator = soapHeader.examineAllHeaderElements();
 		boolean found = false;
@@ -64,6 +64,6 @@ public class SoapHeaderMatcher extends AbstractSoapMessageMatcher {
 			}
 		}
 		assertTrue("SOAP header [" + soapHeaderName + "] not found", found, "Envelope",
-				soapMessage.getEnvelope().getSource());
+	soapMessage.getEnvelope().getSource());
 	}
 }

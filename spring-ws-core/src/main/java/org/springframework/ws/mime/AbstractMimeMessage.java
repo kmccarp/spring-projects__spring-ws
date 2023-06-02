@@ -51,7 +51,7 @@ public abstract class AbstractMimeMessage implements MimeMessage {
 		Assert.notNull(inputStreamSource, "InputStreamSource must not be null");
 		if (inputStreamSource instanceof Resource && ((Resource) inputStreamSource).isOpen()) {
 			throw new IllegalArgumentException("Passed-in Resource contains an open stream: invalid argument. "
-					+ "MIME requires an InputStreamSource that creates a fresh stream for every call.");
+		+ "MIME requires an InputStreamSource that creates a fresh stream for every call.");
 		}
 		DataHandler dataHandler = new DataHandler(new InputStreamSourceDataSource(inputStreamSource, contentType));
 		return addAttachment(contentId, dataHandler);

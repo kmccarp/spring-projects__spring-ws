@@ -65,9 +65,9 @@ public class SoapHeaderElementMethodArgumentResolverTest extends AbstractMethodA
 			element.setText(HEADER_CONTENT + i);
 		}
 		soapHeaderWithEmptyValue = new MethodParameter(
-				getClass().getMethod("soapHeaderWithEmptyValue", SoapHeaderElement.class), 0);
+	getClass().getMethod("soapHeaderWithEmptyValue", SoapHeaderElement.class), 0);
 		soapHeaderElementParameter = new MethodParameter(getClass().getMethod("soapHeaderElement", SoapHeaderElement.class),
-				0);
+	0);
 		soapHeaderElementListParameter = new MethodParameter(getClass().getMethod("soapHeaderElementList", List.class), 0);
 		soapHeaderMismatch = new MethodParameter(getClass().getMethod("soapHeaderMismatch", SoapHeaderElement.class), 0);
 		soapHeaderMismatchList = new MethodParameter(getClass().getMethod("soapHeaderMismatchList", List.class), 0);
@@ -84,7 +84,7 @@ public class SoapHeaderElementMethodArgumentResolverTest extends AbstractMethodA
 	public void failOnEmptyValue() {
 
 		assertThatIllegalArgumentException()
-				.isThrownBy(() -> resolver.resolveArgument(messageContext, soapHeaderWithEmptyValue));
+	.isThrownBy(() -> resolver.resolveArgument(messageContext, soapHeaderWithEmptyValue));
 	}
 
 	@Test
@@ -138,16 +138,21 @@ public class SoapHeaderElementMethodArgumentResolverTest extends AbstractMethodA
 		assertThat((List<?>) result).isEmpty();
 	}
 
-	public void soapHeaderWithEmptyValue(@SoapHeader("") SoapHeaderElement element) {}
+	public void soapHeaderWithEmptyValue(@SoapHeader("") SoapHeaderElement element) {
+	}
 
-	public void soapHeaderElement(@SoapHeader("{http://springframework.org/ws}header") SoapHeaderElement element) {}
+	public void soapHeaderElement(@SoapHeader("{http://springframework.org/ws}header") SoapHeaderElement element) {
+	}
 
 	public void soapHeaderElementList(
-			@SoapHeader("{http://springframework.org/ws}header") List<SoapHeaderElement> elements) {}
+@SoapHeader("{http://springframework.org/ws}header") List<SoapHeaderElement> elements) {
+	}
 
-	public void soapHeaderMismatch(@SoapHeader("{http://springframework.org/ws}xxx") SoapHeaderElement element) {}
+	public void soapHeaderMismatch(@SoapHeader("{http://springframework.org/ws}xxx") SoapHeaderElement element) {
+	}
 
 	public void soapHeaderMismatchList(
-			@SoapHeader("{http://springframework.org/ws}xxx") List<SoapHeaderElement> elements) {}
+@SoapHeader("{http://springframework.org/ws}xxx") List<SoapHeaderElement> elements) {
+	}
 
 }

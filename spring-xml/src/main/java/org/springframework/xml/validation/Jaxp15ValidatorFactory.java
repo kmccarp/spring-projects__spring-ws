@@ -79,7 +79,7 @@ abstract class Jaxp15ValidatorFactory {
 			} catch (SAXNotRecognizedException | SAXNotSupportedException e) {
 				if (log.isWarnEnabled()) {
 					log.warn(XMLConstants.ACCESS_EXTERNAL_DTD + " property not supported by "
-							+ validator.getClass().getCanonicalName());
+				+ validator.getClass().getCanonicalName());
 				}
 			}
 
@@ -88,7 +88,7 @@ abstract class Jaxp15ValidatorFactory {
 			} catch (SAXNotRecognizedException | SAXNotSupportedException e) {
 				if (log.isWarnEnabled()) {
 					log.warn(XMLConstants.ACCESS_EXTERNAL_SCHEMA + " property not supported by "
-							+ validator.getClass().getCanonicalName());
+				+ validator.getClass().getCanonicalName());
 				}
 			}
 
@@ -113,7 +113,8 @@ abstract class Jaxp15ValidatorFactory {
 		}
 
 		@Override
-		public void warning(SAXParseException ex) throws SAXException {}
+		public void warning(SAXParseException ex) throws SAXException {
+		}
 
 		@Override
 		public void error(SAXParseException ex) throws SAXException {

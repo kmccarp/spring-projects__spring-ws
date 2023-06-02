@@ -46,7 +46,7 @@ public class CallbackHandlerChain extends AbstractCallbackHandler {
 		boolean allUnsupported = true;
 		for (CallbackHandler callbackHandler : callbackHandlers) {
 			try {
-				callbackHandler.handle(new Callback[] { callback });
+				callbackHandler.handle(new Callback[]{callback});
 				allUnsupported = false;
 			} catch (UnsupportedCallbackException ex) {
 				// if an UnsupportedCallbackException occurs, go to the next handler

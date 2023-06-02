@@ -139,7 +139,7 @@ public class SaajUtilsTest {
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		Document document = builder.parse(getClass().getResourceAsStream("soapMessage.xml"));
 		SOAPMessage soapMessage = SaajUtils.loadMessage(new ClassPathResource("soapMessage.xml", getClass()),
-				messageFactory);
+	messageFactory);
 
 		XmlAssert.assertThat(document).and(soapMessage.getSOAPPart()).ignoreWhitespace().areIdentical();
 	}

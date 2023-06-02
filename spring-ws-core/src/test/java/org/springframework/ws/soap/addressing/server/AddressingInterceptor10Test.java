@@ -56,7 +56,7 @@ public class AddressingInterceptor10Test extends AbstractAddressingInterceptorTe
 		SaajSoapMessage expectedResponse = loadSaajMessage(getTestPath() + "/response-anonymous.xml");
 
 		assertXMLSimilar(expectedResponse,
-				(SaajSoapMessage) context.getResponse());
+	(SaajSoapMessage) context.getResponse());
 
 		verify(strategyMock);
 	}

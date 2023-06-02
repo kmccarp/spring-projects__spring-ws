@@ -71,8 +71,8 @@ public class WebServiceMessageReceiverObjectSupportTest {
 
 		receiverSupport.handleConnection(connectionMock, receiver);
 
-        verify(connectionMock).receive(messageFactory);
-    }
+		verify(connectionMock).receive(messageFactory);
+	}
 
 	@Test
 	public void handleConnectionFaultResponse() throws Exception {
@@ -103,7 +103,7 @@ public class WebServiceMessageReceiverObjectSupportTest {
 	@Test
 	public void handleConnectionNoResponse() throws Exception {
 
-        when(connectionMock.receive(messageFactory)).thenReturn(request);
+		when(connectionMock.receive(messageFactory)).thenReturn(request);
 		connectionMock.close();
 
 		WebServiceMessageReceiver receiver = new WebServiceMessageReceiver() {

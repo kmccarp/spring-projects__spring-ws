@@ -44,14 +44,14 @@ public class XmlValidatorFactoryTest {
 	public void testNonExistentResource() {
 
 		assertThatIllegalArgumentException().isThrownBy(
-				() -> XmlValidatorFactory.createValidator(new NonExistentResource(), XmlValidatorFactory.SCHEMA_W3C_XML));
+	() -> XmlValidatorFactory.createValidator(new NonExistentResource(), XmlValidatorFactory.SCHEMA_W3C_XML));
 	}
 
 	@Test
 	public void testInvalidSchemaLanguage() {
 
 		assertThatIllegalArgumentException().isThrownBy(() -> XmlValidatorFactory
-				.createValidator(new ClassPathResource("schema.xsd", AbstractValidatorFactoryTestCase.class), "bla"));
+	.createValidator(new ClassPathResource("schema.xsd", AbstractValidatorFactoryTestCase.class), "bla"));
 	}
 
 	private static class NonExistentResource extends AbstractResource {

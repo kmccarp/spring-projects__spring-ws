@@ -62,7 +62,7 @@ public class SoapEndpointInvocationChain extends EndpointInvocationChain {
 	 * @param isUltimateReceiver whether this chain fullfils the SOAP 1.2 Ultimate receiver role
 	 */
 	public SoapEndpointInvocationChain(Object endpoint, EndpointInterceptor[] interceptors, String[] actorsOrRoles,
-			boolean isUltimateReceiver) {
+boolean isUltimateReceiver) {
 		super(endpoint, interceptors);
 		this.actorsOrRoles = actorsOrRoles;
 		this.isUltimateReceiver = isUltimateReceiver;

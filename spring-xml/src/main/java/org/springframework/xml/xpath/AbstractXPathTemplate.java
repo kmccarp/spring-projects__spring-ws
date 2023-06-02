@@ -50,7 +50,7 @@ public abstract class AbstractXPathTemplate extends TransformerObjectSupport imp
 
 	@Override
 	public final void evaluate(String expression, Source context, NodeCallbackHandler callbackHandler)
-			throws XPathException {
+throws XPathException {
 		evaluate(expression, context, new NodeCallbackHandlerNodeMapper(callbackHandler));
 	}
 

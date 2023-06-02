@@ -47,8 +47,8 @@ public abstract class XPathExpressionFactory {
 	 * @throws XPathParseException if the given expression cannot be parsed
 	 */
 	public static XPathExpression createXPathExpression(String expression)
-			throws IllegalStateException, XPathParseException {
-		return createXPathExpression(expression, Collections.<String, String> emptyMap());
+throws IllegalStateException, XPathParseException {
+		return createXPathExpression(expression, Collections.<String, String>emptyMap());
 	}
 
 	/**
@@ -62,7 +62,7 @@ public abstract class XPathExpressionFactory {
 	 * @throws XPathParseException if the given expression cannot be parsed
 	 */
 	public static XPathExpression createXPathExpression(String expression, Map<String, String> namespaces)
-			throws IllegalStateException, XPathParseException {
+throws IllegalStateException, XPathParseException {
 		Assert.hasLength(expression, "expression is empty");
 		if (namespaces == null) {
 			namespaces = Collections.emptyMap();

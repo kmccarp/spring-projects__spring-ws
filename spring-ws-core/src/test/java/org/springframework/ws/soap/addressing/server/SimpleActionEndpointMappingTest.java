@@ -52,8 +52,8 @@ public class SimpleActionEndpointMappingTest extends AbstractWsAddressingTestCas
 		map.put("http://example.com/fabrikam/mail/Delete", endpoint1);
 		map.put("http://example.com/fabrikam/mail/Add", endpoint2);
 
-		mapping.setPreInterceptors(new EndpointInterceptor[] { new PayloadLoggingInterceptor() });
-		mapping.setPostInterceptors(new EndpointInterceptor[] { new PayloadValidatingInterceptor() });
+		mapping.setPreInterceptors(new EndpointInterceptor[]{new PayloadLoggingInterceptor()});
+		mapping.setPostInterceptors(new EndpointInterceptor[]{new PayloadValidatingInterceptor()});
 		mapping.setAddress(new URI("mailto:fabrikam@example.com"));
 		mapping.setActionMap(map);
 		mapping.afterPropertiesSet();

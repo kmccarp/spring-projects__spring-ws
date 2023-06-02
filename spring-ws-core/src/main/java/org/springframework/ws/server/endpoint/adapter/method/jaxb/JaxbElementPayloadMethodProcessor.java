@@ -57,7 +57,7 @@ public class JaxbElementPayloadMethodProcessor extends AbstractJaxb2PayloadMetho
 
 	@Override
 	protected void handleReturnValueInternal(MessageContext messageContext, MethodParameter returnType,
-			Object returnValue) throws JAXBException {
+Object returnValue) throws JAXBException {
 		JAXBElement<?> element = (JAXBElement<?>) returnValue;
 		marshalToResponsePayload(messageContext, element.getDeclaredType(), element);
 	}

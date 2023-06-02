@@ -41,7 +41,8 @@ public class TransformerHelper {
 	/**
 	 * Initializes a new instance of the {@code TransformerHelper}.
 	 */
-	public TransformerHelper() {}
+	public TransformerHelper() {
+	}
 
 	/**
 	 * Initializes a new instance of the {@code TransformerHelper} with the specified {@link TransformerFactory}.

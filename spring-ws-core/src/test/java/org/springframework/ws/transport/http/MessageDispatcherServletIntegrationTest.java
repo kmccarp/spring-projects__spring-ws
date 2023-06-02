@@ -67,7 +67,7 @@ public class MessageDispatcherServletIntegrationTest {
 		jettyContext.setContextPath("/");
 
 		String resourceBase = new File(MessageDispatcherServletIntegrationTest.class.getResource("WEB-INF").toURI())
-				.getParent();
+	.getParent();
 
 		jettyContext.setResourceBase(resourceBase);
 
@@ -99,7 +99,7 @@ public class MessageDispatcherServletIntegrationTest {
 
 		SOAPMessage request = messageFactory.createMessage();
 		SOAPElement element = request.getSOAPBody()
-				.addChildElement(new QName(EchoPayloadEndpoint.NAMESPACE, EchoPayloadEndpoint.LOCAL_PART));
+	.addChildElement(new QName(EchoPayloadEndpoint.NAMESPACE, EchoPayloadEndpoint.LOCAL_PART));
 		element.setTextContent("Hello World");
 
 		SOAPConnection connection = connectionFactory.createConnection();

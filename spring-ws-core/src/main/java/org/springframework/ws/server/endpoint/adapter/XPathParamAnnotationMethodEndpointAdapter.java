@@ -72,8 +72,7 @@ import org.w3c.dom.NodeList;
  *             XPathParamMethodArgumentResolver}.
  */
 @Deprecated
-public class XPathParamAnnotationMethodEndpointAdapter extends AbstractMethodEndpointAdapter
-		implements InitializingBean {
+public class XPathParamAnnotationMethodEndpointAdapter extends AbstractMethodEndpointAdapterimplements InitializingBean {
 
 	private XPathFactory xpathFactory;
 
@@ -117,9 +116,9 @@ public class XPathParamAnnotationMethodEndpointAdapter extends AbstractMethodEnd
 
 	private boolean isSupportedType(Class<?> clazz) {
 		return Boolean.class.isAssignableFrom(clazz) || Boolean.TYPE.isAssignableFrom(clazz)
-				|| Double.class.isAssignableFrom(clazz) || Double.TYPE.isAssignableFrom(clazz)
-				|| Node.class.isAssignableFrom(clazz) || NodeList.class.isAssignableFrom(clazz)
-				|| String.class.isAssignableFrom(clazz);
+	|| Double.class.isAssignableFrom(clazz) || Double.TYPE.isAssignableFrom(clazz)
+	|| Node.class.isAssignableFrom(clazz) || NodeList.class.isAssignableFrom(clazz)
+	|| String.class.isAssignableFrom(clazz);
 	}
 
 	@Override
@@ -152,7 +151,7 @@ public class XPathParamAnnotationMethodEndpointAdapter extends AbstractMethodEnd
 				conversionType = XPathConstants.STRING;
 			} else {
 				throw new IllegalArgumentException("Invalid parameter type [" + parameterTypes[i] + "]. "
-						+ "Supported are: Boolean, Double, Node, NodeList, and String.");
+			+ "Supported are: Boolean, Double, Node, NodeList, and String.");
 			}
 			args[i] = xpath.evaluate(expression, payloadElement, conversionType);
 		}

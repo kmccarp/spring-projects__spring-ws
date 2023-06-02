@@ -26,8 +26,7 @@ import org.springframework.context.Lifecycle;
  * @author Arjen Poutsma
  * @since 1.5.0
  */
-public abstract class AbstractStandaloneMessageReceiver extends SimpleWebServiceMessageReceiverObjectSupport
-		implements Lifecycle, DisposableBean {
+public abstract class AbstractStandaloneMessageReceiver extends SimpleWebServiceMessageReceiverObjectSupportimplements Lifecycle, DisposableBean {
 
 	private volatile boolean active = false;
 

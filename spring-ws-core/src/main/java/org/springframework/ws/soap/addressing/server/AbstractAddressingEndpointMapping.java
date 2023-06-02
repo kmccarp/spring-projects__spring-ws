@@ -75,8 +75,7 @@ import org.springframework.xml.transform.TransformerObjectSupport;
  * @author Nate Stoddard
  * @since 1.5.0
  */
-public abstract class AbstractAddressingEndpointMapping extends TransformerObjectSupport
-		implements SoapEndpointMapping, ApplicationContextAware, InitializingBean, Ordered {
+public abstract class AbstractAddressingEndpointMapping extends TransformerObjectSupportimplements SoapEndpointMapping, ApplicationContextAware, InitializingBean, Ordered {
 
 	private String[] actorsOrRoles;
 
@@ -110,14 +109,14 @@ public abstract class AbstractAddressingEndpointMapping extends TransformerObjec
 	 * {@link UuidMessageIdStrategy}.
 	 */
 	protected void initDefaultStrategies() {
-		this.versions = new AddressingVersion[] { new Addressing200408(), new Addressing10() };
+		this.versions = new AddressingVersion[]{new Addressing200408(), new Addressing10()};
 		messageIdStrategy = new UuidMessageIdStrategy();
 	}
 
 	@Override
 	public final void setActorOrRole(String actorOrRole) {
 		Assert.notNull(actorOrRole, "actorOrRole must not be null");
-		actorsOrRoles = new String[] { actorOrRole };
+		actorsOrRoles = new String[]{actorOrRole};
 	}
 
 	@Override
@@ -199,7 +198,7 @@ public abstract class AbstractAddressingEndpointMapping extends TransformerObjec
 	 */
 	public final void setMessageSender(WebServiceMessageSender messageSender) {
 		Assert.notNull(messageSender, "'messageSender' must not be null");
-		setMessageSenders(new WebServiceMessageSender[] { messageSender });
+		setMessageSenders(new WebServiceMessageSender[]{messageSender});
 	}
 
 	/**
@@ -240,10 +239,10 @@ public abstract class AbstractAddressingEndpointMapping extends TransformerObjec
 		}
 		if (getApplicationContext() != null) {
 			Map<String, SmartEndpointInterceptor> smartInterceptors = BeanFactoryUtils
-					.beansOfTypeIncludingAncestors(getApplicationContext(), SmartEndpointInterceptor.class, true, false);
+		.beansOfTypeIncludingAncestors(getApplicationContext(), SmartEndpointInterceptor.class, true, false);
 			if (!smartInterceptors.isEmpty()) {
 				this.smartInterceptors = smartInterceptors.values()
-						.toArray(new SmartEndpointInterceptor[smartInterceptors.size()]);
+			.toArray(new SmartEndpointInterceptor[smartInterceptors.size()]);
 			}
 		}
 	}
@@ -276,7 +275,7 @@ public abstract class AbstractAddressingEndpointMapping extends TransformerObjec
 	 * {@link org.springframework.ws.soap.addressing.version.AddressingVersion}.
 	 */
 	private EndpointInvocationChain getEndpointInvocationChain(Object endpoint, AddressingVersion version,
-			MessageAddressingProperties requestMap, MessageContext messageContext) {
+MessageAddressingProperties requestMap, MessageContext messageContext) {
 		URI responseAction = getResponseAction(endpoint, requestMap);
 		URI faultAction = getFaultAction(endpoint, requestMap);
 
@@ -287,7 +286,7 @@ public abstract class AbstractAddressingEndpointMapping extends TransformerObjec
 		interceptors.addAll(Arrays.asList(preInterceptors));
 
 		AddressingEndpointInterceptor addressingInterceptor = new AddressingEndpointInterceptor(version, messageIdStrategy,
-				messageSenders, responseAction, faultAction);
+	messageSenders, responseAction, faultAction);
 		interceptors.add(addressingInterceptor);
 		interceptors.addAll(Arrays.asList(postInterceptors));
 
@@ -300,13 +299,13 @@ public abstract class AbstractAddressingEndpointMapping extends TransformerObjec
 		}
 
 		return new SoapEndpointInvocationChain(endpoint, interceptors.toArray(new EndpointInterceptor[interceptors.size()]),
-				actorsOrRoles, isUltimateReceiver);
+	actorsOrRoles, isUltimateReceiver);
 	}
 
 	private boolean supports(AddressingVersion version, SoapMessage request) {
 		SoapHeader header = request.getSoapHeader();
 		if (header != null) {
-			for (Iterator<SoapHeaderElement> iterator = header.examineAllHeaderElements(); iterator.hasNext();) {
+			for (Iterator<SoapHeaderElement> iterator = header.examineAllHeaderElements(); iterator.hasNext(); ) {
 				SoapHeaderElement headerElement = iterator.next();
 				if (version.understands(headerElement)) {
 					return true;

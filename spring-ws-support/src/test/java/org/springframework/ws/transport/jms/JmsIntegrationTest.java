@@ -36,7 +36,8 @@ import org.springframework.xml.transform.StringSource;
 @ContextConfiguration("jms-applicationContext.xml")
 public class JmsIntegrationTest {
 
-	@Autowired private WebServiceTemplate webServiceTemplate;
+	@Autowired
+	private WebServiceTemplate webServiceTemplate;
 
 	private EmbeddedActiveMQ server;
 

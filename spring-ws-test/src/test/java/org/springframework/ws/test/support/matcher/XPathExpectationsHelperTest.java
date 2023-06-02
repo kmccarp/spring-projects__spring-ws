@@ -246,7 +246,7 @@ public class XPathExpectationsHelperTest {
 
 			WebServiceMessage message = createMock(WebServiceMessage.class);
 			expect(message.getPayloadSource()).andReturn(new StringSource("<a:a xmlns:a=\"http://example.org\"><a:b/></a:a>"))
-					.times(2);
+		.times(2);
 
 			replay(message);
 

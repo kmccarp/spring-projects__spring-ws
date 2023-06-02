@@ -133,26 +133,26 @@ public class SaajXmlReader extends AbstractXmlReader {
 		Name elementName = element.getElementName();
 		if (getContentHandler() != null) {
 			if (namespacesFeature) {
-				for (Iterator<?> iterator = element.getNamespacePrefixes(); iterator.hasNext();) {
+				for (Iterator<?> iterator = element.getNamespacePrefixes(); iterator.hasNext(); ) {
 					String prefix = (String) iterator.next();
 					String namespaceUri = element.getNamespaceURI(prefix);
 					getContentHandler().startPrefixMapping(prefix, namespaceUri);
 				}
 				getContentHandler().startElement(elementName.getURI(), elementName.getLocalName(),
-						elementName.getQualifiedName(), getAttributes(element));
+			elementName.getQualifiedName(), getAttributes(element));
 			} else {
 				getContentHandler().startElement("", "", elementName.getQualifiedName(), getAttributes(element));
 			}
 		}
-		for (Iterator<?> iterator = element.getChildElements(); iterator.hasNext();) {
+		for (Iterator<?> iterator = element.getChildElements(); iterator.hasNext(); ) {
 			Node child = (Node) iterator.next();
 			handleNode(child);
 		}
 		if (getContentHandler() != null) {
 			if (namespacesFeature) {
 				getContentHandler().endElement(elementName.getURI(), elementName.getLocalName(),
-						elementName.getQualifiedName());
-				for (Iterator<?> iterator = element.getNamespacePrefixes(); iterator.hasNext();) {
+			elementName.getQualifiedName());
+				for (Iterator<?> iterator = element.getNamespacePrefixes(); iterator.hasNext(); ) {
 					String prefix = (String) iterator.next();
 					getContentHandler().endPrefixMapping(prefix);
 				}
@@ -172,7 +172,7 @@ public class SaajXmlReader extends AbstractXmlReader {
 	private Attributes getAttributes(SOAPElement element) {
 		AttributesImpl attributes = new AttributesImpl();
 
-		for (Iterator<?> iterator = element.getAllAttributes(); iterator.hasNext();) {
+		for (Iterator<?> iterator = element.getAllAttributes(); iterator.hasNext(); ) {
 			Name attributeName = (Name) iterator.next();
 			String namespace = attributeName.getURI();
 			if (namespace == null || !namespacesFeature) {
@@ -180,10 +180,10 @@ public class SaajXmlReader extends AbstractXmlReader {
 			}
 			String attributeValue = element.getAttributeValue(attributeName);
 			attributes.addAttribute(namespace, attributeName.getLocalName(), attributeName.getQualifiedName(), "CDATA",
-					attributeValue);
+		attributeValue);
 		}
 		if (namespacePrefixesFeature) {
-			for (Iterator<?> iterator = element.getNamespacePrefixes(); iterator.hasNext();) {
+			for (Iterator<?> iterator = element.getNamespacePrefixes(); iterator.hasNext(); ) {
 				String prefix = (String) iterator.next();
 				String namespaceUri = element.getNamespaceURI(prefix);
 				String qName;

@@ -53,14 +53,14 @@ public class PayloadRootSmartSoapEndpointInterceptorTest {
 	public void neitherNamespaceNorLocalPart() {
 
 		assertThatIllegalArgumentException()
-				.isThrownBy(() -> new PayloadRootSmartSoapEndpointInterceptor(delegate, null, null));
+	.isThrownBy(() -> new PayloadRootSmartSoapEndpointInterceptor(delegate, null, null));
 	}
 
 	@Test
 	public void shouldInterceptFullMatch() {
 
 		PayloadRootSmartSoapEndpointInterceptor interceptor = new PayloadRootSmartSoapEndpointInterceptor(delegate,
-				namespaceUri, localPart);
+	namespaceUri, localPart);
 
 		boolean result = interceptor.shouldIntercept(messageContext, null);
 
@@ -71,7 +71,7 @@ public class PayloadRootSmartSoapEndpointInterceptorTest {
 	public void shouldInterceptFullNonMatch() {
 
 		PayloadRootSmartSoapEndpointInterceptor interceptor = new PayloadRootSmartSoapEndpointInterceptor(delegate,
-				"http://springframework.org/other", localPart);
+	"http://springframework.org/other", localPart);
 
 		boolean result = interceptor.shouldIntercept(messageContext, null);
 
@@ -82,7 +82,7 @@ public class PayloadRootSmartSoapEndpointInterceptorTest {
 	public void shouldInterceptNamespaceUriMatch() {
 
 		PayloadRootSmartSoapEndpointInterceptor interceptor = new PayloadRootSmartSoapEndpointInterceptor(delegate,
-				namespaceUri, null);
+	namespaceUri, null);
 
 		boolean result = interceptor.shouldIntercept(messageContext, null);
 
@@ -93,7 +93,7 @@ public class PayloadRootSmartSoapEndpointInterceptorTest {
 	public void shouldInterceptNamespaceUriNonMatch() {
 
 		PayloadRootSmartSoapEndpointInterceptor interceptor = new PayloadRootSmartSoapEndpointInterceptor(delegate,
-				"http://springframework.org/other", null);
+	"http://springframework.org/other", null);
 
 		boolean result = interceptor.shouldIntercept(messageContext, null);
 

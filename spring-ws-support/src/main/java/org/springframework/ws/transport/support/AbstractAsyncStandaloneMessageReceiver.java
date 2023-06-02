@@ -27,8 +27,7 @@ import org.springframework.util.ClassUtils;
  *
  * @author Arjen Poutsma
  */
-public abstract class AbstractAsyncStandaloneMessageReceiver extends AbstractStandaloneMessageReceiver
-		implements BeanNameAware {
+public abstract class AbstractAsyncStandaloneMessageReceiver extends AbstractStandaloneMessageReceiverimplements BeanNameAware {
 
 	/** Default thread name prefix. */
 	public final String DEFAULT_THREAD_NAME_PREFIX = ClassUtils.getShortName(getClass()) + "-";

@@ -38,7 +38,7 @@ public class SimpleMethodEndpointMappingTest {
 
 		MyBean bean = new MyBean();
 
-		mapping.setEndpoints(new Object[] { bean });
+		mapping.setEndpoints(new Object[]{bean});
 		mapping.afterPropertiesSet();
 	}
 
@@ -62,7 +62,7 @@ public class SimpleMethodEndpointMappingTest {
 	public void testGetLookupKeyForMessageNamespace() throws Exception {
 
 		MockWebServiceMessage request = new MockWebServiceMessage(
-				"<MyRequest xmlns='http://springframework.org/spring-ws/' />");
+	"<MyRequest xmlns='http://springframework.org/spring-ws/' />");
 		MessageContext messageContext = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
 
 		assertThat(mapping.getLookupKeyForMessage(messageContext)).isEqualTo("MyRequest");

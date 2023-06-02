@@ -37,8 +37,7 @@ import org.springframework.util.Assert;
  * @see #setUsers(java.util.Properties)
  * @since 2.3.0
  */
-public class SimplePasswordValidationCallbackHandler extends AbstractWsPasswordCallbackHandler
-		implements InitializingBean {
+public class SimplePasswordValidationCallbackHandler extends AbstractWsPasswordCallbackHandlerimplements InitializingBean {
 
 	private Map<String, String> users = new HashMap<String, String>();
 

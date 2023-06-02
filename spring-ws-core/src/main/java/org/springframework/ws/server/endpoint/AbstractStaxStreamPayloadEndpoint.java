@@ -39,7 +39,7 @@ import org.springframework.ws.context.MessageContext;
  * request with a {@code XMLStreamReader}, and to create a response using a {@code XMLStreamWriter}.
  *
  * @author Arjen Poutsma
- * @see #invokeInternal(javax.xml.stream.XMLStreamReader,javax.xml.stream.XMLStreamWriter)
+ * @see #invokeInternal(javax.xml.stream.XMLStreamReader, javax.xml.stream.XMLStreamWriter)
  * @see XMLStreamReader
  * @see XMLStreamWriter
  * @since 1.0.0
@@ -208,7 +208,7 @@ public abstract class AbstractStaxStreamPayloadEndpoint extends AbstractStaxPayl
 
 		@Override
 		public void writeAttribute(String prefix, String namespaceURI, String localName, String value)
-				throws XMLStreamException {
+	throws XMLStreamException {
 			createStreamWriter();
 			streamWriter.writeAttribute(prefix, namespaceURI, localName, value);
 		}

@@ -42,7 +42,8 @@ public class Pop3PollingMonitoringStrategy extends PollingMonitoringStrategy {
 	}
 
 	@Override
-	public void setDeleteMessages(boolean deleteMessages) {}
+	public void setDeleteMessages(boolean deleteMessages) {
+	}
 
 	/**
 	 * Re-opens the folder, if it closed.

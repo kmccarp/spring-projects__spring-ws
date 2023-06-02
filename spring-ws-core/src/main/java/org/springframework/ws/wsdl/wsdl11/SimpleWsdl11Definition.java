@@ -47,7 +47,8 @@ public class SimpleWsdl11Definition implements Wsdl11Definition, InitializingBea
 	 * <p>
 	 * A subsequent call to the {@link #setWsdl(Resource)} method is required.
 	 */
-	public SimpleWsdl11Definition() {}
+	public SimpleWsdl11Definition() {
+	}
 
 	/**
 	 * Create a new instance of the {@link SimpleWsdl11Definition} class with the specified resource.

@@ -41,7 +41,8 @@ import org.springframework.xml.transform.ResourceSource;
  */
 public abstract class ResponseCreators {
 
-	private ResponseCreators() {}
+	private ResponseCreators() {
+	}
 
 	// Payload
 
@@ -211,7 +212,7 @@ public abstract class ResponseCreators {
 
 		@Override
 		public WebServiceMessage createResponse(URI uri, WebServiceMessage request, WebServiceMessageFactory messageFactory)
-				throws IOException {
+	throws IOException {
 			return adaptee.createMessage(messageFactory);
 		}
 	}

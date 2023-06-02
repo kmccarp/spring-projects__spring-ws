@@ -57,7 +57,8 @@ public abstract class AbstractWebServiceConnection implements WebServiceConnecti
 	 * @param message the message
 	 * @throws IOException when an I/O exception occurs
 	 */
-	protected void onSendBeforeWrite(WebServiceMessage message) throws IOException {}
+	protected void onSendBeforeWrite(WebServiceMessage message) throws IOException {
+	}
 
 	/**
 	 * Returns a {@code TransportOutputStream} for the given message. Called from {@link #send(WebServiceMessage)}.
@@ -76,7 +77,8 @@ public abstract class AbstractWebServiceConnection implements WebServiceConnecti
 	 * @param message the message
 	 * @throws IOException when an I/O exception occurs
 	 */
-	protected void onSendAfterWrite(WebServiceMessage message) throws IOException {}
+	protected void onSendAfterWrite(WebServiceMessage message) throws IOException {
+	}
 
 	@Override
 	public final WebServiceMessage receive(WebServiceMessageFactory messageFactory) throws IOException {
@@ -99,7 +101,8 @@ public abstract class AbstractWebServiceConnection implements WebServiceConnecti
 	 *
 	 * @throws IOException when an I/O exception occurs
 	 */
-	protected void onReceiveBeforeRead() throws IOException {}
+	protected void onReceiveBeforeRead() throws IOException {
+	}
 
 	/**
 	 * Returns a {@code TransportInputStream}. Called from {@link #receive(WebServiceMessageFactory)}.
@@ -118,7 +121,8 @@ public abstract class AbstractWebServiceConnection implements WebServiceConnecti
 	 * @param message the message
 	 * @throws IOException when an I/O exception occurs
 	 */
-	protected void onReceiveAfterRead(WebServiceMessage message) throws IOException {}
+	protected void onReceiveAfterRead(WebServiceMessage message) throws IOException {
+	}
 
 	@Override
 	public final void close() throws IOException {
@@ -155,6 +159,7 @@ public abstract class AbstractWebServiceConnection implements WebServiceConnecti
 	 *
 	 * @throws IOException if an I/O error occurs when closing this connection
 	 */
-	protected void onClose() throws IOException {}
+	protected void onClose() throws IOException {
+	}
 
 }

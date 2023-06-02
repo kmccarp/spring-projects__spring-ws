@@ -82,7 +82,7 @@ public abstract class Wss4jTestCase {
 	}
 
 	protected void assertXpathEvaluatesTo(String message, String expectedValue, String xpathExpression,
-			Document document) {
+Document document) {
 
 		String actualValue = xpathTemplate.evaluateAsString(xpathExpression, new DOMSource(document));
 
@@ -161,7 +161,8 @@ public abstract class Wss4jTestCase {
 		throw new IllegalArgumentException("Illegal message: " + message);
 	}
 
-	protected void onSetup() throws Exception {}
+	protected void onSetup() throws Exception {
+	}
 
 	protected SoapMessage loadSoap11Message(String fileName) throws Exception {
 

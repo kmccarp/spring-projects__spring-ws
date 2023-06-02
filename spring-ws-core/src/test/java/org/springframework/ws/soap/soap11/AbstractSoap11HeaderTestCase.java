@@ -51,8 +51,8 @@ public abstract class AbstractSoap11HeaderTestCase extends AbstractSoapHeaderTes
 		transformer.transform(soapHeader.getSource(), result);
 
 		XmlAssert.assertThat(result.toString())
-				.and("<SOAP-ENV:Header xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' />").ignoreWhitespace()
-				.areSimilar();
+	.and("<SOAP-ENV:Header xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' />").ignoreWhitespace()
+	.areSimilar();
 	}
 
 	@Test
@@ -68,7 +68,7 @@ public abstract class AbstractSoap11HeaderTestCase extends AbstractSoapHeaderTes
 		headerElement = soapHeader.addHeaderElement(qName);
 		headerElement.setActorOrRole(SoapVersion.SOAP_11.getNextActorOrRoleUri());
 		Iterator<SoapHeaderElement> iterator = ((Soap11Header) soapHeader)
-				.examineHeaderElementsToProcess(new String[] { "role1" });
+	.examineHeaderElementsToProcess(new String[]{"role1"});
 
 		assertThat(iterator).isNotNull();
 		assertThat(iterator.hasNext()).isTrue();
@@ -113,7 +113,7 @@ public abstract class AbstractSoap11HeaderTestCase extends AbstractSoapHeaderTes
 		QName name = headerElement.getName();
 
 		assertThat(name).is(new Condition<>(value -> value.equals(new QName(NAMESPACE, "localName1", PREFIX))
-				|| value.equals(new QName(NAMESPACE, "localName3", PREFIX)), ""));
+	|| value.equals(new QName(NAMESPACE, "localName3", PREFIX)), ""));
 	}
 
 }

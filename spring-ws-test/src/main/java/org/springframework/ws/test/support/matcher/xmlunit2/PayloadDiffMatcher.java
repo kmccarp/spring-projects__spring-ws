@@ -59,9 +59,9 @@ public class PayloadDiffMatcher extends DiffMatcher {
 		Document expectedDocument = createDocumentFromSource(expected);
 		Document actualDocument = createDocumentFromSource(payload);
 		return DiffBuilder.compare(expectedDocument) //
-				.withTest(actualDocument) //
-				.checkForSimilar() //
-				.build();
+	.withTest(actualDocument) //
+	.checkForSimilar() //
+	.build();
 	}
 
 	private Document createDocumentFromSource(Source source) {

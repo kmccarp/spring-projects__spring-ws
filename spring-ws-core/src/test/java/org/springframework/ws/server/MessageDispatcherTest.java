@@ -184,7 +184,7 @@ public class MessageDispatcherTest {
 		interceptorMock1.afterCompletion(messageContext, endpoint, null);
 
 		EndpointInvocationChain chain = new EndpointInvocationChain(endpoint,
-				new EndpointInterceptor[] { interceptorMock1, interceptorMock2 });
+	new EndpointInterceptor[]{interceptorMock1, interceptorMock2});
 
 		expect(mappingMock.getEndpoint(messageContext)).andReturn(chain);
 		expect(factoryMock.createWebServiceMessage()).andReturn(new MockWebServiceMessage());
@@ -214,7 +214,7 @@ public class MessageDispatcherTest {
 		EndpointInterceptor interceptorMock2 = createStrictMock("interceptor2", EndpointInterceptor.class);
 
 		EndpointInvocationChain chain = new EndpointInvocationChain(endpoint,
-				new EndpointInterceptor[] { interceptorMock1, interceptorMock2 });
+	new EndpointInterceptor[]{interceptorMock1, interceptorMock2});
 		expect(mappingMock.getEndpoint(messageContext)).andReturn(chain);
 
 		expect(interceptorMock1.handleRequest(messageContext, endpoint)).andReturn(true);
@@ -250,7 +250,7 @@ public class MessageDispatcherTest {
 		interceptorMock1.afterCompletion(messageContext, endpoint, null);
 
 		EndpointInvocationChain chain = new EndpointInvocationChain(endpoint,
-				new EndpointInterceptor[] { interceptorMock1, interceptorMock2 });
+	new EndpointInterceptor[]{interceptorMock1, interceptorMock2});
 
 		expect(mappingMock.getEndpoint(messageContext)).andReturn(chain);
 		expect(factoryMock.createWebServiceMessage()).andReturn(new MockWebServiceMessage());
@@ -285,7 +285,7 @@ public class MessageDispatcherTest {
 		interceptorMock2.afterCompletion(messageContext, endpoint, null);
 
 		EndpointInvocationChain chain = new EndpointInvocationChain(endpoint,
-				new EndpointInterceptor[] { interceptorMock1, interceptorMock2 });
+	new EndpointInterceptor[]{interceptorMock1, interceptorMock2});
 
 		expect(mappingMock.getEndpoint(messageContext)).andReturn(chain);
 		expect(factoryMock.createWebServiceMessage()).andReturn(new MockWebServiceMessage());
@@ -330,7 +330,7 @@ public class MessageDispatcherTest {
 		interceptorMock.afterCompletion(messageContext, endpoint, null);
 
 		EndpointInvocationChain chain = new EndpointInvocationChain(endpoint,
-				new EndpointInterceptor[] { interceptorMock });
+	new EndpointInterceptor[]{interceptorMock});
 
 		expect(mappingMock.getEndpoint(messageContext)).andReturn(chain);
 		expect(factoryMock.createWebServiceMessage()).andReturn(new MockWebServiceMessage());
@@ -368,7 +368,7 @@ public class MessageDispatcherTest {
 		interceptorMock.afterCompletion(messageContext, endpoint, null);
 
 		EndpointInvocationChain chain = new EndpointInvocationChain(endpoint,
-				new EndpointInterceptor[] { interceptorMock });
+	new EndpointInterceptor[]{interceptorMock});
 
 		expect(mappingMock.getEndpoint(messageContext)).andReturn(chain);
 		MockWebServiceMessage response = new MockWebServiceMessage();

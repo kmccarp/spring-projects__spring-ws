@@ -48,7 +48,7 @@ public class MessageMethodEndpointAdapter extends AbstractMethodEndpointAdapter 
 	protected boolean supportsInternal(MethodEndpoint methodEndpoint) {
 		Method method = methodEndpoint.getMethod();
 		return Void.TYPE.isAssignableFrom(method.getReturnType()) && method.getParameterTypes().length == 1
-				&& MessageContext.class.isAssignableFrom(method.getParameterTypes()[0]);
+	&& MessageContext.class.isAssignableFrom(method.getParameterTypes()[0]);
 	}
 
 	@Override

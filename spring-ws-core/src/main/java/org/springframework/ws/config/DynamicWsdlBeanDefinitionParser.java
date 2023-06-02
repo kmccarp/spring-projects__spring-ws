@@ -42,7 +42,7 @@ import org.w3c.dom.Element;
 class DynamicWsdlBeanDefinitionParser extends AbstractBeanDefinitionParser {
 
 	private static final boolean commonsSchemaPresent = ClassUtils.isPresent("org.apache.ws.commons.schema.XmlSchema",
-			DynamicWsdlBeanDefinitionParser.class.getClassLoader());
+DynamicWsdlBeanDefinitionParser.class.getClassLoader());
 
 	@Override
 	protected AbstractBeanDefinition parseInternal(Element element, ParserContext parserContext) {
@@ -78,7 +78,7 @@ class DynamicWsdlBeanDefinitionParser extends AbstractBeanDefinitionParser {
 		} else {
 			if (schemas.size() > 1) {
 				throw new IllegalArgumentException(
-						"Multiple <xsd/> elements requires Commons XMLSchema." + "Please put Commons XMLSchema on the classpath.");
+			"Multiple <xsd/> elements requires Commons XMLSchema." + "Please put Commons XMLSchema on the classpath.");
 			}
 			RootBeanDefinition schemaDef = createBeanDefinition(SimpleXsdSchema.class, source);
 			Element schema = schemas.iterator().next();

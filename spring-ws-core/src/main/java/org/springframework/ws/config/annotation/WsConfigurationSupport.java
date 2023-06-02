@@ -128,7 +128,8 @@ public class WsConfigurationSupport {
 	 * Template method to add endpoint interceptors. Override this method to add Spring-WS interceptors for pre- and
 	 * post-processing of endpoint invocation.
 	 */
-	protected void addInterceptors(List<EndpointInterceptor> interceptors) {}
+	protected void addInterceptors(List<EndpointInterceptor> interceptors) {
+	}
 
 	/**
 	 * Returns a {@link DefaultMethodEndpointAdapter} for processing requests through annotated endpoint methods. Consider
@@ -158,14 +159,16 @@ public class WsConfigurationSupport {
 	 *
 	 * @param argumentResolvers the list of custom converters; initially an empty list.
 	 */
-	protected void addArgumentResolvers(List<MethodArgumentResolver> argumentResolvers) {}
+	protected void addArgumentResolvers(List<MethodArgumentResolver> argumentResolvers) {
+	}
 
 	/**
 	 * Add custom {@link MethodReturnValueHandler}s in addition to the ones registered by default.
 	 *
 	 * @param returnValueHandlers the list of custom handlers; initially an empty list.
 	 */
-	protected void addReturnValueHandlers(List<MethodReturnValueHandler> returnValueHandlers) {}
+	protected void addReturnValueHandlers(List<MethodReturnValueHandler> returnValueHandlers) {
+	}
 
 	/**
 	 * Returns a {@link SoapFaultAnnotationExceptionResolver} ordered at 0 for handling endpoint exceptions.

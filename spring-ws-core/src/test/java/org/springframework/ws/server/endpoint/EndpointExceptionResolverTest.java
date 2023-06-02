@@ -59,5 +59,6 @@ public class EndpointExceptionResolverTest {
 		assertThat(matched).isTrue();
 	}
 
-	public void emptyMethod() {}
+	public void emptyMethod() {
+	}
 }

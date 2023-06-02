@@ -48,6 +48,6 @@ public interface MethodReturnValueHandler {
 	 * @throws Exception in case of errors
 	 */
 	void handleReturnValue(MessageContext messageContext, MethodParameter returnType, Object returnValue)
-			throws Exception;
+throws Exception;
 
 }

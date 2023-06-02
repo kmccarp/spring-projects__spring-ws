@@ -69,7 +69,7 @@ public class DefaultMessagesProviderTest {
 		Types types = definition.createTypes();
 		definition.setTypes(types);
 		Schema schema = (Schema) definition.getExtensionRegistry().createExtension(Types.class,
-				new QName("http://www.w3.org/2001/XMLSchema", "schema"));
+	new QName("http://www.w3.org/2001/XMLSchema", "schema"));
 		types.addExtensibilityElement(schema);
 		schema.setElement(schemaDocument.getDocumentElement());
 

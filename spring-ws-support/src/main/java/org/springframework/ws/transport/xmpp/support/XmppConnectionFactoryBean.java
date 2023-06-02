@@ -135,7 +135,7 @@ public class XmppConnectionFactoryBean implements FactoryBean<XMPPTCPConnection>
 	 * @param serviceName the name of the service to connect to. May be {@code null}
 	 */
 	protected XMPPTCPConnectionConfiguration createConnectionConfiguration(String host, int port, String serviceName)
-			throws XmppStringprepException {
+throws XmppStringprepException {
 		Assert.hasText(host, "'host' must not be empty");
 		if (StringUtils.hasText(serviceName)) {
 			return XMPPTCPConnectionConfiguration.builder().setHost(host).setPort(port).setXmppDomain(serviceName).build();

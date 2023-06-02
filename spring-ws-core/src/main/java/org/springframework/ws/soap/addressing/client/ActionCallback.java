@@ -255,7 +255,7 @@ public class ActionCallback implements WebServiceMessageCallback {
 		SoapMessage soapMessage = (SoapMessage) message;
 		URI messageId = getMessageIdStrategy().newMessageId(soapMessage);
 		MessageAddressingProperties map = new MessageAddressingProperties(getTo(), getFrom(), getReplyTo(), getFaultTo(),
-				getAction(), messageId);
+	getAction(), messageId);
 		version.addAddressingHeaders(soapMessage, map);
 	}
 }

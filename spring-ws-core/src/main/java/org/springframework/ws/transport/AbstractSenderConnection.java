@@ -28,8 +28,7 @@ import java.util.Iterator;
  * @author Greg Turnquist
  * @since 1.0.0
  */
-public abstract class AbstractSenderConnection extends AbstractWebServiceConnection
-		implements HeadersAwareSenderWebServiceConnection {
+public abstract class AbstractSenderConnection extends AbstractWebServiceConnectionimplements HeadersAwareSenderWebServiceConnection {
 
 	private TransportOutputStream requestOutputStream;
 
@@ -61,7 +60,8 @@ public abstract class AbstractSenderConnection extends AbstractWebServiceConnect
 	 * @throws IOException if an I/O error occurs when closing this connection
 	 */
 	@Override
-	protected void onClose() throws IOException {}
+	protected void onClose() throws IOException {
+	}
 
 	/** Indicates whether this connection has a response. */
 	protected abstract boolean hasResponse() throws IOException;

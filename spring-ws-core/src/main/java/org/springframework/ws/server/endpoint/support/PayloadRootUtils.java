@@ -46,7 +46,8 @@ import org.xml.sax.XMLReader;
  */
 public abstract class PayloadRootUtils {
 
-	private PayloadRootUtils() {}
+	private PayloadRootUtils() {
+	}
 
 	/**
 	 * Returns the root qualified name of the given source, transforming it if necessary.
@@ -56,12 +57,12 @@ public abstract class PayloadRootUtils {
 	 * @return the root element, or {@code null} if {@code source} is {@code null}
 	 */
 	public static QName getPayloadRootQName(Source source, TransformerFactory transformerFactory)
-			throws TransformerException {
+throws TransformerException {
 		return getPayloadRootQName(source, new TransformerHelper(transformerFactory));
 	}
 
 	public static QName getPayloadRootQName(Source source, TransformerHelper transformerHelper)
-			throws TransformerException {
+throws TransformerException {
 		if (source == null) {
 			return null;
 		}
@@ -123,7 +124,7 @@ public abstract class PayloadRootUtils {
 				}
 			}
 			if (streamReader.getEventType() == XMLStreamConstants.START_ELEMENT
-					|| streamReader.getEventType() == XMLStreamConstants.END_ELEMENT) {
+		|| streamReader.getEventType() == XMLStreamConstants.END_ELEMENT) {
 				result = streamReader.getName();
 			}
 		}

@@ -38,7 +38,7 @@ import org.springframework.ws.context.MessageContext;
  * the request with a {@code XMLEventReader}, and to create a response using a {@code XMLEventWriter}.
  *
  * @author Arjen Poutsma
- * @see #invokeInternal(javax.xml.stream.XMLEventReader,javax.xml.stream.util.XMLEventConsumer,
+ * @see #invokeInternal(javax.xml.stream.XMLEventReader, javax.xml.stream.util.XMLEventConsumer,
  *      javax.xml.stream.XMLEventFactory)
  * @see XMLEventReader
  * @see XMLEventWriter
@@ -136,7 +136,7 @@ public abstract class AbstractStaxEventPayloadEndpoint extends AbstractStaxPaylo
 	 * @param eventFactory an {@code XMLEventFactory} that can be used to create events
 	 */
 	protected abstract void invokeInternal(XMLEventReader eventReader, XMLEventConsumer eventWriter,
-			XMLEventFactory eventFactory) throws Exception;
+XMLEventFactory eventFactory) throws Exception;
 
 	/**
 	 * Implementation of the {@code XMLEventWriter} interface that creates a response {@code WebServiceMessage} as soon as

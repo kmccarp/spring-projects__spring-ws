@@ -98,7 +98,7 @@ public class MailSenderConnection extends AbstractSenderConnection {
 
 	/** Constructs a new Mail connection with the given parameters. */
 	protected MailSenderConnection(Session session, URLName transportUri, URLName storeUri, InternetAddress to,
-			long receiveTimeout) {
+long receiveTimeout) {
 		Assert.notNull(session, "'session' must not be null");
 		Assert.notNull(transportUri, "'transportUri' must not be null");
 		Assert.notNull(storeUri, "'storeUri' must not be null");
@@ -183,7 +183,7 @@ public class MailSenderConnection extends AbstractSenderConnection {
 		Transport transport = null;
 		try {
 			requestMessage
-					.setDataHandler(new DataHandler(new ByteArrayDataSource(requestContentType, requestBuffer.toByteArray())));
+		.setDataHandler(new DataHandler(new ByteArrayDataSource(requestContentType, requestBuffer.toByteArray())));
 			transport = session.getTransport(transportUri);
 			transport.connect();
 			requestMessage.saveChanges();

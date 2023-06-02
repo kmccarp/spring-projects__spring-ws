@@ -61,7 +61,7 @@ public class SimpleSoapExceptionResolver extends AbstractEndpointExceptionResolv
 	@Override
 	protected final boolean resolveExceptionInternal(MessageContext messageContext, Object endpoint, Exception ex) {
 		Assert.isInstanceOf(SoapMessage.class, messageContext.getResponse(),
-				"SimpleSoapExceptionResolver requires a SoapMessage");
+	"SimpleSoapExceptionResolver requires a SoapMessage");
 		SoapMessage response = (SoapMessage) messageContext.getResponse();
 		String faultString = StringUtils.hasLength(ex.getMessage()) ? ex.getMessage() : ex.toString();
 		SoapBody body = response.getSoapBody();
@@ -72,12 +72,13 @@ public class SimpleSoapExceptionResolver extends AbstractEndpointExceptionResolv
 
 	/**
 	 * Empty template method to allow subclasses an opportunity to customize the given {@link SoapFault}. Called from
-	 * {@link #resolveExceptionInternal(MessageContext,Object,Exception)}.
+	 * {@link #resolveExceptionInternal(MessageContext, Object, Exception)}.
 	 *
 	 * @param messageContext current message context
 	 * @param endpoint the executed endpoint, or {@code null} if none chosen at the time of the exception
 	 * @param ex the exception that got thrown during endpoint execution
 	 * @param fault the SOAP fault to be customized.
 	 */
-	protected void customizeFault(MessageContext messageContext, Object endpoint, Exception ex, SoapFault fault) {}
+	protected void customizeFault(MessageContext messageContext, Object endpoint, Exception ex, SoapFault fault) {
+	}
 }

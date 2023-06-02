@@ -47,8 +47,7 @@ import com.sun.net.httpserver.HttpExchange;
  * @author Greg Turnquist
  * @since 1.5.0
  */
-public class HttpExchangeConnection extends AbstractReceiverConnection
-		implements EndpointAwareWebServiceConnection, FaultAwareWebServiceConnection {
+public class HttpExchangeConnection extends AbstractReceiverConnectionimplements EndpointAwareWebServiceConnection, FaultAwareWebServiceConnection {
 
 	private final HttpExchange httpExchange;
 
@@ -153,7 +152,7 @@ public class HttpExchangeConnection extends AbstractReceiverConnection
 	@Override
 	public void onClose() throws IOException {
 		if (responseStatusCode == HttpTransportConstants.STATUS_ACCEPTED
-				|| responseStatusCode == HttpTransportConstants.STATUS_NOT_FOUND) {
+	|| responseStatusCode == HttpTransportConstants.STATUS_NOT_FOUND) {
 			httpExchange.sendResponseHeaders(responseStatusCode, -1);
 		}
 		httpExchange.close();

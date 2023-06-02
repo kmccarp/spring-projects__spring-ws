@@ -49,7 +49,8 @@ public class JdkHttpClientMessageSender extends AbstractHttpWebServiceMessageSen
 
 	private Duration requestTimeout = DEFAULT_REQUEST_TIMEOUT;
 
-	public JdkHttpClientMessageSender() {}
+	public JdkHttpClientMessageSender() {
+	}
 
 	public JdkHttpClientMessageSender(HttpClient httpClient) {
 
@@ -76,7 +77,7 @@ public class JdkHttpClientMessageSender extends AbstractHttpWebServiceMessageSen
 
 		if (isAcceptGzipEncoding()) {
 			connection.addRequestHeader(HttpTransportConstants.HEADER_ACCEPT_ENCODING,
-					HttpTransportConstants.CONTENT_ENCODING_GZIP);
+		HttpTransportConstants.CONTENT_ENCODING_GZIP);
 		}
 
 		return connection;

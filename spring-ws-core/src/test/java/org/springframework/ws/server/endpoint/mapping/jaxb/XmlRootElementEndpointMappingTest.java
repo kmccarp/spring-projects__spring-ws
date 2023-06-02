@@ -45,7 +45,8 @@ public class XmlRootElementEndpointMappingTest {
 		assertThat(name).isEqualTo(new QName("myNamespace", "myRoot"));
 	}
 
-	public void rootElement(MyRootElement rootElement) {}
+	public void rootElement(MyRootElement rootElement) {
+	}
 
 	@XmlRootElement(name = "myRoot", namespace = "myNamespace")
 	public static class MyRootElement {

@@ -152,7 +152,7 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 	public void sendSourceAndReceiveToResultNoResponse() {
 
 		boolean b = template.sendSourceAndReceiveToResult(baseUrl + "/soap/noResponse", new StringSource(messagePayload),
-				new StringResult());
+	new StringResult());
 		assertThat(b).isFalse();
 	}
 
@@ -244,8 +244,8 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 	public void notFound() {
 
 		assertThatExceptionOfType(WebServiceTransportException.class)
-				.isThrownBy(() -> template.sendSourceAndReceiveToResult(baseUrl + "/errors/notfound",
-						new StringSource(messagePayload), new StringResult()));
+	.isThrownBy(() -> template.sendSourceAndReceiveToResult(baseUrl + "/errors/notfound",
+new StringSource(messagePayload), new StringResult()));
 	}
 
 	@Test
@@ -254,7 +254,7 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 		Result result = new StringResult();
 
 		assertThatExceptionOfType(SoapFaultClientException.class).isThrownBy(() -> template
-				.sendSourceAndReceiveToResult(baseUrl + "/soap/receiverFault", new StringSource(messagePayload), result));
+	.sendSourceAndReceiveToResult(baseUrl + "/soap/receiverFault", new StringSource(messagePayload), result));
 	}
 
 	@Test
@@ -263,7 +263,7 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 		Result result = new StringResult();
 
 		assertThatExceptionOfType(SoapFaultClientException.class).isThrownBy(() -> template
-				.sendSourceAndReceiveToResult(baseUrl + "/soap/senderFault", new StringSource(messagePayload), result));
+	.sendSourceAndReceiveToResult(baseUrl + "/soap/senderFault", new StringSource(messagePayload), result));
 	}
 
 	@Test
@@ -274,7 +274,7 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 			SoapMessage soapMessage = (SoapMessage) message;
 			final String attachmentContent = "content";
 			soapMessage.addAttachment("attachment-1",
-					new DataHandler(new ByteArrayDataSource(attachmentContent, "text/plain")));
+		new DataHandler(new ByteArrayDataSource(attachmentContent, "text/plain")));
 		}, new StringResult());
 	}
 

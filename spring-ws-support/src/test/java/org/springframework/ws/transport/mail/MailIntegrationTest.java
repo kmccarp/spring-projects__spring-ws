@@ -38,12 +38,14 @@ import com.icegreen.greenmail.util.GreenMailUtil;
 @ContextConfiguration("mail-applicationContext.xml")
 public class MailIntegrationTest {
 
-	@Autowired private GreenMailBean greenMailBean;
+	@Autowired
+	private GreenMailBean greenMailBean;
 
-	@Autowired private WebServiceTemplate webServiceTemplate;
+	@Autowired
+	private WebServiceTemplate webServiceTemplate;
 
 	@Disabled("doesn't run under Spring Framework 6.0.1-SNAPSHOT")
-    @Test
+	@Test
 	public void testMailTransport() throws MessagingException {
 
 		String content = "<root xmlns=\"http://springframework.org/spring-ws\"><child/></root>";
@@ -55,7 +57,7 @@ public class MailIntegrationTest {
 		assertThat(receivedMessages).hasSize(1);
 
 		assertThat(GreenMailUtil.getAddressList(receivedMessages[0].getFrom()))
-				.isEqualTo("Spring-WS SOAP Client <client@localhost>");
+	.isEqualTo("Spring-WS SOAP Client <client@localhost>");
 		assertThat(GreenMailUtil.getAddressList(receivedMessages[0].getAllRecipients())).isEqualTo("server@localhost");
 		assertThat(GreenMailUtil.getBody(receivedMessages[0])).contains(content);
 	}

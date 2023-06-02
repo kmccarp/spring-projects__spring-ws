@@ -47,8 +47,7 @@ import org.springframework.ws.soap.SoapMessage;
  * @deprecated as of Spring Web Services 2.0, in favor of annotated endpoints
  */
 @Deprecated
-public abstract class AbstractFaultCreatingValidatingMarshallingPayloadEndpoint extends
-		org.springframework.ws.server.endpoint.AbstractValidatingMarshallingPayloadEndpoint implements MessageSourceAware {
+public abstract class AbstractFaultCreatingValidatingMarshallingPayloadEndpoint extendsorg.springframework.ws.server.endpoint.AbstractValidatingMarshallingPayloadEndpoint implements MessageSourceAware {
 
 	/**
 	 * Default SOAP Fault Detail name used when a global validation error occur on the request.
@@ -56,7 +55,7 @@ public abstract class AbstractFaultCreatingValidatingMarshallingPayloadEndpoint 
 	 * @see #setDetailElementName(javax.xml.namespace.QName)
 	 */
 	public static final QName DEFAULT_DETAIL_ELEMENT_NAME = new QName("http://springframework.org/spring-ws",
-			"ValidationError", "spring-ws");
+"ValidationError", "spring-ws");
 
 	/**
 	 * Default SOAP Fault string used when a validation errors occur on the request.
@@ -149,7 +148,7 @@ public abstract class AbstractFaultCreatingValidatingMarshallingPayloadEndpoint 
 
 	/**
 	 * This implementation logs all errors, returns {@code false}, and creates a
-	 * {@link SoapBody#addClientOrSenderFault(String,Locale) client or sender} {@link SoapFault}, adding a
+	 * {@link SoapBody#addClientOrSenderFault(String, Locale) client or sender} {@link SoapFault}, adding a
 	 * {@link SoapFaultDetail} with all errors if the {@code addValidationErrorDetail} property is {@code true}.
 	 *
 	 * @param messageContext the message context

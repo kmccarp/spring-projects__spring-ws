@@ -35,7 +35,8 @@ public abstract class TransportInputStream extends InputStream {
 
 	private InputStream inputStream;
 
-	protected TransportInputStream() {}
+	protected TransportInputStream() {
+	}
 
 	private InputStream getInputStream() throws IOException {
 		if (inputStream == null) {

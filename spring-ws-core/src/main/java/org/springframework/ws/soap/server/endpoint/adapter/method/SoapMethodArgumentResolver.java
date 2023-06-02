@@ -38,7 +38,7 @@ public class SoapMethodArgumentResolver implements MethodArgumentResolver {
 	public boolean supportsParameter(MethodParameter parameter) {
 		Class<?> parameterType = parameter.getParameterType();
 		return SoapMessage.class.equals(parameterType) || SoapBody.class.equals(parameterType)
-				|| SoapEnvelope.class.equals(parameterType) || SoapHeader.class.equals(parameterType);
+	|| SoapEnvelope.class.equals(parameterType) || SoapHeader.class.equals(parameterType);
 	}
 
 	@Override

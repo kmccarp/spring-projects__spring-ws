@@ -45,7 +45,8 @@ import org.springframework.xml.transform.ResourceSource;
  */
 public abstract class ResponseMatchers {
 
-	private ResponseMatchers() {}
+	private ResponseMatchers() {
+	}
 
 	// Payload
 

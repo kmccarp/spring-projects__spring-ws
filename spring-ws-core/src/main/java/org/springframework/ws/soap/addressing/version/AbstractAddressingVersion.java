@@ -181,11 +181,11 @@ public abstract class AbstractAddressingVersion extends TransformerObjectSupport
 			return null;
 		}
 		List<Node> referenceProperties = referencePropertiesExpression != null
-				? referencePropertiesExpression.evaluateAsNodeList(node)
-				: Collections.emptyList();
+	? referencePropertiesExpression.evaluateAsNodeList(node)
+	: Collections.emptyList();
 		List<Node> referenceParameters = referenceParametersExpression != null
-				? referenceParametersExpression.evaluateAsNodeList(node)
-				: Collections.emptyList();
+	? referenceParametersExpression.evaluateAsNodeList(node)
+	: Collections.emptyList();
 		return new EndpointReference(address, referenceProperties, referenceParameters);
 	}
 
@@ -248,13 +248,13 @@ public abstract class AbstractAddressingVersion extends TransformerObjectSupport
 			transform(new DOMSource(address), headerElement.getResult());
 			if (getReferenceParametersName() != null && !epr.getReferenceParameters().isEmpty()) {
 				Element referenceParams = document.createElementNS(getNamespaceUri(),
-						QNameUtils.toQualifiedName(getReferenceParametersName()));
+			QNameUtils.toQualifiedName(getReferenceParametersName()));
 				addReferenceNodes(new DOMResult(referenceParams), epr.getReferenceParameters());
 				transform(new DOMSource(referenceParams), headerElement.getResult());
 			}
 			if (getReferencePropertiesName() != null && !epr.getReferenceProperties().isEmpty()) {
 				Element referenceProps = document.createElementNS(getNamespaceUri(),
-						QNameUtils.toQualifiedName(getReferencePropertiesName()));
+			QNameUtils.toQualifiedName(getReferencePropertiesName()));
 				addReferenceNodes(new DOMResult(referenceProps), epr.getReferenceProperties());
 				transform(new DOMSource(referenceProps), headerElement.getResult());
 			}
@@ -279,13 +279,13 @@ public abstract class AbstractAddressingVersion extends TransformerObjectSupport
 	@Override
 	public final SoapFault addInvalidAddressingHeaderFault(SoapMessage message) {
 		return addAddressingFault(message, getInvalidAddressingHeaderFaultSubcode(),
-				getInvalidAddressingHeaderFaultReason());
+	getInvalidAddressingHeaderFaultReason());
 	}
 
 	@Override
 	public final SoapFault addMessageAddressingHeaderRequiredFault(SoapMessage message) {
 		return addAddressingFault(message, getMessageAddressingHeaderRequiredFaultSubcode(),
-				getMessageAddressingHeaderRequiredFaultReason());
+	getMessageAddressingHeaderRequiredFaultReason());
 	}
 
 	private SoapFault addAddressingFault(SoapMessage message, QName subcode, String reason) {

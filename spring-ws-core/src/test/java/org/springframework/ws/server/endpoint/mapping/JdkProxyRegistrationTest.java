@@ -38,9 +38,11 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 @ContextConfiguration("jdk-proxy-registration.xml")
 public class JdkProxyRegistrationTest {
 
-	@Autowired private PayloadRootAnnotationMethodEndpointMapping mapping;
+	@Autowired
+	private PayloadRootAnnotationMethodEndpointMapping mapping;
 
-	@Autowired private ApplicationContext applicationContext;
+	@Autowired
+	private ApplicationContext applicationContext;
 
 	@Test
 	public void registration() throws NoSuchMethodException {
@@ -66,7 +68,8 @@ public class JdkProxyRegistrationTest {
 	public static class MyEndpointImpl implements MyEndpoint {
 
 		@Override
-		public void doIt(@RequestPayload Source payload) {}
+		public void doIt(@RequestPayload Source payload) {
+		}
 
 	}
 

@@ -36,8 +36,8 @@ public class SoapEnvelopeDiffMatcherTest {
 	public void match() throws Exception {
 
 		String xml = "<?xml version='1.0'?>" + "<soap:Envelope xmlns:soap='http://www.w3.org/2003/05/soap-envelope'>"
-				+ "<soap:Header><header xmlns='http://example.com'/></soap:Header>"
-				+ "<soap:Body><payload xmlns='http://example.com'/></soap:Body>" + "</soap:Envelope>";
+	+ "<soap:Header><header xmlns='http://example.com'/></soap:Header>"
+	+ "<soap:Body><payload xmlns='http://example.com'/></soap:Body>" + "</soap:Envelope>";
 		DOMResult result = new DOMResult();
 		TransformerHelper transformerHelper = new TransformerHelper();
 		transformerHelper.transform(new StringSource(xml), result);

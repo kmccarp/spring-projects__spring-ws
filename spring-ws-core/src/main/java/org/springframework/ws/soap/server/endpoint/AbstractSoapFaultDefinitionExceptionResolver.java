@@ -35,7 +35,7 @@ import org.springframework.ws.soap.soap12.Soap12Fault;
  *
  * @author Arjen Poutsma
  * @see #setDefaultFault(SoapFaultDefinition)
- * @see #getFaultDefinition(Object,Exception)
+ * @see #getFaultDefinition(Object, Exception)
  * @since 1.0.0
  */
 public abstract class AbstractSoapFaultDefinitionExceptionResolver extends AbstractEndpointExceptionResolver {
@@ -59,7 +59,7 @@ public abstract class AbstractSoapFaultDefinitionExceptionResolver extends Abstr
 	@Override
 	protected final boolean resolveExceptionInternal(MessageContext messageContext, Object endpoint, Exception ex) {
 		Assert.isInstanceOf(SoapMessage.class, messageContext.getResponse(),
-				"AbstractSoapFaultDefinitionExceptionResolver requires a SoapMessage");
+	"AbstractSoapFaultDefinitionExceptionResolver requires a SoapMessage");
 
 		SoapFaultDefinition definition = getFaultDefinition(endpoint, ex);
 		if (definition == null) {
@@ -77,10 +77,10 @@ public abstract class AbstractSoapFaultDefinitionExceptionResolver extends Abstr
 		SoapFault fault;
 
 		if (SoapFaultDefinition.SERVER.equals(definition.getFaultCode())
-				|| SoapFaultDefinition.RECEIVER.equals(definition.getFaultCode())) {
+	|| SoapFaultDefinition.RECEIVER.equals(definition.getFaultCode())) {
 			fault = soapBody.addServerOrReceiverFault(faultStringOrReason, definition.getLocale());
 		} else if (SoapFaultDefinition.CLIENT.equals(definition.getFaultCode())
-				|| SoapFaultDefinition.SENDER.equals(definition.getFaultCode())) {
+	|| SoapFaultDefinition.SENDER.equals(definition.getFaultCode())) {
 			fault = soapBody.addClientOrSenderFault(faultStringOrReason, definition.getLocale());
 		} else {
 			if (soapBody instanceof Soap11Body) {
@@ -111,6 +111,7 @@ public abstract class AbstractSoapFaultDefinitionExceptionResolver extends Abstr
 	 * @param ex the exception to be handled
 	 * @param fault the created fault
 	 */
-	protected void customizeFault(Object endpoint, Exception ex, SoapFault fault) {}
+	protected void customizeFault(Object endpoint, Exception ex, SoapFault fault) {
+	}
 
 }

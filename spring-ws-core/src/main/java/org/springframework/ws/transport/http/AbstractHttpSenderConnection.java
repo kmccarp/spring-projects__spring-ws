@@ -36,8 +36,7 @@ import org.springframework.ws.transport.WebServiceConnection;
  * @author Andreas Veithen
  * @since 1.0.0
  */
-public abstract class AbstractHttpSenderConnection extends AbstractSenderConnection
-		implements FaultAwareWebServiceConnection {
+public abstract class AbstractHttpSenderConnection extends AbstractSenderConnectionimplements FaultAwareWebServiceConnection {
 
 	/**
 	 * Cached result of {@link #hasResponse}.
@@ -74,7 +73,7 @@ public abstract class AbstractHttpSenderConnection extends AbstractSenderConnect
 	protected final boolean hasResponse() throws IOException {
 		int responseCode = getResponseCode();
 		if (HttpTransportConstants.STATUS_ACCEPTED == responseCode
-				|| HttpTransportConstants.STATUS_NO_CONTENT == responseCode) {
+	|| HttpTransportConstants.STATUS_NO_CONTENT == responseCode) {
 			return false;
 		}
 		if (hasResponse != null) {
@@ -167,8 +166,10 @@ public abstract class AbstractHttpSenderConnection extends AbstractSenderConnect
 
 	@Override
 	@Deprecated
-	public final void setFault(boolean fault) {}
+	public final void setFault(boolean fault) {
+	}
 
 	@Override
-	public final void setFaultCode(QName faultCode) throws IOException {}
+	public final void setFaultCode(QName faultCode) throws IOException {
+	}
 }

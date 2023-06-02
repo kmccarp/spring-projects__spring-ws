@@ -50,7 +50,8 @@ public class Wsdl4jDefinition implements Wsdl11Definition {
 	 *
 	 * @see #setDefinition(javax.wsdl.Definition)
 	 */
-	public Wsdl4jDefinition() {}
+	public Wsdl4jDefinition() {
+	}
 
 	/**
 	 * Constructs a new {@code Wsdl4jDefinition} based on the given {@code Definition}.

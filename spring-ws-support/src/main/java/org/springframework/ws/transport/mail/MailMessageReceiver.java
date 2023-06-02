@@ -142,7 +142,7 @@ public class MailMessageReceiver extends AbstractAsyncStandaloneMessageReceiver 
 				monitoringStrategy = new PollingMonitoringStrategy();
 			} else {
 				throw new IllegalArgumentException("Cannot determine monitoring strategy for \"" + protocol + "\". "
-						+ "Set the 'monitoringStrategy' explicitly.");
+			+ "Set the 'monitoringStrategy' explicitly.");
 			}
 		}
 		super.afterPropertiesSet();

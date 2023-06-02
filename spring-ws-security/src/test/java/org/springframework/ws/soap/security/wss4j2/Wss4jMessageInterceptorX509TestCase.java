@@ -60,7 +60,7 @@ public abstract class Wss4jMessageInterceptorX509TestCase extends Wss4jTestCase 
 		Document document = getDocument(message);
 
 		assertXpathExists("Absent BinarySecurityToken element",
-				"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:BinarySecurityToken", document);
+	"/SOAP-ENV:Envelope/SOAP-ENV:Header/wsse:Security/wsse:BinarySecurityToken", document);
 
 		// lets verify the signature that we've just generated
 		interceptor.validateMessage(message, messageContext);

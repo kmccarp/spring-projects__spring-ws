@@ -36,9 +36,11 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 @ContextConfiguration("bridged-method-registration.xml")
 public class BridgedMethodRegistrationTest {
 
-	@Autowired private PayloadRootAnnotationMethodEndpointMapping mapping;
+	@Autowired
+	private PayloadRootAnnotationMethodEndpointMapping mapping;
 
-	@Autowired private ApplicationContext applicationContext;
+	@Autowired
+	private ApplicationContext applicationContext;
 
 	@Test
 	public void registration() throws NoSuchMethodException {

@@ -83,7 +83,7 @@ public class XmlRootElementPayloadMethodProcessorTest {
 	public void resolveArgumentRootElement() throws JAXBException {
 
 		WebServiceMessage request = new MockWebServiceMessage(
-				"<root xmlns='http://springframework.org'><string>Foo</string></root>");
+	"<root xmlns='http://springframework.org'><string>Foo</string></root>");
 		MessageContext messageContext = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
 
 		Object result = processor.resolveArgument(messageContext, rootElementParameter);
@@ -99,7 +99,7 @@ public class XmlRootElementPayloadMethodProcessorTest {
 	public void resolveArgumentType() throws JAXBException {
 
 		WebServiceMessage request = new MockWebServiceMessage(
-				"<type xmlns='http://springframework.org'><string>Foo</string></type>");
+	"<type xmlns='http://springframework.org'><string>Foo</string></type>");
 		MessageContext messageContext = new DefaultMessageContext(request, new MockWebServiceMessageFactory());
 
 		Object result = processor.resolveArgument(messageContext, typeParameter);
@@ -191,7 +191,7 @@ public class XmlRootElementPayloadMethodProcessorTest {
 		MockWebServiceMessage response = (MockWebServiceMessage) messageContext.getResponse();
 
 		XmlAssert.assertThat(response.getPayloadAsString())
-				.and("<root xmlns='http://springframework.org'><string>Foo</string></root>").ignoreWhitespace().areIdentical();
+	.and("<root xmlns='http://springframework.org'><string>Foo</string></root>").ignoreWhitespace().areIdentical();
 	}
 
 	@Test
@@ -210,7 +210,8 @@ public class XmlRootElementPayloadMethodProcessorTest {
 		return rootElement;
 	}
 
-	public void type(@RequestPayload MyType type) {}
+	public void type(@RequestPayload MyType type) {
+	}
 
 	@XmlRootElement(name = "root", namespace = "http://springframework.org")
 	public static class MyRootElement {

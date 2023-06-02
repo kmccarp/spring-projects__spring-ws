@@ -48,7 +48,7 @@ public abstract class SchemaLoaderUtils {
 	 * @see javax.xml.XMLConstants#RELAXNG_NS_URI
 	 */
 	public static Schema loadSchema(Resource resource, String schemaLanguage) throws IOException, SAXException {
-		return loadSchema(new Resource[] { resource }, schemaLanguage);
+		return loadSchema(new Resource[]{resource}, schemaLanguage);
 	}
 
 	/**

@@ -55,13 +55,13 @@ public abstract class AbstractPayloadSourceMethodProcessor extends AbstractPaylo
 	 * @throws Exception in case of errors
 	 */
 	protected abstract Object resolveRequestPayloadArgument(MethodParameter parameter, Source requestPayload)
-			throws Exception;
+throws Exception;
 
 	// MethodReturnValueHandler
 
 	@Override
 	public final void handleReturnValue(MessageContext messageContext, MethodParameter returnType, Object returnValue)
-			throws Exception {
+throws Exception {
 		if (returnValue != null) {
 			Source responsePayload = createResponsePayload(returnType, returnValue);
 			if (responsePayload != null) {

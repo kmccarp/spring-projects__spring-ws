@@ -59,7 +59,7 @@ public class X509AuthenticationToken extends AbstractAuthenticationToken {
 	 * @param authorities the authorities
 	 */
 	public X509AuthenticationToken(Object principal, X509Certificate credentials,
-			Collection<? extends GrantedAuthority> authorities) {
+Collection<? extends GrantedAuthority> authorities) {
 		super(authorities);
 		this.principal = principal;
 		this.credentials = credentials;

@@ -52,8 +52,8 @@ public abstract class AbstractSoap12MessageTestCase extends AbstractSoapMessageT
 	@Override
 	protected final Resource[] getSoapSchemas() {
 
-		return new Resource[] { new ClassPathResource("xml.xsd", AbstractSoap12MessageTestCase.class),
-				new ClassPathResource("soap12.xsd", AbstractSoap12MessageTestCase.class) };
+		return new Resource[]{new ClassPathResource("xml.xsd", AbstractSoap12MessageTestCase.class),
+	new ClassPathResource("soap12.xsd", AbstractSoap12MessageTestCase.class)};
 	}
 
 	@Override
@@ -71,10 +71,10 @@ public abstract class AbstractSoap12MessageTestCase extends AbstractSoapMessageT
 		String result = bos.toString(StandardCharsets.UTF_8);
 
 		XmlAssert.assertThat(result)
-				.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://www.w3.org/2003/05/soap-envelope'>" + getHeader()
-						+ "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS() + ":Body></"
-						+ getNS() + ":Envelope>")
-				.ignoreWhitespace().areIdentical();
+	.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://www.w3.org/2003/05/soap-envelope'>" + getHeader()
++ "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS() + ":Body></"
++ getNS() + ":Envelope>")
+	.ignoreWhitespace().areIdentical();
 
 		String contentType = tos.getHeaders().get(TransportConstants.HEADER_CONTENT_TYPE);
 
@@ -105,7 +105,7 @@ public abstract class AbstractSoap12MessageTestCase extends AbstractSoapMessageT
 	public void testToDocument() throws Exception {
 
 		transformer.transform(new StringSource("<payload xmlns='http://www.springframework.org' />"),
-				soapMessage.getSoapBody().getPayloadResult());
+	soapMessage.getSoapBody().getPayloadResult());
 
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactoryUtils.newInstance();
 		documentBuilderFactory.setNamespaceAware(true);
@@ -133,7 +133,7 @@ public abstract class AbstractSoap12MessageTestCase extends AbstractSoapMessageT
 	public void testSetLiveDocument() throws Exception {
 
 		transformer.transform(new StringSource("<payload xmlns='http://www.springframework.org' />"),
-				soapMessage.getSoapBody().getPayloadResult());
+	soapMessage.getSoapBody().getPayloadResult());
 
 		Document document = soapMessage.getDocument();
 
@@ -145,17 +145,17 @@ public abstract class AbstractSoap12MessageTestCase extends AbstractSoapMessageT
 		String result = bos.toString(StandardCharsets.UTF_8);
 
 		XmlAssert.assertThat(result)
-				.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://www.w3.org/2003/05/soap-envelope'>" + getHeader()
-						+ "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS() + ":Body></"
-						+ getNS() + ":Envelope>")
-				.ignoreWhitespace().areIdentical();
+	.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://www.w3.org/2003/05/soap-envelope'>" + getHeader()
++ "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS() + ":Body></"
++ getNS() + ":Envelope>")
+	.ignoreWhitespace().areIdentical();
 	}
 
 	@Override
 	public void testSetOtherDocument() throws Exception {
 
 		transformer.transform(new StringSource("<payload xmlns='http://www.springframework.org' />"),
-				soapMessage.getSoapBody().getPayloadResult());
+	soapMessage.getSoapBody().getPayloadResult());
 
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		soapMessage.writeTo(bos);
@@ -174,9 +174,9 @@ public abstract class AbstractSoap12MessageTestCase extends AbstractSoapMessageT
 		String result = bos.toString(StandardCharsets.UTF_8);
 
 		XmlAssert.assertThat(result)
-				.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://www.w3.org/2003/05/soap-envelope'>" + getHeader()
-						+ "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS() + ":Body></"
-						+ getNS() + ":Envelope>")
-				.ignoreWhitespace().areIdentical();
+	.and("<" + getNS() + ":Envelope xmlns:" + getNS() + "='http://www.w3.org/2003/05/soap-envelope'>" + getHeader()
++ "<" + getNS() + ":Body><payload xmlns='http://www.springframework.org' /></" + getNS() + ":Body></"
++ getNS() + ":Envelope>")
+	.ignoreWhitespace().areIdentical();
 	}
 }

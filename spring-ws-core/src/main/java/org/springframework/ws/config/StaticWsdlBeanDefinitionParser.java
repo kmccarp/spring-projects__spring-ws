@@ -46,7 +46,7 @@ class StaticWsdlBeanDefinitionParser extends AbstractSingleBeanDefinitionParser 
 
 	@Override
 	protected String resolveId(Element element, AbstractBeanDefinition definition, ParserContext parserContext)
-			throws BeanDefinitionStoreException {
+throws BeanDefinitionStoreException {
 		String id = element.getAttribute(ID_ATTRIBUTE);
 		if (StringUtils.hasLength(id)) {
 			return id;

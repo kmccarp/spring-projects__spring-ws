@@ -66,7 +66,7 @@ public class Wsdl11DestinationProvider extends AbstractCachingDestinationProvide
 		expressionNamespaces.put("soap12", "http://schemas.xmlsoap.org/wsdl/soap12/");
 
 		locationXPathExpression = XPathExpressionFactory.createXPathExpression(DEFAULT_WSDL_LOCATION_EXPRESSION,
-				expressionNamespaces);
+	expressionNamespaces);
 	}
 
 	/** Sets a WSDL location from which the service destination {@code URI} will be resolved. */

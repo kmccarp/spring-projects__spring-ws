@@ -45,8 +45,7 @@ import org.springframework.ws.soap.saaj.SaajSoapMessageFactory;
 import org.springframework.ws.transport.WebServiceConnection;
 import org.springframework.ws.transport.support.FreePortScanner;
 
-class HttpComponents5MessageSenderIntegrationTest
-		extends AbstractHttpWebServiceMessageSenderIntegrationTestCase<HttpComponents5MessageSender> {
+class HttpComponents5MessageSenderIntegrationTestextends AbstractHttpWebServiceMessageSenderIntegrationTestCase<HttpComponents5MessageSender> {
 
 	@Override
 	protected HttpComponents5MessageSender createMessageSender() {
@@ -131,7 +130,7 @@ class HttpComponents5MessageSenderIntegrationTest
 			appContext.refresh();
 
 			HttpComponents5MessageSender messageSender = appContext.getBean("messageSender",
-					HttpComponents5MessageSender.class);
+		HttpComponents5MessageSender.class);
 			connection = messageSender.createConnection(new URI("http://localhost:" + port));
 
 			connection.send(new SaajSoapMessage(messageFactory.createMessage()));

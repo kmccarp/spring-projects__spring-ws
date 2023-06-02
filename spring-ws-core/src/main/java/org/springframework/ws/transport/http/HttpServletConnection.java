@@ -43,8 +43,7 @@ import org.springframework.ws.transport.support.EnumerationIterator;
  * @author Greg Turnquist
  * @since 1.0.0
  */
-public class HttpServletConnection extends AbstractReceiverConnection
-		implements EndpointAwareWebServiceConnection, FaultAwareWebServiceConnection {
+public class HttpServletConnection extends AbstractReceiverConnectionimplements EndpointAwareWebServiceConnection, FaultAwareWebServiceConnection {
 
 	private final HttpServletRequest httpServletRequest;
 
@@ -97,8 +96,8 @@ public class HttpServletConnection extends AbstractReceiverConnection
 	@Override
 	public URI getUri() throws URISyntaxException {
 		return new URI(httpServletRequest.getScheme(), null, httpServletRequest.getServerName(),
-				httpServletRequest.getServerPort(), httpServletRequest.getRequestURI(), httpServletRequest.getQueryString(),
-				null);
+	httpServletRequest.getServerPort(), httpServletRequest.getRequestURI(), httpServletRequest.getQueryString(),
+	null);
 	}
 
 	/*

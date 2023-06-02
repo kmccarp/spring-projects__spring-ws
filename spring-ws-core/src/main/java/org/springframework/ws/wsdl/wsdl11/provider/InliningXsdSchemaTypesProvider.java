@@ -59,7 +59,7 @@ public class InliningXsdSchemaTypesProvider extends TransformerObjectSupport imp
 		this.schemaCollection = new XsdSchemaCollection() {
 
 			public XsdSchema[] getXsdSchemas() {
-				return new XsdSchema[] { schema };
+				return new XsdSchema[]{schema};
 			}
 
 			public XmlValidator createValidator() {
@@ -98,7 +98,7 @@ public class InliningXsdSchemaTypesProvider extends TransformerObjectSupport imp
 			}
 			Element schemaElement = getSchemaElement(schemas[i]);
 			Schema schema = (Schema) definition.getExtensionRegistry().createExtension(Types.class,
-					new QName("http://www.w3.org/2001/XMLSchema", "schema"));
+		new QName("http://www.w3.org/2001/XMLSchema", "schema"));
 			types.addExtensibilityElement(schema);
 			schema.setElement(schemaElement);
 		}

@@ -34,12 +34,12 @@ public class JDomPayloadMethodProcessorTest extends AbstractPayloadMethodProcess
 
 	@Override
 	protected MethodParameter[] createSupportedParameters() throws NoSuchMethodException {
-		return new MethodParameter[] { new MethodParameter(getClass().getMethod("element", Element.class), 0) };
+		return new MethodParameter[]{new MethodParameter(getClass().getMethod("element", Element.class), 0)};
 	}
 
 	@Override
 	protected MethodParameter[] createSupportedReturnTypes() throws NoSuchMethodException {
-		return new MethodParameter[] { new MethodParameter(getClass().getMethod("element", Element.class), -1) };
+		return new MethodParameter[]{new MethodParameter(getClass().getMethod("element", Element.class), -1)};
 	}
 
 	@Override

@@ -23,5 +23,6 @@ import org.springframework.ws.server.endpoint.MessageEndpoint;
 public class NoResponseEndpoint implements MessageEndpoint {
 
 	@Override
-	public void invoke(MessageContext messageContext) {}
+	public void invoke(MessageContext messageContext) {
+	}
 }

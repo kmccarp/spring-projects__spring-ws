@@ -102,7 +102,7 @@ public class ResponseCreatorsTest {
 		xmlBuilder.append("</soap:Envelope>");
 		String envelope = xmlBuilder.toString();
 		ResponseCreator responseCreator = ResponseCreators
-				.withSoapEnvelope(new ByteArrayResource(envelope.getBytes(StandardCharsets.UTF_8)));
+	.withSoapEnvelope(new ByteArrayResource(envelope.getBytes(StandardCharsets.UTF_8)));
 		WebServiceMessage response = responseCreator.createResponse(null, null, messageFactory);
 
 		XmlAssert.assertThat(getSoapEnvelopeAsString((SoapMessage) response)).and(envelope).ignoreWhitespace().areSimilar();

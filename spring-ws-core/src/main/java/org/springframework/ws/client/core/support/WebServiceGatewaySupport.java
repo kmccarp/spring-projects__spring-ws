@@ -187,6 +187,7 @@ public abstract class WebServiceGatewaySupport implements InitializingBean {
 	 *
 	 * @throws java.lang.Exception if initialization fails
 	 */
-	protected void initGateway() throws Exception {}
+	protected void initGateway() throws Exception {
+	}
 
 }

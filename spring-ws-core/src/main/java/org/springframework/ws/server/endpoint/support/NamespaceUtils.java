@@ -34,7 +34,8 @@ import org.springframework.xml.namespace.SimpleNamespaceContext;
  */
 public abstract class NamespaceUtils {
 
-	private NamespaceUtils() {}
+	private NamespaceUtils() {
+	}
 
 	/**
 	 * Creates a {@code NamespaceContext} for the specified method, based on {@link Namespaces @Namespaces} and
@@ -61,7 +62,7 @@ public abstract class NamespaceUtils {
 	}
 
 	private static void addNamespaceAnnotations(AnnotatedElement annotatedElement,
-			SimpleNamespaceContext namespaceContext) {
+SimpleNamespaceContext namespaceContext) {
 		if (annotatedElement.isAnnotationPresent(Namespaces.class)) {
 			Namespaces namespacesAnn = annotatedElement.getAnnotation(Namespaces.class);
 			for (Namespace namespaceAnn : namespacesAnn.value()) {

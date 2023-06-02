@@ -202,7 +202,7 @@ public class HttpComponents5ClientFactory implements FactoryBean<CloseableHttpCl
 	public CloseableHttpClient getObject() throws Exception {
 
 		PoolingHttpClientConnectionManagerBuilder connectionManagerBuilder = PoolingHttpClientConnectionManagerBuilder
-				.create();
+	.create();
 
 		if (this.maxTotalConnections != -1) {
 			connectionManagerBuilder.setMaxConnTotal(this.maxTotalConnections);
@@ -217,12 +217,12 @@ public class HttpComponents5ClientFactory implements FactoryBean<CloseableHttpCl
 		applyMaxConnectionsPerHost(connectionManager);
 
 		RequestConfig.Builder requestConfigBuilder = RequestConfig.custom() //
-				.setConnectionRequestTimeout(Timeout.of(connectionTimeout)) //
-				.setResponseTimeout(Timeout.of(readTimeout));
+	.setConnectionRequestTimeout(Timeout.of(connectionTimeout)) //
+	.setResponseTimeout(Timeout.of(readTimeout));
 
 		HttpClientBuilder httpClientBuilder = HttpClientBuilder.create() //
-				.setDefaultRequestConfig(requestConfigBuilder.build()) //
-				.setConnectionManager(connectionManager);
+	.setDefaultRequestConfig(requestConfigBuilder.build()) //
+	.setConnectionManager(connectionManager);
 
 		if (credentials != null && authScope != null) {
 
@@ -252,7 +252,7 @@ public class HttpComponents5ClientFactory implements FactoryBean<CloseableHttpCl
 	}
 
 	public void setConnectionManagerBuilderCustomizer(
-			PoolingHttpClientConnectionManagerBuilderCustomizer connectionManagerBuilderCustomizer) {
+PoolingHttpClientConnectionManagerBuilderCustomizer connectionManagerBuilderCustomizer) {
 		this.connectionManagerBuilderCustomizer = connectionManagerBuilderCustomizer;
 	}
 

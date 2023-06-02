@@ -36,7 +36,7 @@ public class DefaultWsConfigurationTest {
 	public void payloadRootAnnotationMethodEndpointMapping() {
 
 		PayloadRootAnnotationMethodEndpointMapping endpointMapping = this.applicationContext
-				.getBean(PayloadRootAnnotationMethodEndpointMapping.class);
+	.getBean(PayloadRootAnnotationMethodEndpointMapping.class);
 
 		assertThat(endpointMapping.getOrder()).isEqualTo(0);
 	}
@@ -45,7 +45,7 @@ public class DefaultWsConfigurationTest {
 	public void soapActionAnnotationMethodEndpointMapping() {
 
 		SoapActionAnnotationMethodEndpointMapping endpointMapping = this.applicationContext
-				.getBean(SoapActionAnnotationMethodEndpointMapping.class);
+	.getBean(SoapActionAnnotationMethodEndpointMapping.class);
 
 		assertThat(endpointMapping.getOrder()).isEqualTo(1);
 	}
@@ -54,7 +54,7 @@ public class DefaultWsConfigurationTest {
 	public void annotationActionEndpointMapping() {
 
 		AnnotationActionEndpointMapping endpointMapping = this.applicationContext
-				.getBean(AnnotationActionEndpointMapping.class);
+	.getBean(AnnotationActionEndpointMapping.class);
 
 		assertThat(endpointMapping.getOrder()).isEqualTo(2);
 	}
@@ -82,7 +82,8 @@ public class DefaultWsConfigurationTest {
 	private static class TestEndpoint {
 
 		@SoapAction("handle")
-		public void handle() {}
+		public void handle() {
+		}
 
 	}
 

@@ -34,28 +34,28 @@ public class SoapFaultDefinition {
 	/**
 	 * Constant {@code QName} used to indicate that a {@code Client} fault must be created.
 	 *
-	 * @see org.springframework.ws.soap.SoapBody#addClientOrSenderFault(String,java.util.Locale)
+	 * @see org.springframework.ws.soap.SoapBody#addClientOrSenderFault(String, java.util.Locale)
 	 */
 	public static final QName CLIENT = new QName("CLIENT");
 
 	/**
 	 * Constant {@code QName} used to indicate that a {@code Receiver} fault must be created.
 	 *
-	 * @see org.springframework.ws.soap.SoapBody#addServerOrReceiverFault(String,java.util.Locale)
+	 * @see org.springframework.ws.soap.SoapBody#addServerOrReceiverFault(String, java.util.Locale)
 	 */
 	public static final QName RECEIVER = new QName("RECEIVER");
 
 	/**
 	 * Constant {@code QName} used to indicate that a {@code Sender} fault must be created.
 	 *
-	 * @see org.springframework.ws.soap.SoapBody#addServerOrReceiverFault(String,java.util.Locale)
+	 * @see org.springframework.ws.soap.SoapBody#addServerOrReceiverFault(String, java.util.Locale)
 	 */
 	public static final QName SENDER = new QName("SENDER");
 
 	/**
 	 * Constant {@code QName} used to indicate that a {@code Server} fault must be created.
 	 *
-	 * @see org.springframework.ws.soap.SoapBody#addClientOrSenderFault(String,java.util.Locale)
+	 * @see org.springframework.ws.soap.SoapBody#addClientOrSenderFault(String, java.util.Locale)
 	 */
 	public static final QName SERVER = new QName("SERVER");
 

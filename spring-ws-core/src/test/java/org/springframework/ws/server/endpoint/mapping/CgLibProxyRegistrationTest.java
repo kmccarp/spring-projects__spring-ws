@@ -38,9 +38,11 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 @ContextConfiguration("cglib-proxy-registration.xml")
 public class CgLibProxyRegistrationTest {
 
-	@Autowired private PayloadRootAnnotationMethodEndpointMapping mapping;
+	@Autowired
+	private PayloadRootAnnotationMethodEndpointMapping mapping;
 
-	@Autowired private ApplicationContext applicationContext;
+	@Autowired
+	private ApplicationContext applicationContext;
 
 	@Test
 	public void registration() throws NoSuchMethodException {
@@ -60,7 +62,8 @@ public class CgLibProxyRegistrationTest {
 
 		@PayloadRoot(localPart = "Request", namespace = "http://springframework.org/spring-ws")
 		@Log
-		public void doIt(@RequestPayload Source payload) {}
+		public void doIt(@RequestPayload Source payload) {
+		}
 
 	}
 

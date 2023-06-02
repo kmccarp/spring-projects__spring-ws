@@ -60,7 +60,7 @@ public class FaultCreatingValidatingMarshallingPayloadEndpointTest {
 		SOAPMessage request = messageFactory.createMessage();
 		request.getSOAPBody().addBodyElement(new QName("http://www.springframework.org/spring-ws", "request"));
 		messageContext = new DefaultMessageContext(new SaajSoapMessage(request),
-				new SaajSoapMessageFactory(messageFactory));
+	new SaajSoapMessageFactory(messageFactory));
 	}
 
 	@Test
@@ -105,14 +105,14 @@ public class FaultCreatingValidatingMarshallingPayloadEndpointTest {
 		DetailEntry detailEntry = (DetailEntry) iterator.next();
 
 		assertThat(detailEntry.getElementQName())
-				.isEqualTo(new QName("http://springframework.org/spring-ws", "ValidationError"));
+	.isEqualTo(new QName("http://springframework.org/spring-ws", "ValidationError"));
 		assertThat(detailEntry.getTextContent()).isEqualTo("Name is required");
 		assertThat(iterator.hasNext()).isTrue();
 
 		detailEntry = (DetailEntry) iterator.next();
 
 		assertThat(detailEntry.getElementQName())
-				.isEqualTo(new QName("http://springframework.org/spring-ws", "ValidationError"));
+	.isEqualTo(new QName("http://springframework.org/spring-ws", "ValidationError"));
 		assertThat(detailEntry.getTextContent()).isEqualTo("Age Cannot be negative");
 		assertThat(iterator.hasNext()).isFalse();
 	}
@@ -214,7 +214,8 @@ public class FaultCreatingValidatingMarshallingPayloadEndpointTest {
 		}
 
 		@Override
-		public void marshal(Object graph, Result result) throws XmlMappingException, IOException {}
+		public void marshal(Object graph, Result result) throws XmlMappingException, IOException {
+		}
 	}
 
 }

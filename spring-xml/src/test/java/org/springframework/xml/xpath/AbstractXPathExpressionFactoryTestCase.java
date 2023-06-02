@@ -99,7 +99,7 @@ public abstract class AbstractXPathExpressionFactoryTestCase {
 	public void testEvaluateAsBooleanNamespaces() throws IOException, SAXException {
 
 		XPathExpression expression = createXPathExpression("/prefix1:root/prefix2:child/prefix2:boolean/text()",
-				namespaces);
+	namespaces);
 		boolean result = expression.evaluateAsBoolean(namespacesDocument);
 
 		assertThat(result).isTrue();

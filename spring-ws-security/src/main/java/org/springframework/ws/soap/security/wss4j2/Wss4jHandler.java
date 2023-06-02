@@ -54,7 +54,7 @@ class Wss4jHandler extends WSHandler {
 
 	@Override
 	public void doSenderAction(Document doc, RequestData reqData, List<HandlerAction> actions, boolean isRequest)
-			throws WSSecurityException {
+throws WSSecurityException {
 		super.doSenderAction(doc, reqData, actions, isRequest);
 	}
 

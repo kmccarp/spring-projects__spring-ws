@@ -39,7 +39,7 @@ public class MapBasedSoapEndpointMappingTest {
 		context.registerSingleton("endpoint", Object.class);
 		context.registerAlias("endpoint", "alias");
 		MyMapBasedEndpointMapping mapping = new MyMapBasedEndpointMapping();
-		mapping.setValidKeys(new String[] { "endpoint", "alias" });
+		mapping.setValidKeys(new String[]{"endpoint", "alias"});
 
 		mapping.setRegisterBeanNames(true);
 		mapping.setApplicationContext(context);
@@ -83,7 +83,7 @@ public class MapBasedSoapEndpointMappingTest {
 		endpointMap.put("endpoint2", endpoint2);
 
 		MyMapBasedEndpointMapping mapping = new MyMapBasedEndpointMapping();
-		mapping.setValidKeys(new String[] { "endpoint1", "endpoint2" });
+		mapping.setValidKeys(new String[]{"endpoint1", "endpoint2"});
 
 		mapping.setEndpointMap(endpointMap);
 		mapping.setApplicationContext(new StaticApplicationContext());
