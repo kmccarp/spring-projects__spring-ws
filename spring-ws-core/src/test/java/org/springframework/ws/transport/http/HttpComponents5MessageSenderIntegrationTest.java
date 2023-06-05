@@ -157,6 +157,8 @@ class HttpComponents5MessageSenderIntegrationTest
 	@SuppressWarnings("serial")
 	public static class EchoServlet extends HttpServlet {
 
+		private static final long serialVersionUID = 1;
+
 		@Override
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
