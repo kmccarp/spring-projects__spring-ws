@@ -41,7 +41,7 @@ public abstract class AbstractXPathExpressionFactoryTestCase {
 
 	private Document namespacesDocument;
 
-	private Map<String, String> namespaces = new HashMap<String, String>();
+    private final Map<String, String> namespaces = new HashMap<>();
 
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -248,7 +248,7 @@ public abstract class AbstractXPathExpressionFactoryTestCase {
 	public void testEvaluateAsObject() {
 
 		XPathExpression expression = createXPathExpression("/root/child");
-		String result = expression.evaluateAsObject(noNamespacesDocument, new NodeMapper<String>() {
+		String result = expression.evaluateAsObject(noNamespacesDocument, new NodeMapper<>() {
 			public String mapNode(Node node, int nodeNum) throws DOMException {
 				return node.getLocalName();
 			}
@@ -262,7 +262,7 @@ public abstract class AbstractXPathExpressionFactoryTestCase {
 	public void testEvaluate() throws Exception {
 
 		XPathExpression expression = createXPathExpression("/root/child/*");
-		List<String> results = expression.evaluate(noNamespacesDocument, new NodeMapper<String>() {
+		List<String> results = expression.evaluate(noNamespacesDocument, new NodeMapper<>() {
 			public String mapNode(Node node, int nodeNum) throws DOMException {
 				return node.getLocalName();
 			}

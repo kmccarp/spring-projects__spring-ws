@@ -90,10 +90,10 @@ public abstract class RequestCreators {
 		return withSoapEnvelope(new ResourceSource(soapEnvelope));
 	}
 
-	/**
-	 * Adapts a {@link WebServiceMessageCreator} to the {@link RequestCreator} contract.
-	 */
-	private static class WebServiceMessageCreatorAdapter implements RequestCreator {
+    /**
+     * Adapts a {@link WebServiceMessageCreator} to the {@link RequestCreator} contract.
+     */
+    private static final class WebServiceMessageCreatorAdapter implements RequestCreator {
 
 		private final WebServiceMessageCreator adaptee;
 

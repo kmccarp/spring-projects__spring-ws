@@ -402,7 +402,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 					}
 				}
 			}
-		}, new WebServiceMessageExtractor<Object>() {
+		}, new WebServiceMessageExtractor<>() {
 
 			public Object extractData(WebServiceMessage response) throws IOException {
 				Unmarshaller unmarshaller = getUnmarshaller();
@@ -440,7 +440,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 		try {
 			final Transformer transformer = createTransformer();
 			Boolean retVal = doSendAndReceive(uri, transformer, requestPayload, requestCallback,
-					new SourceExtractor<Boolean>() {
+					new SourceExtractor<>() {
 
 						public Boolean extractData(Source source) throws IOException, TransformerException {
 							if (source != null) {
@@ -497,7 +497,7 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 					requestCallback.doWithMessage(message);
 				}
 			}
-		}, new SourceExtractorMessageExtractor<T>(responseExtractor));
+		}, new SourceExtractorMessageExtractor<>(responseExtractor));
 	}
 
 	//
@@ -792,8 +792,8 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 		}
 	}
 
-	/** Adapter to enable use of a WebServiceMessageCallback inside a WebServiceMessageExtractor. */
-	private static class WebServiceMessageCallbackMessageExtractor implements WebServiceMessageExtractor<Boolean> {
+    /** Adapter to enable use of a WebServiceMessageCallback inside a WebServiceMessageExtractor. */
+    private static final class WebServiceMessageCallbackMessageExtractor implements WebServiceMessageExtractor<Boolean> {
 
 		private final WebServiceMessageCallback callback;
 
@@ -808,8 +808,8 @@ public class WebServiceTemplate extends WebServiceAccessor implements WebService
 		}
 	}
 
-	/** Adapter to enable use of a SourceExtractor inside a WebServiceMessageExtractor. */
-	private static class SourceExtractorMessageExtractor<T> implements WebServiceMessageExtractor<T> {
+    /** Adapter to enable use of a SourceExtractor inside a WebServiceMessageExtractor. */
+    private static final class SourceExtractorMessageExtractor<T> implements WebServiceMessageExtractor<T> {
 
 		private final SourceExtractor<T> sourceExtractor;
 

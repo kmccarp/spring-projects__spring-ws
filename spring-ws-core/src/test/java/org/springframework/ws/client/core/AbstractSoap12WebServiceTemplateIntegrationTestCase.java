@@ -77,7 +77,7 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 
 	private WebServiceTemplate template;
 
-	private String messagePayload = "<root xmlns='http://springframework.org/spring-ws'><child/></root>";
+    private final String messagePayload = "<root xmlns='http://springframework.org/spring-ws'><child/></root>";
 
 	@BeforeAll
 	public static void startJetty() throws Exception {
@@ -278,9 +278,9 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 		}, new StringResult());
 	}
 
-	/** Servlet that returns and error message for a given status code. */
-	@SuppressWarnings("serial")
-	public static class ErrorServlet extends HttpServlet {
+    /** Servlet that returns and error message for a given status code. */
+    @SuppressWarnings("serial")
+    public static final class ErrorServlet extends HttpServlet {
 
 		private int sc;
 
@@ -298,7 +298,7 @@ public abstract class AbstractSoap12WebServiceTemplateIntegrationTestCase {
 	@SuppressWarnings("serial")
 	public abstract static class AbstractSoapServlet extends HttpServlet {
 
-		protected MessageFactory messageFactory = null;
+		protected MessageFactory messageFactory;
 
 		@Override
 		public void init(ServletConfig servletConfig) throws ServletException {
