@@ -34,7 +34,7 @@ public class SimpleXsdSchemaTest extends AbstractXsdSchemaTestCase {
 
 	@Test
 	public void testBareXsdSchema() {
-		assertThatIllegalArgumentException().isThrownBy(() -> new SimpleXsdSchema().toString());
+		assertThatIllegalArgumentException().isThrownBy(new SimpleXsdSchema()::toString);
 	}
 
 }

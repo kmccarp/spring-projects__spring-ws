@@ -185,6 +185,6 @@ public class PayloadTransformingInterceptorTest {
 
 	@Test
 	public void testNoStylesheetsSet() {
-		assertThatIllegalArgumentException().isThrownBy(() -> interceptor.afterPropertiesSet());
+		assertThatIllegalArgumentException().isThrownBy(interceptor::afterPropertiesSet);
 	}
 }
