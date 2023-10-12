@@ -117,11 +117,11 @@ public abstract class AbstractStaxStreamPayloadEndpoint extends AbstractStaxPayl
 	 */
 	protected abstract void invokeInternal(XMLStreamReader streamReader, XMLStreamWriter streamWriter) throws Exception;
 
-	/**
-	 * Implementation of the {@code XMLStreamWriter} interface that creates a response {@code WebServiceMessage} as soon
-	 * as any method is called, thus lazily creating the response.
-	 */
-	private class ResponseCreatingStreamWriter implements XMLStreamWriter {
+    /**
+     * Implementation of the {@code XMLStreamWriter} interface that creates a response {@code WebServiceMessage} as soon
+     * as any method is called, thus lazily creating the response.
+     */
+    private final class ResponseCreatingStreamWriter implements XMLStreamWriter {
 
 		private MessageContext messageContext;
 
